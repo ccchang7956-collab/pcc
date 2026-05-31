@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>底價及價格分析 - 重點備考系統</title>
+    <meta name="description" content="底價及價格分析系統化重點筆記與互動式模擬備考系統，助您迅速掌握考試重點，高分通關！">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #10b981; /* Emerald Green */
+            --accent-primary-glow: rgba(16, 185, 129, 0.15);
+            --accent-secondary: #f43f5e; /* Rose/Coral Red */
+            --accent-warning: #f59e0b; /* Amber */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow-green: 0 0 15px rgba(16, 185, 129, 0.3);
+            --glow-red: 0 0 15px rgba(244, 63, 94, 0.3);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-primary);
+            border-radius: 2px;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 30%, #a7f3d0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-stat {
+            background: rgba(31, 41, 55, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-stat .num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat .lbl {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Container & Grid layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .section-title svg {
+            color: var(--accent-primary);
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        /* Board 1: Core Architecture Card Grid */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .arch-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-primary);
+            opacity: 0.7;
+        }
+
+        .arch-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.05);
+        }
+
+        .arch-card-icon {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .arch-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .arch-card ul {
+            list-style: none;
+        }
+
+        .arch-card li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .arch-card li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+        }
+
+        /* Board 2: Number Codes Counters */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .num-card {
+            background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(31, 41, 55, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all var(--transition-speed);
+        }
+
+        .num-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .num-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+        }
+
+        .num-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .num-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Board 3: Trap Table */
+        .trap-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .trap-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .trap-table th {
+            background-color: rgba(31, 41, 55, 0.5);
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-row {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .trap-row:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .trap-row td {
+            padding: 1.25rem 1.5rem;
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .trap-wrong {
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .trap-right {
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .trap-detail {
+            background-color: rgba(17, 24, 39, 0.6);
+            display: none;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-detail-content {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-warning);
+        }
+
+        .trap-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Board 4: Classic Explanations */
+        .classic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .classic-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .classic-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .classic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .classic-num-lbl {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .classic-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .classic-law {
+            font-size: 0.8rem;
+            color: var(--accent-warning);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.25rem;
+            display: inline-block;
+        }
+
+        .classic-body {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .classic-exp {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-primary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* Interactive Quiz Section */
+        .quiz-container {
+            background-color: var(--bg-secondary);
+            border: 2px solid rgba(16, 185, 129, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .quiz-info {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-score-lbl {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-primary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .quiz-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quiz-option-btn:hover:not(:disabled) {
+            background-color: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(3px);
+        }
+
+        .quiz-option-btn.correct {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: var(--accent-primary) !important;
+            color: var(--accent-primary);
+            font-weight: 700;
+            box-shadow: var(--glow-green);
+        }
+
+        .quiz-option-btn.wrong {
+            background-color: rgba(244, 63, 94, 0.15) !important;
+            border-color: var(--accent-secondary) !important;
+            color: var(--accent-secondary);
+            font-weight: 700;
+            box-shadow: var(--glow-red);
+        }
+
+        .quiz-feedback {
+            background-color: rgba(31, 41, 55, 0.5);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+            display: none;
+            border-left: 4px solid var(--accent-primary);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .quiz-feedback h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .quiz-feedback p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .quiz-action-btn {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+        }
+
+        .quiz-action-btn:hover:not(:disabled) {
+            background-color: var(--bg-card);
+            border-color: var(--text-secondary);
+        }
+
+        .quiz-action-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .quiz-action-btn.primary-btn {
+            background-color: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            font-weight: 700;
+        }
+
+        .quiz-action-btn.primary-btn:hover {
+            background-color: #059669;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Alert styling inside text */
+        .info-alert {
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .info-alert-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-alert-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            header {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                gap: 0.75rem;
+                position: relative; /* 取消固定以留出更多手機版空間 */
+            }
+            
+            nav {
+                gap: 1rem;
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                white-space: nowrap; /* 確保導覽文字不換行以進行平滑左右滑動 */
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            nav::-webkit-scrollbar {
+                height: 3px;
+            }
+            nav::-webkit-scrollbar-thumb {
+                background: var(--accent-primary);
+                border-radius: 2px;
+            }
+            
+            .hero {
+                padding: 3rem 1rem 1.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-stats {
+                gap: 0.75rem;
+            }
+            
+            .hero-stat {
+                padding: 0.5rem 1rem;
+                min-width: 100px;
+                flex: 1 1 30%;
+            }
+            
+            .hero-stat .num {
+                font-size: 1.25rem;
+            }
+            
+            .hero-stat .lbl {
+                font-size: 0.75rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            section {
+                margin-bottom: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.35rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .arch-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .arch-card {
+                padding: 1.25rem;
+            }
+            
+            .arch-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .arch-card li {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* 數字密碼改為 2 欄 */
+            .number-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .num-card {
+                padding: 1.25rem 0.5rem;
+            }
+            
+            .num-val {
+                font-size: 2.25rem;
+            }
+            
+            .num-title {
+                font-size: 0.9rem;
+            }
+            
+            .num-desc {
+                font-size: 0.75rem;
+            }
+            
+            /* ⚠️ 是非題易錯文字陷阱表格 RWD 改良：將表格轉換為垂直卡片流 */
+            .trap-table, .trap-table thead, .trap-table tbody, .trap-table th, .trap-table td, .trap-table tr {
+                display: block;
+            }
+            
+            .trap-table thead {
+                display: none; /* 隱藏表頭 */
+            }
+            
+            .trap-row {
+                border-bottom: none;
+                background: rgba(255, 255, 255, 0.01);
+                margin-bottom: 0.5rem;
+                border-radius: 8px 8px 0 0;
+                padding: 0.5rem 0;
+                border: 1px solid var(--border-color);
+            }
+            
+            .trap-row td {
+                padding: 0.65rem 1rem;
+                font-size: 0.88rem;
+            }
+            
+            .trap-row td:first-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                color: var(--accent-secondary);
+                font-weight: 700;
+            }
+            
+            .trap-row td:nth-child(2) {
+                color: var(--accent-primary);
+                font-weight: 700;
+            }
+            
+            .trap-detail-content {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .quiz-container {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+            
+            .quiz-question {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .quiz-option-btn {
+                padding: 0.85rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .quiz-nav-btns {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .quiz-action-btn {
+                width: 100%;
+                padding: 0.85rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <span>PCC</span> 底價及價格分析備考系統
+        </div>
+        <nav>
+            <a href="#hero" class="active">主頁</a>
+            <a href="#arch">核心架構</a>
+            <a href="#numbers">數字密碼</a>
+            <a href="#traps">是非陷阱</a>
+            <a href="#classics">經典題庫</a>
+            <a href="#quiz">模擬測驗</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>底價及價格分析</h1>
+        <p>系統化備考重點提煉與互動小測驗。專為中華民國公共工程委員會「採購專業人員考試」精準打造。</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num">44</div>
+                <div class="lbl">精選選擇題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">96</div>
+                <div class="lbl">實務是非題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">100%</div>
+                <div class="lbl">忠於標準答案</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        
+        <!-- Board 1: Core Architecture -->
+        <section id="arch">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                🎯 第一板塊：核心知識架構
+            </h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div class="arch-card-icon">👑</div>
+                    <h3>1. 底價訂定之權責歸屬與程序</h3>
+                    <ul>
+                        <li><strong>核定權限</strong>：一般由規劃、設計、需求或使用單位提出預估金額及其分析後，由承辦採購單位簽報<strong>機關首長或其授權人員</strong>核定。</li>
+                        <li><strong>例外簡化程序</strong>：<strong>重複性採購</strong>或<strong>未達公告金額之採購</strong>，得由<strong>承辦採購單位逕行簽報核定</strong>（免逐案由需求單位提出）。</li>
+                        <li><strong>異動與效力</strong>：因機關首長異動，原已核定之底價<strong>不需重新訂定</strong>，原核定底價依然有效。</li>
+                        <li><strong>監辦與實務</strong>：開標主持人開啟底價封後，監辦人員<strong>查看底價金額尚無不可</strong>，但仍需遵守決標前之保密規定。</li>
+                    </ul>
+                </div>
+                
+                <div class="arch-card">
+                    <div class="arch-card-icon">⏰</div>
+                    <h3>2. 底價訂定之法定時限</h3>
+                    <ul>
+                        <li><strong>公開招標（分段開標）</strong>：至遲應於<strong>價格標開標前</strong>定之。</li>
+                        <li><strong>選擇性招標</strong>：應於資格審查後之<strong>下一階段（價格標/比價）開標前</strong>定之。</li>
+                        <li><strong>限制性招標（比價）</strong>：應於<strong>辦理比價之開標前</strong>定之。</li>
+                        <li><strong>限制性招標（議價）</strong>：訂定底價前，<strong>應先參考廠商之報價或估價單</strong>（包含公開客觀評選優勝廠商後之議價）。</li>
+                        <li><strong>當場改採議價（未達公告金額）</strong>：當場改採議價時，其底價訂定前<strong>仍應先參考廠商之報價或估價單</strong>。</li>
+                        <li><strong>公開取得書面報價</strong>：底價應於<strong>進行比價或議價前</strong>定之（非開標前）。</li>
+                    </ul>
+                </div>
+                
+                <div class="arch-card">
+                    <div class="arch-card-icon">🔒</div>
+                    <h3>3. 底價之公開與保密原則</h3>
+                    <ul>
+                        <li><strong>保密時機</strong>：底價於開標前與決標前應予<strong>保密</strong>；決標後應予<strong>公開</strong>。</li>
+                        <li><strong>不公開之例外（商業機密）</strong>：若屬<strong>以轉售或供製造成品以供轉售之採購</strong>，其底價涉及商業機密者，決標後<strong>得不予公開</strong>，但應通知<strong>得標廠商</strong>（不需通知所有投標廠商）。</li>
+                        <li><strong>機密採購例外</strong>：軍事機密採購之底價於決標後得不予公開。</li>
+                        <li><strong>複數決標之公開時機</strong>：採用複數決標方式，尚有部分項目未決標時，其<strong>已決標部分之底價應予公開</strong>（不得等全部決標）。</li>
+                        <li><strong>流標與廢標之底價處理</strong>：流標後因底價未開啟，若招標條件均未改變，底價<strong>經機關首長或其授權人核准免再重新訂定（得沿用）</strong>；但若廢標後重行招標，且圖說、規範、成本、行情有改變者，應重行訂定。</li>
+                    </ul>
+                </div>
+                
+                <div class="arch-card">
+                    <div class="arch-card-icon">📊</div>
+                    <h3>4. 價格與成本分析實務</h3>
+                    <ul>
+                        <li><strong>成本分類</strong>：
+                            <ul>
+                                <li><strong>固定成本</strong>：指<strong>不隨</strong>履約標的之數量而變動之成本（如模具費、折舊費、基本設立費）。</li>
+                                <li><strong>變動成本</strong>：會隨履約標的數量而變動之成本（如原材料、直接人工）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>利潤合理編列</strong>：利潤得視個案，依所需成本、市場之競爭性及經營策略加以分析，合理編列，避免超額利潤。</li>
+                        <li><strong>不訂底價之替代審查</strong>：準用最有利標評選優勝廠商，議價階段如不訂底價，可成立<strong>評審委員會</strong>審查廠商報價；當認為標價合理者，得不提出建議減價金額，直接照得標廠商之報價決標。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board 2: Number Codes -->
+        <section id="numbers">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24"><path d="M4 19h16v2H4zm0-4h16v2H4zm0-4h16v2H4zm0-4h16v2H4zm0-4h16v2H4z"/></svg>
+                🔢 第二板塊：常考「數字、比例與時限」密碼
+            </h2>
+            <div class="number-grid">
+                <div class="num-card">
+                    <div class="num-val">4%</div>
+                    <div class="num-title">超底價決標限制</div>
+                    <div class="num-desc">合於招標文件之最低標標價超過底價 4% 以內，且未逾預算，查核金額以上採購需報經上級機關核准後決標。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">8%</div>
+                    <div class="num-title">緊急決標超底價上限</div>
+                    <div class="num-desc">因緊急情事，未達公告金額或重複性採購，經首長或其授權人員核准得於超底價 8% 以內決標。不論如何皆不得超預算。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">80%</div>
+                    <div class="num-title">標價偏低認定門檻</div>
+                    <div class="num-desc">訂有底價之採購，總標價或部分標價低於底價 80% 者，得認定標價偏低，啟動採購法第58條說明與防範程序。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">70%</div>
+                    <div class="num-title">無底價標價偏低門檻</div>
+                    <div class="num-desc">無底價且未設評審會之採購，總標價低於預估需用金額 70% 者認定偏低；部分標價低於其他機關決標價/一般價格 70% 者亦同。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">1000萬</div>
+                    <div class="num-title">價格資料庫傳輸門檻</div>
+                    <div class="num-desc">預算金額達新台幣 1,000 萬元以上之工程採購，應於決標後一定期限內將契約單價及預算單價資料傳輸至工程價格資料庫。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">3次</div>
+                    <div class="num-title">比減價格次數上限</div>
+                    <div class="num-desc">最低標超底價優先減價 1 次，減價結果仍超底價時，比減價格不得逾 3 次。優先減價不計入比減價次數。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">1辦公日</div>
+                    <div class="num-title">外幣折算基準日</div>
+                    <div class="num-desc">標價幣別在2種以上者，依「辦理決標前 1 辦公日」臺灣銀行收盤即期賣出匯率折算以定標序（非開標前）。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board 3: Trap Table -->
+        <section id="traps">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                ⚠️ 第三板塊：是非題易錯「文字陷阱」對比表 (點擊展開解析)
+            </h2>
+            <div class="trap-container">
+                <table class="trap-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 45%;">❌ 題庫常見錯誤敘述（答案為 X）</th>
+                            <th style="width: 45%;">⭕ 正確法規與實務觀念</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="trap-row" onclick="toggleTrapDetail(1)">
+                            <td class="trap-wrong">機關辦理小額採購，仍應訂定底價。</td>
+                            <td class="trap-right">小額採購依法得免訂定底價（採購法第47條第1項第3款）。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-1">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法第47條第1項第3款。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第2題與第13題考點。機關辦理未達公告金額十分之一（小額採購，即新台幣15萬以下）之採購，得免訂定底價。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(2)">
+                            <td class="trap-wrong">機關訂定底價，不得基於廠商產品品質之差異，訂定不同之底價。</td>
+                            <td class="trap-right">機關得基於技術、品質、功能、履約地、商業條款、評分或使用效益等差異，訂定不同之底價。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-2">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法施行細則第52-1條。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第5題與第28題考點。採購標的基於廠商交付標的之品質、功能、效益差異，而訂定不同之底價，屬於合法的差別訂價實務，而非限制競爭。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(3)">
+                            <td class="trap-wrong">最有利標固定費用決標者，因價格不納入評選，故不得規定廠商詳列報價內容。</td>
+                            <td class="trap-right">價格雖不必納入評選，但仍得規定廠商於投標文件內詳列報價內容以利審查。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-3">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 最有利標評選辦法及投標須知範本。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第7題與第8題考點。即便招標文件訂明固定費用給付，機關仍有審查廠商提出之工作內容與經費編列是否合理完整之義務，因此得要求詳列報價。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(4)">
+                            <td class="trap-wrong">最低標標價超過底價時，優先減價及比減價格次數合計不得逾3次。</td>
+                            <td class="trap-right">優先減價不計入比減價格次數，比減價格之次數合計不得逾 3 次（優先減價 1 次 + 比減 3 次）。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-4">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法第53條第1項。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第34題與第35題考點。優先減價是單獨給最低標的優惠，不屬於所有廠商均可參與之「比減價格」，因此「比減價格」次數上限為 3 次。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(5)">
+                            <td class="trap-wrong">流標後重行招標，即使招標條件未變，原底價仍應重新訂定，不得沿用。</td>
+                            <td class="trap-right">流標後底價未開啟且招標條件未變，經機關首長或其授權人核准免再重新訂定（得沿用原底價）。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-5">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法施行細則第54條第3項。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第18題與第19題考點。流標時底價封根本未被開啟，其保密性仍完好，因此在招標條件未變動時，為簡化行政作業，報經核准後得直接沿用原底價。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(6)">
+                            <td class="trap-wrong">機關辦理查核金額以上之採購，訂定底價應報上級機關核定。</td>
+                            <td class="trap-right">不論採購金額多大，訂定底價一律由機關首長或其授權人員核定，無需報上級機關核定。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-6">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法第46條及施行細則第53條。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第22題與第24題考點。上級機關是「監辦」查核金額以上之採購程序，不干預底價之具體金額核定。底價訂定屬於招標機關首長之法定職權。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(7)">
+                            <td class="trap-wrong">轉售或供製供轉售採購，底價涉及商業機密者，決標後得不公開，且不通知廠商。</td>
+                            <td class="trap-right">底價涉及商業機密決標後得不公開，但應「通知得標廠商」（不需通知所有投標廠商）。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-7">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法第34條第3項但書。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第23題與第25題考點。考卷最愛用「通知各投標廠商」來做為錯誤選項，依法僅需「通知得標廠商」。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(8)">
+                            <td class="trap-wrong">機關辦理工程採購之預算金額達新台幣 1000 萬元以上者，僅須傳輸得標廠商決標單價。</td>
+                            <td class="trap-right">應傳輸得標廠商之「契約單價」及經機關核定之「預算單價」資料至價格資料庫。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-8">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法第11條第2項及施行細則。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第30題與第31題考點。為供其他機關預算編列及底價訂定之參考，除了決標單價外，機關核定之預算單價也是重要對比資料，兩者皆必須傳輸。
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail(9)">
+                            <td class="trap-wrong">物價商情上揚時，為利最低標案決標，底價得以超過預算金額訂定。</td>
+                            <td class="trap-right">底價屬於決標的法定上限，不論物價如何波動，底價仍不得以超過預算金額訂定。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap-detail-9">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據</span> 政府採購法施行細則第54條第2項。
+                                    <br><span class="trap-tag">陷阱剖析</span> 題庫是非題第36題與第37題考點。底價金額絕對不能突破預算上限，若預算不足，機關應先辦理預算變更或修正招標文件，而非在決標時直接訂定超預算之底價。
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Board 4: Classic Explanations -->
+        <section id="classics">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                📝 第四板塊：精選經典題解析
+            </h2>
+            <div class="classic-grid">
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">選擇題 第34題</span>
+                        <span class="classic-law">放棄優先減價之比減價權利</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目描述：</strong> 機關辦理最低標決標案件，開標後最低標廠商之標價未進入底價，最低標廠商當場表示放棄優先減價，則該廠商得否參與後續比減價？
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心備考解析：</strong>
+                        <br>標準答案為 <strong>得 (可以參與)</strong>。
+                        <br>這是實務開標中極為高頻的爭議與考點。最低標廠商當場表示放棄「優先減價」的機會，僅代表其放棄了該單獨議減的優先特權。在該程序流標並隨即宣布進入所有廠商共同參與的「重新比減價格」時，該最低標廠商只要是合於招標文件規定的合格投標商，就依然享有平等的比減價權利，主持開標人員不得限制其投標。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">選擇題 第44題</span>
+                        <span class="classic-law">採購法第58條 差額保證金之實務判定</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目描述：</strong> 機關辦公傢俱招標案採最低標決標，最低標標價為 410 萬元，低於底價 600 萬元之80%（480萬）與70%（420萬）。機關認為廠商提出之說明「尚非完全合理」，關於差額保證金之通知，下列何者正確？
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心備考解析：</strong>
+                        <br>標準答案為 <strong>不通知該廠商提出</strong>。
+                        <br>依「政府採購法第五十八條處理程序」之規定：
+                        <br>1. 最低標標價低於底價80%時，應通知最低標限期提出說明。
+                        <br>2. 若廠商提出之說明「尚非完全合理」，且機關認為有降低品質、不能誠信履約之虞者，應<strong>直接不予決標予該廠商，根本不會通知其提出差額保證金</strong>！
+                        <br>3. 只有在廠商之說明「尚非完全合理」，且機關「同意」其繳納差額保證金後辦理決標時，才會通知其繳納。本題中機關已認定說明「尚非完全合理」，因此依法直接不決標。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">是非題 第94題</span>
+                        <span class="classic-law">多種幣別折算基準日</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目描述：</strong> 投標廠商之標價幣別，依招標文件規定在 2 種以上者，由機關折算新臺幣總價以定標序。該折算總價，依辦理「開標前」 1 辦公日臺灣銀行收盤即期賣出匯率折算之。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心備考解析：</strong>
+                        <br>標準答案為 <strong>X (錯誤)</strong>。
+                        <br>依政府採購法施行細則規定，多種幣別之折算總價，應依辦理<strong>「決標前」1 辦公日</strong>臺灣銀行外匯交易收盤即期賣出匯率折算之，非開標前 1 辦公日。這是法規條文中極細微的階段字眼陷阱，考試時務必注意「開標前」與「決標前」之差異。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">是非題 第59題</span>
+                        <span class="classic-law">公告底價之權核程序</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目描述：</strong> 機關得依實際需要，報經上級機關核准後，於招標文件公告底價。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心備考解析：</strong>
+                        <br>標準答案為 <strong>X (錯誤)</strong>。
+                        <br>機關依實際需要，得於招標文件中公告底價。公告底價是招標機關的行政裁量權限，<strong>完全不需報經上級機關核准</strong>，機關自行決定即可。是非題第1題為正確敘述（機關得公告底價），第59題多加了「報經上級機關核准後」而成為錯誤陷阱。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">選擇題 第5題</span>
+                        <span class="classic-law">優勝廠商議價與底價訂定</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目描述：</strong> 依採購法，下列何者有誤？ (1)評選2家以上優勝廠商與其各該廠商議價底價不一樣。 (2)採公開取得3家以上書面報價，其底價應於開標前定之。 (3)與優勝廠商議價訂底價前應先參考該廠商之報價。 (4)採最有利標者得不訂定底價。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心備考解析：</strong>
+                        <br>錯誤敘述為 <strong>(2) 公開取得書面報價其底價應於開標前定之</strong>。
+                        <br>依政府採購法施行細則，公開取得廠商書面報價或企劃書者，其底價應於<strong>「進行比價或議價前」定之</strong>，而非開標前。選項 (1) 為正確，因為不同優勝廠商（例如第一名與第二名）其評選出的序位與條件不同，議價底價本應分開訂定；選項 (3) 也是限制性招標議價之法定程序，訂定底價前應先參考廠商之報價或估價單。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6v6l4 2"/></svg>
+                ⚔️ 離線自包含模擬測驗系統 (隨機出題與即時解析)
+            </h2>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-info">
+                        單元：底價及價格分析 | 題號：<span id="current-q-num">1</span>/<span id="total-qs-count">0</span>
+                    </div>
+                    <div class="quiz-score-lbl">
+                        得分：<span id="quiz-score">0</span> 分 | 答對：<span id="correct-count">0</span> 題
+                    </div>
+                </div>
+                
+                <div class="quiz-question" id="quiz-q-text">
+                    載入中...
+                </div>
+                
+                <div class="quiz-options" id="quiz-opts-container">
+                    <!-- Options will be dynamic -->
+                </div>
+                
+                <div class="quiz-feedback" id="quiz-feedback-box">
+                    <h4 id="feedback-title">解析</h4>
+                    <p id="feedback-text">解析內容</p>
+                </div>
+                
+                <div class="quiz-nav-btns">
+                    <button class="quiz-action-btn" id="prev-btn" onclick="prevQuestion()" disabled>上一題</button>
+                    <button class="quiz-action-btn" id="next-btn" onclick="nextQuestion()">下一題</button>
+                    <button class="quiz-action-btn primary-btn" id="restart-btn" onclick="initQuiz(true)">隨機重測</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 PCC 採購專業人員考試重點備考系統</p>
+        <p>本系統為離線自包含工具，無任何後端依賴，完全忠於公共工程委員會標準答案</p>
+    </footer>
+
+    <script>
+        // 題目資料庫
+        const mcqsData = [{"id": 1, "answer": 1, "raw_content": "機關辦理採購，下列何者正確？ (1)公告金額以上未達查核金額之財物採 購，因緊急情事需決標時，經原底價核定人或其授權人員核准可超底價5％ 以內決標。 (2)開標結果之最低報價廠商未進入底價，優先減價時填列「不 再減價」時，不得再予最低報價廠商第1次比減價之機會。 (3)比減價過 程，比減價廠商有2家分別填列「願按底價承製」、「願按底價減新臺幣100 元承製」，應宣布以「願按底價減新臺幣100元承製」之廠商決標。 (4)以 上皆非。", "question": "機關辦理採購，下列何者正確？", "options": ["公告金額以上未達查核金額之財物採 購，因緊急情事需決標時，經原底價核定人或其授權人員核准可超底價5％ 以內決標。", "開標結果之最低報價廠商未進入底價，優先減價時填列「不 再減價」時，不得再予最低報價廠商第1次比減價之機會。", "比減價過 程，比減價廠商有2家分別填列「願按底價承製」、「願按底價減新臺幣100 元承製」，應宣布以「願按底價減新臺幣100元承製」之廠商決標。", "以 上皆非。"]}, {"id": 2, "answer": 3, "raw_content": "機關辦理採購，招標文件規定廠商之標價依規定之計算方式，有依投標標的 之性能、耐用年限、保固期、能源使用效能或維修費用等之差異，就標價予 以加價或減價以定標價之高低序位者，以加價或減價後之標價決定最低標 者，係屬下列何種決標原則？ (1)最有利標。 (2)參考最有利標精神。 (3) 最低標。 (4)準用最有利標。", "question": "機關辦理採購，招標文件規定廠商之標價依規定之計算方式，有依投標標的 之性能、耐用年限、保固期、能源使用效能或維修費用等之差異，就標價予 以加價或減價以定標價之高低序位者，以加價或減價後之標價決定最低標 者，係屬下列何種決標原則？", "options": ["最有利標。", "參考最有利標精神。", "最低標。", "準用最有利標。"]}, {"id": 3, "answer": 4, "raw_content": "有關底價單之保管，下列何者為非？ (1)開標前訂有底價者，主持開標人員 及監辦開標人員應查察底價有無密封。 (2)審標結果有廠商符合招標文件規 定，而需進行比較廠商標價是否在底價以內之程序時，方開啟底價封。 (3) 開啟底價封後，查察實際核定之底價金額。 (4)開啟底價封後未能當場決標 者，會議主持人將底價單重行置入底價封即可，無需密封。", "question": "有關底價單之保管，下列何者為非？", "options": ["開標前訂有底價者，主持開標人員 及監辦開標人員應查察底價有無密封。", "審標結果有廠商符合招標文件規 定，而需進行比較廠商標價是否在底價以內之程序時，方開啟底價封。", "開啟底價封後，查察實際核定之底價金額。", "開啟底價封後未能當場決標 者，會議主持人將底價單重行置入底價封即可，無需密封。"]}, {"id": 4, "answer": 3, "raw_content": "機關以公開招標及最有利標方式辦理訂有底價之採購，最有利標廠商報價超 過底價而須洽減時，以下何者敘述最正確？ (1)議價時洽減。 (2)評選時洽 減。 (3)協商時洽減。 (4)以上皆非。", "question": "機關以公開招標及最有利標方式辦理訂有底價之採購，最有利標廠商報價超 過底價而須洽減時，以下何者敘述最正確？", "options": ["議價時洽減。", "評選時洽 減。", "協商時洽減。", "以上皆非。"]}, {"id": 5, "answer": 2, "raw_content": "依採購法，下列何者有誤？ (1)依採購法第22條第1項第9款評選2家以上優 勝廠商，其與各該廠商議價之底價不一樣。 (2)依採購法第49條採公開取得 3家以上廠商之書面報價者，其底價應於開標前定之。 (3)依採購法第22條 第1項第9款與優勝廠商議價，訂定底價前應先參考該廠商之報價。 (4)依採 購法辦理公開招標，其採第56條評選最有利標者，得不訂定底價。", "question": "依採購法，下列何者有誤？", "options": ["依採購法第22條第1項第9款評選2家以上優 勝廠商，其與各該廠商議價之底價不一樣。", "依採購法第49條採公開取得 3家以上廠商之書面報價者，其底價應於開標前定之。", "依採購法第22條 第1項第9款與優勝廠商議價，訂定底價前應先參考該廠商之報價。", "依採 購法辦理公開招標，其採第56條評選最有利標者，得不訂定底價。"]}, {"id": 6, "answer": 1, "raw_content": "依採購法，下列何者有誤？ (1)部分標價有對應之底價項目可供比較，該部 分標價低於相同部分項目底價之80%者，得認定為部分標價偏低。 (2)廠商 之部分標價低於其他機關最近辦理相同採購決標價之70%者，得認定為部分 標價偏低。 (3)廠商之部分標價經評審或評選委員會認為偏低者，得認定為 部分標價偏低。 (4)廠商之部分標價低於可供參考之一般價格之70%者，得 認定為部分標價偏低。", "question": "依採購法，下列何者有誤？", "options": ["部分標價有對應之底價項目可供比較，該部 分標價低於相同部分項目底價之80%者，得認定為部分標價偏低。", "廠商 之部分標價低於其他機關最近辦理相同採購決標價之70%者，得認定為部分 標價偏低。", "廠商之部分標價經評審或評選委員會認為偏低者，得認定為 部分標價偏低。", "廠商之部分標價低於可供參考之一般價格之70%者，得 認定為部分標價偏低。"]}, {"id": 7, "answer": 4, "raw_content": "機關辦理訂有底價之採購，關於底價之訂定，下列何者有誤？ (1)應參考圖 說、規範、契約，並考量成本、市場行情及政府機關決標資料。 (2)規劃、 設計、需求或使用單位提出預估金額及其分析後由承辦採購單位簽報。 (3) 機關首長或其授權人員核定。 (4)開標後可參考廠商標價更改底價。", "question": "機關辦理訂有底價之採購，關於底價之訂定，下列何者有誤？", "options": ["應參考圖 說、規範、契約，並考量成本、市場行情及政府機關決標資料。", "規劃、 設計、需求或使用單位提出預估金額及其分析後由承辦採購單位簽報。", "機關首長或其授權人員核定。", "開標後可參考廠商標價更改底價。"]}, {"id": 8, "answer": 4, "raw_content": "底價及價格分析中，下列何者正確？ (1)採最有利標之招標文件未訂明固定 費用或費率，而由廠商於投標文件載明標價者，應規定廠商於投標文件內詳 列報價內容，並納入評選。 (2)未訂定底價之採購，除小額採購外，應成立 評審委員會。 (3)標價合理者，評審委員會得不提出建議之金額。 (4)以上 皆是。", "question": "底價及價格分析中，下列何者正確？", "options": ["採最有利標之招標文件未訂明固定 費用或費率，而由廠商於投標文件載明標價者，應規定廠商於投標文件內詳 列報價內容，並納入評選。", "未訂定底價之採購，除小額採購外，應成立 評審委員會。", "標價合理者，評審委員會得不提出建議之金額。", "以上 皆是。"]}, {"id": 9, "answer": 4, "raw_content": "不訂底價之採購，其審查投標廠商之標價？ (1)不分金額均應成立評審委員 會。 (2)應成立評選委員會。 (3)應成立稽核委員會。 (4)除小額採購外， 應成立評審委員會。", "question": "不訂底價之採購，其審查投標廠商之標價？", "options": ["不分金額均應成立評審委員 會。", "應成立評選委員會。", "應成立稽核委員會。", "除小額採購外， 應成立評審委員會。"]}, {"id": 10, "answer": 1, "raw_content": "依採購法，除採最高標決標者外，下列何者有誤？ (1)底價得高於預算金 額。 (2)決標紀錄載明底價金額。 (3)機關訂定底價，基於履約地差異，訂 定不同之底價。 (4)機關訂定底價，基於評分差異，訂定不同之底價。", "question": "依採購法，除採最高標決標者外，下列何者有誤？", "options": ["底價得高於預算金 額。", "決標紀錄載明底價金額。", "機關訂定底價，基於履約地差異，訂 定不同之底價。", "機關訂定底價，基於評分差異，訂定不同之底價。"]}, {"id": 11, "answer": 4, "raw_content": "依政府採購法，下列何者有誤？ (1)機關訂定底價，由需求單位提出預估金 額及其分析後，由承辦採購單位簽報機關首長或其授權人員核定。 (2)機關 訂定底價，未達公告金額之採購，由承辦採購單位逕行簽報核定。 (3)機關 訂定底價，公告金額以上之重複性採購，由承辦採購單位逕行簽報核定。 (4)機關訂定底價，一律由承辦採購單位簽報機關首長或其授權人員核定。", "question": "依政府採購法，下列何者有誤？", "options": ["機關訂定底價，由需求單位提出預估金 額及其分析後，由承辦採購單位簽報機關首長或其授權人員核定。", "機關 訂定底價，未達公告金額之採購，由承辦採購單位逕行簽報核定。", "機關 訂定底價，公告金額以上之重複性採購，由承辦採購單位逕行簽報核定。", "機關訂定底價，一律由承辦採購單位簽報機關首長或其授權人員核定。"]}, {"id": 12, "answer": 3, "raw_content": "選擇性招標底價之訂定應於何時定之？ (1)資格審查之開標前定之。 (2)議 價前定之。 (3)資格審查後之下一階段開標前定之。 (4)於比價前定之。", "question": "選擇性招標底價之訂定應於何時定之？", "options": ["資格審查之開標前定之。", "議 價前定之。", "資格審查後之下一階段開標前定之。", "於比價前定之。"]}, {"id": 13, "answer": 1, "raw_content": "以最有利標決標者，得將價格納入評選項目，下列何項次非屬評選價格之子 項？ (1)品質。 (2)價格組成之完整性。 (3)折讓。 (4)履約成本控制方 式。", "question": "以最有利標決標者，得將價格納入評選項目，下列何項次非屬評選價格之子 項？", "options": ["品質。", "價格組成之完整性。", "折讓。", "履約成本控制方 式。"]}, {"id": 14, "answer": 3, "raw_content": "適用最有利標標價之決定，得於評選時就廠商之報價內容，進行何程序？ (1)分析評分及比價。 (2)分析評分及議價。 (3)分析評分或評比。 (4)議 價或比價。", "question": "適用最有利標標價之決定，得於評選時就廠商之報價內容，進行何程序？", "options": ["分析評分及比價。", "分析評分及議價。", "分析評分或評比。", "議 價或比價。"]}, {"id": 15, "answer": 1, "raw_content": "總標價偏低之情形，何者錯誤？ (1)訂有底價之採購，廠商之總標價低於底 價之85％者。 (2)未訂底價之採購，廠商之總標價經評審或評選委員會認為 偏低者。 (3)未訂底價且未設置評審委員會或評選委員會之採購，廠商之總 標價低於預算金額或預估需用金額之70％者。 (4)訂有底價之採購，廠商之 總標價低於底價之80％者。", "question": "總標價偏低之情形，何者錯誤？", "options": ["訂有底價之採購，廠商之總標價低於底 價之85％者。", "未訂底價之採購，廠商之總標價經評審或評選委員會認為 偏低者。", "未訂底價且未設置評審委員會或評選委員會之採購，廠商之總 標價低於預算金額或預估需用金額之70％者。", "訂有底價之採購，廠商之 總標價低於底價之80％者。"]}, {"id": 16, "answer": 4, "raw_content": "下列何者錯誤？ (1)評審委員會，機關得以採購法第94條成立之評選委員 會代之。 (2)最有利標決標者，以不訂底價為原則；其訂有底價，而廠商 報價逾底價須減價者，於採行協商措施時洽減之。 (3)查核金額以上之採 購，最低標標價超過底價4％且未逾預算金額者，應先報經上級機關核准後 決標。 (4)評審委員會，其成員由機關首長或其授權人員就對於採購標的之 「規格」具有專門知識之機關職員或公正人士派兼或聘兼之。", "question": "下列何者錯誤？", "options": ["評審委員會，機關得以採購法第94條成立之評選委員 會代之。", "最有利標決標者，以不訂底價為原則；其訂有底價，而廠商 報價逾底價須減價者，於採行協商措施時洽減之。", "查核金額以上之採 購，最低標標價超過底價4％且未逾預算金額者，應先報經上級機關核准後 決標。", "評審委員會，其成員由機關首長或其授權人員就對於採購標的之 「規格」具有專門知識之機關職員或公正人士派兼或聘兼之。"]}, {"id": 17, "answer": 3, "raw_content": "下列何者正確？ (1)採總標價決標者，決標前僅就總標價之高低認定是否接 受，不及於其所組成之單價。 (2)機關訂定底價，不得訂定不同之底價。 (3)招標文件得預先載明契約金額或相關費率作為決標條件。 (4)超底價廢 標後，重新招標時不得調整底價。", "question": "下列何者正確？", "options": ["採總標價決標者，決標前僅就總標價之高低認定是否接 受，不及於其所組成之單價。", "機關訂定底價，不得訂定不同之底價。", "招標文件得預先載明契約金額或相關費率作為決標條件。", "超底價廢 標後，重新招標時不得調整底價。"]}, {"id": 18, "answer": 3, "raw_content": "下列何者錯誤？ (1)機關辦理減價或比減價格結果在底價以內時，除有採購 法第58條總標價或部分標價偏低之情形者外，應即宣布決標。 (2)最低合格 標報價超過底價時，洽最低標廠商減價1次；減價結果仍超過底價時，由所 有合於招標文件規定之投標廠商重新比減價格，比減價格不得逾3次。 (3) 最低標價仍超過底價8%者，報上級機關同意始可宣布決標。 (4)機關訂定 底價，得基於技術、品質、功能、履約地、商業條款、評分或使用效益等差 異，訂定不同之底價。", "question": "下列何者錯誤？", "options": ["機關辦理減價或比減價格結果在底價以內時，除有採購 法第58條總標價或部分標價偏低之情形者外，應即宣布決標。", "最低合格 標報價超過底價時，洽最低標廠商減價1次；減價結果仍超過底價時，由所 有合於招標文件規定之投標廠商重新比減價格，比減價格不得逾3次。", "最低標價仍超過底價8%者，報上級機關同意始可宣布決標。", "機關訂定 底價，得基於技術、品質、功能、履約地、商業條款、評分或使用效益等差 異，訂定不同之底價。"]}, {"id": 19, "answer": 3, "raw_content": "限制性招標之議價，訂定底價前？ (1)自行依據經驗辦理。 (2)得先參考廠 商之報價或估價單。 (3)應先參考廠商之報價或估價單。 (4)應先試洽廠商 減價。", "question": "限制性招標之議價，訂定底價前？", "options": ["自行依據經驗辦理。", "得先參考廠 商之報價或估價單。", "應先參考廠商之報價或估價單。", "應先試洽廠商 減價。"]}, {"id": 20, "answer": 1, "raw_content": "限制性招標比價，底價之訂定時機為？ (1)辦理比價之開標前。 (2)辦理比 價前。 (3)訂底價前應先參考廠商之報價或估價單。 (4)以上皆是。", "question": "限制性招標比價，底價之訂定時機為？", "options": ["辦理比價之開標前。", "辦理比 價前。", "訂底價前應先參考廠商之報價或估價單。", "以上皆是。"]}, {"id": 21, "answer": 4, "raw_content": "依採購法，下列何者有誤？ (1)未能減至機關所宣布之最低標優先減價結果 者，機關不通知其參加下一次之比減價格。 (2)未能減至機關所宣布之第1 次比減價格之最低標價者，機關不通知其參加第2次之比減價格。 (3)超底 價決標者，決標紀錄記載超底價之金額、比率及必須決標之緊急情事。 (4) 查核金額以上之採購，上級機關派員監辦人員不得當場予以核准超底價決 標。", "question": "依採購法，下列何者有誤？", "options": ["未能減至機關所宣布之最低標優先減價結果 者，機關不通知其參加下一次之比減價格。", "未能減至機關所宣布之第1 次比減價格之最低標價者，機關不通知其參加第2次之比減價格。", "超底 價決標者，決標紀錄記載超底價之金額、比率及必須決標之緊急情事。", "查核金額以上之採購，上級機關派員監辦人員不得當場予以核准超底價決 標。"]}, {"id": 22, "answer": 3, "raw_content": "依採購法，下列何者有誤？ (1)機關辦理減價或比減價格結果在底價以內 時，除有採購法第58條總標價或部分標價偏低之情形者外，應即宣布決標。 (2)廠商減價或比減價格結果在底價以內之情形，包括平底價之情形。 (3) 廠商標價與底價相同時仍應洽減價。 (4)洽廠商減價時不得公開底價。", "question": "依採購法，下列何者有誤？", "options": ["機關辦理減價或比減價格結果在底價以內 時，除有採購法第58條總標價或部分標價偏低之情形者外，應即宣布決標。", "廠商減價或比減價格結果在底價以內之情形，包括平底價之情形。", "廠商標價與底價相同時仍應洽減價。", "洽廠商減價時不得公開底價。"]}, {"id": 23, "answer": 3, "raw_content": "依採購法，下列何者有誤？ (1)訂有底價之採購，廠商之總標價低於底價 80%者，得認定為總標價偏低。 (2)未訂底價之採購，廠商之總標價經評審 委員會認為偏低者，得認定為總標價偏低。 (3)未訂底價且未設置評審委員 會或評選委員會之採購，廠商之總標價低於預算金額之80%者，得認定為總 標價偏低。 (4)未訂底價且未設置評審委員會或評選委員會之採購，預算案 尚未經立法程序者，廠商之總標價低於預估需用金額之70%者，得認定為總 標價偏低。", "question": "依採購法，下列何者有誤？", "options": ["訂有底價之採購，廠商之總標價低於底價 80%者，得認定為總標價偏低。", "未訂底價之採購，廠商之總標價經評審 委員會認為偏低者，得認定為總標價偏低。", "未訂底價且未設置評審委員 會或評選委員會之採購，廠商之總標價低於預算金額之80%者，得認定為總 標價偏低。", "未訂底價且未設置評審委員會或評選委員會之採購，預算案 尚未經立法程序者，廠商之總標價低於預估需用金額之70%者，得認定為總 標價偏低。"]}, {"id": 24, "answer": 4, "raw_content": "依採購法，下列何者有誤？ (1)訂定底價確有困難之特殊或複雜案件得不訂 底價。 (2)以最有利標決標之採購得不訂底價。 (3)小額採購得不訂底價。 (4)不訂底價應報上級機關核准。", "question": "依採購法，下列何者有誤？", "options": ["訂定底價確有困難之特殊或複雜案件得不訂 底價。", "以最有利標決標之採購得不訂底價。", "小額採購得不訂底價。", "不訂底價應報上級機關核准。"]}, {"id": 25, "answer": 2, "raw_content": "依採購法，下列何者有誤？ (1)選擇性招標之底價應於資格審查後之下一 階段開標前定之。 (2)公開招標採分段開標者，其底價至遲應於第2階段價 格標開標前定之。 (3)限制性招標之比價，其底價應於辦理比價之開標前定 之。 (4)限制性招標之議價，訂定底價前應先參考廠商之報價或估價單。", "question": "依採購法，下列何者有誤？", "options": ["選擇性招標之底價應於資格審查後之下一 階段開標前定之。", "公開招標採分段開標者，其底價至遲應於第2階段價 格標開標前定之。", "限制性招標之比價，其底價應於辦理比價之開標前定 之。", "限制性招標之議價，訂定底價前應先參考廠商之報價或估價單。"]}, {"id": 26, "answer": 1, "raw_content": "機關採準用最有利標辦理評選優勝廠商，下列何者為非？ (1)如採訂定底價 者，底價得於開標前由採購評選委員會訂定之。 (2)廠商標價合理者，可考 慮照價訂底價，照價決標。 (3)廠商之報價應納入評選考量。 (4)如採訂定 底價者，對於不同優勝序位之廠商，應訂定不同之底價。", "question": "機關採準用最有利標辦理評選優勝廠商，下列何者為非？", "options": ["如採訂定底價 者，底價得於開標前由採購評選委員會訂定之。", "廠商標價合理者，可考 慮照價訂底價，照價決標。", "廠商之報價應納入評選考量。", "如採訂定 底價者，對於不同優勝序位之廠商，應訂定不同之底價。"]}, {"id": 27, "answer": 2, "raw_content": "廢標後重行招標，有關底價之訂定，下列何者不適法？ (1)如原訂底價尚在 保密之中，是否重訂底價，由機關首長或其授權人員決定。 (2)如原訂底價 尚在保密之中，是否重訂底價，由開標主持人決定。 (3)如招標之圖說、規 範、契約、成本、市場行情等有所改變，應重行訂定底價。 (4)以上皆非。", "question": "廢標後重行招標，有關底價之訂定，下列何者不適法？", "options": ["如原訂底價尚在 保密之中，是否重訂底價，由機關首長或其授權人員決定。", "如原訂底價 尚在保密之中，是否重訂底價，由開標主持人決定。", "如招標之圖說、規 範、契約、成本、市場行情等有所改變，應重行訂定底價。", "以上皆非。"]}, {"id": 28, "answer": 4, "raw_content": "機關辦理公開客觀評選優勝廠商，採不分段開標方式，有關廠商價格標之開 啟時機，下列敘述何者正確？ (1)議價時開啟。 (2)評選後議價前開啟。 (3)召開評選會議時開啟。 (4)依招標文件所定開標時間開啟。", "question": "機關辦理公開客觀評選優勝廠商，採不分段開標方式，有關廠商價格標之開 啟時機，下列敘述何者正確？", "options": ["議價時開啟。", "評選後議價前開啟。", "召開評選會議時開啟。", "依招標文件所定開標時間開啟。"]}, {"id": 29, "answer": 2, "raw_content": "一般採購案（即無特殊情形者），其底價應於何時公開？ (1)開標後。 (2) 決標後。 (3)廢標後。 (4)流標後。", "question": "一般採購案（即無特殊情形者），其底價應於何時公開？", "options": ["開標後。", "決標後。", "廢標後。", "流標後。"]}, {"id": 30, "answer": 3, "raw_content": "以下何者訂定底價前應參考廠商報價（新臺幣，下同）？ (1)300萬元工程 採購之第2次公開招標。 (2)500萬元工程採購之第1次公開招標。 (3)200萬 元財物採購之限制性招標洽原得標廠商後續擴充採購。 (4)300萬元財物採 購之第1次選擇性招標。", "question": "以下何者訂定底價前應參考廠商報價（新臺幣，下同）？", "options": ["300萬元工程 採購之第2次公開招標。", "500萬元工程採購之第1次公開招標。", "200萬 元財物採購之限制性招標洽原得標廠商後續擴充採購。", "300萬元財物採 購之第1次選擇性招標。"]}, {"id": 31, "answer": 4, "raw_content": "下述有關底價之敘述，何者正確？ (1)公開招標採分段開標者，底價應於價 格標開標前定之。 (2)開標後發現底價訂定有誤，得重訂底價。 (3)標價偏 低情形，廠商表示願繳納差額保證金時，機關得告知廠商底價金額。 (4)預 先於招標文件公告底價。", "question": "下述有關底價之敘述，何者正確？", "options": ["公開招標採分段開標者，底價應於價 格標開標前定之。", "開標後發現底價訂定有誤，得重訂底價。", "標價偏 低情形，廠商表示願繳納差額保證金時，機關得告知廠商底價金額。", "預 先於招標文件公告底價。"]}, {"id": 32, "answer": 1, "raw_content": "下列敘述何者正確？ (1)機關採未訂底價之最低標辦理採購且設有評審委員 會者，應先審查合於招標文件規定之最低標價後，對標價合理者，評審委員 會得不提出建議金額。 (2)第1次公開招標未達3家流標後重新招標，底價 不得重訂。 (3)第1次公開招標超底價廢標後重新招標，重訂底價時不得調 高。 (4)查核金額以上之底價報上級機關核准。", "question": "下列敘述何者正確？", "options": ["機關採未訂底價之最低標辦理採購且設有評審委員 會者，應先審查合於招標文件規定之最低標價後，對標價合理者，評審委員 會得不提出建議金額。", "第1次公開招標未達3家流標後重新招標，底價 不得重訂。", "第1次公開招標超底價廢標後重新招標，重訂底價時不得調 高。", "查核金額以上之底價報上級機關核准。"]}, {"id": 33, "answer": 1, "raw_content": "機關依「中央機關未達公告金額採購招標辦法」第2條第3項規定，於公告或 招標文件中訂明開標時間地點，並於開標後當場審查，逕行辦理決標，下列 敘述何者錯誤？ (1)第1次開標前，訂定底價時應先參考廠商之報價或估價 單。 (2)如已先簽准改採限制性招標之議價者，訂定底價時應先參考廠商之 報價。 (3)機關得選擇不刊登政府採購公報。 (4)履約地點位於原住民族地 區者，應符合原住民族工作權保障法之規定。", "question": "機關依「中央機關未達公告金額採購招標辦法」第2條第3項規定，於公告或 招標文件中訂明開標時間地點，並於開標後當場審查，逕行辦理決標，下列 敘述何者錯誤？", "options": ["第1次開標前，訂定底價時應先參考廠商之報價或估價 單。", "如已先簽准改採限制性招標之議價者，訂定底價時應先參考廠商之 報價。", "機關得選擇不刊登政府採購公報。", "履約地點位於原住民族地 區者，應符合原住民族工作權保障法之規定。"]}, {"id": 34, "answer": 2, "raw_content": "機關辦理最低標決標案件，開標後最低標廠商之標價未進入底價，最低標廠 商當場表示放棄優先減價，則該廠商得否參與後續比減價？ (1)不得。 (2) 得。 (3)經其他廠商同意後仍得。 (4)視為放棄。", "question": "機關辦理最低標決標案件，開標後最低標廠商之標價未進入底價，最低標廠 商當場表示放棄優先減價，則該廠商得否參與後續比減價？", "options": ["不得。", "得。", "經其他廠商同意後仍得。", "視為放棄。"]}, {"id": 35, "answer": 3, "raw_content": "依採購法，下列何者有誤？ (1)訂定底價確有困難之特殊或複雜案件，得不 訂底價。但應於招標文件內敘明理由及決標條件與原則。 (2)最有利標決標 之案件，可將履約期程之長短訂為評選項目。 (3)適用最有利標決標之案 件，評分最高之廠商有優先減價之權利。 (4)不訂底價以最有利標決標之採 購，得規定廠商於投標文件內詳列報價內容。", "question": "依採購法，下列何者有誤？", "options": ["訂定底價確有困難之特殊或複雜案件，得不 訂底價。但應於招標文件內敘明理由及決標條件與原則。", "最有利標決標 之案件，可將履約期程之長短訂為評選項目。", "適用最有利標決標之案 件，評分最高之廠商有優先減價之權利。", "不訂底價以最有利標決標之採 購，得規定廠商於投標文件內詳列報價內容。"]}, {"id": 36, "answer": 3, "raw_content": "下列敘述何者錯誤？ (1)採單價決標者，依預估採購所需金額認定採購金 額。 (2)預計金額小於或等於預算金額。 (3)預計金額為該採購之預估決標 金額，其性質類似底價，應由機關首長或其授權人員核定後公告。 (4)預算 案尚未經立法程序，亦得附條件先行辦理招標。", "question": "下列敘述何者錯誤？", "options": ["採單價決標者，依預估採購所需金額認定採購金 額。", "預計金額小於或等於預算金額。", "預計金額為該採購之預估決標 金額，其性質類似底價，應由機關首長或其授權人員核定後公告。", "預算 案尚未經立法程序，亦得附條件先行辦理招標。"]}, {"id": 37, "answer": 2, "raw_content": "未訂底價之採購，評審委員會所提出建議之金額，下列敘述何者正確？ (1) 屬開標前訂定建議之金額。 (2)標價合理者，評審委員會得不提出建議之金 額。 (3)審查資格後由評審委員會提出建議之金額。 (4)機關有緊急需求 時，得超建議之金額決標。", "question": "未訂底價之採購，評審委員會所提出建議之金額，下列敘述何者正確？", "options": ["屬開標前訂定建議之金額。", "標價合理者，評審委員會得不提出建議之金 額。", "審查資格後由評審委員會提出建議之金額。", "機關有緊急需求 時，得超建議之金額決標。"]}, {"id": 38, "answer": 4, "raw_content": "依採購法，下列何者有誤？ (1)不是所有工程都須於決標日起30日內依規定 格式傳輸至工程價格資料庫。 (2)採購法第11條第2項所稱一定金額，為新 臺幣1,000萬元。 (3)工程價格資料庫係供各機關採購預算編列及底價訂定 之參考。 (4)工程價格資料庫，除應秘密之部分外，得有償提供廠商。", "question": "依採購法，下列何者有誤？", "options": ["不是所有工程都須於決標日起30日內依規定 格式傳輸至工程價格資料庫。", "採購法第11條第2項所稱一定金額，為新 臺幣1,000萬元。", "工程價格資料庫係供各機關採購預算編列及底價訂定 之參考。", "工程價格資料庫，除應秘密之部分外，得有償提供廠商。"]}, {"id": 39, "answer": 3, "raw_content": "機關依採購法第11條第2項規定傳輸之資料，下列何者有誤？ (1)其屬統包 者，為得標廠商完成細部設計後，經機關核定之單價。 (2)其內容包括得標 廠商之契約單價及經機關核定之預算單價。 (3)機關應於決標日起20日內， 將資料製作成公共工程電腦估價系統格式電子檔，並透過政府電子採購網站 傳輸至工程價格資料庫。 (4)傳輸資料應依主管機關訂定之「公共工程施工 綱要規範細目碼編訂原則」編訂。", "question": "機關依採購法第11條第2項規定傳輸之資料，下列何者有誤？", "options": ["其屬統包 者，為得標廠商完成細部設計後，經機關核定之單價。", "其內容包括得標 廠商之契約單價及經機關核定之預算單價。", "機關應於決標日起20日內， 將資料製作成公共工程電腦估價系統格式電子檔，並透過政府電子採購網站 傳輸至工程價格資料庫。", "傳輸資料應依主管機關訂定之「公共工程施工 綱要規範細目碼編訂原則」編訂。"]}, {"id": 40, "answer": 4, "raw_content": "下列何者錯誤？ (1)除限制性招標議價外，底價係未見廠商報價前預估成本 及競爭等情形所訂定決標之底限。 (2)最有利標於評選時參考廠商提出之報 價內容進行分析評分或評比。 (3)底價應依圖說、規範、契約並考量成本、 市場行情及政府機關決標資料逐項編列。 (4)為提升議價效率，機關得於廠 商議價過程中建議廠商減至底價。", "question": "下列何者錯誤？", "options": ["除限制性招標議價外，底價係未見廠商報價前預估成本 及競爭等情形所訂定決標之底限。", "最有利標於評選時參考廠商提出之報 價內容進行分析評分或評比。", "底價應依圖說、規範、契約並考量成本、 市場行情及政府機關決標資料逐項編列。", "為提升議價效率，機關得於廠 商議價過程中建議廠商減至底價。"]}, {"id": 41, "answer": 3, "raw_content": "招標機關辦理採購，以最有利標決標，故不訂底價，下列何種敘述為不正 確？ (1)未違反採購法第47條之規定。 (2)規定廠商於投標文件中詳列報價 內容。 (3)招標文件無需載明評選項目。 (4)得依招標文件規定採行協商措 施以便洽廠商更改投標文件內容。", "question": "招標機關辦理採購，以最有利標決標，故不訂底價，下列何種敘述為不正 確？", "options": ["未違反採購法第47條之規定。", "規定廠商於投標文件中詳列報價 內容。", "招標文件無需載明評選項目。", "得依招標文件規定採行協商措 施以便洽廠商更改投標文件內容。"]}, {"id": 42, "answer": 4, "raw_content": "採固定價格評選優勝廠商，為避免廠商產生超額利潤並維護招標機關權益， 下列何者應納入評分項目？ (1)價格。 (2)標的之功能、效益。 (3)品質的 可靠度。 (4)廠商提出與採購標的相關之創意事項。", "question": "採固定價格評選優勝廠商，為避免廠商產生超額利潤並維護招標機關權益， 下列何者應納入評分項目？", "options": ["價格。", "標的之功能、效益。", "品質的 可靠度。", "廠商提出與採購標的相關之創意事項。"]}, {"id": 43, "answer": 2, "raw_content": "依採購法，下列何者有誤？ (1)機關於第1次比減價格前，應宣布最低標廠 商減價結果。 (2)最低標廠商優先減價時得書面表示減至底價。 (3)第2次 以後比減價格前，應宣布前一次比減價格之最低標價。 (4)機關得限制廠商 比減價格之次數為2次。", "question": "依採購法，下列何者有誤？", "options": ["機關於第1次比減價格前，應宣布最低標廠 商減價結果。", "最低標廠商優先減價時得書面表示減至底價。", "第2次 以後比減價格前，應宣布前一次比減價格之最低標價。", "機關得限制廠商 比減價格之次數為2次。"]}, {"id": 44, "answer": 1, "raw_content": "機關辦公傢俱招標案，依採購法規定採最低標決標，最低標廠商標價為新臺 幣（下同）410萬元，低於底價600萬元，機關認為廠商提出之說明尚非完全 合理，關於差額保證金之通知，下列何者正確？ (1)不通知該廠商提出。 (2)通知該廠商繳納10萬元。 (3)通知該廠商繳納70萬元。 (4)通知該廠商 繳納190萬元。", "question": "機關辦公傢俱招標案，依採購法規定採最低標決標，最低標廠商標價為新臺 幣（下同）410萬元，低於底價600萬元，機關認為廠商提出之說明尚非完全 合理，關於差額保證金之通知，下列何者正確？", "options": ["不通知該廠商提出。", "通知該廠商繳納10萬元。", "通知該廠商繳納70萬元。", "通知該廠商 繳納190萬元。"]}];
+        const tfsData = [{"id": 1, "answer": "O", "question": "機關依實際需要，得於招標文件中公告底價。"}, {"id": 2, "answer": "X", "question": "機關辦理小額採購，仍應訂定底價。"}, {"id": 3, "answer": "X", "question": "未訂底價之採購，以合於招標文件規定，標價合理，且在預算數額以內之最 低標為得標廠商，非屬採購法規定之決標原則之一。"}, {"id": 4, "answer": "O", "question": "未訂底價之採購，以合於招標文件規定，標價合理，且在預算數額以內之最 低標為得標廠商，為採購法規定之決標原則之一。"}, {"id": 5, "answer": "X", "question": "機關訂定底價，不得基於廠商產品品質之差異，訂定不同之底價。"}, {"id": 6, "answer": "O", "question": "機關訂定底價，得基於廠商產品品質之差異，訂定不同之底價。"}, {"id": 7, "answer": "X", "question": "機關辦理採購，其採最有利標決標原則，如招標文件訂明固定費用或費率 者，因價格不納入評選，故機關不得規定廠商於投標文件內詳列報價內容。"}, {"id": 8, "answer": "O", "question": "機關辦理採購，其採最有利標決標原則，如招標文件訂明固定費用或費率 者，價格雖不必納入評選，但機關仍得規定廠商於投標文件內詳列報價內 容。"}, {"id": 9, "answer": "X", "question": "某機關辦理未達查核金額之採購，底價係由機關首長授權處長核定，開標結 果最低標價仍超過底價3%但不逾預算數額，機關確有緊急情事需決標，應經 處長核准後方可決標。"}, {"id": 10, "answer": "O", "question": "某機關辦理未達查核金額之採購，底價係由機關首長授權處長核定，開標結 果最低標價仍超過底價3%但不逾預算數額，機關確有緊急情事需決標，應經 處長或其授權人員核准後即可決標。"}, {"id": 11, "answer": "X", "question": "單價偏低之情形，不包括誤報（少1位數）之情形。"}, {"id": 12, "answer": "O", "question": "單價偏低之情形，有可能係誤報（少1位數）或故意低報（先領款之部分高 報，後領款之部分低報）。"}, {"id": 13, "answer": "X", "question": "機關辦理採購，均應訂定底價。"}, {"id": 14, "answer": "O", "question": "機關辦理採購，符合得不訂定底價情形者，招標文件應敘明理由及決標條件 與原則。"}, {"id": 15, "answer": "X", "question": "機關辦理減價或比減價格結果在底價以內時，除有採購法第58條總標價或部 分標價偏低之情形者外，應即宣布決標。所稱在底價以內，不包括平底價之 情形。"}, {"id": 16, "answer": "O", "question": "機關辦理減價或比減價格結果在底價以內時，除有採購法第58條總標價或部 分標價偏低之情形者外，應即宣布決標。所稱在底價以內，包括平底價之情 形。"}, {"id": 17, "answer": "O", "question": "機關辦理公開取得廠商書面報價之採購，僅1家廠商投標，當場改採限制性 招標之議價，其底價訂定前應先參考廠商之報價或估價單。"}, {"id": 18, "answer": "X", "question": "流標後因底價未開啟，其重行招標，即使招標條件均未改變，底價仍應重新 訂定並經機關首長或其授權人核准，不得沿用原底價。"}, {"id": 19, "answer": "O", "question": "流標後因底價未開啟，其重行招標，如招標條件均未改變，底價得經機關首 長或其授權人核准免再重新訂定。"}, {"id": 20, "answer": "X", "question": "機關辦理最有利標決標之採購且廠商須報價者，應審查廠商總價（不包括單 價），並考量該價格相對於廠商所提供之品質等非價格項目，是否合理、完 整，以作為評分或決定最有利標之依據。"}, {"id": 21, "answer": "O", "question": "機關辦理最有利標決標之採購且廠商須報價者，應審查廠商單價及總價，並 考量該價格相對於廠商所提供之品質等非價格項目，是否合理、完整，以作 為評分或決定最有利標之依據。"}, {"id": 22, "answer": "X", "question": "機關辦理查核金額以上之採購，訂定底價應報上級機關核定。"}, {"id": 23, "answer": "O", "question": "以轉售或供製造成品以供轉售之採購，其底價涉及商業機密者，底價於決標 後得不予公開，但應通知得標廠商。"}, {"id": 24, "answer": "O", "question": "機關辦理查核金額以上之採購，訂定底價無需報上級機關核定。"}, {"id": 25, "answer": "X", "question": "以轉售或供製造成品以供轉售之採購，其底價涉及商業機密者，底價於決標 後得不予公開，但應通知各投標廠商。"}, {"id": 26, "answer": "X", "question": "機關辦理採購案如於使用期間有由原供應廠商提供維護服務之必要者，其後 續數年維護服務之價格，不可附於採購標的合併招標決標。"}, {"id": 27, "answer": "O", "question": "機關辦理採購案如於使用期間有由原供應廠商提供維護服務之必要者，其後 續數年維護服務之價格，可附於採購標的一併考量，合併招標決標，以免造 成後續維護作業發生困難。"}, {"id": 28, "answer": "X", "question": "機關對於採購標的，不得因廠商交付標的之品質、功能、使用效益等有所差 異，而訂定不同之底價。"}, {"id": 29, "answer": "O", "question": "機關對於採購標的，基於廠商交付標的之品質、功能、使用效益等差異之考 量，而訂定不同之底價，尚無不可。"}, {"id": 30, "answer": "X", "question": "機關辦理工程採購之預算金額達新臺幣1,000萬元以上者，僅須於決標後將 得標廠商之決標單價資料透過政府電子採購網傳輸至工程價格資料庫。"}, {"id": 31, "answer": "O", "question": "機關辦理工程採購之預算金額達新臺幣1,000萬元以上者，應於決標後一定 期限內將得標廠商之契約單價及經機關核定之預算單價資料透過政府電子採 購網傳輸至工程價格資料庫。"}, {"id": 32, "answer": "X", "question": "機關廢標後重行招標，如招標之圖說、規範、契約、成本、市場行情等有所 改變，不須依採購法第46條規定重行訂定底價。"}, {"id": 33, "answer": "O", "question": "機關廢標後重行招標，如招標之圖說、規範、契約、成本、市場行情等有所 改變，應依採購法第46條規定重行訂定底價。"}, {"id": 34, "answer": "X", "question": "合於招標文件規定之投標廠商之最低標價超過底價時，得洽該最低標廠商減 價1次；減價結果仍超過底價時，得由所有合於招標文件規定之投標廠商重 新比減價格，上述最低標廠商減價1次及比減價格之次數合計不得逾3次。"}, {"id": 35, "answer": "O", "question": "合於招標文件規定之投標廠商之最低標價超過底價時，得洽該最低標廠商減 價1次；減價結果仍超過底價時，得由所有合於招標文件規定之投標廠商重 新比減價格，上述比減價格之次數合計不得逾3次。"}, {"id": 36, "answer": "X", "question": "機關辦理訂有底價之採購，以合於招標文件規定，且在底價以內之最低標為 得標廠商者，因物價商情上揚，為利決標，底價得以超過預算金額訂定之。"}, {"id": 37, "answer": "O", "question": "機關辦理訂有底價之採購，以合於招標文件規定，且在底價以內之最低標為 得標廠商者，雖因物價商情上揚，底價仍不得以超過預算金額訂定之。"}, {"id": 38, "answer": "X", "question": "機關利用主管機關之採購資訊系統傳輸決標公告，其有底價而不予公開者， 應敘明理由。採單價乘以預估數量之和決標並以單價訂定契約者，因係以單 價訂定契約，故僅需傳輸單價資料。"}, {"id": 39, "answer": "X", "question": "採購法第11條第2項所稱一定金額，為工程採購之查核金額，新臺幣5,000萬 元。"}, {"id": 40, "answer": "O", "question": "採購法第11條第2項所稱一定金額，為新臺幣1,000萬元。"}, {"id": 41, "answer": "X", "question": "依採購法第54條，當合於招標文件規定之最低標價，逾評審委員會建議之金 額時，招標機關尚不得未洽廠商減價，即逕行宣布廢標。"}, {"id": 42, "answer": "O", "question": "依採購法第54條，當合於招標文件規定之最低標價，逾評審委員會建議之金 額時，招標機關得依廠商之報價情形判斷，不請廠商減價，逕行宣布廢標。"}, {"id": 43, "answer": "X", "question": "投標廠商之標價幣別，依招標文件規定在2種以上，如最低標廠商之總標價 （經折算後）有採購法第58條前段情形，致未能於辦理決標作業當日完成決 標程序者，製作保留決標紀錄，載明如有決標時，以最低標廠商之說明經機 關首長或其授權人認可核定之日為決標日。"}, {"id": 44, "answer": "O", "question": "投標廠商之標價幣別，依招標文件規定在2種以上，如最低標廠商之總標價 （經折算後）有採購法第58條前段情形，致未能於辦理決標作業當日完成決 標程序者，製作保留決標紀錄，載明如有決標時，以保留決標日為決標日。"}, {"id": 45, "answer": "X", "question": "採適用最有利標決標時，以不訂底價為原則。其訂有底價而廠商之報價逾底 價須減價者，得於議價時洽減之。"}, {"id": 46, "answer": "O", "question": "採適用最有利標決標時，以不訂底價為原則。其訂有底價而廠商之報價逾底 價須減價者，於協商時洽減之。"}, {"id": 47, "answer": "X", "question": "機關辦理公開客觀評選優勝廠商，招標文件如未訂明固定費用或費率，應於 議價時提供空白標單供廠商重行報價。"}, {"id": 48, "answer": "O", "question": "機關辦理公開客觀評選優勝廠商，招標文件如未訂明固定費用或費率，議價 時無需提供空白標單供廠商重行報價。"}, {"id": 49, "answer": "O", "question": "機關利用主管機關之採購資訊系統傳輸決標公告，其有底價而不予公開者， 應敘明理由。採單價乘以預估數量之和決標並以單價訂定契約者，應傳輸單 價乘以預估數量之和，以利統計。"}, {"id": 50, "answer": "X", "question": "公開取得3家以上廠商之書面報價或企劃書者，其底價應於開標前訂之。"}, {"id": 51, "answer": "O", "question": "公開取得3家以上廠商之書面報價或企劃書者，其底價應於進行比價或議價 前定之。"}, {"id": 52, "answer": "X", "question": "採用複數決標方式，尚有部分項目未決標，其已決標部分之底價，仍應保 密。"}, {"id": 53, "answer": "O", "question": "採用複數決標方式，尚有部分項目未決標，其已決標部分之底價，應予公 開。"}, {"id": 54, "answer": "X", "question": "機關依採購法第52條第1項第1款或第2款規定採最低標決標，招標標的在2項 以上而未採分項決標者，應以各項單價及其預估需求數量之乘積加總計算， 決定最低標。但招標標的僅1項而以招標標的之單價決定最低標者，因履約 期間數量不確定，得免載明履約期間預估需求數量或契約總額。"}, {"id": 55, "answer": "O", "question": "機關依採購法第52條第1項第1款或第2款規定採最低標決標，招標標的在2項 以上而未採分項決標者，應以各項單價及其預估需求數量之乘積加總計算， 決定最低標。但招標標的僅1項而以招標標的之單價決定最低標者，雖履約 期間數量不確定，仍應載明履約期間預估需求數量或契約總額。"}, {"id": 56, "answer": "O", "question": "原產地非屬我國之採購，必要時需於訂底價時考量海運、空運及關稅等所增 加之成本。"}, {"id": 57, "answer": "X", "question": "機關辦理採購，符合得不訂定底價情形者，無需於招標文件敘明理由。"}, {"id": 58, "answer": "X", "question": "底價於廢標後應予公開。"}, {"id": 59, "answer": "X", "question": "機關得依實際需要，報經上級機關核准後，於招標文件公告底價。"}, {"id": 60, "answer": "X", "question": "招標文件不得預先載明固定之契約金額或相關費率作為決標條件。"}, {"id": 61, "answer": "X", "question": "底價於決標後均應予公開，無例外。"}, {"id": 62, "answer": "X", "question": "機關辦理採購，經減價結果，最低標價仍超過底價而不逾預算數額，機關確 有緊急情事需決標時，經機關首長核准，在不得超過底價8%以內宣布決標， 即屬適法。"}, {"id": 63, "answer": "X", "question": "機關辦理採購，經減價結果，最低標價仍超過底價而不逾預算數額，機關確 有緊急情事需決標時，查核金額以上之採購，報經上級機關核准後決標，即 屬適法。"}, {"id": 64, "answer": "X", "question": "成本分析時應注意數量與完成履約目的之相當情形，但對所列之雜項費用及 管理費用之合理比例得予忽略。"}, {"id": 65, "answer": "X", "question": "物價指數調整係以現在之採購價格為基礎，利用相關物價指數調整。但應注 意關連性及究係部分調整或全部調整。"}, {"id": 66, "answer": "X", "question": "機關辦理採購，除採購法另有規定外，應訂定底價。底價應依圖說、規範、 契約並考量成本、市場行情及政府機關決標資料逐項編列。查核金額以上 者，應報經上級機關核定。"}, {"id": 67, "answer": "X", "question": "因機關首長異動之故，原核定之底價應重新訂定，以符採購法第46條規定。"}, {"id": 68, "answer": "O", "question": "底價應依圖說、規範、市場行情、契約內容等規定逐項編列。"}, {"id": 69, "answer": "O", "question": "於招標文件中要求廠商於投標文件詳列標價之主要項目及其子項、分項等成 本結構，為成本分析方法之一。"}, {"id": 70, "answer": "X", "question": "機關依中央機關未達公告金額採購招標辦法第2條第1項第3款規定辦理採 購，且已於招標文件預先載明採固定費用給付。機關於擇定最符合需要者 後，為完成議價程序，機關仍應訂定底價。"}, {"id": 71, "answer": "O", "question": "利潤得視個案，依所需成本、市場之競爭性及經營策略加以分析，合理編 列。"}, {"id": 72, "answer": "O", "question": "機關辦理採購採最低標決標，最低標廠商標價有採購法第58條總標價或部分 標價偏低之情形，主持人請最低標提出說明，不宣布底價。"}, {"id": 73, "answer": "X", "question": "開標主持人開啟底價封後，監辦人員不可查看底價金額。"}, {"id": 74, "answer": "O", "question": "開標主持人開啟底價封後，監辦人員查看底價金額，尚無不可，惟應遵守採 購法第34條第3項底價於決標前應保密之規定。"}, {"id": 75, "answer": "X", "question": "機關辦理採購採最低標決標，最低標廠商標價有採購法第58條總標價或部分 標價偏低之情形，主持人請最低標提出說明，並宣布底價。"}, {"id": 76, "answer": "X", "question": "機關訂定底價，應由規劃、設計、需求或使用單位提出預估金額及其分析 後，由承辦採購單位簽報機關首長或其授權人員核定，並無例外。"}, {"id": 77, "answer": "O", "question": "機關訂定底價，應由規劃、設計、需求或使用單位提出預估金額及其分析 後，由承辦採購單位簽報機關首長或其授權人員核定。但重複性採購或未達 公告金額之採購，得由承辦採購單位逕行簽報核定。"}, {"id": 78, "answer": "X", "question": "機關辦理限制性招標，採經公開客觀評選優勝廠商後之議價，訂定底價前不 必參考廠商之報價或估價單。"}, {"id": 79, "answer": "O", "question": "限制性招標之議價，包括評選優勝廠商後之議價，訂定底價前應先參考廠商 之報價或估價單。"}, {"id": 80, "answer": "X", "question": "機關辦理採購，依採購法第47條第1項第1款（訂定底價確有困難之特殊或複 雜案件）及第2款（最有利標）規定不訂底價者，不得於招標文件預先載明 契約金額或相關費率作為決標條件。"}, {"id": 81, "answer": "O", "question": "機關辦理採購，依採購法第47條第1項第1款（訂定底價確有困難之特殊或複 雜案件）及第2款（最有利標）規定不訂底價者，得於招標文件預先載明契 約金額或相關費率作為決標條件。"}, {"id": 82, "answer": "X", "question": "機關依採購法第52條第1項第4款採用複數決標方式，其允許依不同數量報價 者，依標價及可決標之數量依序決標，但不得有不同之決標價。"}, {"id": 83, "answer": "O", "question": "機關依採購法第52條第1項第4款採用複數決標方式，其允許依不同數量報價 者，依標價及可決標之數量依序決標，並得有不同之決標價。"}, {"id": 84, "answer": "X", "question": "機關辦理公開取得廠商書面報價之採購，僅1家廠商投標，當場改採限制性 招標之議價，其底價訂定前不必先參考廠商之報價或估價單。"}, {"id": 85, "answer": "X", "question": "變動成本係指不隨履約標的之數量而變動之成本。"}, {"id": 86, "answer": "O", "question": "固定成本係指不隨履約標的之數量而變動之成本。"}, {"id": 87, "answer": "X", "question": "機關不得於招標文件中公告底價，並無例外。"}, {"id": 88, "answer": "O", "question": "軍事機關依採購法第104條第1項第2款辦理具機密採購者，其底價於決標後 得不予公開。"}, {"id": 89, "answer": "X", "question": "依採購法第22條第1項第9款準用最有利標評選優勝廠商，議價前均應訂定底 價。"}, {"id": 90, "answer": "O", "question": "依採購法第22條第1項第9款準用最有利標評選優勝廠商，議價階段如不訂底 價，可成立評審委員會審查廠商報價，當認為標價合理者，得不提出建議減 價金額，依優勝廠商報價決標予該廠商。"}, {"id": 91, "answer": "X", "question": "機關於招標文件中預先載明相關費率作為決標條件者，屬採購法第34條第3 項所稱公告底價。"}, {"id": 92, "answer": "O", "question": "機關於招標文件中預先載明相關費率作為決標條件者，非屬採購法第34條第 3項所稱公告底價。"}, {"id": 93, "answer": "X", "question": "投標廠商之標價幣別，依招標文件規定在2種以上者，由機關擇其中1種或以 新臺幣折算總價，以定標序及計算是否超過底價。該折算總價，依辦理開標 前1辦公日臺灣銀行外匯交易收盤即期賣出匯率折算之。"}, {"id": 94, "answer": "O", "question": "投標廠商之標價幣別，依招標文件規定在2種以上者，由機關擇其中1種或以 新臺幣折算總價，以定標序及計算是否超過底價。該折算總價，依辦理決標 前1辦公日臺灣銀行外匯交易收盤即期賣出匯率折算之。"}, {"id": 95, "answer": "X", "question": "某機關辦理未達查核金額之採購，底價係由機關首長授權內部一級主管核 定，開標結果最低標價仍超過底價3%但不逾預算數額，機關確有緊急情事需 決標，應經該主管核准後方可決標。"}, {"id": 96, "answer": "O", "question": "某機關辦理未達查核金額之採購，底價係由機關首長授權內部一級主管核 定，開標結果最低標價仍超過底價3%但不逾預算數額，機關確有緊急情事需 決標，應經該主管或其授權人員核准後即可決標。"}];
+        
+        let allQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let correctCount = 0;
+        let answeredQuestions = new Set();
+
+        // 摺疊易錯陷阱詳細內容
+        function toggleTrapDetail(id) {
+            const detailRow = document.getElementById('trap-detail-' + id);
+            if (detailRow.style.display === 'table-row' || detailRow.style.display === 'block') {
+                detailRow.style.display = 'none';
+            } else {
+                // 行動裝置版使用 block
+                detailRow.style.display = window.innerWidth <= 768 ? 'block' : 'table-row';
+            }
+        }
+
+        // 初始化測驗
+        function initQuiz(shuffle = true) {
+            // 將是非題與選擇題合併，是非題轉化為選擇題格式（選項為 O/X）
+            const formattedTfs = tfsData.map(tf => ({
+                id: 'tf_' + tf.id,
+                type: 'tf',
+                question: '【是非題】' + tf.question,
+                options: ['O (正確)', 'X (錯誤)'],
+                answer: tf.answer === 'O' ? 1 : 2
+            }));
+
+            const formattedMcqs = mcqsData.map(mcq => ({
+                id: 'mcq_' + mcq.id,
+                type: 'mcq',
+                question: '【選擇題】' + mcq.question,
+                options: mcq.options,
+                answer: mcq.answer
+            }));
+
+            allQuestions = [...formattedMcqs, ...formattedTfs];
+
+            if (shuffle) {
+                // Fisher-Yates Shuffle
+                for (let i = allQuestions.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+                }
+            }
+
+            currentIndex = 0;
+            score = 0;
+            correctCount = 0;
+            answeredQuestions.clear();
+            
+            document.getElementById('total-qs-count').innerText = allQuestions.length;
+            document.getElementById('quiz-score').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            
+            showQuestion(currentIndex);
+        }
+
+        // 顯示當前題目
+        function showQuestion(index) {
+            if (allQuestions.length === 0) return;
+            
+            const q = allQuestions[index];
+            document.getElementById('current-q-num').innerText = index + 1;
+            document.getElementById('quiz-q-text').innerText = q.question;
+            
+            const container = document.getElementById('quiz-opts-container');
+            container.innerHTML = '';
+            
+            const isAnswered = answeredQuestions.has(q.id);
+            
+            q.options.forEach((optText, optIdx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option-btn';
+                btn.innerText = (q.type === 'mcq' ? '(' + (optIdx + 1) + ') ' : '') + optText;
+                
+                if (isAnswered) {
+                    btn.disabled = true;
+                    if (optIdx + 1 === q.answer) {
+                        btn.classList.add('correct');
+                    } else if (q.userAnswer === optIdx + 1) {
+                        btn.classList.add('wrong');
+                    }
+                } else {
+                    btn.onclick = () => handleAnswer(optIdx + 1);
+                }
+                
+                container.appendChild(btn);
+            });
+
+            const feedbackBox = document.getElementById('quiz-feedback-box');
+            if (isAnswered) {
+                feedbackBox.style.display = 'block';
+                const isCorrect = q.userAnswer === q.answer;
+                document.getElementById('feedback-title').innerText = isCorrect ? '🎉 答對了！' : '❌ 答錯了！';
+                document.getElementById('feedback-title').style.color = isCorrect ? 'var(--accent-primary)' : 'var(--accent-secondary)';
+                
+                // 提供一般解析
+                let explanation = '標準答案為：' + (q.type === 'tf' ? (q.answer === 1 ? '⭕ O' : '❌ X') : '選項 (' + q.answer + ')。');
+                
+                // 特定經典題目的細緻解析
+                if (q.id === 'mcq_34') {
+                    explanation += ' 放棄優先減價僅代表廠商放棄單獨議減之優惠。在隨後所有合於招標文件規定廠商均可參加的「比減價」程序中，該最低標廠商依然具有合法的比減價權利。';
+                } else if (q.id === 'mcq_44') {
+                    explanation += ' 依採購法第58條，廠商說明「尚非完全合理」且機關認為有降低品質、不能誠信履約之虞時，機關應直接不決標予該廠商，此時根本不會通知其提出差額保證金。';
+                } else if (q.id === 'tf_94' || q.id === 'tf_93') {
+                    explanation += ' 依施行細則折算外幣總價，應以「辦理決標前 1 辦公日」之臺灣銀行收盤即期賣出匯率折算，而非「開標前 1 辦公日」。';
+                } else if (q.id === 'tf_59' || q.id === 'tf_1') {
+                    explanation += ' 公告底價是招標機關的行政裁量權，完全不需要報經上級機關核准，機關依實際需要得自行於招標文件中預先公告底價。';
+                } else if (q.id === 'mcq_5') {
+                    explanation += ' 公開取得廠商書面報價或企劃書者，其底價應於「進行比價或議價前」定之，而非開標前。其餘選項皆是法規的正確描述。';
+                } else {
+                    explanation += ' 請查照本單元之核心知識架構進行對照。';
+                }
+                document.getElementById('feedback-text').innerText = explanation;
+            } else {
+                feedbackBox.style.display = 'none';
+            }
+
+            document.getElementById('prev-btn').disabled = index === 0;
+            document.getElementById('next-btn').disabled = index === allQuestions.length - 1;
+        }
+
+        // 處理答題
+        function handleAnswer(selectedOption) {
+            const q = allQuestions[currentIndex];
+            if (answeredQuestions.has(q.id)) return;
+            
+            q.userAnswer = selectedOption;
+            answeredQuestions.add(q.id);
+            
+            const isCorrect = selectedOption === q.answer;
+            if (isCorrect) {
+                correctCount++;
+                score = Math.round((correctCount / allQuestions.length) * 100);
+            }
+            
+            document.getElementById('quiz-score').innerText = score;
+            document.getElementById('correct-count').innerText = correctCount;
+            
+            showQuestion(currentIndex);
+        }
+
+        // 上一題
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showQuestion(currentIndex);
+            }
+        }
+
+        // 下一題
+        function nextQuestion() {
+            if (currentIndex < allQuestions.length - 1) {
+                currentIndex++;
+                showQuestion(currentIndex);
+            }
+        }
+
+        // 平滑滾動與導覽列作用中狀態
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let currentSecId = 'hero';
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop;
+                if (window.scrollY >= secTop - 120) {
+                    currentSecId = sec.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSecId) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 頁面加載完成後初始化
+        window.onload = function() {
+            initQuiz(true);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府採購法之爭議處理 - 頂級互動備考系統</title>
+    <meta name="description" content="政府採購法之爭議處理系統化重點備考筆記與互動式離線測驗，助您迅速掌握考試重點，高分通關！">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #10b981; /* Emerald Green */
+            --accent-primary-glow: rgba(16, 185, 129, 0.15);
+            --accent-secondary: #f43f5e; /* Rose/Coral Red */
+            --accent-warning: #f59e0b; /* Amber */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow-green: 0 0 15px rgba(16, 185, 129, 0.3);
+            --glow-red: 0 0 15px rgba(244, 63, 94, 0.3);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-primary);
+            border-radius: 2px;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 30%, #a7f3d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-stat {
+            background: rgba(31, 41, 55, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-stat .num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat .lbl {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Container & Grid layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .section-title svg {
+            color: var(--accent-primary);
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Board 1: Core Architecture Card Grid */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .arch-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-primary);
+            opacity: 0.7;
+        }
+
+        .arch-card.orange::before {
+            background: var(--accent-warning);
+        }
+
+        .arch-card.rose::before {
+            background: var(--accent-secondary);
+        }
+
+        .arch-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.05);
+        }
+
+        .arch-card-icon {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+        }
+
+        .arch-card.orange .arch-card-icon {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-warning);
+        }
+
+        .arch-card.rose .arch-card-icon {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--accent-secondary);
+        }
+
+        .arch-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .arch-card ul {
+            list-style: none;
+        }
+
+        .arch-card li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .arch-card li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+        }
+
+        .arch-card.orange li::before {
+            color: var(--accent-warning);
+        }
+
+        .arch-card.rose li::before {
+            color: var(--accent-secondary);
+        }
+
+        /* Board 2: Number Codes Counters */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .num-card {
+            background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(31, 41, 55, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all var(--transition-speed);
+        }
+
+        .num-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .num-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+        }
+
+        .num-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .num-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Board 3: Trap Table */
+        .trap-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .trap-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .trap-table th {
+            background-color: rgba(31, 41, 55, 0.5);
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-row {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .trap-row:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .trap-row td {
+            padding: 1.25rem 1.5rem;
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .trap-wrong {
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .trap-right {
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .trap-detail {
+            background-color: rgba(17, 24, 39, 0.6);
+            display: none;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-detail-content {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-warning);
+        }
+
+        .trap-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Board 4: Classic Explanations */
+        .classic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .classic-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .classic-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .classic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .classic-num-lbl {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .classic-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .classic-law {
+            font-size: 0.8rem;
+            color: var(--accent-warning);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.25rem;
+            display: inline-block;
+        }
+
+        .classic-body {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .classic-exp {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-primary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* Interactive Quiz Section */
+        .quiz-container {
+            background-color: var(--bg-secondary);
+            border: 2px solid rgba(16, 185, 129, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .quiz-info {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-score-lbl {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-primary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .quiz-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quiz-option-btn:hover:not(:disabled) {
+            background-color: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(3px);
+        }
+
+        .quiz-option-btn.correct {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: var(--accent-primary) !important;
+            color: var(--accent-primary);
+            font-weight: 700;
+            box-shadow: var(--glow-green);
+        }
+
+        .quiz-option-btn.wrong {
+            background-color: rgba(244, 63, 94, 0.15) !important;
+            border-color: var(--accent-secondary) !important;
+            color: var(--accent-secondary);
+            font-weight: 700;
+            box-shadow: var(--glow-red);
+        }
+
+        .quiz-feedback {
+            background-color: rgba(31, 41, 55, 0.5);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+            display: none;
+            border-left: 4px solid var(--accent-primary);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .quiz-feedback.tf-feedback {
+            border-left-color: var(--accent-warning);
+        }
+
+        .quiz-feedback h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .quiz-feedback p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .quiz-action-btn {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+        }
+
+        .quiz-action-btn:hover:not(:disabled) {
+            background-color: var(--bg-card);
+            border-color: var(--text-secondary);
+        }
+
+        .quiz-action-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .quiz-action-btn.primary-btn {
+            background-color: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            font-weight: 700;
+        }
+
+        .quiz-action-btn.primary-btn:hover {
+            background-color: #059669;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Alert styling inside text */
+        .info-alert {
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .info-alert-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-alert-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+                position: relative;
+            }
+            nav {
+                gap: 0.75rem;
+                width: 100%;
+                justify-content: flex-start;
+                white-space: nowrap;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+            }
+            nav::-webkit-scrollbar {
+                height: 3px;
+            }
+            nav::-webkit-scrollbar-thumb {
+                background: var(--text-muted);
+            }
+            .hero {
+                padding: 4rem 1rem 2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .arch-grid {
+                grid-template-columns: 1fr;
+            }
+            .quiz-container {
+                padding: 1.5rem;
+            }
+            .number-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .num-val {
+                font-size: 2.25rem;
+            }
+            
+            /* Table Cardification for RWD */
+            .trap-table, .trap-table thead, .trap-table tbody, .trap-table th, .trap-table td, .trap-table tr {
+                display: block;
+            }
+            .trap-table thead {
+                display: none; /* Hide headers on mobile */
+            }
+            .trap-row {
+                margin-bottom: 1.5rem;
+                background-color: var(--bg-card);
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                padding: 1rem;
+            }
+            .trap-row td {
+                padding: 0.5rem 0;
+                border: none;
+            }
+            .trap-row td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                display: block;
+                font-size: 0.75rem;
+                color: var(--text-muted);
+                text-transform: uppercase;
+                margin-bottom: 0.25rem;
+            }
+            .trap-detail-content {
+                border-left: none;
+                border-top: 3px solid var(--accent-warning);
+                padding: 1rem 0 0 0;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <span>PCC</span> 爭議處理備考系統
+        </div>
+        <nav>
+            <a href="#hero" class="active">主頁</a>
+            <a href="#arch">救濟雙軌</a>
+            <a href="#numbers">數字密碼</a>
+            <a href="#traps">易錯陷阱</a>
+            <a href="#classics">經典題庫</a>
+            <a href="#quiz">模擬測驗</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>政府採購法之爭議處理</h1>
+        <p>系統化重點備考筆記與離線互動小測驗。專為中華民國公共工程委員會「採購專業人員考試」精準打造。</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num">45 題</div>
+                <div class="lbl">精選選擇題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">83 題</div>
+                <div class="lbl">精選是非題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">100%</div>
+                <div class="lbl">忠於標準答案</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        
+        <!-- Board 1: Core Architecture -->
+        <section id="arch">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                核心知識架構：採購爭濟雙軌制
+            </h2>
+            <div class="arch-grid">
+                <!-- Card 1 -->
+                <div class="arch-card">
+                    <div class="arch-card-icon">🔍</div>
+                    <h3>招標、審標、決標爭議（行政救濟）</h3>
+                    <ul>
+                        <li><strong>適用範圍</strong>：廠商與機關於招標、審標、決標階段發生之爭議。</li>
+                        <li><strong>救濟軌道</strong>：向招標機關提出<strong>異議</strong> ➔ 向申訴會提出<strong>申訴</strong> ➔ 向行政法院提起<strong>行政訴訟</strong>。</li>
+                        <li><strong>金額限制</strong>：異議無金額限制；申訴以<strong>公告金額（150萬）以上</strong>為原則（但沒收押標金與101條刊登公報案件不受金額限制）。</li>
+                        <li><strong>效力地位</strong>：申訴會所作之審議判斷，其性質<strong>視同訴願決定</strong>（不服須於2個月內提起行政訴訟）。</li>
+                    </ul>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="arch-card orange">
+                    <div class="arch-card-icon">⚖️</div>
+                    <h3>履約、驗收爭議（民事救濟）</h3>
+                    <ul>
+                        <li><strong>適用範圍</strong>：履約或驗收階段，因契約給付、工期、違約金、瑕疵等未能達成協議者。</li>
+                        <li><strong>救濟軌道</strong>：向申訴會申請<strong>調解</strong> ➔ 提付<strong>仲裁</strong>或向地方法院提起<strong>民事訴訟</strong>。</li>
+                        <li><strong>重要特點</strong>：調解不論金額大小皆可申請。機關申請調解須經廠商同意，廠商申請機關不得拒絕。</li>
+                        <li><strong>強制仲裁權</strong>：<strong>工程與技術服務採購</strong>，若因機關不同意調解建議致調解不成立，廠商提付仲裁時，<strong>機關不得拒絕</strong>。</li>
+                        <li><strong>效力地位</strong>：調解成立書具有<strong>與確定判決同一之效力</strong>（具強制執行名義）。</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="arch-card rose">
+                    <div class="arch-card-icon">🚨</div>
+                    <h3>第101條刊登公報爭議（特別軌道）</h3>
+                    <ul>
+                        <li><strong>性質判定</strong>：機關依101條通知廠商將刊登公報，此通知性質上為<strong>行政處分</strong>。</li>
+                        <li><strong>救濟軌道</strong>：雖多發生於履約中（如進度落後），但因屬行政處分，爭議救濟一律走<strong>「異議 ➔ 申訴 ➔ 行政訴訟」</strong>行政軌道，<strong>不得申請民事調解</strong>！</li>
+                        <li><strong>暫緩刊登</strong>：廠商於規定期限內提出異議、申訴者，在<strong>異議、申訴結果確定前，機關不得刊登公報</strong>。</li>
+                        <li><strong>小額適用</strong>：101條刊登公報之裁處<strong>不論採購金額大小一律適用</strong>，小額採購違規亦會被刊登。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board 2: Number Codes -->
+        <section id="numbers">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
+                常考「數字、比例與時限」密碼
+            </h2>
+            <div class="number-grid">
+                <!-- Item 1 -->
+                <div class="num-card">
+                    <div class="num-val">10 日</div>
+                    <div class="num-title">異議提出期限</div>
+                    <div class="num-desc">自接獲通知或公告次日起算。若無通知/公告，自知悉次日起10日，至遲不得逾決標次日起15日。</div>
+                </div>
+                <!-- Item 2 -->
+                <div class="num-card">
+                    <div class="num-val">15 日</div>
+                    <div class="num-title">異議處理與申訴提出</div>
+                    <div class="num-desc">機關應於收受異議次日起15日內處理；廠商對結果不服，應於收受處理結果次日起15日內提出申訴。</div>
+                </div>
+                <!-- Item 3 -->
+                <div class="num-card">
+                    <div class="num-val">20 日</div>
+                    <div class="num-title">101條異議與適法處置</div>
+                    <div class="num-desc">不服101條通知者應於20日內書面異議。申訴會指明原採購行為違法者，機關應自收受判斷書次日起20日內另為適法處置。</div>
+                </div>
+                <!-- Item 4 -->
+                <div class="num-card">
+                    <div class="num-val">3 萬元</div>
+                    <div class="num-title">申訴審議費用</div>
+                    <div class="num-desc">政府採購申訴每一事件應繳納審議費新臺幣3萬元。實體審查前應先繳納，未繳納則不受理。</div>
+                </div>
+                <!-- Item 5 -->
+                <div class="num-card">
+                    <div class="num-val">50%</div>
+                    <div class="num-title">預審前/調解撤回退費</div>
+                    <div class="num-desc">申訴於第1次預審會議前撤回者，無息退還1/2。調解於第1次調解期日次日起10日內撤回者，退還50%（大額超20萬退80%）。</div>
+                </div>
+                <!-- Item 6 -->
+                <div class="num-card">
+                    <div class="num-val">80%</div>
+                    <div class="num-title">調解期日前撤回退費</div>
+                    <div class="num-desc">調解於第1次調解期日前撤回者，無息退還調解費之80%。若調解費超過20萬，於第1次期日次日起10日內撤回亦退80%。</div>
+                </div>
+                <!-- Item 7 -->
+                <div class="num-card">
+                    <div class="num-val">4 個月</div>
+                    <div class="num-title">調解程序期限</div>
+                    <div class="num-desc">履約爭議調解應自收受調解申請書之次日起4個月內完成，但經雙方同意者得延長之。</div>
+                </div>
+                <!-- Item 8 -->
+                <div class="num-card">
+                    <div class="num-val">3年/5年</div>
+                    <div class="num-title">刊登公報與追繳押標金時效</div>
+                    <div class="num-desc">機關刊登101條公報之裁處權時效為3年（自行為終了起）；追繳押標金之請求權時效為5年。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board 3: Trap Table -->
+        <section id="traps">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                是非題易錯「文字陷阱」對比表（點選各列查看備考剖析）
+            </h2>
+            <div class="trap-container">
+                <table class="trap-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 45%;">❌ 題庫常見錯誤敘述（標準答案為 X）</th>
+                            <th style="width: 55%;">⭕ 正確法規與實務觀念</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr class="trap-row" onclick="toggleTrapDetail('detail-1')" data-label="是非陷阱 1">
+                            <td class="trap-wrong">廠商對於招標文件廠商資格認有違反法令，因時間急迫，可以電話或言詞向機關提出異議。</td>
+                            <td class="trap-right">政府採購之異議及申訴，<strong>一律應具備書面文件</strong>（異議書/申訴書），言詞、電話等口頭方式皆屬不合法，機關應不受理。</td>
+                        </tr>
+                        <tr class="trap-detail" id="detail-1">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">【法規依據：政府採購法第75條、第77條】</span>
+                                    <p>備考剖析：是非題極愛考「異議得以言詞提出」的陷阱。切記，採購法上的正式救濟程序（異議與申訴）均為要式行為，必須以「書面」提出。只有一般陳情或非正式詢問才可以口頭為之。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2 -->
+                        <tr class="trap-row" onclick="toggleTrapDetail('detail-2')" data-label="是非陷阱 2">
+                            <td class="trap-wrong">未達公告金額之採購，因金額較小，故不適用政府採購法第101條通知及刊登政府採購公報之規定。</td>
+                            <td class="trap-right">政府採購法第101條關於刊登公報之裁處，<strong>不論採購金額大小一律適用</strong>！即使是小額採購，違規仍會被刊登公報。</td>
+                        </tr>
+                        <tr class="trap-detail" id="detail-2">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">【法規依據：政府採購法第101條、主管機關釋令】</span>
+                                    <p>備考剖析：這是考生極易掉入的常識陷阱。雖然招標申訴有公告金額門檻，但「刊登公報（黑名單）之懲處」屬於對廠商誠信之行政處分，涉及公共利益，因此不論是 10 萬元以下之小額採購，還是上億元採購，違規事由一旦成立，皆須依法刊登公報，沒有金額門檻豁免。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3 -->
+                        <tr class="trap-row" onclick="toggleTrapDetail('detail-3')" data-label="是非陷阱 3">
+                            <td class="trap-wrong">廠商與機關間關於政府採購履約或驗收之爭議，得依政府採購法之規定提出異議及申訴。</td>
+                            <td class="trap-right">異議與申訴<strong>僅適用於「招標、審標、決標」</strong>爭議。履約或驗收之爭議，應申請<strong>「調解、仲裁或民事訴訟」</strong>，不得申訴。</td>
+                        </tr>
+                        <tr class="trap-detail" id="detail-3">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">【法規依據：政府採購法第74條、第85條之1】</span>
+                                    <p>備考剖析：本題是採購救濟雙軌制的核心考點。救濟軌道以「決標日」為界分：決標前走行政救濟（異議申訴），決標後走民事救濟（調解仲裁）。履約及驗收屬於決標後之民事爭議，絕不可提出「申訴」，唯一能向申訴會申請的是「履約爭議調解」。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4 -->
+                        <tr class="trap-row" onclick="toggleTrapDetail('detail-4')" data-label="是非陷阱 4">
+                            <td class="trap-wrong">履約爭議調解由採購申訴審議委員會進行，其程序及性質與一般法院訴訟相同，以公開審理為原則。</td>
+                            <td class="trap-right">履約爭議之調解程序，基於保護廠商商業秘密及促成雙方和解，<strong>以不公開為原則</strong>。</td>
+                        </tr>
+                        <tr class="trap-detail" id="detail-4">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">【法規依據：政府採購法第85條之1、調解規則】</span>
+                                    <p>備考剖析：採購法調解程序「以不公開為原則」，這與行政訴訟、民事訴訟的「公開審判原則」大相逕庭。是非題極常利用此習慣性思維進行誤導，務必牢記調解是不公開的。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5 -->
+                        <tr class="trap-row" onclick="toggleTrapDetail('detail-5')" data-label="是非陷阱 5">
+                            <td class="trap-wrong">機關如不同意調解委員所提出之調解建議，因為是機關自主權限，故無需報請上級機關核定。</td>
+                            <td class="trap-right">機關不同意調解建議時，<strong>應先報請上級機關核定</strong>，並以書面向申訴會及廠商說明理由，不可逕自拒絕。</td>
+                        </tr>
+                        <tr class="trap-detail" id="detail-5">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">【法規依據：政府採購法第85條之1第3項】</span>
+                                    <p>備考剖析：為防範基層機關承辦人員因怕承擔責任而一律拒絕調解建議，採購法特別規定「機關不同意調解建議」屬要式行為，必須「報請上級機關核定」並書面說明理由。此條款旨在加強上級機關之監督，促使機關理性面對調解。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 6 -->
+                        <tr class="trap-row" onclick="toggleTrapDetail('detail-6')" data-label="是非陷阱 6">
+                            <td class="trap-wrong">廠商與機關發生履約爭議，申訴會作成調解建議函送雙方，廠商同意但機關遲未回復，經限期催告仍不回復時，視為機關同意調解建議。</td>
+                            <td class="trap-right">機關對於調解建議逾期仍未回復時，<strong>應視為「不同意」調解建議</strong>（以調解不成立處理），不能視為默示同意。</td>
+                        </tr>
+                        <tr class="trap-detail" id="detail-6">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">【法規依據：政府採購法第85條之1、調解收費辦法】</span>
+                                    <p>備考剖析：在公法或民事調解實務中，默示一般不代表同意。機關未於期限內回復，代表雙方未達成合意，因此法律效果上只能判定為「不同意（調解不成立）」。這是非常容易被混淆的法理細節題。</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Board 4: Classic Explanations -->
+        <section id="classics">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.782 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                精選經典題深剖解析
+            </h2>
+            <div class="classic-grid">
+                <!-- Card 1 -->
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div class="classic-title">1. 調解撤回退費之雙重比例陷阱</div>
+                        <span class="classic-num-lbl">選擇題 39, 42 聯考題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>考題還原</strong>：
+                        <br>Q39：繳納調解費 100 萬元，於第1次調解期日次日起10日內撤回，應退還多少？（答：80 萬元）
+                        <br>Q42：繳納調解費 10 萬元，於第1次調解期日次日起10日內撤回，應退還多少？（答：5 萬元）
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：
+                        根據《採購履約爭議調解收費辦法》第14條規定，於第1次調解期日之次日起10日內以書面撤回調解者，其退費比例有金額門檻區分：
+                        <br>1. <strong>調解費未超過20萬元者</strong>：無息退還 <strong>50%</strong>。因此 10 萬元的 50% 為 5 萬元（Q42）。
+                        <br>2. <strong>調解費超過20萬元者</strong>：無息退還 <strong>80%</strong>。因此 100 萬元的 80% 為 80 萬元（Q39）。
+                        <br><span style="color:var(--accent-warning)">★ 備考口訣：大額退八成，小額砍半退！這是考試中最具殺傷力的數字細節題。</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div class="classic-title">2. 工程與技術服務採購之「強制仲裁權」</div>
+                        <span class="classic-num-lbl">是非題 35, 36, 61, 64 聯考題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>考題還原</strong>：
+                        <br>Q64 (O)：機關辦理技術服務採購案，與廠商之履約爭議經調解建議，因機關不同意致調解不成立者，廠商提付仲裁，機關不得拒絕。
+                        <br>Q35 (X)：機關辦理工程採購，履約爭議調解，因廠商不同意建議致調解不成立，廠商提付仲裁，機關不得拒絕。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：
+                        依政府採購法第85條之1第2項規定，調解不成立後「強制仲裁」的適用必須符合三個嚴格前提：
+                        <br>1. <strong>採購類別限制</strong>：僅限於<strong>「工程採購」</strong>與<strong>「技術服務採購」</strong>。財物、一般勞務採購不適用。
+                        <br>2. <strong>不成立原因限制</strong>：必須是<strong>「因機關不同意」</strong>調解建議或方案致調解不成立。若是因「廠商不同意」致調解不成立者，不適用強制仲裁。
+                        <br>3. <strong>提付主體</strong>：必須由<strong>「廠商」</strong>提付仲裁，此時機關才不得拒絕（機關不可主動提付並強迫廠商仲裁）。
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div class="classic-title">3. 101條刊登公報裁處權時效 vs 追繳押標金時效</div>
+                        <span class="classic-num-lbl">是非題 19, 20, 68, 69 聯考題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>考題還原</strong>：
+                        <br>Q69 (O)：機關依政府採購法第101條第1項各款通知廠商將刊登政府採購公報之裁處權時效為3年。
+                        <br>Q20 (O)：機關依政府採購法第31條第2項各款及招標文件規定通知廠商追繳押標金之請求權時效為5年。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：
+                        這兩者在法律性質上完全不同，時效規定也因此不同：
+                        <br>1. <strong>刊登公報 (101條)</strong>：性質上屬於「行政罰（裁處權）」，依行政罰法或採購法第101條之1規定，其裁處權時效為 <strong>3年</strong>（自違反行為終了之日起算）。
+                        <br>2. <strong>追繳押標金 (31條)</strong>：性質上屬於「公法上不當得利（請求權）」，依行政程序法第131條第1項規定，機關之公法上請求權時效為 <strong>5年</strong>。
+                        <br><span style="color:var(--accent-warning)">★ 備考口訣：黑名單處罰 3 年，追討押標金 5 年！</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                離線互動式模擬測驗系統
+            </h2>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-info" id="quiz-progress">題目載入中...</div>
+                    <div class="quiz-score-lbl" id="quiz-score">得分: 0 / 0 (0%)</div>
+                </div>
+                <div class="quiz-question" id="quiz-question">請稍候，題目正在生成與打亂中...</div>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Option buttons will be injected here -->
+                </div>
+                
+                <div class="quiz-feedback" id="quiz-feedback">
+                    <h4>備考解析與法規依據：</h4>
+                    <p id="quiz-feedback-text">解析內容</p>
+                </div>
+                
+                <div class="quiz-nav-btns">
+                    <button class="quiz-action-btn" id="quiz-prev-btn" onclick="prevQuestion()" disabled>上一題</button>
+                    <button class="quiz-action-btn" id="quiz-shuffle-btn" onclick="triggerReset()">隨機重測</button>
+                    <button class="quiz-action-btn primary-btn" id="quiz-next-btn" onclick="nextQuestion()">下一題</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 115 採購專業人員考試備考網頁 - 政府採購法之爭議處理</p>
+        <p>依據最新中華民國行政院公共工程委員會標準題庫提煉，100% 精準無編造</p>
+    </footer>
+
+    <!-- Injected Questions Data -->
+    <script>
+        // Injected data placeholder
+        const rawQuestionsData = [{"id": 1, "type": "mcq", "question": "[選擇題 1] 依政府採購法，下列何者有誤：", "choices": [{"num": 1, "text": "(1) 申訴審議判斷指明原採購行為違反法令 者，招標機關應自收受審議判斷書之次日起20日內另為適法之處置。"}, {"num": 2, "text": "(2) 申 訴審議判斷指明原採購行為違反法令者，廠商得向招標機關請求償付其準備 投標、異議及申訴所支出之必要費用。"}, {"num": 3, "text": "(3) 申訴提出後，廠商得於審議判斷 送達前撤回之。"}, {"num": 4, "text": "(4) 申訴經撤回後，得再行提出同一之申訴。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 2, "type": "mcq", "question": "[選擇題 2] 廠商對於採購之過程、結果提出異議者，為接獲機關通知或機關公告之次日 起：", "choices": [{"num": 1, "text": "(1) 15日。"}, {"num": 2, "text": "(2) 20日。"}, {"num": 3, "text": "(3) 7日。"}, {"num": 4, "text": "(4) 10日。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 3, "type": "mcq", "question": "[選擇題 3] 申訴廠商於第1次預審會議期日前撤回採購申訴者，所繳審議費？", "choices": [{"num": 1, "text": "(1) 不予 退還。"}, {"num": 2, "text": "(2) 無息退還二分之一。"}, {"num": 3, "text": "(3) 無息退還三分之一。"}, {"num": 4, "text": "(4) 無息退還全 部。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 4, "type": "mcq", "question": "[選擇題 4] 就採購履約爭議調解，下列何者為正確？", "choices": [{"num": 1, "text": "(1) 調解程序以不公開為原則。"}, {"num": 2, "text": "(2) 調解過程中，採購程序應暫停。"}, {"num": 3, "text": "(3) 機關得拒絕廠商申請之調解。"}, {"num": 4, "text": "(4) 機關申請調解，無需經廠商同意。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 5, "type": "mcq", "question": "[選擇題 5] 下列何者非採購調解事件應不予受理之事由：", "choices": [{"num": 1, "text": "(1) 當事人不適格。"}, {"num": 2, "text": "(2) 已提 起仲裁、申請調解或民事訴訟。"}, {"num": 3, "text": "(3) 他造當事人拒絕繳納調解費。"}, {"num": 4, "text": "(4) 非屬 政府採購事件。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 6, "type": "mcq", "question": "[選擇題 6] 廠商與臺北市政府工務局自辦之採購案件產生採購履約爭議時，得向：", "choices": [{"num": 1, "text": "(1) 臺北市政府採購申訴審議委員會申請調解。"}, {"num": 2, "text": "(2) 行政院公共工程委員會採購 申訴審議委員會申訴。"}, {"num": 3, "text": "(3) 臺北市政府採購申訴審議委員會申訴。"}, {"num": 4, "text": "(4) 行政 院公共工程委員會採購申訴審議委員會申請調解。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 7, "type": "mcq", "question": "[選擇題 7] 機關辦理採購，下列何者為非？", "choices": [{"num": 1, "text": "(1) 申訴事件，在為實體審查前，應先繳納 審議費用。"}, {"num": 2, "text": "(2) 關於招標文件之申訴事件，未投標之廠商亦得提出。"}, {"num": 3, "text": "(3) 申 訴事件，應先為實體審查，其無不受理之情形者，再為程序審查。"}, {"num": 4, "text": "(4) 廠商 誤向非管轄之機關申訴者，以該機關收受之日，視為提起申訴之日。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 8, "type": "mcq", "question": "[選擇題 8] 採購申訴事件之代理人就其受委任事件，有為一切申訴行為之權。但下列何 事項，非受特別委任，不得為之：", "choices": [{"num": 1, "text": "(1) 撰寫申訴書。"}, {"num": 2, "text": "(2) 撤回申訴。"}, {"num": 3, "text": "(3) 出 席預審會議。"}, {"num": 4, "text": "(4) 代收審議判斷書。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 9, "type": "mcq", "question": "[選擇題 9] 廠商或機關向採購申訴審議委員會申請履約爭議調解時，其調解標的金額為 新臺幣（下同）5億元以上者，應繳納調解費：", "choices": [{"num": 1, "text": "(1) 10萬元。"}, {"num": 2, "text": "(2) 20萬元。"}, {"num": 3, "text": "(3) 35萬元。"}, {"num": 4, "text": "(4) 100萬元。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 10, "type": "mcq", "question": "[選擇題 10] 目前臺東縣政府未設採購申訴審議委員會，對於臺東縣政府所屬之機關、學 校自辦之採購如發生爭議，臺東縣政府得如何處理？", "choices": [{"num": 1, "text": "(1) 委請臺北市政府採 購申訴審議委員會處理。"}, {"num": 2, "text": "(2) 委請政府採購法主管機關所設之採購申訴審議 委員會處理。"}, {"num": 3, "text": "(3) 委請高雄市政府採購申訴審議委員會處理。"}, {"num": 4, "text": "(4) 由臺東縣 議會處理。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 11, "type": "mcq", "question": "[選擇題 11] 機關申請調解，廠商不同意調解時，採購申訴審議委員會應如何處理？", "choices": [{"num": 1, "text": "(1) 不受理。"}, {"num": 2, "text": "(2) 駁回。"}, {"num": 3, "text": "(3) 視同未提出申請。"}, {"num": 4, "text": "(4) 請其撤回。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 12, "type": "mcq", "question": "[選擇題 12] 申訴審議委員會就調解事件進行程序審查時，如發現申請人委託律師提出調 解而未檢具委任狀時，應：", "choices": [{"num": 1, "text": "(1) 逕不予受理。"}, {"num": 2, "text": "(2) 駁回。"}, {"num": 3, "text": "(3) 命其補正。"}, {"num": 4, "text": "(4) 退件。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 13, "type": "mcq", "question": "[選擇題 13] 採購申訴審議委員會之決議，應有多少以上委員出席，出席委員過半數同意 行之？", "choices": [{"num": 1, "text": "(1) 四分之一。"}, {"num": 2, "text": "(2) 三分之一。"}, {"num": 3, "text": "(3) 二分之一。"}, {"num": 4, "text": "(4) 三分之二。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 14, "type": "mcq", "question": "[選擇題 14] 政府採購之調解應自收受調解申請書之次日起多久期間內完成調解程序。但 經雙方同意延長者，得延長之？", "choices": [{"num": 1, "text": "(1) 4個月。"}, {"num": 2, "text": "(2) 3個月。"}, {"num": 3, "text": "(3) 2個月。"}, {"num": 4, "text": "(4) 6 個月。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 15, "type": "mcq", "question": "[選擇題 15] 對於政府採購，下列何者敘述為不正確？", "choices": [{"num": 1, "text": "(1) 採購申訴得僅就書面審議。"}, {"num": 2, "text": "(2) 申訴提出後，廠商得於審議判斷送達前撤回。"}, {"num": 3, "text": "(3) 調解屬廠商申請者， 機關不得拒絕。"}, {"num": 4, "text": "(4) 廠商對於驗收爭議得提出異議、申訴。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 16, "type": "mcq", "question": "[選擇題 16] 依政府採購法調解成立，其調解成立書性質：", "choices": [{"num": 1, "text": "(1) 視同訴願決定。"}, {"num": 2, "text": "(2) 與確 定判決有同一效力。"}, {"num": 3, "text": "(3) 不具強制執行名義。"}, {"num": 4, "text": "(4) 視同法院判決。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 17, "type": "mcq", "question": "[選擇題 17] 機關與廠商因採購履約爭議未能達成協議者，得向採購申訴審議委員會申 請：", "choices": [{"num": 1, "text": "(1) 申訴。"}, {"num": 2, "text": "(2) 仲裁。"}, {"num": 3, "text": "(3) 調解。"}, {"num": 4, "text": "(4) 訴訟。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 18, "type": "mcq", "question": "[選擇題 18] 有關政府採購法第101條之申訴案，廠商不服申訴審議判斷之結果者，得於 審議判斷書送達之次日起2個月內，向：", "choices": [{"num": 1, "text": "(1) 行政法院提起行政訴訟。"}, {"num": 2, "text": "(2) 所轄之地方法院提起民事訴訟。"}, {"num": 3, "text": "(3) 所轄之高等法院提起民事訴訟。"}, {"num": 4, "text": "(4) 招 標機關之上級機關提起訴願。"}], "answer": 1, "law": "第101條"}, {"id": 19, "type": "mcq", "question": "[選擇題 19] 廠商對於招標文件異議之處理結果不服，或招標機關逾規定期限不為處理 者，得向採購申訴審議委員會申訴之門檻為：", "choices": [{"num": 1, "text": "(1) 公告金額以上。"}, {"num": 2, "text": "(2) 查核 金額以上。"}, {"num": 3, "text": "(3) 不論金額大小。"}, {"num": 4, "text": "(4) 公告金額十分之一以上。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 20, "type": "mcq", "question": "[選擇題 20] 政府採購申訴案件經審議判斷指明原採購行為違反法令者，廠商得向招標 機關請求償付？", "choices": [{"num": 1, "text": "(1) 準備投標、異議及申訴所支出之必要費用。"}, {"num": 2, "text": "(2) 所失利 益。"}, {"num": 3, "text": "(3) 押標金。"}, {"num": 4, "text": "(4) 另行訴訟之費用。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 21, "type": "mcq", "question": "[選擇題 21] 採購申訴審議委員會委員之人數依法為？", "choices": [{"num": 1, "text": "(1) 5人至17人。"}, {"num": 2, "text": "(2) 7人至35人。"}, {"num": 3, "text": "(3) 沒有明文規定。"}, {"num": 4, "text": "(4) 以上皆是。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 22, "type": "mcq", "question": "[選擇題 22] 依法不得設立採購申訴審議委員會之機關為：", "choices": [{"num": 1, "text": "(1) 政府採購法之主管機關。"}, {"num": 2, "text": "(2) 直轄市政府。"}, {"num": 3, "text": "(3) 縣（市）政府。"}, {"num": 4, "text": "(4) 鄉公所。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 23, "type": "mcq", "question": "[選擇題 23] 政府採購申訴案件每一案件之收費（新臺幣）為？", "choices": [{"num": 1, "text": "(1) 5萬元。"}, {"num": 2, "text": "(2) 3萬元。"}, {"num": 3, "text": "(3) 依個案認定。"}, {"num": 4, "text": "(4) 不用收費。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 24, "type": "mcq", "question": "[選擇題 24] 廠商於等標期內向招標機關提出異議，如仍不服該異議處理結果，應於接 獲招標機關異議處理結果幾日內，向採購申訴審議委員會提出申訴：", "choices": [{"num": 1, "text": "(1) 15 天。"}, {"num": 2, "text": "(2) 20天。"}, {"num": 3, "text": "(3) 10天。"}, {"num": 4, "text": "(4) 沒有限制。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 25, "type": "mcq", "question": "[選擇題 25] 有關政府採購之申訴，下列何者為非？", "choices": [{"num": 1, "text": "(1) 自收受異議處理結果之次日起 15日內提出。"}, {"num": 2, "text": "(2) 應具申訴書，並由申訴廠商簽名或蓋章。"}, {"num": 3, "text": "(3) 申訴審議判 斷，視同訴願決定。"}, {"num": 4, "text": "(4) 申訴之提起，以申訴廠商寄出申訴書之日為準。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 26, "type": "mcq", "question": "[選擇題 26] 政府採購之異議，招標機關應自收受廠商異議之次日起幾日內為適當之處 理？", "choices": [{"num": 1, "text": "(1) 10日。"}, {"num": 2, "text": "(2) 15日。"}, {"num": 3, "text": "(3) 20日。"}, {"num": 4, "text": "(4) 1個月。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 27, "type": "mcq", "question": "[選擇題 27] 政府採購法第75條及76條規定之異議、申訴程序，係在處理何種爭議：", "choices": [{"num": 1, "text": "(1) 招標、審標、決標。"}, {"num": 2, "text": "(2) 履約。"}, {"num": 3, "text": "(3) 驗收。"}, {"num": 4, "text": "(4) 保固 。"}], "answer": 1, "law": "第75條"}, {"id": 28, "type": "mcq", "question": "[選擇題 28] 政府採購履約爭議調解程序，不適用廠商與機關何種爭議（下列何者為 非）：", "choices": [{"num": 1, "text": "(1) 招標、審標、決標。"}, {"num": 2, "text": "(2) 履約。"}, {"num": 3, "text": "(3) 驗收。"}, {"num": 4, "text": "(4) 保固。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 29, "type": "mcq", "question": "[選擇題 29] 廠商與機關之間因採購履約產生爭議，得選用下列何種方式解決爭議？", "choices": [{"num": 1, "text": "(1) 訴訟。"}, {"num": 2, "text": "(2) 仲裁。"}, {"num": 3, "text": "(3) 向採購申訴審議委員會申請調解。"}, {"num": 4, "text": "(4) 以上皆是。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 30, "type": "mcq", "question": "[選擇題 30] 採購申訴審議判斷之效力？", "choices": [{"num": 1, "text": "(1) 視同確定判決。"}, {"num": 2, "text": "(2) 視同訴願決定。"}, {"num": 3, "text": "(3) 視 同仲裁判斷。"}, {"num": 4, "text": "(4) 視同調解成立書。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 31, "type": "mcq", "question": "[選擇題 31] 廠商誤向該管採購申訴審議委員會以外之機關申訴者，收受申訴書之機關應 於收受之次日起幾日內將申訴書移送於該管採購申訴審議委員會，並通知申 訴廠商？", "choices": [{"num": 1, "text": "(1) 5日。"}, {"num": 2, "text": "(2) 7日。"}, {"num": 3, "text": "(3) 3日。"}, {"num": 4, "text": "(4) 10日。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 32, "type": "mcq", "question": "[選擇題 32] 依政府採購法，下列何者有誤：", "choices": [{"num": 1, "text": "(1) 調解事件應自收受調解申請書之次日起 4個月內完成調解程序。但經雙方同意延長者，得延長之。"}, {"num": 2, "text": "(2) 對於政府採 購法第102條規定之異議處理結果不服者，應申請調解。"}, {"num": 3, "text": "(3) 已提起仲裁且 在進行中之爭議不得向採購申訴審議委員會申請調解。"}, {"num": 4, "text": "(4) 已提起訴訟且在 進行中之爭議不得向採購申訴審議委員會申請調解。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 33, "type": "mcq", "question": "[選擇題 33] 依政府採購法，下列何者有誤？", "choices": [{"num": 1, "text": "(1) 調解案之他造當事人應自收受調解申請 書副本之次日起15日內，以書面向採購申訴審議委員會陳述意見，並副知申 請人。"}, {"num": 2, "text": "(2) 調解，以公開為原則。"}, {"num": 3, "text": "(3) 就調解事件有法律上利害關係之第三 人，調解委員得依職權審酌通知其參加調解程序。"}, {"num": 4, "text": "(4) 申訴會於調解時，得 囑託具專門知識經驗之機關、學校、團體或人員鑑定，並得邀請學者或專家 諮詢。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 34, "type": "mcq", "question": "[選擇題 34] 依政府採購法，下列何者正確：", "choices": [{"num": 1, "text": "(1) 異議逾越法定期間者，應不予受理，並 以書面通知提出異議之廠商。"}, {"num": 2, "text": "(2) 異議逾越法定期間者，仍得予受理。"}, {"num": 3, "text": "(3) 廠商誤向非管轄之機關提出異議者，該收文機關亦得就廠商之異議加以處 理。"}, {"num": 4, "text": "(4) 機關處理異議，不應給予異議廠商陳述意見之機會。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 35, "type": "mcq", "question": "[選擇題 35] 依政府採購法，下列何者有誤：", "choices": [{"num": 1, "text": "(1) 廠商提出申訴時，應繳納審議費，每一 申訴事件為新臺幣3萬元。"}, {"num": 2, "text": "(2) 招標機關自行依申訴廠商之請求，撤銷或變 更其處理結果者，採購申訴審議委員會應作成申訴不受理之決議。"}, {"num": 3, "text": "(3) 廠商 提出申訴但拒繳納審議費，採購申訴審議委員會仍得受理。"}, {"num": 4, "text": "(4) 申訴事件經 審查無不受理之情形者，由採購申訴審議委員會主任委員指定委員1人至3人 為預審委員，進行實體審查。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 36, "type": "mcq", "question": "[選擇題 36] 廠商申請調解，已繳納調解費新臺幣（下同）10萬元，於通知調解期日後始 發現有當事人不適格之情事，應退還調解費多少元？", "choices": [{"num": 1, "text": "(1) 0元。"}, {"num": 2, "text": "(2) 5萬元。"}, {"num": 3, "text": "(3) 9萬5,000元。"}, {"num": 4, "text": "(4) 10萬元。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 37, "type": "mcq", "question": "[選擇題 37] 高雄市某漁會接受內政部補助辦理採購(非藝文採購)，補助金額為新臺幣 （下同）150萬元，採購金額為200萬元，投標廠商不服決標結果，可向下列 哪一個採購申訴審議委員會申訴？", "choices": [{"num": 1, "text": "(1) 高雄市政府採購申訴審議委員會。"}, {"num": 2, "text": "(2) 行政院農業委員會設置之採購申訴審議委員會。"}, {"num": 3, "text": "(3) 行政院公共工程委 員會採購申訴審議委員會。"}, {"num": 4, "text": "(4) 以上皆非。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 38, "type": "mcq", "question": "[選擇題 38] 依政府採購法，下列何者有誤：", "choices": [{"num": 1, "text": "(1) 招標機關處理異議為不受理之決定時， 仍得評估其事由，於認其異議有理由時，自行撤銷或變更原處理結果或暫停 採購程序之進行。"}, {"num": 2, "text": "(2) 政府採購法第75條第1項第3款所定期限之計算，其經 機關通知及公告者，廠商接獲通知之日與機關公告之日不同時，以公告之日 起算。"}, {"num": 3, "text": "(3) 異議不合規定，但其情形可補正者，應定期間命其補正；逾期不 補正者，不予受理。"}, {"num": 4, "text": "(4) 機關依政府採購法第102條規定將異議處理結果以 書面通知提出異議之廠商時，應附記廠商如對該處理結果不服，得於收受異 議處理結果之次日起15日內，以書面向採購申訴審議委員會提出申訴。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 39, "type": "mcq", "question": "[選擇題 39] 廠商或機關向採購申訴審議委員會申請履約爭議調解時，其調解費為新臺幣 （下同）100萬，於第1次調解期日之次日起10日內撤回調解，應退還調解費 為：", "choices": [{"num": 1, "text": "(1) 20萬元。"}, {"num": 2, "text": "(2) 30萬元。"}, {"num": 3, "text": "(3) 50萬元。"}, {"num": 4, "text": "(4) 80萬元。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 40, "type": "mcq", "question": "[選擇題 40] 政府採購申訴案件經審議判斷指明原採購行為違反法令者，招標機關應自 收受審議判斷書之次日起幾日內另為適法之處置：", "choices": [{"num": 1, "text": "(1) 10日。"}, {"num": 2, "text": "(2) 15日。"}, {"num": 3, "text": "(3) 20日。"}, {"num": 4, "text": "(4) 30日。"}], "answer": 3, "law": "採購法爭議處理"}, {"id": 41, "type": "mcq", "question": "[選擇題 41] 廠商對於招標機關依政府採購法第31條規定不予發還或追繳押標金爭議，得 向採購申訴審議委員會申訴之門檻為：", "choices": [{"num": 1, "text": "(1) 公告金額以上。"}, {"num": 2, "text": "(2) 查核金額以 上。"}, {"num": 3, "text": "(3) 不論金額大小。"}, {"num": 4, "text": "(4) 公告金額十分之一以上。"}], "answer": 3, "law": "第31條"}, {"id": 42, "type": "mcq", "question": "[選擇題 42] 「廠商請求機關展延工期不成故申請調解，並繳納調解費新臺幣（下同）10 萬元，嗣於第1次調解期日之次日起10日內以書面撤回調解，則應退還調解 費多少元？", "choices": [{"num": 1, "text": "(1) 0元。"}, {"num": 2, "text": "(2) 5萬元。"}, {"num": 3, "text": "(3) 9萬5,000元。"}, {"num": 4, "text": "(4) 10萬元。"}], "answer": 2, "law": "採購法爭議處理"}, {"id": 43, "type": "mcq", "question": "[選擇題 43] 某法人接受補助辦理採購(非藝文採購)，採購金額為新臺幣（下同）200萬 元，臺中市政府補助50萬元，內政部補助100萬元，且由臺中市政府及內政 部共同辦理監督，廠商就此採購案申訴時，應向下列哪一個採購申訴審議委 員會申訴？", "choices": [{"num": 1, "text": "(1) 行政院公共工程委員會採購申訴審議委員會。"}, {"num": 2, "text": "(2) 臺中市政 府採購申訴審議委員會。"}, {"num": 3, "text": "(3) 臺北市政府採購申訴審議委員會。"}, {"num": 4, "text": "(4) 以上皆 是。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 44, "type": "mcq", "question": "[選擇題 44] 廠商對於機關辦理之採購提出異議逾法定期限時，機關對於異議之處置，何 者為是？", "choices": [{"num": 1, "text": "(1) 應不予受理。"}, {"num": 2, "text": "(2) 應為實體審查。"}, {"num": 3, "text": "(3) 移受理申訴之機關。"}, {"num": 4, "text": "(4) 移上級機關。"}], "answer": 1, "law": "採購法爭議處理"}, {"id": 45, "type": "mcq", "question": "[選擇題 45] 主管機關及直轄市、縣（市）政府為處理中央及地方機關採購之廠商申訴及 機關與廠商間之履約爭議調解，分別設採購申訴審議委員會；置委員至多：", "choices": [{"num": 1, "text": "(1) 20人。"}, {"num": 2, "text": "(2) 25人。"}, {"num": 3, "text": "(3) 30人。"}, {"num": 4, "text": "(4) 35人。"}], "answer": 4, "law": "採購法爭議處理"}, {"id": 1, "type": "tf", "question": "[是非題 1] 廠商提出採購申訴，應同時繕具副本送招標機關。機關應自收受申訴書副本 之次日起15日內，以書面向該管採購申訴審議委員會陳述意見。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 2, "type": "tf", "question": "[是非題 2] 廠商提出採購申訴，應同時繕具副本送招標機關。機關應自收受申訴書副本 之次日起10日內，以書面向該管採購申訴審議委員會陳述意見。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 3, "type": "tf", "question": "[是非題 3] 採購申訴審議委員會之審議判斷書如指明機關原採購行為違反法令者，應一 併於審議判斷中建議招標機關處置方式。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 4, "type": "tf", "question": "[是非題 4] 採購申訴審議委員會之審議判斷書如指明機關原採購行為違反法令者，亦得 一併於審議判斷中建議招標機關處置方式。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 5, "type": "tf", "question": "[是非題 5] 廠商申請調解時，其請求事項目前仍在法院審理中，且未合意停止訴訟，為 利爭議加速解決，採購申訴審議委員會仍應受理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 6, "type": "tf", "question": "[是非題 6] 廠商申請調解時，其請求事項目前仍在法院審理中，且未合意停止訴訟，該 調解案採購申訴審議委員會應不予受理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 7, "type": "tf", "question": "[是非題 7] 機關依政府採購法第101條通知廠商後，廠商於規定期限內提出異議申訴， 經申訴審議結果指明不違反政府採購法或並無不實者，機關應先確定該廠商 未於法定期限內提起行政訴訟，再將其名稱及相關情形刊登政府採購公報。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 8, "type": "tf", "question": "[是非題 8] 機關依政府採購法第101條通知廠商後，廠商於規定期限內提出異議申訴， 經申訴審議結果指明不違反政府採購法或並無不實者，機關應即將廠商名稱 及相關情形刊登政府採購公報，尚不必先確定該廠商是否提起行政訴訟。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第101條"}, {"id": 9, "type": "tf", "question": "[是非題 9] 廠商對於未達公告金額之採購，不得依政府採購法第102條規定提出申訴。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第102條"}, {"id": 10, "type": "tf", "question": "[是非題 10] 廠商對於未達公告金額之採購，得依政府採購法第102條規定提出申訴。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第102條"}, {"id": 11, "type": "tf", "question": "[是非題 11] 機關辦理技術服務採購案，與廠商之履約爭議經採購申訴審議委員會提出調 解建議或調解方案，因機關不同意致調解不成立者，廠商提付仲裁，機關得 視個案特性及實際需要決定是否接受。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 12, "type": "tf", "question": "[是非題 12] 機關對於廠商依政府採購法第101條所為通知，應附記廠商不服該通知時應 於接獲通知之次日起15日內向機關提出書面異議。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 13, "type": "tf", "question": "[是非題 13] 機關對於廠商依政府採購法第101條所為通知，應附記廠商不服該通知時應 於接獲通知之次日起20日內向機關提出書面異議，如未提出異議者，將刊登 政府採購公報。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第101條"}, {"id": 14, "type": "tf", "question": "[是非題 14] 招標機關處理異議為不受理之決定後，縱認為異議有理由時，仍不得自行撤 銷或變更原處理結果或暫停採購程序之進行。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 15, "type": "tf", "question": "[是非題 15] 招標機關處理異議為不受理之決定後，仍得評估其事由，於認為異議有理由 時，自行撤銷或變更原處理結果或暫停採購程序之進行。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 16, "type": "tf", "question": "[是非題 16] 採購申訴審議判斷，視同訴願決定，申訴廠商對之不服得提起民事訴訟。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 17, "type": "tf", "question": "[是非題 17] 採購申訴審議判斷，視同訴願決定，申訴廠商對之不服得提起行政訴訟。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 18, "type": "tf", "question": "[是非題 18] 機關辦理未經公開程序之採購，廠商於投標廠商聲明書聲明：「本廠商就本 採購案，係屬公職人員利益衝突迴避法第2條及第3條所稱公職人員或其關係 人」者，機關不得決標予該廠商。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第2條"}, {"id": 19, "type": "tf", "question": "[是非題 19] 機關依政府採購法第31條第2項各款及招標文件規定通知廠商追繳押標金之 請求權時效為3年。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第31條"}, {"id": 20, "type": "tf", "question": "[是非題 20] 機關依政府採購法第31條第2項各款及招標文件規定通知廠商追繳押標金之 請求權時效為5年。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第31條"}, {"id": 21, "type": "tf", "question": "[是非題 21] 機關辦理未經公開程序之採購，廠商於投標廠商聲明書聲明：「本廠商就本 採購案，係屬公職人員利益衝突迴避法第2條及第3條所稱公職人員或其關係 人」者，機關得決標予該廠商。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第2條"}, {"id": 22, "type": "tf", "question": "[是非題 22] 某機關辦理採購，招標公告上已載有「財物變賣公告」等文字，嗣投標廠商 不服決標結果提出申訴，該管採購申訴審議委員會仍應予受理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 23, "type": "tf", "question": "[是非題 23] 廠商與機關發生履約爭議向採購申訴審議委員會申請調解，該會作成調解建 議函送雙方，請雙方於一定之期限內以書面表示是否同意建議，嗣廠商來文 同意建議，機關遲未回復，經採購申訴審議委員會再酌定一定期間命機關為 同意與否之意思表示，逾期仍未回復時，得以機關不同意調解建議處理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 24, "type": "tf", "question": "[是非題 24] 機關如不同意調解委員所提出之調解建議，無需報請上級機關核定。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 25, "type": "tf", "question": "[是非題 25] 機關如不同意調解委員所提出之調解建議，應先報請上級機關核定，並以書 面向採購申訴審議委員會及廠商說明理由。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 26, "type": "tf", "question": "[是非題 26] 廠商與機關發生履約爭議向採購申訴審議委員會申請調解，該會作成調解建 議函送雙方，並請雙方於一定之期限內以書面表示是否同意建議，嗣廠商來 文同意建議，機關遲未回復，經採購申訴審議委員會再酌定一定期間命機關 為同意與否之意思表示，逾期仍未回復時，得以機關同意調解建議處理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 27, "type": "tf", "question": "[是非題 27] 政府採購所涉招標、審標、決標之申訴，廠商申訴縱有理由時，也不得向招 標機關請求償付其準備投標、異議及申訴所支出之必要費用。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 28, "type": "tf", "question": "[是非題 28] 政府採購所涉招標、審標、決標之申訴，廠商申訴有理由時，得向招標機關 請求償付其準備投標、異議及申訴所支出之必要費用。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 29, "type": "tf", "question": "[是非題 29] 申訴逾越法定期間者，採購申訴審議委員會仍得受理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 30, "type": "tf", "question": "[是非題 30] 申訴逾越法定期間者，應提採購申訴審議委員會委員會議為不受理決議。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 31, "type": "tf", "question": "[是非題 31] 廠商對採購之過程提出異議，其過程未經通知或公告者，須於知悉或可得而 知悉之次日起10日內提出，且至遲不得逾決標日之次日起20日。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 32, "type": "tf", "question": "[是非題 32] 廠商對採購之過程提出異議，其過程未經通知或公告者，須於知悉或可得而 知悉之次日起10日內提出，且至遲不得逾決標日之次日起15日。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 33, "type": "tf", "question": "[是非題 33] 機關辦理採購，廠商提出異議或申訴，招標機關評估其事由，縱認其異議或 申訴有理由者，仍不得自行撤銷、變更原處理結果，或暫停採購程序之進 行，應待申訴審議結果。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 34, "type": "tf", "question": "[是非題 34] 機關辦理採購，廠商提出異議或申訴，招標機關評估其事由，認其異議或申 訴有理由者，應自行撤銷、變更原處理結果，或暫停採購程序之進行。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 35, "type": "tf", "question": "[是非題 35] 機關辦理工程採購，與廠商之履約爭議經採購申訴審議委員會提出調解建 議，因廠商不同意致調解不成立者，廠商提付仲裁，機關不得拒絕。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 36, "type": "tf", "question": "[是非題 36] 機關辦理工程採購，與廠商之履約爭議經採購申訴審議委員會提出調解建 議，因機關不同意致調解不成立者，廠商提付仲裁，機關不得拒絕。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 37, "type": "tf", "question": "[是非題 37] 採購申訴審議委員會辦理調解之程序及效力，除政府採購法有特別規定者 外，準用民事訴訟法有關調解之規定。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 38, "type": "tf", "question": "[是非題 38] 採購申訴審議委員會對於調解事件，應先為實體審查；其無實體不合法之情 形者，再進行程序審查。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 39, "type": "tf", "question": "[是非題 39] 政府採購之調解於採購申訴審議委員會內進行調解程序，以公開為原則。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 40, "type": "tf", "question": "[是非題 40] 政府採購履約爭議案件於仲裁程序進行中，仍可申請調解。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 41, "type": "tf", "question": "[是非題 41] 採購異議或申訴以言詞或書面提出均可。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 42, "type": "tf", "question": "[是非題 42] 政府採購法第75條第1項第2款及第3款所定期限之計算，其經機關通知及公 告者，廠商接獲通知之日及機關公告之日不同時，以日期在前者起算。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第75條"}, {"id": 43, "type": "tf", "question": "[是非題 43] 廠商投標前得對機關招標文件之事項以書面向招標機關申請調解。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 44, "type": "tf", "question": "[是非題 44] 機關辦理採購，與廠商之履約爭議經採購申訴審議委員會提出調解建議或調 解方案，因機關不同意致調解不成立者，廠商提付仲裁，機關不得拒絕。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 45, "type": "tf", "question": "[是非題 45] 廠商對於招標文件廠商資格認有違反法令，因時間急迫，故可以電話方式向 機關提出異議，不用提出書面文件。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 46, "type": "tf", "question": "[是非題 46] 小額採購不適用政府採購法第101條通知廠商及刊登政府採購公報之規定。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 47, "type": "tf", "question": "[是非題 47] 採購申訴審議委員會辦理調解之程序及其效力，除政府採購法有特別規定者 外，準用仲裁法有關調解之規定。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 48, "type": "tf", "question": "[是非題 48] 調解經當事人合意而成立；當事人不能合意者，由採購申訴審議委員會命其 接受而成立。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 49, "type": "tf", "question": "[是非題 49] 機關通知廠商將依政府採購法第101條第1項第12款規定刊登政府採購公報， 廠商不服該通知向機關提出書面異議，機關對此異議作成維持原決定之結 果，廠商不服該處理結果，復向機關以書面表示不服，機關於收到該書面後 應於5日內移文至該管採購申訴審議委員會。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 50, "type": "tf", "question": "[是非題 50] 機關辦理工程採購，甲、乙廠商共同投標，共同投標協議書上已載明：土建 部分由甲廠商施作，水電部分由乙廠商施作，嗣機關因甲廠商土建部分履約 進度落後，認有政府採購法第101條第1項第10款規定之情事，應同時通知 甲、乙廠商將依政府採購法第101條第1項第10款規定刊登政府採購公報。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 51, "type": "tf", "question": "[是非題 51] 廠商對於機關辦理採購（採購金額為新臺幣90萬元），認其招標文件對於廠 商資格之規定有違反法令，乃向招標機關提出異議，復不服招標機關對於異 議所為之決定，可於收到機關異議處理結果之次日起15日內向該管採購申訴 審議委員會申訴。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 52, "type": "tf", "question": "[是非題 52] 廠商申請調解，嗣撤回調解之申請，後又就同一爭議案件申請調解，採購申 訴審議委員會應不予受理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 53, "type": "tf", "question": "[是非題 53] 機關辦理新臺幣80萬元之工程採購，與廠商就驗收事宜發生爭議，不可向採 購申訴審議委員會申請調解。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 54, "type": "tf", "question": "[是非題 54] 廠商與機關間關於政府採購履約或驗收之爭議，得依政府採購法之規定提出 異議及申訴。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 55, "type": "tf", "question": "[是非題 55] 採購申訴逾越法定期間，雖得不予受理，惟有正當理由時，應予受理。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 56, "type": "tf", "question": "[是非題 56] 採購履約爭議，機關依政府採購法第85條之1規定，向採購申訴審議委員會 申請調解，另一方之當事人不得拒絕。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第85條"}, {"id": 57, "type": "tf", "question": "[是非題 57] 採購申訴應具申訴書，惟異議得以言詞向機關提出。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 58, "type": "tf", "question": "[是非題 58] 採購申訴審議委員會得命調解當事人接受調解建議。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 59, "type": "tf", "question": "[是非題 59] 廠商於履約中因違反契約約定事項，遭機關計罰違約金，廠商就此得提出調 解。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 60, "type": "tf", "question": "[是非題 60] 廠商於履約中因違反契約約定事項，遭機關計罰違約金，廠商就此得提出申 訴。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 61, "type": "tf", "question": "[是非題 61] 機關辦理之設計監造採購案，與廠商就工期發生爭議，廠商申請調解，並經 採購申訴審議委員會作成調解建議，廠商同意建議，但機關不同意建議，故 廠商提付仲裁時，機關不可拒絕仲裁。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 62, "type": "tf", "question": "[是非題 62] 廠商對於招標機關追繳或不予發還押標金之異議處理結果不服，因該採購案 未達公告金額，故不得再提出申訴。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 63, "type": "tf", "question": "[是非題 63] 機關辦理技術服務採購，與廠商之履約爭議經採購申訴審議委員會提出調解 建議，因機關不同意致調解不成立者，廠商提付仲裁，機關得視個案特性及 實際需要決定是否接受。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 64, "type": "tf", "question": "[是非題 64] 機關辦理技術服務採購案，與廠商之履約爭議經採購申訴審議委員會提出調 解建議，因機關不同意致調解不成立者，廠商提付仲裁，機關不得拒絕。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 65, "type": "tf", "question": "[是非題 65] 提起採購申訴或履約爭議調解後，即不得撤回。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 66, "type": "tf", "question": "[是非題 66] 主管機關及直轄市、縣（市）政府為處理中央及地方機關採購之廠商申訴及 機關與廠商間之履約爭議調解，分別設採購申訴審議委員會；置委員7人至 35人。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 67, "type": "tf", "question": "[是非題 67] 廠商對於未達公告金額以上採購之異議處理結果不服，而向招標機關提出不 服之事實及理由者，機關應將其移送於該管採購申訴審議委員會，並通知申 訴廠商。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 68, "type": "tf", "question": "[是非題 68] 機關依政府採購法第101條第1項各款通知廠商將刊登政府採購公報之裁處權 時效為5年。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 69, "type": "tf", "question": "[是非題 69] 機關依政府採購法第101條第1項各款通知廠商將刊登政府採購公報之裁處權 時效為3年。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第101條"}, {"id": 70, "type": "tf", "question": "[是非題 70] 機關通知廠商依政府採購法第101條第1項第1款規定將刊登政府採購公報， 經廠商書面異議後，機關逾2個月未為異議處理，廠商遂向採購申訴審議委 員會提出申訴，此時機關應將廠商刊登政府採購公報。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "第101條"}, {"id": 71, "type": "tf", "question": "[是非題 71] 機關通知廠商依政府採購法第101條第1項第1款規定將刊登政府採購公報， 經廠商書面異議後，機關逾2個月未為異議處理，廠商遂向採購申訴審議委 員會提出申訴，此時機關不得將廠商刊登政府採購公報。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "第101條"}, {"id": 72, "type": "tf", "question": "[是非題 72] 申訴廠商於第1次預審會議期日前撤回採購申訴者，所繳審議費無息退還三 分之一。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 73, "type": "tf", "question": "[是非題 73] 申訴廠商於第1次預審會議期日前撤回採購申訴者，所繳審議費無息退還二 分之一。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 74, "type": "tf", "question": "[是非題 74] 政府採購調解申請人在我國無住所、事務所或營業所者，無需委任在我國有 住所、事務所或營業所之代理人為之。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 75, "type": "tf", "question": "[是非題 75] 政府採購調解申請人在我國無住所、事務所或營業所者，應委任在我國有住 所、事務所或營業所之代理人為之。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 76, "type": "tf", "question": "[是非題 76] 廠商提出申訴時併請求暫停採購程序，採購申訴審議委員會於完成申訴審議 前，為確保廠商權益，應通知招標機關暫停採購程序。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 77, "type": "tf", "question": "[是非題 77] 廠商提出申訴時併請求暫停採購程序，採購申訴審議委員會於完成申訴審議 前，必要時得通知招標機關暫停採購程序。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 78, "type": "tf", "question": "[是非題 78] 採購申訴審議委員會委員可聘請社會公正人士但不具有法律或採購相關專門 知識之人擔任。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 79, "type": "tf", "question": "[是非題 79] 採購申訴審議委員會委員須聘請具有法律或採購相關專門知識之公正人士擔 任。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 80, "type": "tf", "question": "[是非題 80] 採購申訴不得僅就書面審議之，應以言詞為之。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 81, "type": "tf", "question": "[是非題 81] 採購申訴得僅就書面審議之。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}, {"id": 82, "type": "tf", "question": "[是非題 82] 採購申訴審議委員會之審議判斷指明原採購行為違反法令者，招標機關得向 行政法院提起行政訴訟。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "X", "law": "採購法爭議處理"}, {"id": 83, "type": "tf", "question": "[是非題 83] 採購申訴審議委員會之審議判斷指明原採購行為違反法令者，招標機關應另 為適法之處置。", "choices": [{"num": "O", "text": "⭕ 正確 (True)"}, {"num": "X", "text": "❌ 錯誤 (False)"}], "answer": "O", "law": "採購法爭議處理"}];
+        
+        let allQuestions = [];
+        
+        // 核心題目的深度針對性備考解析資料庫
+        const explanationDB = {
+            // 選擇題部分
+            "mcq_1": "申訴經撤回後，『不得』再行提出同一之申訴。這是為了防止程序濫用。另外，機關另為處置限 20 日內，準備投標及異議申訴之必要費用可請求償付，且申訴得於審議判斷書送達前撤回。",
+            "mcq_2": "異議期限為接獲通知或機關公告之次日起『10日』。是非題常出15日、20日的文字陷阱，必須牢記是10日。",
+            "mcq_3": "廠商在第1次預審會議期日前撤回申訴者，審議費『無息退還二分之一』（即退還1萬5,000元）。是非題常考退還1/3或不予退還，此為極高頻考點。",
+            "mcq_4": "調解程序『以不公開為原則』，且調解過程中『採購程序應不暫停』，廠商申請調解『機關不得拒絕』。機關申請調解，則需經廠商同意，否則不受理。",
+            "mcq_5": "非屬政府採購事件、當事人不適格、已提起仲裁、申請調解或民事訴訟，皆為『不予受理』之事由。他造當事人拒絕繳納調解費，不是『不予受理』之事由（而是由申請人先墊付或按比例繳納）。",
+            "mcq_6": "地方機關自辦採購之履約爭議，應向『該地方政府（直轄市/縣市）所設之採購申訴審議委員會』申請調解。台北市工務局為台北市政府所屬，故向台北市政府申訴會申請調解。",
+            "mcq_7": "申訴程序是『先程序審查，其無不受理之情形者，再為實體審查』。本題敘述(3)說先實體再程序是錯誤的。此外，關於招標文件之申訴，未投標之廠商亦得提出；誤向非管轄機關申訴以收受日視為提起日。",
+            "mcq_8": "撤回申訴屬於重大權利放棄，非受『特別委任』，代理人不得為之。撰寫申訴書、出席預審會議、代收判斷書皆屬一般委任範圍。",
+            "mcq_9": "調解標的金額在新台幣5億元以上者，應繳納調解費為最高級距之『100萬元』。2億至5億為35萬，5000萬至2億為20萬。",
+            "mcq_10": "縣(市)政府未設申訴會者，得『委請主管機關（即行政院公共工程委員會）所設之採購申訴審議委員會』處理。台東縣政府目前未設申訴會，依法委請工程會處理。",
+            "mcq_11": "機關申請調解，若廠商不同意調解時，申訴會應直接予以『不受理』。調解是解決履約爭議的民事程序，必須基於雙方合意或機關不得拒絕廠商，機關強迫廠商調解是不行的。",
+            "mcq_12": "程序審查發現未檢具委任狀時，屬『可補正之事項』，申訴會應『命其補正』，而非逕不受理或駁回。",
+            "mcq_13": "申訴會之決議，應有『二分之一以上』委員出席，出席委員過半數同意行之。置委員7至35人。",
+            "mcq_14": "調解應自收受調解申請書次日起『4個月』內完成調解程序。經雙方同意得延長之。",
+            "mcq_15": "履約或驗收爭議，應申請『調解』，『不得』提出異議及申訴。異議與申訴僅限於招標、審標、決標。本題(4)敘述錯誤。",
+            "mcq_16": "依採購法調解成立者，其調解成立書之性質『與確定判決有同一效力』，具備強制執行名義。是非題常出『不具強制執行名義』或『視同訴願決定』之陷阱。",
+            "mcq_17": "因採購『履約爭議』未能達成協議者，得向申訴會申請『調解』。申訴適用於招標審標決標，仲裁與訴訟是調解不成立後或直接採用的司法救濟。",
+            "mcq_18": "101條刊登公報之申訴案，廠商若不服申訴審議判斷結果，屬於行政訴訟範疇，應於收受次日起2個月內向『行政法院』提起行政訴訟。不可向民事法院或提訴願。",
+            "mcq_19": "對招標文件異議結果不服，向申訴會『申訴』的門檻為『公告金額（150萬）以上』。未達公告金額者不可對招標審標決標爭議提起申訴（但101條及追繳押標金案件除外）。",
+            "mcq_20": "申訴案件經審議判斷指明原採購行為違反法令者，廠商得向機關請求償付『準備投標、異議及申訴所支出之必要費用』。不包括所失利益或民事訴訟費。",
+            "mcq_21": "採購申訴審議委員會置委員『7人至35人』，由主管機關及直轄市、縣(市)政府聘請具有法律或採購相關專門知識之公正人士擔任，其中學者、專家不得少於三分之二。",
+            "mcq_22": "鄉公所為基層地方自治機關，『依法不得設立』採購申訴審議委員會。只有主管機關（工程會）、直轄市政府及縣（市）政府得設立。",
+            "mcq_23": "政府採購申訴案件，每一申訴事件收費為新台幣『3萬元』，未繳納者程序審查不予受理。",
+            "mcq_24": "等標期內提出異議，若不服結果，應於接獲結果次日起『15日內』提出申訴。15日為申訴之法定黃金期限。",
+            "mcq_25": "申訴之提起，以『申訴書送達申訴會之日』為準，而非寄出日（非採郵遞在途期間扣除法）。本題(4)敘述寄出日為準是錯誤的。",
+            "mcq_26": "招標機關自收受異議次日起，應於『15日』內為適當之處理，並書面通知廠商。逾期不處理，廠商得於期限屆滿次日起15日內提出申訴。",
+            "mcq_27": "異議與申訴程序（第75、76條），『僅』在處理『招標、審標、決標』爭議。履約、驗收、保固爭議不適用。",
+            "mcq_28": "調解程序適用於『履約、驗收、保固』等決標後爭議，『不適用』於『招標、審標、決標』等決標前爭議。本題答案為(1)。",
+            "mcq_30": "申訴審議判斷之效力『視同訴願決定』。調解成立書才視同『確定判決』。這兩個效力定位是非題極愛互換出題，務必區分！",
+            "mcq_31": "廠商誤向非管轄機關申訴，收受機關應於收受之次日起『3日內』移送管轄之申訴會，並通知廠商。以該收受機關收受之日，視為提起申訴之日。",
+            "mcq_32": "對第102條規定（刊登公報通知）之異議處理結果不服者，應提起『申訴』，而非申請調解。101條刊登公報屬於行政處分軌道。",
+            "mcq_33": "政府採購調解『以不公開為原則』，本題(2)敘述公開為原則是錯誤的。他造當事人應於次日起15日內書面陳述意見；調解會得囑託鑑定與諮詢專家。",
+            "mcq_34": "異議逾越法定期間者，機關『應不予受理』，並書面通知廠商。但機關仍得評估其事由，自行撤銷變更原處理結果或暫停採購。",
+            "mcq_35": "廠商提出申訴但拒繳審議費，申訴會應作成『不受理』決議，不能受理。每一申訴案3萬元；若機關自行依廠商請求變更結果，申訴會亦作成不受理（因爭議已消失）。",
+            "mcq_36": "廠商申請調解，於『通知調解期日後』發現當事人不適格，應扣除基本手續費5000元後，退還其餘費用。原本繳納10萬，故退還『9萬5,000元』。若在第一次調解期日前撤回，則退還80%（8萬元）。",
+            "mcq_37": "法人接受補助辦理採購，補助金額占採購金額半數以上且在公告金額以上者適用採購法。其申訴受理機關，以『補助機關』自行辦理採購之申訴會認定。本題內政部補助100萬最高，內政部屬中央機關，故向『行政院公共工程委員會』申訴會申訴。",
+            "mcq_38": "第75條第1項第3款所定期限（對過程、結果異議），機關有通知及公告者，且兩者日期不同時，以『日期在後者起算』。本題(2)敘述『以公告日起算』是錯誤的。",
+            "mcq_39": "繳納調解費100萬元（大額，超過20萬元），於第1次調解期日次日起10日內撤回者，無息退還調解費之『80%』，即『80萬元』。這是大額撤回之特別優惠比例。",
+            "mcq_40": "申訴審議判斷指明原採購行為違反法令者，機關應自收受判斷書之次日起『20日』內另為適法之處置。",
+            "mcq_41": "廠商對於不予發還或追繳押標金爭議（第31條），此屬財產權重大爭議，投標廠商『不論金額大小』皆得向申訴會提起申訴！無公告金額限制。",
+            "mcq_42": "繳納調解費10萬元（小額，未超過20萬元），於第1次調解期日之次日起10日內撤回調解，退還比例為『50%』，即『5萬元』。對比Q39大額退80%，此處退50%，為極易出錯的陷阱！",
+            "mcq_43": "本案由內政部補助100萬（最高占半數且達公告金額），故申訴受理機關以內政部所屬為準，內政部屬中央機關，應向『行政院公共工程委員會』申訴會申訴。",
+            "mcq_44": "異議逾越法定期間，機關在程序審查上『應不予受理』，並以書面通知廠商。不可直接進入實體審查。",
+            "mcq_45": "主管機關及直轄市、縣(市)政府設採購申訴審議委員會，置委員至多『35人』（置委員7人至35人）。",
+
+            // 是非題部分
+            "tf_1": "機關應自收受申訴書副本之次日起『10日』內，向申訴會陳述意見。本題寫15日是錯的（與異議15日混淆）。",
+            "tf_2": "機關應自收受申訴書副本次日起『10日』內陳述意見，此題敘述完全正確。",
+            "tf_3": "審議判斷指明原採購違法者，『得』一併於審議判斷中建議機關處置方式，而非『應』。本題寫『應』屬過度強制，故為錯誤(X)。",
+            "tf_4": "指明違法者，『得』一併建議處置方式，敘述正確(O)。",
+            "tf_5": "調解標的仍在法院審理中且未合意停止訴訟者，屬調解辦法第16條『應不予受理』事由。寫『仍應受理』是錯的。",
+            "tf_6": "訴訟進行中且未停止訴訟者，調解應不予受理，敘述正確(O)。",
+            "tf_7": "101條刊登公報處分經申訴審議結果確定後，機關『應即』刊登公報，不需要等廠商提起行政訴訟或確定未提起。本題寫『應先確定未提起行政訴訟再刊登』是錯的，行政訴訟不停止原處分之執行。",
+            "tf_8": "申訴確定不違反或並無不實後，機關應即刊登公報，不必先確定是否提起行政訴訟。敘述完全正確(O)。",
+            "tf_9": "廠商對於『未達公告金額』之101條刊登公報通知，『得』依規定提出申訴。因為刊登公報是誠信處罰，不限金額大小皆有申訴權。本題寫『不得』是錯的。",
+            "tf_10": "廠商對於未達公告金額採購之101條處分，仍得提出申訴，敘述正確(O)。",
+            "tf_11": "技術服務與工程採購案，因機關不同意調解建議致調解不成立，廠商提付仲裁時，機關『不得拒絕』。本題寫『機關得決定是否接受』是錯的（此為強制仲裁規定）。",
+            "tf_12": "機關為101條通知時，應附記廠商應於接獲通知之次日起『20日』內向機關提出書面異議。本題寫15日是錯的。",
+            "tf_13": "101條通知應附記『20日內』書面提出異議，逾期將刊登公報。敘述完全正確(O)。",
+            "tf_14": "機關為不受理之決定後，若認異議有理由，『仍得』自行撤銷變更原處理結果或暫停採購。寫『不得』是錯的。",
+            "tf_15": "不受理決定後，若有理由，機關仍得自行變更或撤銷原決定。敘述正確(O)。",
+            "tf_16": "申訴審議判斷視同『訴願決定』，不服應提起『行政訴訟』，而非民事訴訟。本題寫民事訴訟是錯的。",
+            "tf_17": "審議判斷不服應提起行政訴訟，敘述正確(O)。",
+            "tf_19": "通知追繳押標金之請求權時效為『5年』。本題寫3年是錯的（與刊登公報3年混淆）。",
+            "tf_20": "通知追繳押標金之請求權時效為『5年』，敘述完全正確(O)。",
+            "tf_22": "機關辦理採購，若招標公告為『財物變賣（收入性質）』，不適用採購法，故申訴會應『不予受理』。本題寫『仍應受理』是錯的。",
+            "tf_23": "廠商同意調解建議而機關遲未回復，經催告逾期仍未回復，『得以機關不同意調解建議』處理。此為默示不同意原則，敘述正確(O)。",
+            "tf_24": "機關不同意調解建議，『應』報請上級機關核定，並書面說明理由。本題寫『無需』是錯的。",
+            "tf_25": "不同意調解建議應先報請上級機關核定，並書面說明理由，敘述正確(O)。",
+            "tf_26": "機關對調解建議遲未回復，逾期視為『不同意』，本題寫『視為同意』是錯誤的。",
+            "tf_27": "招標、審審、決標申訴有理由者，廠商『得』向機關請求準備投標及異議申訴之必要費用。本題寫『不得』是錯的。",
+            "tf_28": "申訴有理由，得請求償付必要費用，敘述正確(O)。",
+            "tf_29": "申訴逾期者，申訴會『應不予受理』。本題寫『仍得受理』是錯的。",
+            "tf_30": "申訴逾期應提申訴會委員會議為不受理決議，敘述正確(O)。",
+            "tf_31": "對未通知/公告之過程異議，至遲不得逾決標日之次日起『15日』。本題寫20日是錯的。",
+            "tf_32": "對未通知/公告過程異議，至遲不得逾決標日之次日起『15日』，敘述正確(O)。",
+            "tf_33": "機關若評估異議申訴有理由者，『應』自行撤銷變更原處置或暫停採購，不必等待申訴會結果。本題寫『不得自行撤銷』是錯的。",
+            "tf_34": "異議申訴有理由者，機關應自行撤銷變更或暫停採購。敘述正確(O)。",
+            "tf_35": "強制仲裁的前提是『因機關不同意調解建議』致不成立，且由廠商提起。本題寫『因廠商不同意建議致不成立』，不適用強制仲裁，機關可以拒絕仲裁。故寫『機關不得拒絕』是錯的(X)。",
+            "tf_36": "因機關不同意調解建議致不成立，廠商提付仲裁，機關不得拒絕，敘述正確(O)。",
+            "tf_38": "調解事件應先為『程序審查』，其無程序不合法者，再進行『實體審查（中介調解）』。本題寫『先實體再程序』是錯的。",
+            "tf_39": "履約爭議調解，『以不公開為原則』。本題寫『以公開為原則』是錯的。",
+            "tf_40": "已提起仲裁或訴訟且在進行中者，屬『應不予受理』調解之事由。本題寫『仍可申請調解』是錯的。",
+            "tf_41": "異議與申訴『一律應以書面提出』。本題寫『以言詞或書面均可』是錯的。",
+            "tf_42": "機關通知及公告日期不同時，期限計算以『日期在後者』起算（給予廠商最長準備期）。本題寫『以日期在前老起算』是錯的。",
+            "tf_43": "投標前之招標文件爭議應走『異議』程序，『不得申請調解』。調解僅限決標後之履約爭議。故本題是錯的(X)。",
+            "tf_44": "只有工程與技術服務採購案，調解不成立時廠商提付仲裁機關才不得拒絕。本題寫『機關辦理採購（未限定類別）』，泛指所有採購，這是不對的（例如財物採購調解不成立，廠商提仲裁，機關可以拒絕）。故為錯誤(X)。",
+            "tf_45": "招標文件異議必須提出『書面』，不能以電話或言詞為之，故為錯誤(X)。",
+            "tf_46": "101條刊登公報之規定，『不論金額大小一律適用』，小額採購違規亦適用。本題寫『小額採購不適用』是錯的。",
+            "tf_47": "調解程序及效力準用『民事訴訟法』有關調解之規定，而非準用仲裁法。本題寫『準用仲裁法』是錯的。",
+            "tf_48": "調解必須經當事人『合意』而成立；當事人不能合意者，調解不成立，調解會『不得強迫』其接受。本題寫『命其接受而成立』是錯的。",
+            "tf_49": "101條維持原決定後，廠商不服處理結果，應向申訴會提出『申訴』。移文程序是廠商向申訴會申訴後，申訴會再請機關陳述意見。本題寫機關收到後應5日內移文是錯的（與以前訴願移文混淆）。",
+            "tf_50": "共同投標成員履約落後達101條刊登公報事由，應『僅通知該落後之成員（如甲廠商）』，『不得』同時刊登乙廠商。本題寫『應同時通知甲乙廠商』是錯的。",
+            "tf_51": "90萬元採購屬『未達公告金額』，對異議結果不服，『不得』向申訴會提出申訴（除101條及押標金追繳案外）。本題寫『可向申訴會申訴』是錯的。",
+            "tf_52": "撤回調解後，『仍得』就同一爭議再申請調解。撤回申訴才『不得』再提同一申訴。調解是民事和解，允許反悔再提。本題寫『應不予受理』是錯的。",
+            "tf_53": "80萬元屬未達公告金額之採購，但履約或驗收爭議，『仍可』向申訴會申請調解（調解不限金額大小）。本題寫『不可申請調解』是錯的。",
+            "tf_54": "履約或驗收爭議，『不得』提出異議及申訴，而應申請調解、仲裁或訴訟。本題寫『得提出異議及申訴』是錯的。",
+            "tf_55": "申訴逾期，『應不予受理』，不可因有正當理由而受理。本題寫『有正當理由時應予受理』是錯的。",
+            "tf_56": "機關申請調解，另一方當事人（廠商）『得拒絕』。只有廠商申請調解時，機關才不得拒絕。本題寫『另一方不得拒絕』是錯的。",
+            "tf_57": "異議及申訴『皆必須以書面提出』，本題寫『異議得以言詞提出』是錯的。",
+            "tf_58": "調解委員之建議，當事人『得拒絕』，調解會『不得命當事人接受』。本題寫『得命當事人接受』是錯的。",
+            "tf_59": "遭機關計罰違約金屬於『履約爭議』，廠商『得提出調解』。敘述正確(O)。",
+            "tf_60": "計罰違約金屬履約爭議，應提調解，『不得提出申訴』。本題寫『得提出申訴』是錯的。",
+            "tf_61": "設計監造屬於『技術服務採購』。調解不成立提付仲裁，屬強制仲裁範疇，機關『不可拒絕』。本題敘述完全正確(O)。",
+            "tf_62": "追繳押標金爭議（第31條），『不論金額大小皆得申訴』。本題寫『因未達公告金額故不得再申訴』是錯的。",
+            "tf_63": "技術服務採購履約爭議調解不成立提付仲裁，機關『不得拒絕』。本題寫『得視個案決定是否接受』是錯的。",
+            "tf_64": "技術服務案調解不成立提付仲裁機關不得拒絕，敘述正確(O)。",
+            "tf_65": "提起申訴或調解後，於審議判斷或調解成立前，『皆得撤回』。本題寫『不得撤回』是錯的。",
+            "tf_66": "申訴會置委員7人至35人，敘述完全正確(O)。",
+            "tf_67": "未達公告金額採購之異議不服，『不得申訴』，機關不可將其移送申訴會。本題寫『機關應將其移送申訴會』是錯的。",
+            "tf_68": "101條刊登公報之通知（裁處權）時效為『3年』。本題寫5年是錯的（與押標金追繳5年混淆）。",
+            "tf_69": "刊登公報裁處權時效為『3年』，敘述完全正確(O)。",
+            "tf_70": "在異議或申訴結果確定前，機關『不得』將廠商刊登政府採購公報。本題寫『此時機關應將廠商刊登公報』是錯的。",
+            "tf_71": "異議申訴未確定前，機關『不得』刊登公報，敘述完全正確(O)。",
+            "tf_72": "第1次預審會議前撤回申訴，退還『二分之一』，本題寫『三分之一』是錯的。",
+            "tf_73": "預審會議前撤回退還二分之一，敘述正確(O)。",
+            "tf_74": "調解申請人在我國無住所者，『應』委任在我國有住所之代理人。本題寫『無需委任』是錯的。",
+            "tf_75": "無住所者應委任國內代理人，敘述正確(O)。",
+            "tf_76": "廠商申請暫停採購，申訴會審查『必要時』得通知機關暫停，而非『應』通知。本題寫『應通知』是錯的。",
+            "tf_77": "暫停採購程序為『必要時得通知』，敘述正確(O)。",
+            "tf_78": "申訴會委員『須聘請具有法律或採購相關專門知識之公正人士』。本題寫『聘請不具有法律或採購知識之人』是錯的。",
+            "tf_79": "委員須聘請有法律/採購知識之公正人士，敘述正確(O)。",
+            "tf_80": "採購申訴『得僅就書面審議之』，不以言詞為限。本題寫『不得僅就書面審議』是錯的。",
+            "tf_81": "申訴得僅就書面審議，敘述正確(O)。",
+            "tf_82": "審議判斷指明違反法令者，招標機關『不得』向行政法院提起行政訴訟（因機關非行政訴訟之原告適格，且必須服從申訴會判斷另為適法處置）。本題寫『得提起行政訴訟』是錯的(X)。",
+            "tf_83": "審議判斷指明違反法令，機關應另為適法處置，敘述正確(O)。"
+        };
+        
+        // 核心載入與測驗引擎
+        let allQuestionsData = [];
+        
+        // 解析並重組題目
+        rawQuestionsData.forEach(q => {
+            let expKey = q.type === "mcq" ? `mcq_${q.id}` : `tf_${q.id}`;
+            let defaultExp = q.type === "mcq" ? `本題答案為：(${q.answer})。` : `本題答案為：[${q.answer}]。`;
+            let customExp = explanationDB[expKey] || "";
+            let finalExp = customExp ? `${customExp} ` : defaultExp;
+            
+            if (q.law && q.law !== "採購法爭議處理") {
+                finalExp += `【法規依據：${q.law}】`;
+            } else {
+                finalExp += `【主題：政府採購法爭議處理章】`;
+            }
+            
+            allQuestionsData.push({
+                id: q.id,
+                type: q.type,
+                question: q.question,
+                choices: q.choices,
+                answer: q.answer,
+                explanation: finalExp
+            });
+        });
+
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let userSelections = {};
+
+        // Shuffle questions
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function triggerReset() {
+            if (confirm("確定要打亂順序並重新開始測驗嗎？這會清除當前得分。")) {
+                score = 0;
+                answeredCount = 0;
+                currentIndex = 0;
+                userSelections = {};
+                allQuestions = shuffle([...allQuestionsData]);
+                updateScore();
+                loadQuestion(0);
+            }
+        }
+
+        function loadQuestion(index) {
+            const q = allQuestions[index];
+            const progress = document.getElementById("quiz-progress");
+            const questionTitle = document.getElementById("quiz-question");
+            const optionsContainer = document.getElementById("quiz-options");
+            const feedback = document.getElementById("quiz-feedback");
+            const prevBtn = document.getElementById("quiz-prev-btn");
+            
+            let typeText = q.type === "mcq" ? "選擇題" : "是非題";
+            progress.innerText = `題目進度: ${index + 1} / ${allQuestions.length} [${typeText}]`;
+            questionTitle.innerText = q.question;
+            optionsContainer.innerHTML = "";
+            
+            feedback.style.display = "none";
+            prevBtn.disabled = index === 0;
+
+            const previouslySelected = userSelections[index];
+            const hasAnswered = previouslySelected !== undefined;
+
+            q.choices.forEach(opt => {
+                const btn = document.createElement("button");
+                btn.className = "quiz-option-btn";
+                btn.innerText = opt.text;
+                btn.disabled = hasAnswered;
+
+                if (hasAnswered) {
+                    const optKey = opt.num;
+                    const correctAns = q.answer;
+                    
+                    if (optKey === correctAns) {
+                        btn.classList.add("correct");
+                    }
+                    if (optKey === previouslySelected && previouslySelected !== correctAns) {
+                        btn.classList.add("wrong");
+                    }
+                } else {
+                    btn.onclick = () => selectOption(index, opt.num);
+                }
+                
+                optionsContainer.appendChild(btn);
+            });
+
+            if (hasAnswered) {
+                showFeedback(q);
+            }
+        }
+
+        function selectOption(index, optionNum) {
+            if (userSelections[index] !== undefined) return;
+            
+            const q = allQuestions[index];
+            userSelections[index] = optionNum;
+            answeredCount++;
+            
+            if (optionNum === q.answer) {
+                score++;
+            }
+            
+            updateScore();
+            loadQuestion(index);
+        }
+
+        function showFeedback(q) {
+            const feedback = document.getElementById("quiz-feedback");
+            const feedbackText = document.getElementById("quiz-feedback-text");
+            feedbackText.innerText = q.explanation;
+            
+            if (q.type === "tf") {
+                feedback.classList.add("tf-feedback");
+            } else {
+                feedback.classList.remove("tf-feedback");
+            }
+            feedback.style.display = "block";
+        }
+
+        function updateScore() {
+            const scoreLbl = document.getElementById("quiz-score");
+            const pct = answeredCount > 0 ? Math.round((score / answeredCount) * 100) : 0;
+            scoreLbl.innerText = `得分: ${score} / ${answeredCount} (${pct}%)`;
+        }
+
+        function nextQuestion() {
+            if (currentIndex < allQuestions.length - 1) {
+                currentIndex++;
+                loadQuestion(currentIndex);
+            } else {
+                alert(`模擬測驗結束！您的最終得分是：${score} / ${allQuestions.length}！`);
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadQuestion(currentIndex);
+            }
+        }
+
+        // Table Trap Toggle Function
+        function toggleTrapDetail(id) {
+            const detailRow = document.getElementById(id);
+            if (detailRow.style.display === "table-row") {
+                detailRow.style.display = "none";
+            } else {
+                detailRow.style.display = "table-row";
+            }
+        }
+
+        // Smooth scroll for nav active state
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize quiz
+        allQuestions = shuffle([...allQuestionsData]);
+        window.onload = () => {
+            loadQuestion(0);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府採購法：履約管理及驗收 - 重點備考系統</title>
+    <meta name="description" content="政府採購專業人員考試必備！系統化提煉履約管理及驗收關鍵考點，包含數字密碼、是非陷阱對比與全功能離線模擬測驗。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #10b981; /* Emerald Green */
+            --accent-primary-glow: rgba(16, 185, 129, 0.15);
+            --accent-secondary: #f43f5e; /* Rose/Coral Red */
+            --accent-warning: #f59e0b; /* Amber */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow-green: 0 0 15px rgba(16, 185, 129, 0.3);
+            --glow-red: 0 0 15px rgba(244, 63, 94, 0.3);
+            --glow-warning: 0 0 15px rgba(245, 158, 11, 0.3);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Fixed Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-primary);
+            border-radius: 2px;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 9rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 30%, #a7f3d0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            background: rgba(31, 41, 55, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            backdrop-filter: blur(8px);
+            min-width: 150px;
+        }
+
+        .hero-stat .num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat .lbl {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .section-icon {
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        /* Board 1: Core Architecture Card Grid */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .arch-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-primary);
+            opacity: 0.7;
+        }
+
+        .arch-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.05);
+        }
+
+        .arch-card-icon {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .arch-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .arch-card ul {
+            list-style: none;
+        }
+
+        .arch-card li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .arch-card li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+        }
+
+        .arch-card strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Board 2: Number Codes Counters */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .num-card {
+            background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(31, 41, 55, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all var(--transition-speed);
+        }
+
+        .num-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px -5px rgba(245, 158, 11, 0.1);
+        }
+
+        .num-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+        }
+
+        .num-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .num-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Board 3: Trap Table */
+        .trap-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .trap-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .trap-table th {
+            background-color: rgba(31, 41, 55, 0.6);
+            padding: 1.15rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-row {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .trap-row:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .trap-row td {
+            padding: 1.25rem 1.5rem;
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        .trap-wrong {
+            color: var(--accent-secondary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trap-right {
+            color: var(--accent-primary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trap-detail {
+            background-color: rgba(17, 24, 39, 0.7);
+            display: none;
+            border-bottom: 1px solid var(--border-color);
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .trap-detail-content {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-warning);
+        }
+
+        .trap-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-warning);
+            margin-bottom: 0.50rem;
+            font-weight: 600;
+        }
+
+        /* Board 4: Classic Explanations */
+        .classic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .classic-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .classic-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .classic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .classic-num-lbl {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .classic-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .classic-law {
+            font-size: 0.8rem;
+            color: var(--accent-warning);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.25rem;
+            display: inline-block;
+        }
+
+        .classic-body {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 2px solid var(--text-muted);
+        }
+
+        .classic-exp {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-primary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* Interactive Quiz Section */
+        .quiz-container {
+            background-color: var(--bg-secondary);
+            border: 2px solid rgba(16, 185, 129, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .quiz-info {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-score-lbl {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-primary);
+            padding: 0.35rem 1rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+        }
+
+        .quiz-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1.15rem 1.25rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 1.4;
+        }
+
+        .quiz-option-btn:hover:not(:disabled) {
+            background-color: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(4px);
+        }
+
+        .quiz-option-btn.correct {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: var(--accent-primary) !important;
+            color: var(--accent-primary) !important;
+            font-weight: 700;
+            box-shadow: var(--glow-green);
+        }
+
+        .quiz-option-btn.wrong {
+            background-color: rgba(244, 63, 94, 0.15) !important;
+            border-color: var(--accent-secondary) !important;
+            color: var(--accent-secondary) !important;
+            font-weight: 700;
+            box-shadow: var(--glow-red);
+        }
+
+        .quiz-feedback {
+            background-color: rgba(31, 41, 55, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            display: none;
+            border-left: 4px solid var(--accent-warning);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .quiz-feedback h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent-warning);
+        }
+
+        .quiz-feedback p {
+            font-size: 0.92rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .quiz-nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+
+        .quiz-action-btn {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 500;
+        }
+
+        .quiz-action-btn:hover:not(:disabled) {
+            background-color: var(--bg-card);
+            border-color: var(--text-secondary);
+        }
+
+        .quiz-action-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .quiz-action-btn.primary-btn {
+            background-color: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            font-weight: 700;
+        }
+
+        .quiz-action-btn.primary-btn:hover {
+            background-color: #059669;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                gap: 0.75rem;
+                position: relative; /* 手機上取消固定定位，避免佔據有限的垂直空間 */
+            }
+            
+            nav {
+                gap: 1rem;
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                white-space: nowrap; /* 確保導覽列在手機上不會換行，形成美觀的水平滑動列 */
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            nav::-webkit-scrollbar {
+                height: 3px;
+            }
+            nav::-webkit-scrollbar-thumb {
+                background: var(--accent-primary);
+                border-radius: 2px;
+            }
+            
+            .hero {
+                padding: 3rem 1rem 1.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-stats {
+                gap: 0.75rem;
+            }
+            
+            .hero-stat {
+                padding: 0.5rem 1rem;
+                min-width: 100px;
+                flex: 1 1 30%;
+            }
+            
+            .hero-stat .num {
+                font-size: 1.25rem;
+            }
+            
+            .hero-stat .lbl {
+                font-size: 0.75rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            section {
+                margin-bottom: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.35rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .arch-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .arch-card {
+                padding: 1.25rem;
+            }
+            
+            .arch-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .arch-card li {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* 數字密碼改為精緻 2 欄 */
+            .number-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .num-card {
+                padding: 1.25rem 0.5rem;
+            }
+            
+            .num-val {
+                font-size: 2.25rem;
+            }
+            
+            .num-title {
+                font-size: 0.9rem;
+            }
+            
+            .num-desc {
+                font-size: 0.75rem;
+            }
+            
+            /* ⚠️ 是非題易錯文字陷阱表格 RWD 改良：將表格轉換為卡片流 */
+            .trap-table, .trap-table thead, .trap-table tbody, .trap-table th, .trap-table td, .trap-table tr {
+                display: block;
+            }
+            
+            .trap-table thead {
+                display: none; /* 隱藏表頭 */
+            }
+            
+            .trap-row {
+                border-bottom: none;
+                background: rgba(255, 255, 255, 0.01);
+                margin-bottom: 0.5rem;
+                border-radius: 8px 8px 0 0;
+                padding: 0.5rem 0;
+                border: 1px solid var(--border-color);
+            }
+            
+            .trap-row td {
+                padding: 0.65rem 1rem;
+                font-size: 0.88rem;
+            }
+            
+            .trap-row td:first-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            }
+            
+            .trap-wrong, .trap-right {
+                align-items: flex-start;
+                line-height: 1.4;
+            }
+            
+            .trap-detail {
+                background-color: rgba(17, 24, 39, 0.9);
+                margin-bottom: 1rem;
+                border-radius: 0 0 8px 8px;
+                border: 1px solid var(--border-color);
+                border-top: none;
+            }
+            
+            .trap-detail-content {
+                padding: 1rem 1.25rem;
+                font-size: 0.82rem;
+            }
+            
+            /* 模擬測驗區行動裝置適配 */
+            .quiz-container {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+            
+            .quiz-question {
+                font-size: 1.05rem;
+                margin-bottom: 1.25rem;
+                line-height: 1.5;
+            }
+            
+            .quiz-option-btn {
+                padding: 0.85rem 1rem;
+                font-size: 0.88rem;
+                border-radius: 8px;
+            }
+            
+            .quiz-feedback {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .quiz-feedback p {
+                font-size: 0.85rem;
+            }
+            
+            .quiz-nav-btns {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .quiz-action-btn {
+                width: 100%;
+                text-align: center;
+                padding: 0.85rem;
+            }
+            
+            .quiz-score-lbl {
+                font-size: 0.8rem;
+                padding: 0.25rem 0.75rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <span>PCC</span> 履約驗收備考系統
+        </div>
+        <nav>
+            <a href="#hero" class="active">主頁</a>
+            <a href="#arch">知識架構</a>
+            <a href="#numbers">數字密碼</a>
+            <a href="#traps">是非陷阱</a>
+            <a href="#classics">經典題庫</a>
+            <a href="#quiz">模擬測驗</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>政府採購法：履約管理及驗收</h1>
+        <p>精準提煉是非題、選擇題考點。提供最高質感的視覺享受與無後端依賴的互動式離線刷題系統。</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num">14 題</div>
+                <div class="lbl">經典選擇題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">97 題</div>
+                <div class="lbl">實務是非題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">111 題</div>
+                <div class="lbl">題庫完整收錄</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        
+        <!-- Board 1: Core Architecture -->
+        <section id="arch">
+            <h2 class="section-title"><span class="section-icon">🎯</span> 核心知識架構</h2>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div class="arch-card-icon">1</div>
+                    <h3>契約要項與範本原則</h3>
+                    <ul>
+                        <li><strong>範本原則</strong>：各類採購契約以採用主管機關（工程會）訂定之範本為原則（第63條）。</li>
+                        <li><strong>契約要項</strong>：不分中央或地方，均由主管機關定之（第63條）。</li>
+                        <li><strong>拘束力前提</strong>：契約要項必須經機關<strong>「實際擇訂於契約」</strong>，始對廠商具有法規拘束力。</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-icon">2</div>
+                    <h3>重大政策變更解約</h3>
+                    <ul>
+                        <li><strong>准駁權責</strong>：廠商依約履約反不符公共利益者，終止或解除部分或全部契約須報經<strong>「上級機關核准」</strong>（第64條）。</li>
+                        <li><strong>損失補償</strong>：應一併載明補償廠商因此所生之損失。</li>
+                        <li><strong>範圍限制</strong>：損失補償<strong>「不包括廠商之所失利益」</strong>（即預期可得之未履約部分利潤）。</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-icon">3</div>
+                    <h3>轉包與分包的界定與責任</h3>
+                    <ul>
+                        <li><strong>轉包（非法）</strong>：將契約中應自行履行之全部或主要部分，由其他廠商代為履行。<strong>轉包廠商併負連帶履行及賠償責任</strong>（第65, 66條）。</li>
+                        <li><strong>分包（合法）</strong>：非轉包而將契約之部分由其他廠商代為履行。得標廠商仍應負完全責任（第67條）。</li>
+                        <li><strong>請求權質權</strong>：得標廠商對機關之價金請求權得為權利質權之標的，<strong>無須機關同意</strong>即可設定（第68條）。</li>
+                        <li><strong>瑕疵連帶</strong>：分包契約報備且設定權利質權予分包商者，其分包瑕疵擔保責任由<strong>「得標與分包廠商連帶承擔」</strong>（第67條）。</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-icon">4</div>
+                    <h3>竣工與驗收期限限制</h3>
+                    <ul>
+                        <li><strong>核對竣工</strong>：廠商書面通知起 <strong>7日內</strong> 會同監造及廠商核對確定（第71條）。</li>
+                        <li><strong>有初驗程序</strong>：收受全部資料 <strong>30日內</strong> 初驗；初驗合格後 <strong>20日內</strong> 辦理驗收（第71條）。</li>
+                        <li><strong>無初驗程序</strong>：廠商備驗或可得驗收程序完成後 <strong>30日內</strong> 辦理驗收（第71條）。</li>
+                        <li><strong>特殊延期</strong>：有特殊情形必須延期者，應經<strong>「機關首長或其授權人員核准」</strong>（第71條）。</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-icon">5</div>
+                    <h3>驗收人員之防弊牽制</h3>
+                    <ul>
+                        <li><strong>主驗人</strong>：主持驗收程序、抽查驗核、決定不符之處置。<strong>最基層之承辦人員不得擔任</strong>，但直屬主管、承辦單位主管可以擔任。非編制內臨時人員<strong>不適宜擔任</strong>。</li>
+                        <li><strong>會驗人</strong>：接管或使用機關（單位）人員。</li>
+                        <li><strong>協驗人</strong>：設計、監造人員（主要負責協助說明，無主驗或會驗決定權）。</li>
+                        <li><strong>監驗人</strong>：會計、政風或監辦單位人員，負責監控程序的合法性。</li>
+                    </ul>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-icon">6</div>
+                    <h3>不符處置與減價收受</h3>
+                    <ul>
+                        <li><strong>限期改善</strong>：驗收不符應通知限期改善。契約未規定期限者，<strong>由主驗人定之</strong>（第72條）。</li>
+                        <li><strong>減價收受條件</strong>：不符項目非屬重要，且其他部分能先行使用並有先行使用之必要，經首長或授權人員核准。</li>
+                        <li><strong>底價與同意</strong>：減價收受之金額<strong>「無須訂定底價」</strong>，且<strong>「無須經廠商同意」</strong>（第72條）。</li>
+                        <li><strong>隱蔽拆驗</strong>：拆驗結果與契約不符者，拆修費用廠商負擔；相符者則由機關負擔。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board 2: Number Codes -->
+        <section id="numbers">
+            <h2 class="section-title"><span class="section-icon">🔢</span> 數字與時限密碼</h2>
+            <div class="number-grid">
+                <div class="num-card">
+                    <div class="num-val">7日</div>
+                    <div class="num-title">核對竣工時限</div>
+                    <div class="num-desc">收到廠商書面通知起會同監造核對竣工之期限。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">30日</div>
+                    <div class="num-title">辦理初驗時限</div>
+                    <div class="num-desc">工程竣工後，有初驗程序者，收受全部資料後辦理初驗期限。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">20日</div>
+                    <div class="num-title">初驗後驗收時限</div>
+                    <div class="num-desc">有初驗程序者，初驗合格後辦理正驗並作成紀錄的期限。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">30日</div>
+                    <div class="num-title">無初驗驗收時限</div>
+                    <div class="num-desc">無初驗程序者，接獲廠商通知備驗完成後辦理驗收期限。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">15日</div>
+                    <div class="num-title">付款與結算證明</div>
+                    <div class="num-desc">驗收合格後請款單據付款期限 / 填具結算驗收證明書期限。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">1次</div>
+                    <div class="num-title">文件補正上限</div>
+                    <div class="num-desc">廠商請款文件不符或不足時，機關通知澄清補正的次數上限。</div>
+                </div>
+                <div class="num-card">
+                    <div class="num-val">2契</div>
+                    <div class="num-title">連帶保證限制</div>
+                    <div class="num-desc">同一廠商同時作為各機關採購契約之連帶保證廠商上限為 2 契約。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board 3: Trap Table -->
+        <section id="traps">
+            <h2 class="section-title"><span class="section-icon">⚠️</span> 是非題易錯「文字陷阱」對比表</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">💡 溫馨提示：點擊下方表格任意一列，即可展開檢閱<b>【法規依據】</b>與<b>【錯題細緻剖析】</b>！</p>
+            <div class="trap-container">
+                <table class="trap-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 45%;">❌ 題庫常見錯誤敘述（答案為 X）</th>
+                            <th style="width: 55%;">⭕ 正確法規與實務觀念</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關不得於採購契約約定，廠商擬分包之項目及分包廠商須經機關審查。</td>
+                            <td><span class="trap-right">⭕</span> 機關得於採購契約約定，廠商擬分包之項目及分包廠商，機關得予審查。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第63條</div>
+                                    <p>本題考驗分包審查的任意約定權。機關可以視需要在契約中約定保留審查權，以維護履約品質，並非絕對「不得約定審查」。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關辦理採購，對於分包廠商履約之部分，得標廠商仍應負完全責任。但分包契約報備於機關者由分包廠商負責。</td>
+                            <td><span class="trap-right">⭕</span> 分包契約不論是否報備於機關，得標廠商對於分包部分仍應負完全責任。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第63條</div>
+                                    <p>得標廠商對於分包廠商履約之部分負「完全責任」，報備與否不影響得標廠商對機關的民事契約責任，不可因報備而轉嫁或免責。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 採購契約要項敘明應於契約內訂明者，機關如未擇訂於契約，仍屬有效，對訂約廠商有拘束力。</td>
+                            <td><span class="trap-right">⭕</span> 契約要項僅為指引，如未實際擇訂（寫入）於契約內，則不生效力，對廠商亦無拘束力。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第63條</div>
+                                    <p>採購契約要項必須經「擇訂於契約內」始具備拘束力。如果機關漏未訂明於契約，即便該要項明文寫著應訂明，仍對廠商無直接強制拘束力。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 依採購法規定，各類採購契約之要項，依其屬中央或地方，由主管機關、直轄市或縣（市）政府參考慣例定之。</td>
+                            <td><span class="trap-right">⭕</span> 採購契約要項不分中央或地方，一律由「主管機關」（即行政院公共工程委員會）參考慣例定之。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第63條</div>
+                                    <p>全國採購契約要項與範本具有統一性，故法明定「不分中央或地方」，其要項由「主管機關」統一制定，地方政府無權自行訂定要項。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 因政策變更終止或解除契約時，機關得經機關首長或其授權人員核准，且免補償廠商因此所生之損失。</td>
+                            <td><span class="trap-right">⭕</span> 政策變更終止或解除契約，機關必須報經「上級機關」核准，且「應」一併載明補償廠商因此所生之損失。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第64條</div>
+                                    <p>政策變更是重大行政決定，權責歸屬「上級機關核准」，且為保障廠商合法權益，法規強制要求必須補償損失（但不包括所失利益）。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 政策變更終止契約，補償廠商因此所生之損失包括其所失利益（預期可得利潤）。</td>
+                            <td><span class="trap-right">⭕</span> 補償廠商因此所生之損失，「不包括」其所失利益（即預期可得利潤）。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第64條</div>
+                                    <p>這是極高頻考點！因非廠商違約而係政策變更終止，雖要補償廠商的「既有實質損失」（所受損害及已履約支出），但「不補償」後續未履行部分的「預期利潤」（所失利益）。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 採購法第65條所稱主要部分，係指招標文件標價清單所列項目。</td>
+                            <td><span class="trap-right">⭕</span> 主要部分是指「招標文件標示為主要部分者」，或招標文件標示或依其他法規「應由得標廠商自行履行之部分」。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第65條</div>
+                                    <p>非標價清單之所有工項皆為主要部分，必須是由機關在招標文件中明確點名「此為主要部分不得分包」，或是法律明定必須自辦的部分（例如營造業之專任工程人員）。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 分包契約報備於機關者，分包部分之瑕疵擔保責任由分包廠商自行承擔，與得標廠商無涉。</td>
+                            <td><span class="trap-right">⭕</span> 若分包契約報備且「設定權利質權」予分包商，分包部分之瑕疵擔保責任由「得標廠商與分包廠商連帶承擔」。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第67條</div>
+                                    <p>即使將款項債權質權設定給分包廠商直撥，瑕疵擔保責任仍不可免除，法規強制規定「得標廠商與分包廠商併負連帶擔保責任」。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 得標廠商將採購專業部分或達公告金額之部分分包，非經機關備查不得為之。</td>
+                            <td><span class="trap-right">⭕</span> 機關「得視需要」在招標文件中訂明分包送備查，並非採購法強制一律規定非經備查不得分包。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第67條</div>
+                                    <p>分包是得標廠商的權利（除主要部分外）。採購法第67條規定機關「得」於招標文件規定備查，如無規定，廠商分包無須強制作備查登記。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 得標廠商就採購契約對機關之價金請求權，不得作為權利質權標的。但經機關同意者不在此限。</td>
+                            <td><span class="trap-right">⭕</span> 價金或報酬請求權得為權利質權之標的，此屬廠商之法定權利，無須採購機關之同意即可設定。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第68條</div>
+                                    <p>價金請求權之質權設定（例如向銀行融資或設定給分包商）為法律保障之債權讓與/質權設定自由，機關無權拒絕，亦無須機關事先同意。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關辦理採購之驗收，其會驗人員為設計、監造人員。</td>
+                            <td><span class="trap-right">⭕</span> 會驗人員為「接管或使用機關（單位）人員」。設計、監造人員為「協驗人員」。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第71條</div>
+                                    <p>驗收人員有四種：主驗人（主持及決定）、監驗人（會計政風實地監辦）、會驗人（使用接管機關確認項目）、協驗人（設計監造人員協助說明）。此角色不可混淆！</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 採購之驗收期限特殊必須延期者，由主驗人員決定之。</td>
+                            <td><span class="trap-right">⭕</span> 驗收延期必須報經「機關首長或其授權人員核准」，非主驗人權限，亦無須報上級機關。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第71條</div>
+                                    <p>主驗人僅主持驗收程序，決定是否合格。若涉及驗收時限的延長（特殊情況），屬於機關契約管理的行政裁量權，必須由機關首長或其授權人員核准。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關承辦採購單位之主管不得擔任所辦採購之主驗人或材料檢驗人。</td>
+                            <td><span class="trap-right">⭕</span> 「最基層之承辦人員」不得為主驗人；但承辦採購單位之直屬主管、單位主管皆「可以」擔任主驗人。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第71條</div>
+                                    <p>為落實利益衝突迴避與內部牽制，最基層承辦該案的經辦人員絕對不可自辦自驗。但為了機關運作，其直屬長官（如課長、科長、處長）非最基層經辦人，依法均得擔任主驗人。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關非依人事法規進用之臨時人員（如派遣或承攬人員），適宜擔任採購案主驗人員。</td>
+                            <td><span class="trap-right">⭕</span> 非依人事法規進用之臨時人員，不適宜擔任採購案之主驗人員。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">行政院工程會函釋 / 採購法第71條</div>
+                                    <p>主驗人依法代表機關行使公權力並做成行政決定，臨時人員或委外廠商人員非編制內具備公務員身分或編制內職員，承擔責任有限，故「不適宜」擔任主驗人。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關辦理小額工程、財物採購，得免辦理驗收。</td>
+                            <td><span class="trap-right">⭕</span> 小額採購（十萬元以下）得備具書面憑證「採書面驗收，免辦理現場查驗」，但仍須辦理書面驗收，絕不可「免辦驗收」。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第71條</div>
+                                    <p>所有公帑支出皆須驗收。小額採購僅是簡化程序為「書面驗收」代替「實地現場查驗」，程序依然是驗收，不可以完全不做驗收就付款。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 辦理減價收受，必須依採購法第46條規定訂定底價，且尚須經廠商同意後方得辦理。</td>
+                            <td><span class="trap-right">⭕</span> 減價收受「無須訂定底價」，亦「無須經廠商同意」，可由機關逕行依規定計算並經首長核准後辦理。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第72條</div>
+                                    <p>減價收受是驗收不符時的替代救濟措施，減價金額非招標底價，故無須訂底價；且此為機關對廠商瑕疵履約之單方處置（扣款），無須廠商同意即可辦理。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關辦理部分驗收或先行使用，該部分價金得先行支付，但保固期間仍必須自全部驗收合格之日起算。</td>
+                            <td><span class="trap-right">⭕</span> 部分驗收或先行使用之部分，不僅得支付該部分價金，保固期間亦「得就該部分起算」。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第72條</div>
+                                    <p>為了公平原則，已經先行驗收並由機關接管使用的部分，折舊與保固責任應即時起算，不應強迫廠商等候其他尚未完工部分而延遲起算保固。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                        <tr class="trap-row" onclick="toggleTrapDetail(this)">
+                            <td><span class="trap-wrong">❌</span> 機關辦理付款及審核程序之法定時限，除契約另有約定外，付款及審核期限包括例假日及特定假日。</td>
+                            <td><span class="trap-right">⭕</span> 付款及審核期限（如15日）係指「實際工作日」，不包括例假日、特定假日及退請受款人補正之日數。</td>
+                        </tr>
+                        <tr class="trap-detail">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <div class="trap-tag">政府採購法第73條</div>
+                                    <p>採購法為保護廠商資金調度，規定了付款與審核的嚴格天數，但為配合機關辦公，這些天數全部以「工作日」計算，扣除例假日與因廠商文件錯誤退件補正的公文往返天數。</p>
+                                </div>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Board 4: Classic Explanations -->
+        <section id="classics">
+            <h2 class="section-title"><span class="section-icon">📝</span> 精選經典題解析</h2>
+            <div class="classic-grid">
+    
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">MCQ_1</span>
+                        <div class="classic-title">政策變更終止契約之核定權責</div>
+                        <div class="classic-law">政府採購法第64條</div>
+                    </div>
+                    <p style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">採購契約得訂明因政策變更，廠商依契約繼續履行反而不符公共利益者，得終止或解除部分或全部契約，但應報經核准之權責為？</p>
+                    <div class="classic-body">
+                        <div>(1) 經機關首長或授權人員核准</div><div>(2) 經上級機關核准</div><div>(3) 經主管機關核准</div><div>(4) 經審計單位核准</div>
+                    </div>
+                    <div class="classic-exp">
+                        <strong style="color: var(--accent-primary);">標準答案：(2)</strong><br>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary); display: inline-block; margin-top: 0.5rem;">此為法定重大契約終止權。為避免基層機關任意以政策變更為由片面解約損害廠商權益，採購法第64條規定，必須報經「上級機關」核准始得為之。同時必須補償廠商所生損失，但不含預期利益。</span>
+                    </div>
+                </div>
+        
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">MCQ_6</span>
+                        <div class="classic-title">分包廠商直撥價金（請求權設定質權）條件</div>
+                        <div class="classic-law">政府採購法第67條第2項</div>
+                    </div>
+                    <p style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">分包廠商及於得標廠商對於機關之價金或報酬請求權之條件？</p>
+                    <div class="classic-body">
+                        <div>(1) 分包契約報備於採購機關，並經得標廠商就分包部分設定權利質權予分包廠商者。</div><div>(2) 分包契約報備於採購機關，或經得標廠商就分包部分設定權利質權予分包廠商者。</div><div>(3) 載明分包廠商者。</div><div>(4) 分包契約報備於採購機關，並經機關同意者。</div>
+                    </div>
+                    <div class="classic-exp">
+                        <strong style="color: var(--accent-primary);">標準答案：(1)</strong><br>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary); display: inline-block; margin-top: 0.5rem;">分包商要獲得直撥價金的安全保障，法規規定必須「雙重條件同時滿足」：一、分包契約必須「報備」於採購機關；二、得標廠商必須將該分包部分之價金請求權「設定權利質權」予分包商。這也是銀行或分包商融資的實務常客。</span>
+                    </div>
+                </div>
+        
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">MCQ_8</span>
+                        <div class="classic-title">主驗人與檢驗人員迴避資格</div>
+                        <div class="classic-law">政府採購法第71條第3項</div>
+                    </div>
+                    <p style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">下列何者不得為所辦採購之主驗人或樣品及材料之檢驗人？</p>
+                    <div class="classic-body">
+                        <div>(1) 機關總務人員</div><div>(2) 該採購案件最基層之承辦人員</div><div>(3) 需求單位人員</div><div>(4) 承辦採購單位之主管</div>
+                    </div>
+                    <div class="classic-exp">
+                        <strong style="color: var(--accent-primary);">標準答案：(2)</strong><br>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary); display: inline-block; margin-top: 0.5rem;">基於「承辦與驗收分立」原則，避免球員兼裁判，承辦該採購案「最基層之經辦人員」絕對不可以擔任主驗人或材料檢驗人。但承辦單位的「主管」（如科長、主任）並不在此限，依法可以擔任主驗人。</span>
+                    </div>
+                </div>
+        
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">MCQ_12</span>
+                        <div class="classic-title">先行使用與保固起算</div>
+                        <div class="classic-law">政府採購法第72條</div>
+                    </div>
+                    <p style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">下列何者錯誤？</p>
+                    <div class="classic-body">
+                        <div>(1) 機關依採購法第72條第1項辦理部分驗收，其所支付之部分價金，以支付該部分驗收項目者為限，並得視不符部分之情形酌予保留。</div><div>(2) 機關辦理採購，有部分先行使用之必要或已履約之部分有減損滅失之虞者，應先就該部分辦理驗收或分段查驗供驗收之用。</div><div>(3) 機關依採購法第72條第1項通知廠商限期改善、拆除、重作或換貨之限期，應於契約預先規定。</div><div>(4) 結算驗收證明書或其他類似文件，除有特殊情形經核准者外，機關應於驗收完畢後15日內填具。</div>
+                    </div>
+                    <div class="classic-exp">
+                        <strong style="color: var(--accent-primary);">標準答案：(3)</strong><br>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary); display: inline-block; margin-top: 0.5rem;">驗收不符時限期改善的期限，如果契約「有規定」依契約；如果契約「沒有規定」，則由「主驗人」在驗收現場裁定合理改善期限，並不需要強制在契約中預先規定。因此選項 (3) 敘述是錯誤的。</span>
+                    </div>
+                </div>
+        
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <span class="classic-num-lbl">MCQ_13</span>
+                        <div class="classic-title">付款付款及審核程序限制</div>
+                        <div class="classic-law">政府採購法第73-1條</div>
+                    </div>
+                    <p style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">依採購法規定，機關辦理工程採購之付款及審核程序，下列何者有誤？</p>
+                    <div class="classic-body">
+                        <div>(1) 驗收付款者，機關應於接到廠商請款單據後，15日內付款。</div><div>(2) 機關應在廠商提出相關文件及付款單據後，如發現有文件不符、不足或有疑義者，通知廠商澄清或補正之次數不得超過1次。</div><div>(3) 機關不得於契約另為約定。</div><div>(4) 定期估驗或分階段付款者，機關應於廠商提出估驗或階段完成之證明文件後，15日內完成審核程序。</div>
+                    </div>
+                    <div class="classic-exp">
+                        <strong style="color: var(--accent-primary);">標準答案：(3)</strong><br>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary); display: inline-block; margin-top: 0.5rem;">本題法源為第73-1條。法規明文規定，機關辦理付款及審核程序，「除契約另有約定外」，應符合15日付款/審核的規定。因此選項 (3) 宣稱「機關不得於契約另為約定」是錯誤的，機關與廠商其實可以在契約中另行約定付款時限（例如因預算撥付時程等特殊原因）。</span>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz">
+            <h2 class="section-title"><span class="section-icon">⚔️</span> 離線自包含模擬測驗系統</h2>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-info">
+                        <span id="quiz-question-type" style="font-weight: 700; color: var(--accent-warning); margin-right: 0.5rem;">[是非題]</span>
+                        <span>題號：</span><span id="quiz-current-num" style="font-weight: 700;">1</span> / <span id="quiz-total-num">111</span>
+                    </div>
+                    <div class="quiz-score-lbl">
+                        目前得分：<span id="quiz-score">0</span> / <span id="quiz-attempted">0</span> (答對率 <span id="quiz-rate">0%</span>)
+                    </div>
+                </div>
+                
+                <div id="quiz-question-text" class="quiz-question">
+                    加載題目中...
+                </div>
+                
+                <div id="quiz-options-container" class="quiz-options">
+                    <!-- Options injected dynamically by JS -->
+                </div>
+                
+                <div id="quiz-feedback-box" class="quiz-feedback">
+                    <h4 id="quiz-feedback-title">解析說明</h4>
+                    <p id="quiz-feedback-text">解析內容...</p>
+                </div>
+                
+                <div class="quiz-nav-btns">
+                    <button class="quiz-action-btn" id="quiz-prev-btn" onclick="prevQuestion()" disabled>上一題</button>
+                    <button class="quiz-action-btn" id="quiz-shuffle-btn" onclick="restartQuiz()" style="border-color: var(--accent-warning); color: var(--accent-warning);">隨機打亂重測</button>
+                    <button class="quiz-action-btn primary-btn" id="quiz-next-btn" onclick="nextQuestion()">下一題</button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>PCC 採購專業人員考試 - 履約管理及驗收重點備考系統</p>
+        <p style="font-size: 0.75rem; opacity: 0.5;">完全離線運行 • 100% 依據最新公共工程委員會標準題庫</p>
+    </footer>
+
+    <script>
+        // 摺疊是非文字陷阱表格
+        function toggleTrapDetail(row) {
+            const nextRow = row.nextElementSibling;
+            if (nextRow && nextRow.classList.contains('trap-detail')) {
+                const isVisible = nextRow.style.display === 'table-row';
+                
+                // 關閉所有其他展開的列
+                document.querySelectorAll('.trap-detail').forEach(el => el.style.display = 'none');
+                
+                if (!isVisible) {
+                    nextRow.style.display = 'table-row';
+                }
+            }
+        }
+
+        // 滾動導覽主動高亮 (Scroll Spy)
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        // ==========================================
+        // 模擬測驗系統 JavaScript 邏輯 (Fisher-Yates)
+        // ==========================================
+        const originTfs = [{"id": "tf_1", "num": 1, "ans": "O", "question": "依採購法規定，各類採購契約以採用主管機關訂定之範本為原則， 其要項及內容由主管機關參考國際及國內慣例定之。", "law": "第 63 條"}, {"id": "tf_2", "num": 2, "ans": "X", "question": "機關不得於採購契約約定，廠商擬分包之項目及分包廠商須經機關 審查。", "law": "第 63 條"}, {"id": "tf_3", "num": 3, "ans": "O", "question": "機關得於採購契約約定，廠商擬分包之項目及分包廠商，機關得予 審查。", "law": "第 63 條"}, {"id": "tf_4", "num": 4, "ans": "O", "question": "國內汽柴油價格之調整，非屬採購契約要項第38點第1項第3款所稱 「政府管制費率之變更」。", "law": "第 63 條"}, {"id": "tf_5", "num": 5, "ans": "O", "question": "依採購法規定，各類採購契約之要項，不分中央或地方，由主管機 關參考國際及國內慣例定之。", "law": "第 63 條"}, {"id": "tf_6", "num": 6, "ans": "X", "question": "機關辦理採購，對於分包廠商履約之部分，得標廠商仍應負完全責 任。但分包契約報備於機關者由分包廠商負責。", "law": "第 63 條"}, {"id": "tf_7", "num": 7, "ans": "O", "question": "機關應於招標文件規定，一方執行錯誤、不實或管理不善，致他方 遭受損害者，應負賠償責任。", "law": "第 63 條"}, {"id": "tf_8", "num": 8, "ans": "O", "question": "採購契約要項內容，由機關依採購之特性及實際需要擇訂於契約。", "law": "第 63 條"}, {"id": "tf_9", "num": 9, "ans": "X", "question": "採購契約要項敘明應於契約內訂明者，機關如未擇訂於契約，仍屬 有效，對訂約廠商有拘束力。", "law": "第 63 條"}, {"id": "tf_10", "num": 10, "ans": "X", "question": "依採購法規定，各類採購契約之要項，依其屬中央或地方，由主管 機關、直轄市或縣（市）政府參考國際及國內慣例定之。", "law": "第 63 條"}, {"id": "tf_11", "num": 11, "ans": "X", "question": "國內汽柴油價格之調整，屬採購契約要項第38點第1項第3款所稱 「政府管制費率之變更」。", "law": "第 63 條"}, {"id": "tf_12", "num": 12, "ans": "O", "question": "機關依採購法第64條於契約訂明因政策變更而為終止或解除部分或 全部契約之處置者，應一併載明其「補償廠商因此所生之損失」， 不包括所失利益。", "law": "第 64 條"}, {"id": "tf_13", "num": 13, "ans": "X", "question": "採購契約得訂明因政策變更，廠商依契約繼續履行反而不符公共利 益者，得經機關首長或其授權人員核准，終止或解除部分或全部契 約，並補償廠商因此所生之損失。", "law": "第 64 條"}, {"id": "tf_14", "num": 14, "ans": "X", "question": "機關依採購法第64條於契約訂明因政策變更而為終止或解除部分或 全部契約之處置者，應一併載明其「補償廠商因此所生之損失」， 包括其所失利益。", "law": "第 64 條"}, {"id": "tf_15", "num": 15, "ans": "O", "question": "採購契約得訂明因政策變更，廠商依契約繼續履行反而不符公共利 益者，機關得報經上級機關核准，終止或解除部分或全部契約，並 補償廠商因此所生之損失。", "law": "第 64 條"}, {"id": "tf_16", "num": 16, "ans": "X", "question": "採購契約得訂明因政策變更，廠商依契約繼續履行反而不符公共利 益者，機關得報經上級機關核准，終止或解除部分或全部契約；但 免補償廠商因此所生之損失。", "law": "第 64 條"}, {"id": "tf_17", "num": 17, "ans": "X", "question": "依其他法規規定應由廠商自行履行之部分，如未於招標文件標示為 主要部分或應由得標廠商自行履約之部分，由其他廠商代為履行， 違反其他法規規定，但不構成採購法所稱轉包。", "law": "第 65 條"}, {"id": "tf_18", "num": 18, "ans": "O", "question": "採購法所稱轉包，指將原契約中應自行履行之全部或其主要部分， 由其他廠商代為履行。", "law": "第 65 條"}, {"id": "tf_19", "num": 19, "ans": "O", "question": "獨資商號承攬機關採購案，於履約過程中負責人變更，如符合民法 第305條所定「營業概括承受」之情形，其讓與人2年內對機關負連 帶責任，且屬民法所定毋須待契約相對人同意之制度，而與轉包及 契約轉讓有別，非屬採購契約要項第23點所稱契約轉讓，亦不構成 採購法第65條所定之轉包。", "law": "第 65 條"}, {"id": "tf_20", "num": 20, "ans": "X", "question": "採購法所稱分包，指將招標文件標示應自行履行之部分，由其他廠 商代為履行。", "law": "第 65 條"}, {"id": "tf_21", "num": 21, "ans": "X", "question": "採購法第65條所稱主要部分係指招標文件標價清單所列項目。", "law": "第 65 條"}, {"id": "tf_22", "num": 22, "ans": "O", "question": "得標廠商應自行履行機關之工程、勞務契約，不得轉包。", "law": "第 65 條"}, {"id": "tf_23", "num": 23, "ans": "O", "question": "機關辦理採購，得標廠商違反規定轉包其他廠商時，機關得解除契 約、終止契約或沒收保證金，並得要求損害賠償。", "law": "第 66 條"}, {"id": "tf_24", "num": 24, "ans": "X", "question": "得標廠商轉包其他廠商時，機關得解除契約、終止契約或沒收保證 金，並得要求損害賠償，與轉包廠商無涉。", "law": "第 66 條"}, {"id": "tf_25", "num": 25, "ans": "O", "question": "得標廠商轉包其他廠商時，機關得解除契約、終止契約或沒收保證 金，並得要求損害賠償，轉包廠商併負連帶履行及賠償責任。", "law": "第 66 條"}, {"id": "tf_26", "num": 26, "ans": "X", "question": "機關辦理採購，得標廠商更換分包廠商而未向機關報備者，機關應 解除契約、終止契約或沒收保證金，並得要求損害賠償。", "law": "第 66 條"}, {"id": "tf_27", "num": 27, "ans": "X", "question": "分包契約報備於採購機關，並經得標廠商就分包部分設定權利質權 予分包廠商者，其分包部分之瑕疵擔保責任，由分包廠商自行承 擔。", "law": "第 67 條"}, {"id": "tf_28", "num": 28, "ans": "X", "question": "採購法稱分包者，謂將契約之全部或一部由其他廠商代為履行。", "law": "第 67 條"}, {"id": "tf_29", "num": 29, "ans": "O", "question": "採購法稱分包者，謂非轉包而將契約之部分由其他廠商代為履行。", "law": "第 67 條"}, {"id": "tf_30", "num": 30, "ans": "O", "question": "分包契約報備於採購機關，並經得標廠商就分包部分設定權利質權 予分包廠商者，其分包部分之瑕疵擔保責任，由得標廠商與分包廠 商連帶承擔。", "law": "第 67 條"}, {"id": "tf_31", "num": 31, "ans": "X", "question": "得標廠商將採購專業部分或達公告金額之部分分包，非經機關備查 不得為之。", "law": "第 67 條"}, {"id": "tf_32", "num": 32, "ans": "O", "question": "得標廠商就採購契約對於機關之價金或報酬請求權，其全部或一部 得為權利質權之標的。", "law": "第 68 條"}, {"id": "tf_33", "num": 33, "ans": "X", "question": "得標廠商就採購契約對於機關之價金或報酬請求權，不得作為權利 質權之標的。但經採購機關同意者，不在此限。", "law": "第 68 條"}, {"id": "tf_34", "num": 34, "ans": "O", "question": "除採購契約另有規定者外，機關應於收到廠商書面通知之日起7日 內會同監造單位及廠商，依據契約、圖說或貨樣核對竣工之項目及 數量，確定是否竣工；廠商未依機關通知派代表參加者，仍得予確 定。", "law": "第 71 條"}, {"id": "tf_35", "num": 35, "ans": "X", "question": "機關辦理採購，其會驗人員，為設計、監造人員。", "law": "第 71 條"}, {"id": "tf_36", "num": 36, "ans": "X", "question": "採購之驗收，無初驗程序者，除契約另有規定者外，機關應於接獲 廠商通知備驗或可得驗收之程序完成後20日內辦理驗收，並作成驗 收紀錄。", "law": "第 71 條"}, {"id": "tf_37", "num": 37, "ans": "O", "question": "採購之驗收，無初驗程序者，除契約另有規定者外，機關應於接獲 廠商通知備驗或可得驗收之程序完成後30日內辦理驗收，並作成驗 收紀錄。", "law": "第 71 條"}, {"id": "tf_38", "num": 38, "ans": "O", "question": "採購之驗收，有初驗程序者，初驗合格後，除契約另有規定者外， 機關應於20日內辦理驗收，並作成驗收紀錄。", "law": "第 71 條"}, {"id": "tf_39", "num": 39, "ans": "X", "question": "採購之驗收，有初驗程序者，初驗合格後，除契約另有規定者外， 機關應於30日內辦理驗收，並作成驗收紀錄。", "law": "第 71 條"}, {"id": "tf_40", "num": 40, "ans": "X", "question": "機關非依人事法規進用之臨時人員適宜為採購案之主驗人員。", "law": "第 71 條"}, {"id": "tf_41", "num": 41, "ans": "O", "question": "機關承辦採購單位之人員不得為所辦採購之主驗人或樣品及材料之 檢驗人。", "law": "第 71 條"}, {"id": "tf_42", "num": 42, "ans": "X", "question": "廠商不得於竣工日前，即將預定竣工日期書面通知監造單位及機 關。", "law": "第 71 條"}, {"id": "tf_43", "num": 43, "ans": "O", "question": "機關辦理採購，其會驗人員，為接管或使用機關(單位)人員。", "law": "第 71 條"}, {"id": "tf_44", "num": 44, "ans": "O", "question": "機關辦理勞務採購之驗收，以書面或召開審查會方式辦理者，其書 面驗收文件或審查會紀錄，得視為驗收紀錄。", "law": "第 71 條"}, {"id": "tf_45", "num": 45, "ans": "X", "question": "機關辦理勞務採購之驗收，以書面或召開審查會方式辦理者，其書 面驗收文件或審查會紀錄，不得視為驗收紀錄。", "law": "第 71 條"}, {"id": "tf_46", "num": 46, "ans": "O", "question": "採購法第71條第3項所稱「承辦採購單位之人員」，指機關辦理該 採購案件最基層之承辦人員。", "law": "第 71 條"}, {"id": "tf_47", "num": 47, "ans": "X", "question": "採購法第71條第3項所稱「承辦採購單位之人員」，除指機關辦理 該採購案件最基層之承辦人員外，亦包括其直屬之主管。", "law": "第 71 條"}, {"id": "tf_48", "num": 48, "ans": "X", "question": "採購之驗收期限，其有特殊情形必須延期者，由主驗人員規定之。", "law": "第 71 條"}, {"id": "tf_49", "num": 49, "ans": "X", "question": "機關辦理採購，主驗人員為主持驗收程序，抽查驗核廠商履約結果 有無與契約、圖說或貨樣規定不符，並決定不符時之處置。但採購 事項單純者得免之。", "law": "第 71 條"}, {"id": "tf_50", "num": 50, "ans": "X", "question": "機關承辦採購單位之主管不得為所辦採購之主驗人或樣品及材料之 檢驗人。", "law": "第 71 條"}, {"id": "tf_51", "num": 51, "ans": "O", "question": "機關辦理採購，以書面憑證採書面分批或部分驗收，於各批或全部 驗收完成後，應將各批或全部驗收結果彙總填具結算驗收證明書。", "law": "第 71 條"}, {"id": "tf_52", "num": 52, "ans": "X", "question": "機關辦理採購，以書面憑證採書面分批或部分驗收，應就各批或部 分驗收結果分別填具結算驗收證明書。", "law": "第 71 條"}, {"id": "tf_53", "num": 53, "ans": "O", "question": "工程竣工後，除契約另有規定者外，有初驗程序者，機關應於收受 全部資料之日起30日內辦理初驗，並作成初驗紀錄。", "law": "第 71 條"}, {"id": "tf_54", "num": 54, "ans": "X", "question": "工程竣工後，除契約另有規定者外，有初驗程序者，機關應於收受 全部資料之日起20日內辦理初驗，並作成初驗紀錄。", "law": "第 71 條"}, {"id": "tf_55", "num": 55, "ans": "O", "question": "機關辦理工程、財物採購，應限期辦理驗收，並得辦理部分驗收。 勞務採購準用之。", "law": "第 71 條"}, {"id": "tf_56", "num": 56, "ans": "X", "question": "機關辦理工程、勞務採購，應限期辦理驗收，並得辦理部分驗收。 財物採購準用之。", "law": "第 71 條"}, {"id": "tf_57", "num": 57, "ans": "O", "question": "機關辦理小額工程、財物採購之驗收，得由承辦採購單位備具書面 憑證採書面驗收，免辦理現場查驗。", "law": "第 71 條"}, {"id": "tf_58", "num": 58, "ans": "X", "question": "機關辦理小額工程、財物採購，得免辦理驗收。", "law": "第 71 條"}, {"id": "tf_59", "num": 59, "ans": "O", "question": "採購之驗收期限，其有特殊情形必須延期者，應經機關首長或其授 權人員核准。", "law": "第 71 條"}, {"id": "tf_60", "num": 60, "ans": "X", "question": "採購之驗收期限，其有特殊情形必須延期者，應報經上級機關核 准。", "law": "第 71 條"}, {"id": "tf_61", "num": 61, "ans": "O", "question": "廠商應於機關工程採購之預定竣工日前或竣工當日，將竣工日期書 面通知監造單位及機關。", "law": "第 71 條"}, {"id": "tf_62", "num": 62, "ans": "X", "question": "除採購契約另有規定者外，機關應於收到廠商書面通知之日起7日 內會同監造單位及廠商，依據契約、圖說或貨樣核對竣工之項目 及數量，確定是否竣工；廠商未依機關通知派代表參加者，不得確 定。", "law": "第 71 條"}, {"id": "tf_63", "num": 63, "ans": "X", "question": "機關辦理採購之驗收結果與規定不符者，得視情形免通知廠商限期 改善、拆除、重作、退貨或換貨。", "law": "第 72 條"}, {"id": "tf_64", "num": 64, "ans": "O", "question": "機關辦理採購之驗收結果與規定不符者，應通知廠商限期改善、拆 除、重作、退貨或換貨。", "law": "第 72 條"}, {"id": "tf_65", "num": 65, "ans": "O", "question": "機關辦理採購，其辦理減價收受之減價計算方式，依契約規定。契 約未規定者，得就不符項目，依契約價金、市價、額外費用、所受 損害或懲罰性違約金等，計算減價金額。", "law": "第 72 條"}, {"id": "tf_66", "num": 66, "ans": "X", "question": "機關辦理採購，其辦理減價收受之減價計算方式，依契約規定。契 約未規定者，不得為之。", "law": "第 72 條"}, {"id": "tf_67", "num": 67, "ans": "O", "question": "機關依採購法第72條第1項規定通知廠商限期改善之期間長短，如 契約未規定，由主驗人定之。", "law": "第 72 條"}, {"id": "tf_68", "num": 68, "ans": "X", "question": "機關依採購法第72條第1項規定通知廠商限期改善之期間，如已於 契約預先約定，主驗人於驗收時得視個案情形更改。", "law": "第 72 條"}, {"id": "tf_69", "num": 69, "ans": "O", "question": "契約雖然未規定機關得辦理部分驗收，機關仍得視需要為之，並就 該驗收之部分支付部分價金。如有就一部分提前使用之必要，應先 就該部分辦理驗收或分段查驗供驗收之用。", "law": "第 72 條"}, {"id": "tf_70", "num": 70, "ans": "X", "question": "契約雖然未規定機關得辦理部分驗收，機關仍得視需要為之，但不 得先就該驗收部分支付部分價金。", "law": "第 72 條"}, {"id": "tf_71", "num": 71, "ans": "O", "question": "機關製作採購之驗收紀錄，應由辦理驗收人員會同簽認。有監驗人 員或有廠商代表參加者，亦應會同簽認。", "law": "第 72 條"}, {"id": "tf_72", "num": 72, "ans": "X", "question": "機關製作採購之驗收紀錄，應由辦理驗收人員會同簽認。有廠商代 表參加者，廠商代表則免簽認。", "law": "第 72 條"}, {"id": "tf_73", "num": 73, "ans": "O", "question": "採購之驗收不符規定而機關通知廠商限期改善、拆除、重作或換 貨，廠商於期限內完成者，機關應再行辦理驗收。", "law": "第 72 條"}, {"id": "tf_74", "num": 74, "ans": "X", "question": "採購之驗收不符規定而機關通知廠商限期改善、拆除、重作或換 貨，廠商於期限內完成者，機關免再行辦理驗收。", "law": "第 72 條"}, {"id": "tf_75", "num": 75, "ans": "O", "question": "機關辦理採購之驗收結果不符部分非屬重要，而其他部分能先行使 用，並經檢討認有先行使用必要者，得經機關首長或其授權人員核 准，就其他部分辦理驗收並支付部分價金。", "law": "第 72 條"}, {"id": "tf_76", "num": 76, "ans": "X", "question": "機關辦理採購之驗收結果不符部分非屬重要，而其他部分能先行使 用，並經檢討認有先行使用必要者，得經主驗人員同意，就其他部 分辦理驗收並支付部分價金。", "law": "第 72 條"}, {"id": "tf_77", "num": 77, "ans": "O", "question": "採購之驗收不符規定而機關通知廠商限期改善者，其期限依契約規 定，契約未規定者，由主驗人定之。", "law": "第 72 條"}, {"id": "tf_78", "num": 78, "ans": "X", "question": "採購之驗收不符規定而機關通知廠商限期改善者，其期限依契約規 定，契約未規定者，不得為之。", "law": "第 72 條"}, {"id": "tf_79", "num": 79, "ans": "O", "question": "機關採購之驗收人對工程或財物隱蔽部分拆驗或化驗者，其拆除、 修復或化驗費用之負擔，依契約規定。契約未規定者，拆驗或化驗 結果與契約規定不符，該費用由廠商負擔；與規定相符者，該費用 由機關負擔。", "law": "第 72 條"}, {"id": "tf_80", "num": 80, "ans": "X", "question": "機關採購之驗收人對工程或財物隱蔽部分拆驗或化驗者，其拆除、 修復或化驗費用之負擔，依契約規定。契約未規定者，概由機關負 擔。", "law": "第 72 條"}, {"id": "tf_81", "num": 81, "ans": "X", "question": "辦理部分驗收，應以契約規定得部分驗收者為限。", "law": "第 72 條"}, {"id": "tf_82", "num": 82, "ans": "X", "question": "機關製作採購之驗收紀錄，屬機關內部文件，不得有廠商代表簽 認。", "law": "第 72 條"}, {"id": "tf_83", "num": 83, "ans": "X", "question": "機關辦理採購，有部分先行使用之必要者，應先就該部分辦理驗收 或分段查驗供驗收之用。至於該部分價金，不得先行支付。", "law": "第 72 條"}, {"id": "tf_84", "num": 84, "ans": "X", "question": "機關辦理採購，有部分先行使用之必要或已履約之部分有減損滅失 之虞者，得先就該部分辦理驗收或分段查驗供驗收之用，並得就該 部分支付價金及起算保固期間。但以契約有規定者為限。", "law": "第 72 條"}, {"id": "tf_85", "num": 85, "ans": "O", "question": "機關依採購法第72條規定辦理減價收受，其減價之金額，尚無須依 採購法第46條規定訂定底價。", "law": "第 72 條"}, {"id": "tf_86", "num": 86, "ans": "O", "question": "機關驗收結果與契約規定不符，依採購法第72條規定於必要時辦理 減價收受者，尚無須經廠商同意。", "law": "第 72 條"}, {"id": "tf_87", "num": 87, "ans": "X", "question": "機關驗收結果與契約規定不符，依採購法第72條規定於必要時辦理 減價收受者，尚須經廠商同意後，方得辦理。", "law": "第 72 條"}, {"id": "tf_88", "num": 88, "ans": "O", "question": "機關辦理採購，有部分先行使用之必要或已履約之部分有減損滅失 之虞者，應先就該部分辦理驗收或分段查驗供驗收之用，並得就該 部分支付價金及起算保固期間。", "law": "第 72 條"}, {"id": "tf_89", "num": 89, "ans": "X", "question": "機關辦理採購，有部分先行使用之必要或已履約之部分有減損滅失 之虞者，應先就該部分辦理驗收或分段查驗供驗收之用，並得就該 部分支付價金。但保固期間之起算仍應自全部驗收之日起算。", "law": "第 72 條"}, {"id": "tf_90", "num": 90, "ans": "X", "question": "機關依採購法第72條規定辦理減價收受，其減價之金額，尚須依採 購法第46條規定訂定底價。", "law": "第 72 條"}, {"id": "tf_91", "num": 91, "ans": "X", "question": "機關辦理付款及審核程序，除契約另有約定外，依採購法規定，其 付款及審核期限包括例假日、特定假日。", "law": "第 73 條"}, {"id": "tf_92", "num": 92, "ans": "O", "question": "公告金額以上之工程或財物採購於驗收後，符合公用事業依一定費 率所供應之財物或其他經主管機關認定之情形者，免填具結算驗收 證明書。", "law": "第 73 條"}, {"id": "tf_93", "num": 93, "ans": "X", "question": "公告金額以上之財物採購於驗收後，屬公用事業依一定費率所供應 之財物者，應填具結算驗收證明書或其他類似文件。", "law": "第 73 條"}, {"id": "tf_94", "num": 94, "ans": "O", "question": "機關開具之結算驗收證明書應由驗收及監驗人員分別簽認，並加蓋 機關印信。", "law": "第 73 條"}, {"id": "tf_95", "num": 95, "ans": "X", "question": "機關開具之結算驗收證明書，蓋機關印信免由主驗或監驗人員簽 認。", "law": "第 73 條"}, {"id": "tf_96", "num": 96, "ans": "X", "question": "機關辦理驗收時得視案件性質免製作紀錄。", "law": "第 73 條"}, {"id": "tf_97", "num": 97, "ans": "O", "question": "機關辦理付款及審核程序，除契約另有約定外，依採購法規定，其 付款及審核期限，係指實際工作日，不包括例假日、特定假日及退 請受款人補正之日數。", "law": "第 73 條"}];
+        const originMcqs = [{"id": "mcq_1", "num": 1, "ans": 2, "question": "採購契約得訂明因政策變更，廠商依契約繼續履行反而不符公共利 益者，得終止或解除部分或全部契約，但應報經核准之權責為？", "options": ["經機關首長或授權人員核准。", "經上級機關核准。", "經主 管機關核准。", "經審計單位核准。"], "law": "第 64 條"}, {"id": "mcq_2", "num": 2, "ans": 1, "question": "機關得於招標文件中規定，違反採購法第65條規定轉包者，廠商所 繳納之何種比率履約保證金（含其孳息）不予發還？", "options": ["全部。", "轉包部分。", "已完成履約部分。", "致部分終止或解除契約 者，依該部分所占契約金額比率計算之。"], "law": "第 65 條"}, {"id": "mcq_3", "num": 3, "ans": 4, "question": "下列何者錯誤？", "options": ["採購法規定，得標廠商不得轉包之主要部分， 指招標文件標示為主要部分；或招標文件標示或依其他法規規定 應由得標廠商自行履行之部分。", "機關得視需要於招標文件中訂 明得標廠商應將專業部分或達一定數量或金額之分包情形送機關備 查。", "得標廠商違反規定轉包者，機關得解除契約、終止契約或 沒收保證金，並得要求損害賠償。", "得標廠商不得將採購分包予 外國廠商。"], "law": "第 65 條"}, {"id": "mcq_4", "num": 4, "ans": 4, "question": "以下何種廠商得為採購之分包廠商？", "options": ["被刊登政府採購公報之不 良廠商。", "提供該採購專案管理服務之廠商。", "提供該採購審 標服務之廠商。", "以上皆非。"], "law": "第 67 條"}, {"id": "mcq_5", "num": 5, "ans": 4, "question": "廠商不得以不具備履行契約分包事項能力或未依法登記或設立之廠 商為分包廠商。對於分包廠商履約之部分，得標廠商應負之責任， 下列何者正確？", "options": ["仍應負催告責任。", "仍應負部分責任。", "就報備於機關情形負責。", "仍應負完全責任。"], "law": "第 67 條"}, {"id": "mcq_6", "num": 6, "ans": 1, "question": "分包廠商及於得標廠商對於機關之價金或報酬請求權之條件？", "options": ["分包契約報備於採購機關，並經得標廠商就分包部分設定權利質權 予分包廠商者。", "分包契約報備於採購機關，或經得標廠商就分 包部分設定權利質權予分包廠商者。", "載明分包廠商者。", "分 包契約報備於採購機關，並經機關同意者。"], "law": "第 67 條"}, {"id": "mcq_7", "num": 7, "ans": 3, "question": "工程施工查核小組依採購法第70條規定進行查核時，以下何者敘述 為錯誤？", "options": ["得通知工程主辦機關就指定之工程項目進行檢驗、拆 驗或鑑定。", "查核小組查核紀錄應於7個工作天內送工程主辦機 關。", "查核小組定期辦理查核，應預先通知赴工地進行查核，主 動出示查核小組之書面通知及相關證明文件。", "查核委員辦理查 核時之迴避，準用採購法第15條第2項及第3項之規定。"], "law": "第 70 條"}, {"id": "mcq_8", "num": 8, "ans": 2, "question": "下列何者不得為所辦採購之主驗人或樣品及材料之檢驗人？", "options": ["機 關總務人員。", "該採購案件最基層之承辦人員。", "需求單位人 員。", "承辦採購單位之主管。"], "law": "第 71 條"}, {"id": "mcq_9", "num": 9, "ans": 2, "question": "機關依採購法第71條第1項規定辦理財物採購驗收，下列何者不是 得採書面驗收，免辦理現場查驗之情形？", "options": ["即買即用。", "分批 驗收，其驗收金額不逾公告金額。", "經政府機關或公正第三人查 驗，並有相關品質或數量之證明文書者。", "小額採購。"], "law": "第 71 條"}, {"id": "mcq_10", "num": 10, "ans": 1, "question": "採購之驗收，無初驗程序者，除契約另有規定者外，機關應於接獲 廠商通知備驗或可得驗收之程序完成後幾日內辦理驗收，並作成驗 收紀錄？", "options": ["30日。", "20日。", "15日。", "10日。"], "law": "第 71 條"}, {"id": "mcq_11", "num": 11, "ans": 3, "question": "機關辦理驗收，得委託專業人員或機構人員擔任何種工作？", "options": ["主 驗。", "會驗。", "協驗。", "監驗。"], "law": "第 71 條"}, {"id": "mcq_12", "num": 12, "ans": 3, "question": "下列何者錯誤？", "options": ["機關依採購法第72條第1項辦理部分驗收，其 所支付之部分價金，以支付該部分驗收項目者為限，並得視不符 部分之情形酌予保留。", "機關辦理採購，有部分先行使用之必要 或已履約之部分有減損滅失之虞者，應先就該部分辦理驗收或分段 查驗供驗收之用。", "機關依採購法第72條第1項通知廠商限期改 善、拆除、重作或換貨之限期，應於契約預先規定。", "結算驗收 證明書或其他類似文件，除有特殊情形經核准者外，機關應於驗收 完畢後15日內填具。"], "law": "第 72 條"}, {"id": "mcq_13", "num": 13, "ans": 3, "question": "依採購法規定，機關辦理工程採購之付款及審核程序，下列何者有 誤？", "options": ["驗收付款者，機關應於接到廠商請款單據後，15日內付 款。", "機關應在廠商提出相關文件及付款單據後，如發現有文 件不符、不足或有疑義者，通知廠商澄清或補正之次數不得超過 1次。", "機關不得於契約另為約定。", "定期估驗或分階段付款 者，機關應於廠商提出估驗或階段完成之證明文件後，15日內完成 審核程序。"], "law": "第 73 條"}, {"id": "mcq_14", "num": 14, "ans": 1, "question": "以下何者敘述錯誤？", "options": ["機關驗收人對工程或財物隱蔽部分拆驗或 化驗者，其拆除、修復或化驗費用之負擔，契約未規定者，應由機 關負擔。", "機關允許保證金得以連帶保證代之或減收者，機關應 於招標文件中規定，同一廠商同時作為各機關採購契約之連帶保證 廠商者，以2契約為限。", "採購申訴審議委員會之審議判斷，視 同訴願決定。", "押標金得以郵政匯票繳納。"], "law": "綜合"}];
+        
+        // 合併並轉換成測驗格式
+        let rawQuestions = [];
+        
+        // 處理是非題
+        originTfs.forEach(q => {
+            rawQuestions.push({
+                type: "TF",
+                num: q.num,
+                question: q.question,
+                options: ["O (正確)", "X (錯誤)"],
+                ansIndex: q.ans === "O" ? 0 : 1, // 0 = O, 1 = X
+                law: q.law,
+                desc: getTfExplanation(q)
+            });
+        });
+        
+        // 處理選擇題
+        originMcqs.forEach(q => {
+            rawQuestions.push({
+                type: "MCQ",
+                num: q.num,
+                question: q.question,
+                options: q.options,
+                ansIndex: q.ans - 1, // 轉換為 0-3 索引
+                law: q.law,
+                desc: getMcqExplanation(q)
+            });
+        });
+        
+        // 為是非題動態提供簡短背景說明
+        function getTfExplanation(q) {
+            const matchingTrap = {"機關不得於採購契約約定，廠商擬分包之項目及分包廠商須經機關審查。": {"wrong": "機關不得於採購契約約定，廠商擬分包之項目及分包廠商須經機關審查。", "right": "機關得於採購契約約定，廠商擬分包之項目及分包廠商，機關得予審查。", "law": "政府採購法第63條", "desc": "本題考驗分包審查的任意約定權。機關可以視需要在契約中約定保留審查權，以維護履約品質，並非絕對「不得約定審查」。"}, "機關辦理採購，對於分包廠商履約之部分，得標廠商仍應負完全責任。但分包契約報備於機關者由分包廠商負責。": {"wrong": "機關辦理採購，對於分包廠商履約之部分，得標廠商仍應負完全責任。但分包契約報備於機關者由分包廠商負責。", "right": "分包契約不論是否報備於機關，得標廠商對於分包部分仍應負完全責任。", "law": "政府採購法第63條", "desc": "得標廠商對於分包廠商履約之部分負「完全責任」，報備與否不影響得標廠商對機關的民事契約責任，不可因報備而轉嫁或免責。"}, "採購契約要項敘明應於契約內訂明者，機關如未擇訂於契約，仍屬有效，對訂約廠商有拘束力。": {"wrong": "採購契約要項敘明應於契約內訂明者，機關如未擇訂於契約，仍屬有效，對訂約廠商有拘束力。", "right": "契約要項僅為指引，如未實際擇訂（寫入）於契約內，則不生效力，對廠商亦無拘束力。", "law": "政府採購法第63條", "desc": "採購契約要項必須經「擇訂於契約內」始具備拘束力。如果機關漏未訂明於契約，即便該要項明文寫著應訂明，仍對廠商無直接強制拘束力。"}, "依採購法規定，各類採購契約之要項，依其屬中央或地方，由主管機關、直轄市或縣（市）政府參考慣例定之。": {"wrong": "依採購法規定，各類採購契約之要項，依其屬中央或地方，由主管機關、直轄市或縣（市）政府參考慣例定之。", "right": "採購契約要項不分中央或地方，一律由「主管機關」（即行政院公共工程委員會）參考慣例定之。", "law": "政府採購法第63條", "desc": "全國採購契約要項與範本具有統一性，故法明定「不分中央或地方」，其要項由「主管機關」統一制定，地方政府無權自行訂定要項。"}, "因政策變更終止或解除契約時，機關得經機關首長或其授權人員核准，且免補償廠商因此所生之損失。": {"wrong": "因政策變更終止或解除契約時，機關得經機關首長或其授權人員核准，且免補償廠商因此所生之損失。", "right": "政策變更終止或解除契約，機關必須報經「上級機關」核准，且「應」一併載明補償廠商因此所生之損失。", "law": "政府採購法第64條", "desc": "政策變更是重大行政決定，權責歸屬「上級機關核准」，且為保障廠商合法權益，法規強制要求必須補償損失（但不包括所失利益）。"}, "政策變更終止契約，補償廠商因此所生之損失包括其所失利益（預期可得利潤）。": {"wrong": "政策變更終止契約，補償廠商因此所生之損失包括其所失利益（預期可得利潤）。", "right": "補償廠商因此所生之損失，「不包括」其所失利益（即預期可得利潤）。", "law": "政府採購法第64條", "desc": "這是極高頻考點！因非廠商違約而係政策變更終止，雖要補償廠商的「既有實質損失」（所受損害及已履約支出），但「不補償」後續未履行部分的「預期利潤」（所失利益）。"}, "採購法第65條所稱主要部分，係指招標文件標價清單所列項目。": {"wrong": "採購法第65條所稱主要部分，係指招標文件標價清單所列項目。", "right": "主要部分是指「招標文件標示為主要部分者」，或招標文件標示或依其他法規「應由得標廠商自行履行之部分」。", "law": "政府採購法第65條", "desc": "非標價清單之所有工項皆為主要部分，必須是由機關在招標文件中明確點名「此為主要部分不得分包」，或是法律明定必須自辦的部分（例如營造業之專任工程人員）。"}, "分包契約報備於機關者，分包部分之瑕疵擔保責任由分包廠商自行承擔，與得標廠商無涉。": {"wrong": "分包契約報備於機關者，分包部分之瑕疵擔保責任由分包廠商自行承擔，與得標廠商無涉。", "right": "若分包契約報備且「設定權利質權」予分包商，分包部分之瑕疵擔保責任由「得標廠商與分包廠商連帶承擔」。", "law": "政府採購法第67條", "desc": "即使將款項債權質權設定給分包廠商直撥，瑕疵擔保責任仍不可免除，法規強制規定「得標廠商與分包廠商併負連帶擔保責任」。"}, "得標廠商將採購專業部分或達公告金額之部分分包，非經機關備查不得為之。": {"wrong": "得標廠商將採購專業部分或達公告金額之部分分包，非經機關備查不得為之。", "right": "機關「得視需要」在招標文件中訂明分包送備查，並非採購法強制一律規定非經備查不得分包。", "law": "政府採購法第67條", "desc": "分包是得標廠商的權利（除主要部分外）。採購法第67條規定機關「得」於招標文件規定備查，如無規定，廠商分包無須強制作備查登記。"}, "得標廠商就採購契約對機關之價金請求權，不得作為權利質權標的。但經機關同意者不在此限。": {"wrong": "得標廠商就採購契約對機關之價金請求權，不得作為權利質權標的。但經機關同意者不在此限。", "right": "價金或報酬請求權得為權利質權之標的，此屬廠商之法定權利，無須採購機關之同意即可設定。", "law": "政府採購法第68條", "desc": "價金請求權之質權設定（例如向銀行融資或設定給分包商）為法律保障之債權讓與/質權設定自由，機關無權拒絕，亦無須機關事先同意。"}, "機關辦理採購之驗收，其會驗人員為設計、監造人員。": {"wrong": "機關辦理採購之驗收，其會驗人員為設計、監造人員。", "right": "會驗人員為「接管或使用機關（單位）人員」。設計、監造人員為「協驗人員」。", "law": "政府採購法第71條", "desc": "驗收人員有四種：主驗人（主持及決定）、監驗人（會計政風實地監辦）、會驗人（使用接管機關確認項目）、協驗人（設計監造人員協助說明）。此角色不可混淆！"}, "採購之驗收期限特殊必須延期者，由主驗人員決定之。": {"wrong": "採購之驗收期限特殊必須延期者，由主驗人員決定之。", "right": "驗收延期必須報經「機關首長或其授權人員核准」，非主驗人權限，亦無須報上級機關。", "law": "政府採購法第71條", "desc": "主驗人僅主持驗收程序，決定是否合格。若涉及驗收時限的延長（特殊情況），屬於機關契約管理的行政裁量權，必須由機關首長或其授權人員核准。"}, "機關承辦採購單位之主管不得擔任所辦採購之主驗人或材料檢驗人。": {"wrong": "機關承辦採購單位之主管不得擔任所辦採購之主驗人或材料檢驗人。", "right": "「最基層之承辦人員」不得為主驗人；但承辦採購單位之直屬主管、單位主管皆「可以」擔任主驗人。", "law": "政府採購法第71條", "desc": "為落實利益衝突迴避與內部牽制，最基層承辦該案的經辦人員絕對不可自辦自驗。但為了機關運作，其直屬長官（如課長、科長、處長）非最基層經辦人，依法均得擔任主驗人。"}, "機關非依人事法規進用之臨時人員（如派遣或承攬人員），適宜擔任採購案主驗人員。": {"wrong": "機關非依人事法規進用之臨時人員（如派遣或承攬人員），適宜擔任採購案主驗人員。", "right": "非依人事法規進用之臨時人員，不適宜擔任採購案之主驗人員。", "law": "行政院工程會函釋 / 採購法第71條", "desc": "主驗人依法代表機關行使公權力並做成行政決定，臨時人員或委外廠商人員非編制內具備公務員身分或編制內職員，承擔責任有限，故「不適宜」擔任主驗人。"}, "機關辦理小額工程、財物採購，得免辦理驗收。": {"wrong": "機關辦理小額工程、財物採購，得免辦理驗收。", "right": "小額採購（十萬元以下）得備具書面憑證「採書面驗收，免辦理現場查驗」，但仍須辦理書面驗收，絕不可「免辦驗收」。", "law": "政府採購法第71條", "desc": "所有公帑支出皆須驗收。小額採購僅是簡化程序為「書面驗收」代替「實地現場查驗」，程序依然是驗收，不可以完全不做驗收就付款。"}, "辦理減價收受，必須依採購法第46條規定訂定底價，且尚須經廠商同意後方得辦理。": {"wrong": "辦理減價收受，必須依採購法第46條規定訂定底價，且尚須經廠商同意後方得辦理。", "right": "減價收受「無須訂定底價」，亦「無須經廠商同意」，可由機關逕行依規定計算並經首長核准後辦理。", "law": "政府採購法第72條", "desc": "減價收受是驗收不符時的替代救濟措施，減價金額非招標底價，故無須訂底價；且此為機關對廠商瑕疵履約之單方處置（扣款），無須廠商同意即可辦理。"}, "機關辦理部分驗收或先行使用，該部分價金得先行支付，但保固期間仍必須自全部驗收合格之日起算。": {"wrong": "機關辦理部分驗收或先行使用，該部分價金得先行支付，但保固期間仍必須自全部驗收合格之日起算。", "right": "部分驗收或先行使用之部分，不僅得支付該部分價金，保固期間亦「得就該部分起算」。", "law": "政府採購法第72條", "desc": "為了公平原則，已經先行驗收並由機關接管使用的部分，折舊與保固責任應即時起算，不應強迫廠商等候其他尚未完工部分而延遲起算保固。"}, "機關辦理付款及審核程序之法定時限，除契約另有約定外，付款及審核期限包括例假日及特定假日。": {"wrong": "機關辦理付款及審核程序之法定時限，除契約另有約定外，付款及審核期限包括例假日及特定假日。", "right": "付款及審核期限（如15日）係指「實際工作日」，不包括例假日、特定假日及退請受款人補正之日數。", "law": "政府採購法第73條", "desc": "採購法為保護廠商資金調度，規定了付款與審核的嚴格天數，但為配合機關辦公，這些天數全部以「工作日」計算，扣除例假日與因廠商文件錯誤退件補正的公文往返天數。"}};
+            for (let wrongText in matchingTrap) {
+                if (q.question.includes(wrongText.slice(0, 15)) && q.ans === "X") {
+                    return matchingTrap[wrongText].desc + " (依據：" + matchingTrap[wrongText].law + ")";
+                }
+            }
+            return q.ans === "O" 
+                ? "本題敘述完全符合採購法之法定規範與工程會實務要求。(依據：" + q.law + ")"
+                : "本題為易錯「文字陷阱」題，內容敘述與法規不符，請仔記正確規定。(依據：" + q.law + ")";
+        }
+        
+        // 為選擇題動態提供解析
+        function getMcqExplanation(q) {
+            const matchingClassic = {"mcq_1": {"id": "mcq_1", "title": "政策變更終止契約之核定權責", "question": "採購契約得訂明因政策變更，廠商依契約繼續履行反而不符公共利益者，得終止或解除部分或全部契約，但應報經核准之權責為？", "options": ["(1) 經機關首長或授權人員核准", "(2) 經上級機關核准", "(3) 經主管機關核准", "(4) 經審計單位核准"], "ans": 2, "law": "政府採購法第64條", "desc": "此為法定重大契約終止權。為避免基層機關任意以政策變更為由片面解約損害廠商權益，採購法第64條規定，必須報經「上級機關」核准始得為之。同時必須補償廠商所生損失，但不含預期利益。"}, "mcq_6": {"id": "mcq_6", "title": "分包廠商直撥價金（請求權設定質權）條件", "question": "分包廠商及於得標廠商對於機關之價金或報酬請求權之條件？", "options": ["(1) 分包契約報備於採購機關，並經得標廠商就分包部分設定權利質權予分包廠商者。", "(2) 分包契約報備於採購機關，或經得標廠商就分包部分設定權利質權予分包廠商者。", "(3) 載明分包廠商者。", "(4) 分包契約報備於採購機關，並經機關同意者。"], "ans": 1, "law": "政府採購法第67條第2項", "desc": "分包商要獲得直撥價金的安全保障，法規規定必須「雙重條件同時滿足」：一、分包契約必須「報備」於採購機關；二、得標廠商必須將該分包部分之價金請求權「設定權利質權」予分包商。這也是銀行或分包商融資的實務常客。"}, "mcq_8": {"id": "mcq_8", "title": "主驗人與檢驗人員迴避資格", "question": "下列何者不得為所辦採購之主驗人或樣品及材料之檢驗人？", "options": ["(1) 機關總務人員", "(2) 該採購案件最基層之承辦人員", "(3) 需求單位人員", "(4) 承辦採購單位之主管"], "ans": 2, "law": "政府採購法第71條第3項", "desc": "基於「承辦與驗收分立」原則，避免球員兼裁判，承辦該採購案「最基層之經辦人員」絕對不可以擔任主驗人或材料檢驗人。但承辦單位的「主管」（如科長、主任）並不在此限，依法可以擔任主驗人。"}, "mcq_12": {"id": "mcq_12", "title": "先行使用與保固起算", "question": "下列何者錯誤？", "options": ["(1) 機關依採購法第72條第1項辦理部分驗收，其所支付之部分價金，以支付該部分驗收項目者為限，並得視不符部分之情形酌予保留。", "(2) 機關辦理採購，有部分先行使用之必要或已履約之部分有減損滅失之虞者，應先就該部分辦理驗收或分段查驗供驗收之用。", "(3) 機關依採購法第72條第1項通知廠商限期改善、拆除、重作或換貨之限期，應於契約預先規定。", "(4) 結算驗收證明書或其他類似文件，除有特殊情形經核准者外，機關應於驗收完畢後15日內填具。"], "ans": 3, "law": "政府採購法第72條", "desc": "驗收不符時限期改善的期限，如果契約「有規定」依契約；如果契約「沒有規定」，則由「主驗人」在驗收現場裁定合理改善期限，並不需要強制在契約中預先規定。因此選項 (3) 敘述是錯誤的。"}, "mcq_13": {"id": "mcq_13", "title": "付款付款及審核程序限制", "question": "依採購法規定，機關辦理工程採購之付款及審核程序，下列何者有誤？", "options": ["(1) 驗收付款者，機關應於接到廠商請款單據後，15日內付款。", "(2) 機關應在廠商提出相關文件及付款單據後，如發現有文件不符、不足或有疑義者，通知廠商澄清或補正之次數不得超過1次。", "(3) 機關不得於契約另為約定。", "(4) 定期估驗或分階段付款者，機關應於廠商提出估驗或階段完成之證明文件後，15日內完成審核程序。"], "ans": 3, "law": "政府採購法第73-1條", "desc": "本題法源為第73-1條。法規明文規定，機關辦理付款及審核程序，「除契約另有約定外」，應符合15日付款/審核的規定。因此選項 (3) 宣稱「機關不得於契約另為約定」是錯誤的，機關與廠商其實可以在契約中另行約定付款時限（例如因預算撥付時程等特殊原因）。"}};
+            const classicKey = "mcq_" + q.num;
+            if (matchingClassic[classicKey]) {
+                return matchingClassic[classicKey].desc + " (依據：" + matchingClassic[classicKey].law + ")";
+            }
+            return "本題為該單元常考精選題，標準答案為選項 (" + q.ans + ")，請詳記其法規法源條款。(依據：" + q.law + ")";
+        }
+
+        let questions = [...rawQuestions];
+        let currentIndex = 0;
+        let score = 0;
+        let attempted = 0;
+        let answeredList = new Array(questions.length).fill(null); // 紀錄每題使用者選擇的答案
+
+        // Shuffle questions
+        function shuffleQuestions(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function restartQuiz() {
+            questions = [...rawQuestions];
+            shuffleQuestions(questions);
+            currentIndex = 0;
+            score = 0;
+            attempted = 0;
+            answeredList = new Array(questions.length).fill(null);
+            
+            document.getElementById("quiz-score").innerText = "0";
+            document.getElementById("quiz-attempted").innerText = "0";
+            document.getElementById("quiz-rate").innerText = "0%";
+            
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            if (questions.length === 0) return;
+            
+            const q = questions[currentIndex];
+            
+            // Header Info
+            document.getElementById("quiz-question-type").innerText = q.type === "TF" ? "[是非題]" : "[選擇題]";
+            document.getElementById("quiz-question-type").style.color = q.type === "TF" ? "var(--accent-primary)" : "var(--accent-warning)";
+            document.getElementById("quiz-current-num").innerText = currentIndex + 1;
+            document.getElementById("quiz-total-num").innerText = questions.length;
+            
+            // Question Text
+            document.getElementById("quiz-question-text").innerText = q.question;
+            
+            // Options Container
+            const container = document.getElementById("quiz-options-container");
+            container.innerHTML = "";
+            
+            const feedbackBox = document.getElementById("quiz-feedback-box");
+            feedbackBox.style.display = "none";
+            
+            // 判斷這題是否已經作答過
+            const savedAnswer = answeredList[currentIndex];
+            
+            q.options.forEach((optText, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "quiz-option-btn";
+                btn.innerText = optText;
+                btn.onclick = () => selectOption(idx);
+                
+                // 如果已經作答過，直接顯示結果
+                if (savedAnswer !== null) {
+                    btn.disabled = true;
+                    if (idx === q.ansIndex) {
+                        btn.classList.add("correct");
+                    } else if (idx === savedAnswer) {
+                        btn.classList.add("wrong");
+                    }
+                }
+                
+                container.appendChild(btn);
+            });
+            
+            if (savedAnswer !== null) {
+                showFeedback(q);
+            }
+            
+            // Button States
+            document.getElementById("quiz-prev-btn").disabled = currentIndex === 0;
+            document.getElementById("quiz-next-btn").disabled = currentIndex === questions.length - 1;
+        }
+
+        function selectOption(selectedIdx) {
+            const q = questions[currentIndex];
+            answeredList[currentIndex] = selectedIdx;
+            
+            attempted++;
+            const isCorrect = selectedIdx === q.ansIndex;
+            if (isCorrect) {
+                score++;
+            }
+            
+            // 更新計分板
+            document.getElementById("quiz-score").innerText = score;
+            document.getElementById("quiz-attempted").innerText = attempted;
+            document.getElementById("quiz-rate").innerText = Math.round((score / attempted) * 100) + "%";
+            
+            // 高亮按鈕並禁用點擊
+            const btns = document.querySelectorAll(".quiz-option-btn");
+            btns.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === q.ansIndex) {
+                    btn.classList.add("correct");
+                } else if (idx === selectedIdx) {
+                    btn.classList.add("wrong");
+                }
+            });
+            
+            showFeedback(q);
+        }
+
+        function showFeedback(q) {
+            const feedbackBox = document.getElementById("quiz-feedback-box");
+            const feedbackText = document.getElementById("quiz-feedback-text");
+            
+            feedbackBox.style.borderLeftColor = q.type === "TF" ? "var(--accent-primary)" : "var(--accent-warning)";
+            feedbackText.innerHTML = "<strong>法規依據：</strong>" + (q.law ? q.law : "政府採購法相關條文") + "<br><br><strong>考點詳解：</strong>" + q.desc;
+            feedbackBox.style.display = "block";
+        }
+
+        function nextQuestion() {
+            if (currentIndex < questions.length - 1) {
+                currentIndex++;
+                renderQuestion();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        // 初始化
+        window.onload = () => {
+            restartQuiz();
+        };
+    </script>
+</body>
+</html>

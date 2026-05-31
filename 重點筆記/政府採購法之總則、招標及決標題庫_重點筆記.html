@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府採購法之總則、招標及決標 - 互動備考系統</title>
+    <meta name="description" content="政府採購法之總則、招標及決標系統化重點筆記與互動式模擬備考系統，助您迅速掌握考試重點，高分通關！">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #10b981; /* Emerald Green */
+            --accent-primary-glow: rgba(16, 185, 129, 0.15);
+            --accent-secondary: #f43f5e; /* Rose/Coral Red */
+            --accent-warning: #f59e0b; /* Amber */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow-green: 0 0 15px rgba(16, 185, 129, 0.3);
+            --glow-red: 0 0 15px rgba(244, 63, 94, 0.3);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-primary);
+            border-radius: 2px;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 30%, #a7f3d0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-stat {
+            background: rgba(31, 41, 55, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-stat .num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat .lbl {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Container & Grid layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .section-title svg {
+            color: var(--accent-primary);
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Board 1: Core Architecture Card Grid */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .arch-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-primary);
+            opacity: 0.7;
+        }
+
+        .arch-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.05);
+        }
+
+        .arch-card-icon {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .arch-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .arch-card ul {
+            list-style: none;
+        }
+
+        .arch-card li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .arch-card li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+        }
+
+        /* Board 2: Number Codes Counters */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .num-card {
+            background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(31, 41, 55, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all var(--transition-speed);
+        }
+
+        .num-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .num-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+        }
+
+        .num-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .num-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Board 3: Trap Table */
+        .trap-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .trap-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .trap-table th {
+            background-color: rgba(31, 41, 55, 0.5);
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-row {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .trap-row:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .trap-row td {
+            padding: 1.25rem 1.5rem;
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .trap-wrong {
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .trap-right {
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .trap-detail {
+            background-color: rgba(17, 24, 39, 0.6);
+            display: none;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trap-detail-content {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-warning);
+        }
+
+        .trap-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-warning);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Board 4: Classic Explanations */
+        .classic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .classic-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .classic-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .classic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .classic-num-lbl {
+            background: var(--accent-primary-glow);
+            color: var(--accent-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .classic-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .classic-law {
+            font-size: 0.8rem;
+            color: var(--accent-warning);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.25rem;
+            display: inline-block;
+        }
+
+        .classic-body {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .classic-exp {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-primary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* Interactive Quiz Section */
+        .quiz-container {
+            background-color: var(--bg-secondary);
+            border: 2px solid rgba(16, 185, 129, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .quiz-info {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-score-lbl {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-primary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .quiz-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quiz-option-btn:hover:not(:disabled) {
+            background-color: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(3px);
+        }
+
+        .quiz-option-btn.correct {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: var(--accent-primary) !important;
+            color: var(--accent-primary);
+            font-weight: 700;
+            box-shadow: var(--glow-green);
+        }
+
+        .quiz-option-btn.wrong {
+            background-color: rgba(244, 63, 94, 0.15) !important;
+            border-color: var(--accent-secondary) !important;
+            color: var(--accent-secondary);
+            font-weight: 700;
+            box-shadow: var(--glow-red);
+        }
+
+        .quiz-feedback {
+            background-color: rgba(31, 41, 55, 0.5);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+            display: none;
+            border-left: 4px solid var(--accent-primary);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .quiz-feedback h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .quiz-feedback p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .quiz-action-btn {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+        }
+
+        .quiz-action-btn:hover:not(:disabled) {
+            background-color: var(--bg-card);
+            border-color: var(--text-secondary);
+        }
+
+        .quiz-action-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .quiz-action-btn.primary-btn {
+            background-color: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            font-weight: 700;
+        }
+
+        .quiz-action-btn.primary-btn:hover {
+            background-color: #059669;
+            box-shadow: var(--glow-green);
+        }
+
+        /* Alert styling inside text */
+        .info-alert {
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .info-alert-title {
+            font-weight: 700;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-alert-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            header {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                gap: 0.75rem;
+                position: relative; /* 取消固定以留出更多手機版空間 */
+            }
+            
+            nav {
+                gap: 1rem;
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                white-space: nowrap; /* 確保導覽文字不換行以進行平滑左右滑動 */
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            nav::-webkit-scrollbar {
+                height: 3px;
+            }
+            nav::-webkit-scrollbar-thumb {
+                background: var(--accent-primary);
+                border-radius: 2px;
+            }
+            
+            .hero {
+                padding: 3rem 1rem 1.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-stats {
+                gap: 0.75rem;
+            }
+            
+            .hero-stat {
+                padding: 0.5rem 1rem;
+                min-width: 100px;
+                flex: 1 1 30%;
+            }
+            
+            .hero-stat .num {
+                font-size: 1.25rem;
+            }
+            
+            .hero-stat .lbl {
+                font-size: 0.75rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            section {
+                margin-bottom: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.35rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .arch-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .arch-card {
+                padding: 1.25rem;
+            }
+            
+            .arch-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .arch-card li {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* 數字密碼改為 2 欄 */
+            .number-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .num-card {
+                padding: 1.25rem 0.5rem;
+            }
+            
+            .num-val {
+                font-size: 2.25rem;
+            }
+            
+            .num-title {
+                font-size: 0.9rem;
+            }
+            
+            .num-desc {
+                font-size: 0.75rem;
+            }
+            
+            /* ⚠️ 是非題易錯文字陷阱表格 RWD 改良：將表格轉換為垂直卡片流 */
+            .trap-table, .trap-table thead, .trap-table tbody, .trap-table th, .trap-table td, .trap-table tr {
+                display: block;
+            }
+            
+            .trap-table thead {
+                display: none; /* 隱藏表頭 */
+            }
+            
+            .trap-row {
+                border-bottom: none;
+                background: rgba(255, 255, 255, 0.01);
+                margin-bottom: 0.5rem;
+                border-radius: 8px 8px 0 0;
+                padding: 0.5rem 0;
+                border: 1px solid var(--border-color);
+            }
+            
+            .trap-row td {
+                padding: 0.65rem 1rem;
+                font-size: 0.88rem;
+            }
+            
+            .trap-row td:first-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            }
+            
+            .trap-wrong, .trap-right {
+                align-items: flex-start;
+                line-height: 1.4;
+            }
+            
+            .trap-detail {
+                background-color: rgba(17, 24, 39, 0.9);
+                margin-bottom: 1rem;
+                border-radius: 0 0 8px 8px;
+                border: 1px solid var(--border-color);
+                border-top: none;
+            }
+            
+            .trap-detail-content {
+                padding: 1rem 1.25rem;
+                font-size: 0.82rem;
+            }
+            
+            /* 模擬測驗區適配 */
+            .quiz-container {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+            
+            .quiz-question {
+                font-size: 1.05rem;
+                margin-bottom: 1.25rem;
+                line-height: 1.5;
+            }
+            
+            .quiz-option-btn {
+                padding: 0.85rem 1rem;
+                font-size: 0.88rem;
+                border-radius: 8px;
+            }
+            
+            .quiz-feedback {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .quiz-feedback p {
+                font-size: 0.85rem;
+            }
+            
+            .quiz-nav-btns {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .quiz-action-btn {
+                width: 100%;
+                text-align: center;
+                padding: 0.85rem;
+            }
+            
+            .quiz-score-lbl {
+                font-size: 0.8rem;
+                padding: 0.25rem 0.75rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <span>PCC</span> 政府採購法備考系統
+        </div>
+        <nav>
+            <a href="#hero" class="active">主頁</a>
+            <a href="#arch">核心架構</a>
+            <a href="#numbers">數字密碼</a>
+            <a href="#traps">易錯陷阱</a>
+            <a href="#classics">經典題庫</a>
+            <a href="#quiz">模擬測驗</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>政府採購法之總則、招標及決標</h1>
+        <p>系統化備考重點提煉與離線互動小測驗。專為中華民國公共工程委員會「採購專業人員考試」精準打造。</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num">200</div>
+                <div class="lbl">精選選擇題</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">5 大</div>
+                <div class="lbl">常見易錯陷阱</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">100%</div>
+                <div class="lbl">忠於標準答案</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        
+        <!-- Board 1: Core Architecture -->
+        <section id="arch">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+                🎯 第一板塊：核心知識架構
+            </h2>
+            <div class="arch-grid">
+                
+                <div class="arch-card">
+                    <div class="arch-card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3>總則與適用範圍</h3>
+                    <ul>
+                        <li><strong>採購法定分類</strong>：分為工程定作、財物買受/租賃、勞務委任等三大類（第7條）。</li>
+                        <li><strong>受機關補助採購</strong>：補助金額達 <strong>50% 以上</strong>且在<strong>公告金額以上</strong>者適用採購法。應由「補助機關」負責監督與監辦，而非其上級機關（第4條）。</li>
+                        <li><strong>請託關說與迴避</strong>：涉及本人、配偶、三親等內血親或姻親、共同生活家屬利益時應行迴避（第15條）。離職承辦、監辦人員 <strong>3年內</strong>不得代理廠商向原任職機關接洽離職前 <strong>5年內</strong>相關事務。</li>
+                    </ul>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3>招標方式與資格限制</h3>
+                    <ul>
+                        <li><strong>招標法規程序</strong>：分為公開招標、選擇性招標與限制性招標。經常性採購得建立 <strong>6家以上</strong>合格廠商名單（第21條）。</li>
+                        <li><strong>專屬權利之範圍</strong>：第22條第1項第2款之專屬權利<strong>明確排除「商標專用權」</strong>（第22條）。</li>
+                        <li><strong>同等品與品牌限制</strong>：技術規格若無國際/國家標準，應列舉 <strong>3家以上</strong>特定廠牌並註明「或同等品」（第26條）。</li>
+                        <li><strong>共同投標與統包</strong>：共同投標須檢附公證或認證之協議書，連帶負履約責任（第25條）。統包不得採限制性招標第9款評選。</li>
+                    </ul>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                    </div>
+                    <h3>等標期、押標金與決標</h3>
+                    <ul>
+                        <li><strong>等標期縮短機制</strong>：電子領標得縮短 <strong>3日</strong>，公開閱覽得縮短 <strong>5日</strong>。變更招標文件非重大改變且於截止日前 <strong>5日</strong>公告者，得免延長等標期。</li>
+                        <li><strong>押標金與保證金</strong>：額度以不逾標價之 <strong>5%</strong> 且不逾新臺幣 <strong>5,000萬元</strong>為原則（第30條）。電子投標押標金減收上限為 <strong>10%</strong>。</li>
+                        <li><strong>底價與廢標</strong>：底價於開標前應予保密。廢標（無決標）後機關應刊登無法決標公告（第27條）。</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Board 2: Number Codes -->
+        <section id="numbers">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
+                </svg>
+                🔢 第二板塊：常考「數字、比例與時限」密碼
+            </h2>
+            <div class="number-grid">
+                
+                <div class="num-card">
+                    <div class="num-val">150 萬</div>
+                    <div class="num-title">公告金額門檻</div>
+                    <div class="num-desc">現行政府採購公告金額定為新臺幣 150 萬元，為區分招標作業程序之關鍵分水嶺。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">5,000 萬</div>
+                    <div class="num-title">查核金額 (工程/財物)</div>
+                    <div class="num-desc">工程與財物採購之查核金額為 5,000 萬元（勞務為 1,000 萬），此門檻以上需報請上級機關派員監辦。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">5% / 5,000萬</div>
+                    <div class="num-title">押標金法定上限</div>
+                    <div class="num-desc">押標金以不逾預算金額或標價之 5% 為原則，且絕對上限不得逾新臺幣 5,000 萬元。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">50%</div>
+                    <div class="num-title">追加工程與補助限制</div>
+                    <div class="num-desc">法人團體受補助採購適用本法之金額比率門檻；亦為限制性招標追加工程契約金額之累計上限比率。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">3日 / 5日</div>
+                    <div class="num-title">電子領標與公閱縮短</div>
+                    <div class="num-desc">電子領標得縮短等標期 3 日；招標前辦理公開閱覽得縮短等標期 5 日。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">3年 / 5年</div>
+                    <div class="num-title">離職人員迴避限制</div>
+                    <div class="num-desc">離職承辦、監辦人員 3 年內不得向原任職機關接洽離職前 5 年內與職務有關之事務。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">10% / 50%</div>
+                    <div class="num-title">保證金減收上限</div>
+                    <div class="num-desc">電子投標廠商押標金/保證金減收上限為 10%；經評選優良廠商減收上限為 50%。</div>
+                </div>
+
+                <div class="num-card">
+                    <div class="num-val">30%</div>
+                    <div class="num-title">資訊服務預付款上限</div>
+                    <div class="num-desc">資訊服務評選得預付一部分費用，但預付款以不超過契約總額上限之 30% 為原則。</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Board 3: Trap Table -->
+        <section id="traps">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+                ⚠️ 第三板塊：選擇題常考易錯「文字陷阱」對比表
+            </h2>
+            
+            <div class="info-alert">
+                <div class="info-alert-title">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    備考心法提示：點擊下方表格各列，可展開查閱該易錯題型的法規深度釋義。
+                </div>
+                <div class="info-alert-desc">本單元的文字陷阱高度集中於「監辦層級」、「專屬權利範圍」、「等標期縮短底限」與「迴避資格」，務必仔細分辨。</div>
+            </div>
+
+            <div class="trap-container">
+                <table class="trap-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 45%;">❌ 題庫常見錯誤敘述（混淆干擾項）</th>
+                            <th style="width: 55%;">⭕ 正確法規與實務觀念</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="trap-row" onclick="toggleTrapDetail('trap_1')">
+                            <td class="trap-wrong">法人或團體接受機關補助辦理採購，受補助者於辦理查核金額以上採購之開標，應受補助機關之上級機關監督。</td>
+                            <td class="trap-right">是非觀念為 X。受補助採購適用採購法者，其辦理查核金額以上採購，應受「補助機關」派員監督監辦，而非其上級機關。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap_1">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據：《政府採購法》第4條及其施行細則</span>
+                                    <p>受機關補助辦理採購之法人或團體，其採購程序雖適用採購法，但該團體本身並無「上級機關」。因此，其查核金額以上採購之監辦、核准等權限，均是由「補助機關」來實施監督，而非補助機關之上級機關。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail('trap_2')">
+                            <td class="trap-wrong">機關依採購法第22條第1項第2款辦理限制性招標，所稱之專屬權利包含商標專用權。</td>
+                            <td class="trap-right">是非觀念為 X。採購法第22條第1項第2款所定之專屬權利，**明確排除「商標專用權」**！</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap_2">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據：《政府採購法施行細則》第22條第1項</span>
+                                    <p>專屬權利指專利權、著作權、電路布局權或其他經主管機關認定之專屬權利，但明文不包括商標專用權。機關不得僅以特定商標為由逕採限制性招標，以免規避公開競爭程序。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail('trap_3')">
+                            <td class="trap-wrong">機關辦理統包採購，得依採購法第22條第1項第9款規定辦理公開評選優勝廠商。</td>
+                            <td class="trap-right">是非觀念為 X。統包採購包含設計與施工等，**不得**依第22條第1項第9款規定之評選專業、技術、資訊或設計服務方式辦理。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap_3">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據：《政府採購法》第24條及統包實務規範</span>
+                                    <p>統包採購之招標方式應採公開招標或選擇性招標（若符合限制性招標其他款則依其規定），但其本質非單純之勞務委任，因此不適用第22條第1項第9款（委託專業、技術、資訊或設計服務）之招標方式。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail('trap_4')">
+                            <td class="trap-wrong">機關依採購法第22條第1項第11款規定採購房地產，其訂有底價者，底價訂定之時機為辦理公告前、開標前或比價前。</td>
+                            <td class="trap-right">是非觀念為 X。房地產採購底價訂定時機非屬上述，答案應選「以上皆非」。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap_4">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據：《機關指定地區採購房地產作業辦法》</span>
+                                    <p>指定地區採購房地產時，底價之訂定應於「勘選小組」或「徵選小組」實地勘選適合需要之房地產後，並於進行「議價前」訂定之。因此在公告前、開標前、比價前等時機訂定均不正確。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="trap-row" onclick="toggleTrapDetail('trap_5')">
+                            <td class="trap-wrong">機關人員利益衝突迴避條款之範圍，包括本人、配偶、二親等內親屬、前配偶及共同生活之親屬利益。</td>
+                            <td class="trap-right">是非觀念為 X。迴避條款所定之親屬利益範圍，**不包括「前配偶」**。</td>
+                        </tr>
+                        <tr class="trap-detail" id="trap_5">
+                            <td colspan="2">
+                                <div class="trap-detail-content">
+                                    <span class="trap-tag">法規依據：《政府採購法》第15條</span>
+                                    <p>採購法第15條利益衝突之親屬迴避範疇包括：本人、配偶、三親等以內之血親或姻親，以及共同生活之家屬。因「前配偶」在法律上婚姻關係已消滅，且非法定血親或姻親，因此不列入法定強制迴避範圍。</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Board 4: Classic Explanations -->
+        <section id="classics">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                📝 第四板塊：精選經典題解析
+            </h2>
+            <div class="classic-grid">
+                
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div>
+                            <span class="classic-title">精選題 1：後續擴充採購金額之計算方式</span>
+                            <br>
+                            <span class="classic-law">《政府採購法施行細則》第6條規定</span>
+                        </div>
+                        <span class="classic-num-lbl">選擇第 16 題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目</strong>：某機關擬委外編印月刊，預估1年12期為新臺幣90萬元，並於招標公告及招標文件敘明履約情形良好者，將依採購法第22條第1項第7款續約2年。該採購之採購金額為？
+                        <br>
+                        <strong>選項</strong>：(1)新臺幣90萬元。 (2)新臺幣180萬元。 (3)新臺幣270萬元。 (4)決標金額。
+                        <br>
+                        <strong>答案</strong>：(3) 新臺幣270萬元。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：經常性採購中，若招標文件已載明後續擴充之期間、金額或數量，其「採購金額」應將**首期金額與後續擴充之預估總金額合併計算**。本題預估首年 90 萬 + 續約 2 年共 180 萬，因此總採購金額為 **270 萬元**（屬公告金額以上採購），而非僅以首年 90 萬元計算。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div>
+                            <span class="classic-title">精選題 2：限制性招標之專屬權利排除</span>
+                            <br>
+                            <span class="classic-law">《政府採購法施行細則》第22條第1項</span>
+                        </div>
+                        <span class="classic-num-lbl">選擇第 41 題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目</strong>：下列何者不是屬採購法第22條第1項第2款因無其他合適替代標的得採限制性招標所稱之專屬權利？
+                        <br>
+                        <strong>選項</strong>：(1)商標專用權。 (2)專利權。 (3)著作權。 (4)電路布局權。
+                        <br>
+                        <strong>答案</strong>：(1) 商標專用權。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：政府採購法第 22 條第 1 項第 2 款之專屬權利包括：專利權、著作權、電路布局權等。但**明文排除「商標專用權」**！因此，機關不可僅因該產品具有特定商標，即逕採限制性招標洽特定廠商辦理，此為考試極為高頻的文字陷阱。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div>
+                            <span class="classic-title">精選題 3：標價偏低不予發還押標金之例外</span>
+                            <br>
+                            <span class="classic-law">《政府採購法》第31條第2項、第58條規定</span>
+                        </div>
+                        <span class="classic-num-lbl">選擇第 110 題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目</strong>：廠商繳納押標金不予發還之情形，下列何者為非？
+                        <br>
+                        <strong>選項</strong>：(1)冒用他人名義或證件投標。 (2)得標後拒不簽約。 (3)廠商之標價偏低，有採購法第58條所定情形而未於機關通知期限內提出合理之說明者。 (4)借用他人名義或證件投標。
+                        <br>
+                        <strong>答案</strong>：(3) 廠商之標價偏低，有採購法第58條所定情形而未於機關通知期限內提出合理之說明者。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：依政府採購法第 31 條第 2 項，廠商有冒名投標、借牌、得標後拒不簽約等影響採購公正之違規行為時，其押標金不予發還。但若僅是「**標價偏低，未於期限內提出合理說明**」，此屬不予決標予該廠商之範疇，其**押標金仍應發還**，不可予以沒收！
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div>
+                            <span class="classic-title">精選題 4：電子領標等標期縮短與法定底限</span>
+                            <br>
+                            <span class="classic-law">《招標期限標準》第9條之規定</span>
+                        </div>
+                        <span class="classic-num-lbl">選擇第 93 題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目</strong>：機關辦理採購，依採購法第93條之1規定辦理電子領標並於招標公告敘明者，等標期得縮短A日。但縮短後不得少於B日？
+                        <br>
+                        <strong>選項</strong>：(1)A=2日；B=5日。 (2)A=3日；B=5日。 (3)A=3日；B=7日。 (4)A=5日；B=10日。
+                        <br>
+                        <strong>答案</strong>：(3) A=3日；B=7日。 （註：本題預設採購案件為公告金額以上，故縮短後不得少於7日）
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：機關辦理電子領標，等標期得縮短 **3 日**。但為了確保廠商有足夠時間準備投標文件，縮短後仍設有法定最低限制：**公告金額以上之採購縮短後不得少於 7 日**；未達公告金額之採購縮短後不得少於 **5 日**。
+                    </div>
+                </div>
+
+                <div class="classic-card">
+                    <div class="classic-header">
+                        <div>
+                            <span class="classic-title">精選題 5：機關人員採購迴避之親屬範疇</span>
+                            <br>
+                            <span class="classic-law">《政府採購法》第15條利益衝突迴避</span>
+                        </div>
+                        <span class="classic-num-lbl">選擇第 30 題</span>
+                    </div>
+                    <div class="classic-body">
+                        <strong>題目</strong>：機關人員對於與採購有關之事項，下列何者不是應迴避之情形？
+                        <br>
+                        <strong>選項</strong>：(1)涉及本人、配偶利益。 (2)涉及二親等以內親屬利益。 (3)涉及前配偶或三親等以內血親或姻親利益。 (4)涉及共同生活家屬利益。
+                        <br>
+                        <strong>答案</strong>：(3) 涉及前配偶或三親等以內血親或姻親利益。
+                    </div>
+                    <div class="classic-exp">
+                        <strong>核心解析</strong>：依採購法第 15 條，機關辦理採購之承辦、監辦人員，若涉及本人、配偶、**三親等以內血親或姻親**、或共同生活家屬之利益時，應行迴避。特別注意：此親屬範疇**不包括「前配偶」**！離職後 3 年內亦不得接洽離職前 5 年內之職務相關事務。
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Board 5: Interactive Quiz -->
+        <section id="quiz">
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                ⚔️ 互動式模擬測驗 (全題庫 200 題隨機挑戰)
+            </h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-info" id="quiz-progress">載入題目中...</div>
+                    <div class="quiz-score-lbl" id="quiz-score">得分: 0 / 0 (0%)</div>
+                </div>
+                <div class="quiz-question" id="quiz-question">
+                    讀取資料中...
+                </div>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Options injected here by JS -->
+                </div>
+                <div class="quiz-feedback" id="quiz-feedback">
+                    <h4 id="quiz-feedback-title">法規依據與解析</h4>
+                    <p id="quiz-feedback-text">解析載入中...</p>
+                </div>
+                <div class="quiz-nav-btns">
+                    <button class="quiz-action-btn" id="quiz-prev-btn" onclick="prevQuestion()" disabled>上一題</button>
+                    <button class="quiz-action-btn primary-btn" id="quiz-next-btn" onclick="nextQuestion()">下一題</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 115 採購專業人員考試備考網頁 - 政府採購法之總則、招標及決標</p>
+        <p>依據最新中華民國行政院公共工程委員會標準題庫提煉，100% 精準無編造</p>
+    </footer>
+
+    <!-- Injected Questions Data -->
+    <script>
+        const mcqsData = [{"id": 1, "answer": 2, "question": "下列何者應依採購法辦理？", "choices": {"1": "機關變賣新臺幣200萬之財物。", "2": "公開徵求新臺幣180萬元之房地產。", "3": "標售新臺幣150萬元之 資源回收物品。", "4": "新臺幣200萬元補助對象之選定。"}, "law": "第 2 條"}, {"id": 2, "answer": 2, "question": "下列何者屬於採購法適用範圍？", "choices": {"1": "購買遠期外匯。", "2": "購買冷凍 食品(肉品)。", "3": "公開標售土石。", "4": "出租辦公廳舍。"}, "law": "第 2 條"}, {"id": 3, "answer": 3, "question": "下列何者不是採購法所稱採購？", "choices": {"1": "工程之定作。", "2": "權利之買 受。", "3": "土地之出租。", "4": "契約工之僱傭。"}, "law": "第 2 條"}, {"id": 4, "answer": 4, "question": "台電公司為敦親睦鄰，補助士林區公所辦理採購，其應適用採購法 之採購金額為何？", "choices": {"1": "新臺幣150萬元以上。", "2": "新臺幣15萬元以 上。", "3": "補助金額占採購金額達半數以上且補助金額達公告金額以 上。", "4": "無論金額大小。"}, "law": "第 3 條"}, {"id": 5, "answer": 1, "question": "台電公司為敦親睦鄰，補助臺北市士林區公所辦理採購，該公所依 採購法規定應報上級機關核准者，所稱上級機關為下列何者？", "choices": {"1": "臺北市政府。", "2": "行政院公共工程委員會。", "3": "台電公司。", "4": "經 濟部。"}, "law": "第 4 條"}, {"id": 6, "answer": 1, "question": "法人或團體接受機關補助辦理採購，其適用採購法者，下列敘述何 者有誤？", "choices": {"1": "受補助者於辦理查核金額以上採購之開標，應受補助 機關之上級機關監督。", "2": "於2以上機關補助同一採購者，其補助 金額是否達採購法第4條第1項所定金額，以其補助總金額計算之。", "3": "受理申訴之採購申訴審議委員會，為補助機關自行辦理採購之 申訴之採購申訴審議委員會。", "4": "有2以上機關補助同一採購者， 有2以上機關補助同一採購者，受理申訴之採購申訴審議委員會， 依指定代表機關或所占補助金額比率最高者認定之。"}, "law": "第 4 條"}, {"id": 7, "answer": 3, "question": "台電公司為敦親睦鄰，補助財團法人工業技術研究院辦理採購，該 研究院依採購法規定應報上級機關核准者，所稱上級機關為下列何 者？", "choices": {"1": "新竹市政府。", "2": "行政院公共工程委員會。", "3": "台電公 司。", "4": "經濟部。"}, "law": "第 4 條"}, {"id": 8, "answer": 2, "question": "下列何者不會有違反採購法第6條第1項規定之虞？", "choices": {"1": "新臺幣50萬 元之採購，指定廠牌公開徵求廠商提供報價單辦理決標。", "2": "不適 用條約協定之採購，限我國廠商投標。", "3": "招標文件規定投標廠商 須為製造廠之代理商。", "4": "規定投標廠商須於招標機關之所在地轄 區有實際工作經驗。"}, "law": "第 6 條"}, {"id": 9, "answer": 2, "question": "下列何者為錯誤？", "choices": {"1": "機關辦理採購，應以維護公共利益及公平合 理為原則。", "2": "採購人員得基於公共利益為違反採購法之決定。", "3": "公營事業之採購適用採購法。", "4": "自然人得為簽約對象。"}, "law": "第 6 條"}, {"id": 10, "answer": 3, "question": "下列何者違反採購法第6條第1項公平合理原則？", "choices": {"1": "廠商履約期間 因機關提前使用目的，採部分驗收，並於部分驗收後將相關之履約 保證金部分發還。", "2": "機關無法順利取得廠商履約所需土地，通知 廠商暫停履約，並暫時發還履約保證金。", "3": "公開招標案件，履約 期間因廠商財務困難，辦理契約變更，增列給付預付款，契約價金 不變。", "4": "道路工程得標廠商因法定工時縮短，要求延長工期，機 關認為部分有理由，同意廠商之部分要求。"}, "law": "第 6 條"}, {"id": 11, "answer": 3, "question": "權利採購之性質分類，下列何者正確？", "choices": {"1": "工程採購。", "2": "勞務採 購。", "3": "財物採購。", "4": "兼具勞務及財物性質之採購。"}, "law": "第 7 條"}, {"id": 12, "answer": 2, "question": "機關辦理採購之開標、比價、議價、決標及驗收，應於規定期限 內，檢送相關文件報請上級機關派員監辦之門檻金額，下列何者正 確？", "choices": {"1": "公告金額以上。", "2": "查核金額以上。", "3": "小額採購。", "4": "巨額。"}, "law": "第 12 條"}, {"id": 13, "answer": 2, "question": "下列敘述何者正確？", "choices": {"1": "採購法所稱監辦，指監辦人員實地監視機 關辦理開標、比價、議價、決標、驗收與付款是否符合採購法規定 之程序。", "2": "公告金額以上之採購，監辦人員採書面審核監辦者， 應經機關首長或其授權人員核准。", "3": "辦理採購之主持人或主驗人 不接受上級機關監辦人員對採購不符合採購法規定程序而提出之意 見，應納入紀錄並報機關首長或其授權人員核准。", "4": "監辦人員得 依採購法第48條第1項各款特殊情形，經機關首長或其授權人員核 准，不派員監辦。"}, "law": "第 12 條"}, {"id": 14, "answer": 1, "question": "下列何者不是採購法規定上級機關應監辦之事項？", "choices": {"1": "審標。", "2": "比價。", "3": "決標。", "4": "開標。"}, "law": "第 12 條"}, {"id": 15, "answer": 3, "question": "下列採購，何者應報請上級機關派員監辦？", "choices": {"1": "新臺幣3,000萬元 財物採購之驗收。", "2": "新臺幣2,000萬元工程採購之議價。", "3": "新 臺幣1,000萬元勞務採購之開標。", "4": "新臺幣2,000萬元工程採購之 查核。"}, "law": "第 12 條"}, {"id": 16, "answer": 3, "question": "某機關擬委外編印月刊，預估1年12期為新臺幣90萬元，並於招標 公告及招標文件敘明履約情形良好者，將依採購法第22條第1項第7 款續約2年。該採購之採購金額為？", "choices": {"1": "新臺幣90萬元。", "2": "新臺 幣180萬元。", "3": "新臺幣270萬元。", "4": "決標金額。"}, "law": "第 12 條"}, {"id": 17, "answer": 1, "question": "機關辦理查核金額以上採購之招標，應於何時檢送採購預算資料、 招標文件及相關文件，報請上級機關派員監辦？", "choices": {"1": "等標期或截 止收件日5日前。", "2": "開標日5日前。", "3": "等標期或截止收件日3日 前。", "4": "開標日3日前。"}, "law": "第 12 條"}, {"id": 18, "answer": 1, "question": "採購金額之計算方式，下列何者正確？", "choices": {"1": "採分批辦理採購者，依 全部批數之預算總額認定之。", "2": "招標文件規定廠商報價金額包括 機關支出及收入金額者，以支出及收入金額之絕對值合計認定之。", "3": "招標文件含有後續擴充項目者，因不確定是否購買，得暫免計 入。", "4": "租期不確定者，以每月租金之36倍認定之。"}, "law": "第 12 條"}, {"id": 19, "answer": 4, "question": "機關辦理採購，其採購金額之認定，於租期不確定之財物採購，以 幾年租金認定之？", "choices": {"1": "1年。", "2": "2年。", "3": "3年。", "4": "4年。"}, "law": "第 12 條"}, {"id": 20, "answer": 2, "question": "依「機關主會計及有關單位會同監辦採購辦法」第5條規定，經機 關首長或其授權人員核准不派員監辦，下列敘述何者為是？", "choices": {"1": "主 會計及有關單位人員仍應辦理書面審核監辦，並於紀錄載明「書面 審核監辦」字樣。", "2": "主會計及有關單位人員未辦理監辦，無須於 紀錄簽章。", "3": "主會計及有關單位人員仍須以監辦人員身分於紀錄 簽章。", "4": "以上皆非。"}, "law": "第 13 條"}, {"id": 21, "answer": 2, "question": "監辦人員採書面審核監辦之簽名時機，下列何者正確？", "choices": {"1": "得於各 相關人員均簽名後為之。", "2": "應於各相關人員均簽名後為之。", "3": "應於與會人員簽名後及主持(驗)人簽名前。", "4": "得免簽名。"}, "law": "第 13 條"}, {"id": 22, "answer": 3, "question": "下列何者不是採購法第13條第1項規定之特殊情形？", "choices": {"1": "另有重要 公務需處理，致無人員可供分派者。", "2": "經政府機關或公正第三人 查驗，並有相關規格、品質、數量之證明文書供驗收者。", "3": "查核 金額以上之採購，上級機關已派員監辦者。", "4": "地區偏遠，無人員 可供分派者。"}, "law": "第 13 條"}, {"id": 23, "answer": 3, "question": "下列何者不得為該採購案之監辦人員？", "choices": {"1": "上級機關人員。", "2": "督 察單位人員。", "3": "採購案之承辦人員。", "4": "稽核單位人員。"}, "law": "第 13 條"}, {"id": 24, "answer": 4, "question": "採購法所稱公告金額，係指新臺幣多少元？", "choices": {"1": "10萬元。", "2": "500 萬元。", "3": "1,000萬元。", "4": "150萬元。"}, "law": "第 13 條"}, {"id": 25, "answer": 3, "question": "機關辦理公告金額以上採購，除有特殊情形者外，應由其主(會)計 及有關單位會同監辦。下列何者非屬監辦事項？", "choices": {"1": "開標。", "2": "比 價。", "3": "查驗。", "4": "決標。"}, "law": "第 13 條"}, {"id": 26, "answer": 4, "question": "公告金額以上採購，機關首長或其授權人員核准不派員監辦之情形 下列何者尚屬適法？", "choices": {"1": "廠商提出異議且尚未解決者。", "2": "廠商申 請調解且尚未解決者。", "3": "經工程施工查核小組認定採購有重大異 常情形者。", "4": "機關內部單位有不同意見者。"}, "law": "第 13 條"}, {"id": 27, "answer": 1, "question": "下列何者屬「機關主會計及有關單位會同監辦採購辦法」所稱有關 單位？", "choices": {"1": "政風單位。", "2": "主計單位。", "3": "會計單位。", "4": "上級單 位。"}, "law": "第 13 條"}, {"id": 28, "answer": 2, "question": "機關辦理公告金額以上之採購，監辦人員採書面審核監辦，應經下 列何者核准？", "choices": {"1": "上級機關。", "2": "機關首長或其授權人員。", "3": "承 辦採購單位。", "4": "主（會）計或有關單位。"}, "law": "第 13 條"}, {"id": 29, "answer": 4, "question": "採購法第14條所定意圖規避本法適用之分批，不包括依下列各項所 分別辦理者？", "choices": {"1": "不同標的 。", "2": "不同需求條件 。", "3": "不同施工 地區 。", "4": "以上皆是。"}, "law": "第 14 條"}, {"id": 30, "answer": 3, "question": "機關人員對於與採購有關之事項，下列何者不是應迴避之情形？", "choices": {"1": "涉及本人、配偶利益。", "2": "涉及二親等以內親屬利益。", "3": "涉 及前配偶或三親等以內血親或姻親利益。", "4": "涉及共同生活家屬利 益。"}, "law": "第 15 條"}, {"id": 31, "answer": 1, "question": "依採購法規定，機關承辦、監辦採購人員離職後幾年內不得為本 人或代理廠商向原任職機關接洽處理離職前5年內與職務有關之事 務？", "choices": {"1": "3年。", "2": "5年。", "3": "1年。", "4": "2年。"}, "law": "第 15 條"}, {"id": 32, "answer": 4, "question": "有關請託或關說之敘述，下列何者正確？", "choices": {"1": "請託或關說，宜以書 面為之或作成紀錄。", "2": "請託或關說，不得作為評選之參考。", "3": "不循法定程序於招標前，對預定辦理之採購事項，提出請求亦屬請 託或關說。", "4": "以上皆是。"}, "law": "第 16 條"}, {"id": 33, "answer": 4, "question": "下列敘述何者正確？", "choices": {"1": "機關辦理適用WTO政府採購協定(GPA)之採 購，不得於招標文件限制大陸地區廠商或其產品或勞務參與。", "2": "個案採購涉及國家安全，如屬適用GPA之採購，機關不得排除第三 地區含陸資成分廠商投標。", "3": "機關以公告方式辦理之所有採購個 案，皆得限制在臺陸資廠商參與。", "4": "以上皆非。"}, "law": "第 17 條"}, {"id": 34, "answer": 4, "question": "機關辦理涉及國家安全之採購，對廠商資格訂定限制條件，得依 採購案件之特性及實際需要，就下列何種事項擇定之？", "choices": {"1": "廠商之 國籍或其設立登記所依據之法律。", "2": "廠商之代表人、董事、監察 人、監事、經理人或持有股份總數或資本總額逾百分之十之股東之 國籍。", "3": "廠商之資金來源及其比率限制。", "4": "以上皆是。"}, "law": "第 17 條"}, {"id": 35, "answer": 4, "question": "機關辦理適用世界貿易組織(WTO)政府採購協定(GPA)之採購，下列 何者非屬GPA規定應辦理事項？", "choices": {"1": "刊登英文摘要公告。", "2": "依GPA 規定之等標期。", "3": "允許GPA會員廠商投標。", "4": "提供英文招標文 件。"}, "law": "第 17 條"}, {"id": 36, "answer": 3, "question": "下列敘述何者錯誤？", "choices": {"1": "採購法所稱選擇性招標，指以公告方式預 先依一定資格條件辦理廠商資格審查後，再行邀請符合資格之廠商 投標。", "2": "機關辦理限制性招標，邀請4家廠商比價，有2家廠商投 標者，即得比價。", "3": "機關辦理選擇性招標，不得規定廠商應將規 格與價格合併投標。", "4": "機關為特定個案辦理選擇性招標，應於辦 理廠商資格審查後，邀請所有符合資格之廠商投標。"}, "law": "第 18 條"}, {"id": 37, "answer": 4, "question": "下列何者不是採購法規定公告金額以上得選用之招標方式？", "choices": {"1": "公 開招標。", "2": "比價。", "3": "公開評選。", "4": "公開取得書面報價。"}, "law": "第 19 條"}, {"id": 38, "answer": 4, "question": "公告金額以上之採購，依採購法規定之招標方式，下列何者為非？", "choices": {"1": "依採購法第22條第1項第12款規定採限制性招標。", "2": "依採購 法第20條規定採選擇性招標。", "3": "依採購法第93條共同供應契約辦 理。", "4": "依採購法第49條公開取得書面報價或企劃書。"}, "law": "第 19 條"}, {"id": 39, "answer": 4, "question": "下列敘述何者不正確？", "choices": {"1": "經常性採購，應建立6家以上之合格廠 商名單。", "2": "機關為特定個案辦理選擇性招標，應於辦理廠商資 格審查後，邀請所有符合資格之廠商投標。", "3": "合格廠商名單有效 期逾1年者，應逐年公告辦理資格審查，並檢討修正既有合格廠商 名單。", "4": "合格廠商名單有效期內發現廠商被刊登政府採購公報， 因廠商資格審查符合招標文件規定，機關後續邀標得邀請該廠商投 標。"}, "law": "第 21 條"}, {"id": 40, "answer": 4, "question": "下列敘述何者錯誤？", "choices": {"1": "機關辦理選擇性招標預先為資格審查建立 合格廠商名單後，仍應隨時接受廠商資格審查之請求，並定期檢討 修正合格廠商名單。", "2": "機關辦理選擇性招標，應予經資格審查合 格之廠商平等受邀之機會。", "3": "機關依採購法第21條第1項建立合 格廠商名單者，應於辦理廠商資格審查之文件中載明後續辦理採購 時邀請廠商投標之規則。", "4": "未達公告金額之採購，不得採選擇性 招標之方式辦理。"}, "law": "第 21 條"}, {"id": 41, "answer": 1, "question": "下列何者不是屬採購法第22條第1項第2款因無其他合適替代標的得 採限制性招標所稱之專屬權利？", "choices": {"1": "商標專用權。", "2": "專利權。", "3": "著作權。", "4": "電路布局權。"}, "law": "第 22 條"}, {"id": 42, "answer": 2, "question": "機關依採購法第22條第1項第9款辦理評選專業服務廠商，其第1次 開標，投標廠商須幾家即可開標？", "choices": {"1": "3家以上。", "2": "1家。", "3": "6 家以上。", "4": "2家以上。"}, "law": "第 22 條"}, {"id": 43, "answer": 1, "question": "機關依採購法第22條第1項第9款規定辦理評選資訊服務廠商，其投 標廠商有幾家即可開標？", "choices": {"1": "1家。", "2": "2家。", "3": "3家。", "4": "6家。"}, "law": "第 22 條"}, {"id": 44, "answer": 2, "question": "依「機關指定地區採購房地產作業辦法」之規定，機關與認定適合 需要者之議價及決標，下列何者為應載明於徵選文件之方式為何？", "choices": {"1": "適合需要者僅1家時，辦理第2次招標開標。", "2": "適合需要者為1 家者，以議價方式辦理。", "3": "適合需要者在2家以上者，以比價方 式辦理。", "4": "其採固定費用勘選認定適合需要者，得免除議價程 序。"}, "law": "第 22 條"}, {"id": 45, "answer": 4, "question": "機關依採購法第22條第1項第11款規定採購房地產，其訂有底價 者，訂定底價之時機：", "choices": {"1": "辦理公告前。", "2": "開標前。", "3": "比價 前。", "4": "以上皆非。"}, "law": "第 22 條"}, {"id": 46, "answer": 3, "question": "機關辦理公告金額以上房地產之採購，下列何情況依「機關指定地 區採購房地產作業辦法」規定不得免除公開徵求：", "choices": {"1": "毗鄰房地產 或畸零地之採購，係與現有房地產合併，以應業務需要者。", "2": "符 合採購法第22條第1項第2款之情形者。", "3": "機關間房地產之取得。", "4": "其他經主管機關認定者。"}, "law": "第 22 條"}, {"id": 47, "answer": 2, "question": "下列敘述何者錯誤？", "choices": {"1": "機關依採購法第22條第1項規定辦理限制 性招標，應由需求、使用或承辦採購單位，就個案敘明符合各款之 情形，簽報機關首長或其授權人員核准。", "2": "機關辦理採購，其屬 原有採購之後續擴充，且已於招標文件敘明擴充之期間、金額或數 量者，得採限制性招標。", "3": "採購法所稱共同投標，指2家以上之 廠商共同具名投標，並於得標後共同具名簽約，連帶負履行採購契 約之責，以承攬工程或提供財物、勞務之行為。", "4": "採購法第22條 第1項第2款所稱專屬權利，不包括商標專用權。"}, "law": "第 22 條"}, {"id": 48, "answer": 3, "question": "機關依採購法第22條第1項第6款辦理契約變更，下列何者錯誤？", "choices": {"1": "僅適用於工程採購。", "2": "契約金額如包括機關支出及收入金額 者，該條款所稱原主契約金額，得以支出部分之金額計算之。", "3": "該條款所稱「必須追加契約以外之工程」之情形，係指增加原契約 外之工作項目，不包括原契約項目規格之變更或既有標的數量之增 加。", "4": "機關辦理契約變更致原決標金額增加者，該增加之金額， 應依採購法第61條或第62條規定辦理公告、彙送。"}, "law": "第 22 條"}, {"id": 49, "answer": 2, "question": "依「機關邀請或委託文化藝術專業人士機構團體提供藝文服務作業 辦法」之規定，機關辦理藝文服務採購，下列何者正確？", "choices": {"1": "應免 收押標金、保證金。", "2": "採公告審查程序者，審查委員會應由委員 5人以上組成。", "3": "巨額藝文服務採購不經公告審查程序辦理者， 應由機關邀集機關人員2人及文化、藝術領域之專家學者7人開會審 查，經三分之二以上人員出席，出席人員二分之一以上審查通過， 簽報機關首長或其授權人員核准。", "4": "以上皆是。"}, "law": "第 22 條"}, {"id": 50, "answer": 1, "question": "機關辦理藝文服務採購，採公告審查程序者，下列何者正確？", "choices": {"1": "招標文件之內容，應考量藝文服務之採購特性及實際需要，必要時 得徵詢藝文業者之意見。", "2": "審查委員會應由委員5人以上組成； 其會議之決議應有委員總額三分之二以上出席，出席委員三分之 二同意行之。", "3": "公告結果，僅1家藝文業者投標者，不得進行審 查。", "4": "以上皆是。"}, "law": "第 22 條"}, {"id": 51, "answer": 3, "question": "下列敘述何者錯誤？", "choices": {"1": "採購法第22條第1項第2款所稱專屬權利， 不包括商標專用權。", "2": "採購法第22條第1項第1款所稱無合格標， 指審標結果無廠商合於招標文件規定。", "3": "採購法第22條第1項第6 款所稱百分之五十，指追加當次金額占原主契約金額之比率。", "4": "機關依採購法第22條第1項規定辦理限制性招標，其得以比價方式 辦理者，優先以比價方式辦理。"}, "law": "第 22 條"}, {"id": 52, "answer": 1, "question": "機關依採購法第22條第1項第10款規定辦理設計競賽廠商公開評 選，其投標廠商有幾家即可開標？", "choices": {"1": "1家。", "2": "2家。", "3": "3家。", "4": "6家。"}, "law": "第 22 條"}, {"id": 53, "answer": 3, "question": "某鎮公所依採購法第22條第1項第3款辦理限制性招標採購，以下何 者為正確？", "choices": {"1": "因採購案件為排水工程，可簽報機關首長或其授權 人員通案核准。", "2": "因屬緊急採購，僅逕洽某廠商議價即可，免優 先洽2家廠商比價。", "3": "不適用「特別採購招標決標處理辦法」。", "4": "以上皆非。"}, "law": "第 22 條"}, {"id": 54, "answer": 2, "question": "機關依採購法第22條第1項第9款辦理委託資訊服務，有關廠商之服 務費用，得於契約規定於訂約後預付一部分，但該部分不得超過契 約總額上限之百分之幾為原則？", "choices": {"1": "五十。", "2": "三十。", "3": "二十。", "4": "十五。"}, "law": "第 22 條"}, {"id": 55, "answer": 4, "question": "有關機關委託廠商辦理社會福利服務，下列敘述何者不正確？", "choices": {"1": "得於招標文件規定得標廠商實際績效提高時，依其情形給付廠商獎 勵金。", "2": "採購評選委員會評選優勝廠商，得不以1家為限。", "3": "提供服務工作人員之薪資，應於招標文件規定採固定價格決標或不 得低於一定金額。", "4": "機關提供場地供廠商使用，皆應由廠商負責 維修，機關無需另外編列費用給付。"}, "law": "第 22 條"}, {"id": 56, "answer": 4, "question": "下列何種情形屬採購法第22條第1項第1款所稱之「重大改變者」？", "choices": {"1": "投標廠商資格放寬。", "2": "履約數量明顯變更。", "3": "履約期限明 顯變更。", "4": "以上皆是。"}, "law": "第 22 條"}, {"id": 57, "answer": 1, "question": "機關委託廠商承辦資訊服務採服務成本加公費法者，得於招標文件 規定得標廠商服務費用降低或實際績效提高時，得依情形給付廠商 獎勵性報酬，其屬服務費用降低者，為所減省之契約價金金額之一 定比率，以不逾百分之幾為原則？", "choices": {"1": "五十。", "2": "三十。", "3": "二 十。", "4": "十。"}, "law": "第 22 條"}, {"id": 58, "answer": 1, "question": "機關依「機關辦理設計競賽廠商評選及計費辦法」以公告程序辦理 設計競賽，設計競賽優勝者須於獲選後提供製作成品服務者，機關 得於招標文件規定得標廠商服務費用降低或實際績效提高時，得依 其情形給付廠商獎勵性報酬。其報酬之規定為何？", "choices": {"1": "屬服務費用 降低者，為所減省之契約價金之一定比率，且以不逾百分之五十為 原則。", "2": "屬實際績效提高者，為所減省之契約價金之一定比率， 且以不逾百分之五十為原則。", "3": "屬服務費用降低者，依契約所載 計算方式給付，且以不逾百分之三十為原則。", "4": "屬實際績效提高 者，依契約所載計算方式給付，且以不逾百分之三十為原則。"}, "law": "第 22 條"}, {"id": 59, "answer": 4, "question": "機關辦理設計競賽，其採服務成本加公費法者，得於招標文件規定 得標廠商服務費用降低或實際績效提高時，得依情形給付廠商獎勵 性報酬，其屬服務費用降低者，為所減省之契約價金金額之一定比 率，以不逾百分之五十為原則，其屬實際績效提高者之契約給付金 額，以不逾契約價金總額或契約價金上限之百分之幾為原則？", "choices": {"1": "五十。", "2": "三十。", "3": "二十。", "4": "十。"}, "law": "第 22 條"}, {"id": 60, "answer": 4, "question": "下列何者屬採購法第22條第1項第6款之適用要件？", "choices": {"1": "非洽原訂 約廠商辦理，不能達契約之目的，且未逾原主契約金額百分之五十 者。", "2": "因未能預見之情形，必須追加契約以外之工程。", "3": "如另 行招標，確有產生重大不便及技術或經濟上困難之虞。", "4": "以上皆 是。"}, "law": "第 22 條"}, {"id": 61, "answer": 3, "question": "某國立大學辦理學生活動中心興建工程，施工期間因未能預見之情 形，必須追加契約以外之工程，而擬依採購法第22條第1項第6款辦 理，下列何者非屬其適用條件？", "choices": {"1": "新增項目。", "2": "原契約項目數 量之增加。", "3": "原契約項目之減少。", "4": "原契約項目規格之變更。"}, "law": "第 22 條"}, {"id": 62, "answer": 4, "question": "機關在原招標目的範圍內，因未能預見之情形，必須追加契約以 外之工程，如另行招標，確有產生重大不便及技術或經濟上困難之 虞，非洽原訂約廠商辦理，不能達契約之目的，且未逾原主契約金 額百分之五十者，得採限制性招標。所稱百分之五十，下列何者正 確？", "choices": {"1": "該次追加金額占原主契約金額。", "2": "該次追加金額占追加 後主契約金額。", "3": "追加累計金額占追加後主契約金額。", "4": "追加 累計金額占原主契約金額之比率。"}, "law": "第 22 條"}, {"id": 63, "answer": 1, "question": "機關辦理委託資訊服務之公開評選屬計畫性質複雜，服務費用不 易確實預估或履約成果不確定之服務案件，服務費用之計算適用何 者計算方式？", "choices": {"1": "服務成本加公費法。", "2": "費用百分比法。", "3": "按 月、按日或按時計酬法。", "4": "總包價法或單價計算法。"}, "law": "第 22 條"}, {"id": 64, "answer": 4, "question": "機關辦理委託資訊服務，其服務費用未達公告金額者，下列何者不 是得適用之採購方式？", "choices": {"1": "公開取得書面報價或企劃書。", "2": "公開 評選。", "3": "公開招標。", "4": "統包。"}, "law": "第 22 條"}, {"id": 65, "answer": 4, "question": "機關採購房地產訂有底價者，訂定底價時應考量下列何者因素？", "choices": {"1": "當地近期買賣實例。", "2": "政府公定價格、評定價格或標售之價 格。", "3": "房地漲跌趨勢。", "4": "以上皆是。"}, "law": "第 22 條"}, {"id": 66, "answer": 4, "question": "機關指定地區採購房地產，應先編擬計畫依規定層報核定，此計畫 內容不包括下列何者？", "choices": {"1": "採購房地產及指定地區採購之理由及其 必要性。", "2": "政府公定或評定價格。", "3": "附近買賣實例或其他徵信 資料。", "4": "預估底價。"}, "law": "第 22 條"}, {"id": 67, "answer": 2, "question": "委託技術服務須縮短時間完成者，得按縮短時間之程度酌增費用， 其所增費用：", "choices": {"1": "須採服務成本加公費法計算。", "2": "得專案議定。", "3": "須採總包價法計算。", "4": "須採建造費用百分比法計算。"}, "law": "第 22 條"}, {"id": 68, "answer": 2, "question": "下列何者不是機關依「機關辦理設計競賽廠商評選及計費辦法」 以公告程序辦理設計競賽，得採行的方式？", "choices": {"1": "公開徵求廠商提出 設計作品供評選。", "2": "在相關專業領域著有專書或研究報告，經機 關認有特殊表現或貢獻者審查擇定後，再通知廠商提出計畫書供評 選。", "3": "公開徵求廠商提出設計作品及設計說明書供評選。", "4": "公 開徵求廠商提出設計建議書，經評選入選者再邀其提出設計作品供 評選。"}, "law": "第 22 條"}, {"id": 69, "answer": 3, "question": "機關依機關辦理設計競賽廠商評選及計費辦法辦理設計競賽，設 計成果之製作費用，下列何者正確？", "choices": {"1": "採服務成本加公費法為原 則核實給付。", "2": "採總包價法為原則，屬得標廠商代收及代付之費 用亦同。", "3": "以採總包價法為原則，但屬得標廠商代收及代付之費 用，得核實給付。", "4": "按月、按日或按時計酬法，但屬得標廠商代 收及代付之費用，得核實給付。"}, "law": "第 22 條"}, {"id": 70, "answer": 2, "question": "未達公告金額之採購，以公開取得廠商之書面報價或企劃書方式辦 理者下列何者為正確？", "choices": {"1": "以採購法第34條公開徵求廠商提供參考 資料之方式刊登公告。", "2": "可於公告文件載明截止收件日期，不必 載明開標時間及地點。", "3": "其決標結果得不通知廠商。", "4": "廠商不 得提出異議。"}, "law": "第 23 條"}, {"id": 71, "answer": 3, "question": "依採購法第49條之規定，將公開徵求廠商提供書面報價或企劃書 之公告，公開於主管機關之資訊網路或刊登於政府採購公報，應取 得幾家以上廠商之書面報價或企劃書，擇符合需要者辦理比價或議 價？", "choices": {"1": "1家。", "2": "2家。", "3": "3家。", "4": "依招標文件規定家數。"}, "law": "第 23 條"}, {"id": 72, "answer": 1, "question": "未達公告金額採購之招標，其金額逾公告金額十分之一者，依「中 央機關未達公告金額採購招標辦法」規定，符合採購法第22條第1 項第16款採限制性招標者，應經需求、使用或承辦採購單位就個案 敘明邀請指定廠商比價或議價之適當理由，並經下列何程序，得採 限制性招標？", "choices": {"1": "簽報機關首長或其授權人員核准。", "2": "簽報主管 機關認定。", "3": "預算書敘明。", "4": "報經上級機關核准。"}, "law": "第 23 條"}, {"id": 73, "answer": 2, "question": "下列敘述何者正確？", "choices": {"1": "機關以統包併採最有利標決標方式辦理 者，無需報經上級機關核准。", "2": "統包採購不得依採購法第22條 第1項第9款規定辦理。", "3": "共同投標廠商應於簽約時檢附共同投標 協議書。", "4": "所稱統包，指將工程或財物採購中之設計、監造與施 工、供應、安裝或一定期間之維修等併於同一採購契約辦理招標。"}, "law": "第 24 條"}, {"id": 74, "answer": 1, "question": "某國立大學採統包方式辦理步道工程採購，總金額為新臺幣95萬 元，下列何者不是得採行的方式？", "choices": {"1": "依採購法第22條第1項第9款 辦理公開評選。", "2": "公開取得企劃書。", "3": "公開招標。", "4": "最有利 標決標。"}, "law": "第 24 條"}, {"id": 75, "answer": 1, "question": "共同投標廠商有採購法第101條各款所列情形，依採購法第102條第 3項應刊登政府採購公報者，應如何刊登方為正確？", "choices": {"1": "視可歸責 之事由，對各該應負責任之成員個別刊登。", "2": "一律刊登全體成員 名稱。", "3": "刊登代表廠商名稱。", "4": "以上皆非。"}, "law": "第 25 條"}, {"id": 76, "answer": 2, "question": "共同投標廠商於投標時應檢附之共同投標協議書，下列何者為非？", "choices": {"1": "由各成員之負責人或其代理人共同具名。", "2": "投標前應先報請 招標機關審核。", "3": "經公證或認證。", "4": "載明共同投標廠商之代表 廠商、代表人及其權責。"}, "law": "第 25 條"}, {"id": 77, "answer": 2, "question": "共同投標廠商之共同投標協議書，下列何者為非？", "choices": {"1": "應載明各成 員之主辦項目及所占契約金額比率。", "2": "協議書內容與契約約定不 符者，以協議書內容為準。", "3": "應載明各成員於得標後連帶負履行 契約責任。", "4": "協議書內容，非經機關同意不得變更。"}, "law": "第 25 條"}, {"id": 78, "answer": 2, "question": "機關允許共同投標時，應於招標文件中規定共同投標廠商之成員， 不得對同一採購另行提出投標文件或為另一共同投標廠商之成員。 但有下列何種情形不在此限？", "choices": {"1": "該採購涉及統包，以增加廠商競 爭者。", "2": "預估合於招標文件規定之投標廠商競爭不足，規定廠商 不得為不同共同投標廠商之成員反不利競爭者。", "3": "其他經上級機 關認定者。", "4": "採最有利標決標者。"}, "law": "第 25 條"}, {"id": 79, "answer": 4, "question": "採購法第25條第1項允許共同投標之個別採購特性，為下列何種情 形：", "choices": {"1": "允許共同投標有利工作界面管理者。", "2": "允許共同投標可 促進競爭者。", "3": "允許共同投標，以符合新工法引進或專利使用之 需要者。", "4": "以上皆是。"}, "law": "第 25 條"}, {"id": 80, "answer": 4, "question": "機關擬定之技術規格無國際標準或國家標準，且無法以精確之方式 說明招標要求，爰於招標文件列舉特定之3家廠牌並註明「或同等 品」，其所列廠牌應符合之情形，以下何者為非？", "choices": {"1": "所列廠牌之 價格應相當。", "2": "所列廠牌僅供廠商參考。", "3": "所列廠牌目前市場 上均有供應且取得容易。", "4": "所列廠牌之尺寸規格應相同。"}, "law": "第 26 條"}, {"id": 81, "answer": 3, "question": "下列敘述何者錯誤？", "choices": {"1": "機關辦理公告金額以上之採購，應依功 能或效益訂定招標文件。其有國際標準或國家標準者，應從其規 定。", "2": "招標文件允許投標廠商提出同等品者，機關於招標文件 中規定廠商應於投標文件內預先提出以供審查，並無違反採購法規 定。", "3": "機關於招標文件要求特定之商名，並註明「或同等品」字 樣者，即不違採購法。", "4": "採購法第26條第3項所稱同等品，指經 機關審查認定，其功能、效益、標準或特性不低於招標文件所要求 或提及者。"}, "law": "第 26 條"}, {"id": 82, "answer": 3, "question": "採購法第26條第3項所稱同等品，應由下列何者審查認定，其功 能、效益、標準或特性不低於招標文件所要求或提及者？", "choices": {"1": "評選 委員會。", "2": "開標主持人。", "3": "招標機關。", "4": "主管機關。"}, "law": "第 26 條"}, {"id": 83, "answer": 2, "question": "下列採購之招標資訊之公告，何者依規定得免刊登政府採購公報？", "choices": {"1": "採購法第22條第1項第9款規定之公開評選。", "2": "依採購法第22 條第1項第15款規定之徵求公告。", "3": "依採購法第61條規定之決標 結果公告。", "4": "採購法第102條第3項規定之廠商名稱與相關情形。"}, "law": "第 27 條"}, {"id": 84, "answer": 4, "question": "機關如欲在開標後辦理廢標，須刊登以下那一個公告？", "choices": {"1": "更正公 告。", "2": "決標公告。", "3": "定期彙送。", "4": "無法決標公告。"}, "law": "第 27 條"}, {"id": 85, "answer": 4, "question": "下列何者為非？", "choices": {"1": "查核金額以上之採購，因涉及轉售，未於招標 公告載明預算金額。", "2": "公告金額以上特殊採購，其以預算金額訂 定特定資格條件者，應於招標公告載明預算金額。", "3": "公開招標辦 理之招標公告，應載明是否屬公共工程實施技師簽證者。", "4": "採用 複數決標之方式者，應俟全部項目決標後一次刊登決標公告。"}, "law": "第 27 條"}, {"id": 86, "answer": 3, "question": "下列何者不是應刊登採購公報1日，並公開於主管機關之政府採購 資訊網站之政府採購資訊？", "choices": {"1": "公開招標之變更或補充招標文件 內容。", "2": "採購法第22條第1項第14款規定之公告審查。", "3": "採購 法第49條公開取得廠商書面報價。", "4": "採購法第61條規定之無法決 標。"}, "law": "第 27 條"}, {"id": 87, "answer": 2, "question": "下列政府採購資訊應刊登政府採購公報1日之公告，並公開於主管 機關之政府採購資訊網站？", "choices": {"1": "採購法第22條第1項第13款規定之 公告審查。", "2": "採購法第22條第1項第9款規定之公開評選。", "3": "採 購法第34條第1項但書規定之公開說明或公開徵求廠商提供參考資 料。", "4": "採購法第49條公開取得書面報價或企劃書。"}, "law": "第 27 條"}, {"id": 88, "answer": 4, "question": "依採購法第27條第1項規定辦理之招標公告，下列何者不是應登載 之事項：", "choices": {"1": "履約期限。", "2": "收受投標文件之地點及截止期限。", "3": "廠商資格條件摘要。", "4": "辦理決標之時間及地點。"}, "law": "第 27 條"}, {"id": 89, "answer": 4, "question": "機關辦理採購，除我國締結之條約或協定另有規定者外，下列何種 情形，經機關首長或其授權人員核准，其等標期得視案件特性及實 際需要合理訂定，不適用招標期限標準規定？", "choices": {"1": "依採購法第22條 以預先建立之合格廠商名單，邀請符合資格之廠商投標，於辦理廠 商資格審查之文件中另有載明者。", "2": "政府機關為商業性轉售或用 於製造產品、提供服務以供轉售目的所為之採購、基於採購案件之 特性或實際需要，有縮短等標期之必要者。", "3": "採購原料、物料或 農礦產品，其市場行情穩定者。", "4": "採購標的屬廠商於市場普遍銷 售且招標文件及投標文件內容簡單者。"}, "law": "第 28 條"}, {"id": 90, "answer": 1, "question": "機關於等標期截止前取消或暫停招標，並於取消或暫停後，且招標 文件內容未經重大改變者，最多於多久期間內重行招標者，等標期 得考量取消或暫停前已公告或邀標之日數，依原定期限酌予縮短？", "choices": {"1": "6個月內。", "2": "3個月內。", "3": "1年內。", "4": "14日內。"}, "law": "第 28 條"}, {"id": 91, "answer": 1, "question": "機關辦理採購，於等標期截止前變更或補充招標文件內容者，應視 需要延長等標期。前項變更或擴充，其非屬重大改變，且原定截止 日前幾日公告或書面通知各廠商者，得免延長等標期？", "choices": {"1": "5日。", "2": "7日。", "3": "10日。", "4": "14日。"}, "law": "第 28 條"}, {"id": 92, "answer": 3, "question": "機關辦理採購，於6個月內重行或續行招標且招標文件內容未經重 大改變者，其等標期，未達公告金額之採購不得少於A日，公告金 額以上之採購不得少於B日？", "choices": {"1": "A=2日；B=5日。", "2": "A=3日；B=5 日。", "3": "A=3日；B=7日。", "4": "A=5日；B=7日。"}, "law": "第 28 條"}, {"id": 93, "answer": 2, "question": "機關辦理採購，依採購法第93條之1規定辦理電子領標並於招標 公告敘明者，等標期得縮短A日。但縮短後不得少於B日？", "choices": {"1": "A=2 日；B=5日。", "2": "A=3日；B=5日。", "3": "A=3日；B=7日。", "4": "A=5日； B=10日。"}, "law": "第 28 條"}, {"id": 94, "answer": 1, "question": "機關辦理非適用WTO政府採購協定之巨額採購公開招標，其等標 期（未提供電子領投標及公開閱覽）不得少於幾日？", "choices": {"1": "28日。", "2": "30日。", "3": "21日。", "4": "40日。"}, "law": "第 28 條"}, {"id": 95, "answer": 2, "question": "機關於等標期截止後流標或廢標，並於其後多久期間內重行招標且 招標文件內容未經重大改變者，等標期得予縮短，公告金額以上 之採購不得少於7日？", "choices": {"1": "6個月內。", "2": "3個月內。", "3": "1年內。", "4": "14日內。"}, "law": "第 28 條"}, {"id": 96, "answer": 3, "question": "機關辦理未達公告金額之採購，其採公開招標（未提供電子領投標 及公開閱覽）辦理者，訂定等標期時，下列敘述何者最為完整？", "choices": {"1": "不少於5天。", "2": "14天以上合理期限。", "3": "7天以上合理期限。", "4": "5天以上合理期限。"}, "law": "第 28 條"}, {"id": 97, "answer": 4, "question": "機關辦理採購，於招標前將招標文件稿辦理公開閱覽，且招標文 件內容未經重大改變者，等標期得縮短A日。但縮短後不得少於B 日？", "choices": {"1": "A=2日；B=5日。", "2": "A=3日；B=5日。", "3": "A=3日；B=7日。", "4": "A=5日；B=10日。"}, "law": "第 28 條"}, {"id": 98, "answer": 1, "question": "機關辦理公開招標，依採購法第42條第2項規定辦理後續階段之邀 標，其等標期由「機關」視需要合理訂定之。前開所列「機關」係 指下列何者？", "choices": {"1": "招標機關。", "2": "上級機關。", "3": "主管機關。", "4": "行政院。"}, "law": "第 28 條"}, {"id": 99, "answer": 3, "question": "機關辦理公開招標（未提供電子領投標及公開閱覽），依採購法 第42條第2項規定，辦理後續階段之邀標，由機關視需要合理訂 定之，但等標期不得少於幾日？", "choices": {"1": "3日。", "2": "5日。", "3": "7日。", "4": "10日。"}, "law": "第 28 條"}, {"id": 100, "answer": 2, "question": "機關辦理非適用WTO政府採購協定之採購公開招標，查核金額以上 未達巨額金額之採購，其等標期（未提供電子領投標及公開閱覽） 不得少於幾日？", "choices": {"1": "14日。", "2": "21日。", "3": "28日。", "4": "35日。"}, "law": "第 28 條"}, {"id": 101, "answer": 2, "question": "機關辦理非適用WTO政府採購協定之採購選擇性招標之廠商資格預 先審查，公告金額以上未達巨額金額之採購，其等標期（未提供 電子領投標及公開閱覽）不得少於幾日？", "choices": {"1": "7日。", "2": "10日。", "3": "14日。", "4": "21日。"}, "law": "第 28 條"}, {"id": 102, "answer": 2, "question": "機關辦理非適用WTO政府採購協定之採購選擇性招標之廠商資格預 先審查，未達公告金額之採購，其等標期（未提供電子領投標及 公開閱覽）不得少於幾日？", "choices": {"1": "5日。", "2": "7日。", "3": "10日。", "4": "14 日。"}, "law": "第 28 條"}, {"id": 103, "answer": 1, "question": "機關依採購法第49條之規定公開徵求廠商之書面報價或企劃書者， 其等標期（未提供電子領投標及公開閱覽），應訂定幾日以上之合 理期限？", "choices": {"1": "5日。", "2": "7日。", "3": "10日。", "4": "14日。"}, "law": "第 28 條"}, {"id": 104, "answer": 3, "question": "機關辦理非適用WTO政府採購協定之採購選擇性招標之廠商資格預 先審查，巨額之採購，其等標期（未提供電子領投標及公開閱覽） 不得少於幾日？", "choices": {"1": "7日。", "2": "10日。", "3": "14日。", "4": "21日。"}, "law": "第 28 條"}, {"id": 105, "answer": 1, "question": "機關辦理採購，依採購法第93條之1規定辦理電子投標並於招標 公告或招標文件敘明者，等標期得縮短A日。但縮短後不得少於B 日？", "choices": {"1": "A=2日；B=5日。", "2": "A=3日；B=5日。", "3": "A=3日；B=7日。", "4": "A=5日；B=10日。"}, "law": "第 28 條"}, {"id": 106, "answer": 2, "question": "以下敘述何者錯誤？", "choices": {"1": "廠商以設定質權之金融機構定期存單繳納 履約保證金者，其存款人(出質人)無須為訂約廠商或其負責人。", "2": "投標廠商繳納之押標金得以公司或負責人名義簽發之支票為 之。", "3": "廠商以漁會信用部簽發之支票繳納押標金，其票面金額得 大於機關所訂押標金之額度。", "4": "廠商以臺灣銀行簽發，未填寫受 款人之支票，繳納臺北市政府辦理之甲標案押標金。"}, "law": "第 30 條"}, {"id": 107, "answer": 3, "question": "機關辦理採購，關於押標金，下列敘述何者為非？", "choices": {"1": "其額度以 不逾預算金額或預估採購總額之百分之五為原則，且不得逾新臺幣 5000萬元。", "2": "應以投標廠商名義繳納。", "3": "應於招標文件中載明 廠商應將押標金（含現金）附於投標文件內遞送。", "4": "得於招標文 件中規定採電子投標之廠商得減收押標金，但減收額度以不逾百分 之十為限。"}, "law": "第 30 條"}, {"id": 108, "answer": 4, "question": "押標金之額度，得為一定金額或標價之一定比率，一定比率，以 不逾標價之百分之五為原則。但不得逾新臺幣多少元？", "choices": {"1": "500萬 元。", "2": "1,000萬元。", "3": "2,500萬元。", "4": "5,000萬元。"}, "law": "第 30 條"}, {"id": 109, "answer": 1, "question": "機關得視案件性質及實際需要，於招標文件中規定得標廠商得支領 預付款，並訂明廠商應先提供同額預付款還款保證，其提供保證之 時機為？", "choices": {"1": "支領預付款前。", "2": "決標後簽約前。", "3": "繳納履約保 證金時。", "4": "決標前。"}, "law": "第 30 條"}, {"id": 110, "answer": 3, "question": "廠商繳納押標金不予發還之情形，下列何者為非？", "choices": {"1": "冒用他人名 義或證件投標。", "2": "得標後拒不簽約。", "3": "廠商之標價偏低，有採 購法第58條所定情形而未於機關通知期限內提出合理之說明者。", "4": "借用他人名義或證件投標。"}, "law": "第 31 條"}, {"id": 111, "answer": 2, "question": "採購法第31條第2項第7款「其他經主管機關認定有影響採購公正 之違反法令行為者」之情形，下列何者為非？", "choices": {"1": "有採購法第50條 第1項第5款情形。", "2": "有採購法第50條第1項第7款情形。", "3": "廠商 或其代表人、代理人、受雇人或其他從業人員有採購法第87條、第 90條或第91條規定構成要件事實之一。", "4": "廠商或其代表人、代理 人、受雇人或其他從業人員與受機關委託提供採購規劃、設計、審 查、監造、專案管理或代辦採購廠商之人員，共同實施採購法第88 條規定構成要件事實。"}, "law": "第 31 條"}, {"id": 112, "answer": 1, "question": "機關於招標文件規定廠商應繳納之押標金為新臺幣80萬元，有一廠 商以存款金額為新臺幣100萬元之設定質權之定期存款單繳納該押 標金，今有依招標文件規定不發還該廠商押標金，機關應不發還之 押標金額度為新臺幣多少元？", "choices": {"1": "80萬元。", "2": "100萬元。", "3": "20 萬元。", "4": "得由機關視個案情形斟酌不發還額度。"}, "law": "第 31 條"}, {"id": 113, "answer": 4, "question": "機關得於招標文件中規定，廠商所繳納之履約保證金及其孳息得 部分或全部不發還之情形，下列何者錯誤？", "choices": {"1": "違反採購法第65條 規定轉包者，全部保證金。", "2": "須返還已支領之契約價金而未返還 者，與未返還金額相等之保證金。", "3": "未依契約約定延長保證金之 有效期者，其應延長之保證金。", "4": "有破產或其他重大情事，致無 法繼續履約而終止契約者，全部保證金。"}, "law": "第 32 條"}, {"id": 114, "answer": 3, "question": "機關辦理採購，下列何者得於招標文件中規定為不合格標？", "choices": {"1": "投 標文件未檢附願繳納差額保證金之切結書。", "2": "投標文件之頁數或 紙張大小與招標文件規定不符者。", "3": "投標文件外封套未書明投標 廠商名稱及地址。", "4": "投標文件未使用機關提供之封套。"}, "law": "第 33 條"}, {"id": 115, "answer": 3, "question": "下列敘述何者不符合採購法第33條之規定？", "choices": {"1": "投標文件置於不透 明之信封或容器內，並以漿糊、膠水、膠帶、釘書針、繩索或其他 類似材料封裝。", "2": "投標信封上或容器外標示廠商名稱及地址。", "3": "機關指定以郵政信箱為唯一之投標送達場所。", "4": "同一投標廠 商就同一採購之投標，以一標為限。"}, "law": "第 33 條"}, {"id": 116, "answer": 1, "question": "某學校總務主任主持一開標案，經發現廠商之投標文件有下列何 種情形時，應為不合格標？", "choices": {"1": "投標文件置於塑膠透明資料袋內並 以膠帶密封者。", "2": "投標文件置於不透明標封袋內並以釘書針封裝 者。", "3": "標封上標示廠商之名稱及地址。", "4": "投標文件以不透明紙 箱封裝。"}, "law": "第 33 條"}, {"id": 117, "answer": 2, "question": "機關辦理採購，下列敘述何者正確？", "choices": {"1": "廠商之企劃書，決標後得 免予保密。", "2": "招標文件於公告前應予保密。", "3": "開標後，除有特 殊情形外，底價應予公開。", "4": "機關得於招標文件中公告底價，但 應報經上級機關核准。"}, "law": "第 34 條"}, {"id": 118, "answer": 2, "question": "機關辦理採購，有關替代方案之規定，下列敘述何者正確？", "choices": {"1": "替 代方案之適用時機，僅限招標階段。", "2": "機關允許廠商於得標後提 出替代方案者，機關審查替代方案所需費用，由廠商負擔。", "3": "採 用替代方案決標者，機關實施替代方案所增加之必要費用，由雙方 分攤。", "4": "機關得於招標文件中規定允許廠商於得標後提出替代方 案且定有獎勵措施者，其獎勵額度，為所減省契約價金之百分之六 十。"}, "law": "第 35 條"}, {"id": 119, "answer": 3, "question": "機關於招標文件中規定允許廠商於得標後提出替代方案且定有獎勵 措施者，其獎勵額度為何？", "choices": {"1": "不逾所減省契約價金之百分之五十 為限。但不扣除機關為處理替代方案所增加之必要費用。", "2": "不逾 所減省契約價金之百分之三十為限。但不扣除機關為處理替代方案 所增加之必要費用。", "3": "不逾所減省契約價金之百分之五十為限， 並應扣除機關為處理替代方案所增加之必要費用。", "4": "不逾所減省 契約價金之百分之三十為限，並應扣除機關為處理替代方案所增加 之必要費用。"}, "law": "第 35 條"}, {"id": 120, "answer": 3, "question": "機關辦理採購，有關替代方案之規定，下列敘述何者正確？", "choices": {"1": "機關於招標文件中規定允許投標廠商於截止投標期限前提出替代方 案者，替代方案標封應與主方案同時開封及審查，並於招標文件訂 明。", "2": "廠商依規定於截止投標期限前提出替代方案者，替代方案 應單獨密封，標封外標示其為替代方案，且每一項目以提出一個替 代方案為限，如未提出主方案，則以替代方案審查之。", "3": "替代方 案經綜合評估各有利不利情形，其總體效益更有利於機關者，即使 延長主方案之工期，替代方案仍得採用。", "4": "招標文件中未規定允 許提出替代方案，廠商自行提出之替代方案，仍得接受，納為決標 標的。"}, "law": "第 35 條"}, {"id": 121, "answer": 2, "question": "下列何者屬「與提供招標標的有關」之投標廠商基本資格？", "choices": {"1": "具 有相當財力證明。", "2": "廠商依工業團體法或商業團體法加入工業或 商業團體之證明。", "3": "具有相當經驗或實績之證明。", "4": "實收資本 額。"}, "law": "第 36 條"}, {"id": 122, "answer": 3, "question": "機關辦理預算金額為新臺幣4億元巨額工程採購之公開招標，經評 估有訂定特定資格之必要，其單次契約金額之訂定最高得規定廠商 提報之單次實績金額不低於新臺幣多少元？", "choices": {"1": "4億元。", "2": "4,000 萬元。", "3": "1億6000萬元。", "4": "1,600萬元。"}, "law": "第 36 條"}, {"id": 123, "answer": 4, "question": "下列何者非屬投標廠商資格與特殊或巨額採購認定標準第4條第1 項第5款所稱「廠商信用之證明」？", "choices": {"1": "票據交換機構於截止投標 日之前半年內所出具之非拒絕往來戶。", "2": "金融機構出具之信用證 明。", "3": "會計師簽證之財務報表。", "4": "營業稅繳納證明。"}, "law": "第 36 條"}, {"id": 124, "answer": 2, "question": "機關辦理預算金額為新臺幣2億元巨額工程採購之公開招標，經評 估有訂定特定資格之必要，其契約累計金額之訂定最高得規定廠商 提報之累計實績金額為不低於新臺幣多少金額？", "choices": {"1": "8,000萬元。", "2": "2億元。", "3": "2,000萬元。", "4": "8,400 萬元。"}, "law": "第 36 條"}, {"id": 125, "answer": 1, "question": "依投標廠商資格與特殊或巨額採購認定標準規定，何者非屬投標廠 商特定資格之證明文件？", "choices": {"1": "營業稅或所得稅之納稅證明。", "2": "投 標廠商現有與承包招標標的有關之專業或一般人力證明。", "3": "截止 投標日前5年內，完成與招標標的同性質或相當之工程、財物或勞 務契約。", "4": "具有符合國際或國家品質管理之驗證文件。"}, "law": "第 36 條"}, {"id": 126, "answer": 4, "question": "以下何者為非？", "choices": {"1": "巨額採購，於工程採購，為新臺幣2億元；於 財物採購，為新臺幣1億元。", "2": "機關辦理採購，得依採購案件之 特性及實際需要，訂定與提供招標標的有關或與履約能力有關之基 本資格。", "3": "招標文件得就外國廠商之投標資格及應提出之資格文 件另行規定，並附經公證或認證之中文譯本。", "4": "機關訂定招標文 件，對於投標廠商之設立地或所在地，應依採購案之性質與實際需 要予以限制。"}, "law": "第 36 條"}, {"id": 127, "answer": 1, "question": "機關依投標廠商資格與特殊或巨額採購認定標準第5條第1項第3款 訂定「具有相當財力」之特定資格證明，下列何項規定不得訂定？", "choices": {"1": "流動負債不低於流動資產。", "2": "權益不低於招標標的預算金額 十二分之一。", "3": "實收資本額不低於招標標的預算金額之十分之 一。", "4": "總負債金額不超過權益4倍。"}, "law": "第 36 條"}, {"id": 128, "answer": 3, "question": "下列採購何者非屬特殊採購？", "choices": {"1": "藝術品或具有歷史文化紀念價值 之古物採購。", "2": "使用特殊施工方法或技術之工程。", "3": "興建構造 物，單一跨徑在15公尺以上之工程。", "4": "需要特殊機具、設備或技 術始能完成之財物或勞務採購。"}, "law": "第 36 條"}, {"id": 129, "answer": 2, "question": "財物採購之採購金額在何種金額以上，係為巨額採購？", "choices": {"1": "新臺幣 5000萬元。", "2": "新臺幣1億元。", "3": "新臺幣2億元。", "4": "新臺幣2000 萬元。"}, "law": "第 36 條"}, {"id": 130, "answer": 2, "question": "下列何者係屬錯誤之敘述？", "choices": {"1": "履約期間逾1年之勞務採購，其以 提供勞力為主，且工作內容重複者，以第1年之預算金額訂定資格 條件。", "2": "投標廠商未符合機關依採購法第36條所定資格者，得 以銀行或保險公司之履約及賠償連帶保證責任、連帶保證保險單代 之。", "3": "機關訂定投標廠商之資格，不得不當限制競爭，並以確認 廠商具備履行契約所必須之能力者為限。", "4": "投標廠商應符合之資 格之一部分，招標文件得訂明允許以分包廠商就其分包部分所具有 者代之。"}, "law": "第 36 條"}, {"id": 131, "answer": 3, "question": "機關辦理新臺幣1億元之非特殊工程採購，不得訂定下列何種投標 廠商資格？", "choices": {"1": "廠商登記或設立之證明。", "2": "廠商信用之證明。", "3": "具有相當財力之證明。", "4": "廠商具有製造、供應或承做能力之 證明。"}, "law": "第 36 條"}, {"id": 132, "answer": 1, "question": "有關投標廠商資格之敘述，何者為正確？", "choices": {"1": "「投標廠商資格與 特殊或巨額採購認定標準」有關「經驗或實績」規定所稱「單次契 約金額」或「累計金額」，招標機關得本於權責自行決定係擇一訂 定或兩者俱訂。", "2": "機關辦理特殊或巨額採購，得視案件特性及需 要，訂定特定資格者，不得同時訂定基本資格。", "3": "票據交換機構 於等標期內所出具之非拒絕往來戶或最近3年內無退票紀錄證明， 方得為廠商信用之證明。", "4": "「工廠登記證明文件」為投標廠商特 定資格。"}, "law": "第 36 條"}, {"id": 133, "answer": 3, "question": "機關訂定招標文件，何者正確？", "choices": {"1": "廠商履行契約所必須具備之財 務、商業或技術資格條件，不考慮廠商在外國之商業活動。", "2": "為 因應採購性質與特性，得就投標廠商之設立地或所在地予以指定。", "3": "有關加入工業或商業團體之資格證明，除法令另有規定外，不 得限制由特定區域之團體出具。", "4": "廠商或其受雇人、從業人員具 有專門技能之資格證明，屬特定資格。"}, "law": "第 36 條"}, {"id": 134, "answer": 4, "question": "下列何者係屬投標廠商之特定資格？", "choices": {"1": "所得稅或營業稅之納稅證 明。", "2": "公會會員證。", "3": "曾完成與招標標的類似之製造、供應或 承做之文件。", "4": "具有符合國家品質管理之驗證文件。"}, "law": "第 36 條"}, {"id": 135, "answer": 1, "question": "機關訂定投標廠商之特定資格時，以下何者為是？", "choices": {"1": "應先評估可 能符合特定資格之廠商家數，並檢討有無不當限制競爭之情形。", "2": "得規定投標廠商之實收資本額應不低於招標標的預算金額之八 分之一。", "3": "得規定投標廠商之權益不低於招標標的預算金額之十 分之一。", "4": "得規定投標廠商於截止投標日前3年內，曾完成與招 標標的同性質之採購契約。"}, "law": "第 36 條"}, {"id": 136, "answer": 1, "question": "有關投標廠商資格之敘述，何者為正確？", "choices": {"1": "機關辦理特殊或巨 額採購，得視採購案件之特性及實際需要，訂定投標廠商之基本資 格。", "2": "機關訂定投標廠商需具有相當財力之資格證明者，其範圍 得包括實收資本額不低於招標標的預算金額之五分之二。", "3": "機關 辦理外國廠商得參與之採購，不得禁止大陸廠商投標。", "4": "機關以 廠商須有相當經驗或實績為特定資格者，其期間得限3年內者。"}, "law": "第 36 條"}, {"id": 137, "answer": 3, "question": "某學校舉辦畢業旅行之勞務採購案，非屬特殊採購，採購金額新 臺幣100萬元，所訂之資格條件何者為非？", "choices": {"1": "營業稅繳款書收據 聯或主管稽徵機關核章之最近一期營業人銷售額與稅額申報書收執 聯。", "2": "由政府機關或其授權機構核發該廠商係合法登記或設立之 證明文件。", "3": "須提出最近3年內曾辦理類似活動400人以上且3次 之經驗。", "4": "票據交換機構於截止投標日之前半年內所出具之最近 3年內無退票紀錄證明。"}, "law": "第 36 條"}, {"id": 138, "answer": 4, "question": "下列敘述何者為錯誤？", "choices": {"1": "興建長度在1,000公尺以上之隧道，屬 特殊採購。", "2": "採購兼有工程、勞務二種性質，而工程認定其歸屬 者，於勞務性質符合特殊採購情形者，得以該勞務性質於該採購所 占比例訂定特定資格。", "3": "投標廠商應提出之資格證明文件，廠商 得以目的事業主管機關核准之電子資料替代。", "4": "機關訂定與履約 能力有關之基本資格時，得依採購案件之特性及實際需要對其受雇 人、從業人員具有專門技能之人數，視個案需要，予以限制，並得 逾法令規定之人數。"}, "law": "第 36 條"}, {"id": 139, "answer": 4, "question": "機關辦理為期2年新臺幣6,000萬元巨額勞務採購之公開評選招標， 第1年之預算金額為新臺幣3,000萬元，因該採購案工作內容重複且 係以提供勞力為主，經評估有訂定特定資格之必要，其單次契約金 額之訂定最高得規定廠商提報之單次契約實績金額，不低於新臺 幣多少金額？", "choices": {"1": "3,000萬元。", "2": "2,400萬元。", "3": "6,000萬元。", "4": "1,200 萬元。"}, "law": "第 36 條"}, {"id": 140, "answer": 4, "question": "以下何種公司型態非以登記之「資本總額」認定其「實收資本 額」？", "choices": {"1": "無限公司。", "2": "兩合公司。", "3": "有限公司。", "4": "股份有 限公司。"}, "law": "第 36 條"}, {"id": 141, "answer": 1, "question": "工程採購之採購金額在何種金額以上，係為巨額採購？", "choices": {"1": "新臺 幣2億元。", "2": "新臺幣1億元。", "3": "新臺幣5,000萬元。", "4": "新臺幣 2,000萬元。"}, "law": "第 36 條"}, {"id": 142, "answer": 2, "question": "下列敘述何者正確？", "choices": {"1": "新臺幣8,000萬元非特殊之工程採購，得 依投標廠商資格與特殊或巨額採購認定標準訂定投標廠商之實收資 本額。", "2": "投標廠商為外國廠商者，得免附具加入工業或商業團體 之證明。", "3": "新臺幣1億元之工程採購，機關得訂定投標廠商之基 本資格與特定資格。", "4": "有關廠商或其受雇人、從業人員具有專門 技能之資格證明作為基本資格者，得就一定專門技能人員之人數依 採購案之實際需要人數為限制規定。"}, "law": "第 36 條"}, {"id": 143, "answer": 1, "question": "以下敘述何者錯誤？", "choices": {"1": "非屬特殊或巨額採購不得訂定與履約能力 有關之廠商資格。", "2": "國立大學於投標時適用招標文件規定之資格 條件。", "3": "外國廠商依其國情而難以出具之資格文件，得以自述方 式於投標文件敘明。", "4": "廠商依工業團體法加入工業團體之證明， 屬基本資格。"}, "law": "第 36 條"}, {"id": 144, "answer": 1, "question": "新臺幣(下同)2,000萬元之一般工程採購，不得訂定何種廠商資格 條件？", "choices": {"1": "廠商之實收資本額不得低於200萬元。", "2": "廠商須檢附 納稅證明。", "3": "廠商須提出設立或登記證明。", "4": "廠商須檢附曾完 成與招標標的類似之承作文件。"}, "law": "第 36 條"}, {"id": 145, "answer": 3, "question": "下列何者係屬「與履約能力有關」之投標廠商基本資格？", "choices": {"1": "營業 稅或所得稅之證明。", "2": "公會會員證。", "3": "維修人員經專業訓練之 證明。", "4": "工廠登記證明文件。"}, "law": "第 36 條"}, {"id": 146, "answer": 1, "question": "機關就外國廠商之投標資格及應提出之資格文件，得就實際需要另 行規定，附經公證或認證之中文譯本，並於招標文件中訂明。其原 文與中文譯本之內容有異者，以下列何者為準？", "choices": {"1": "原文。", "2": "中 文譯本。", "3": "取對機關有利者。", "4": "取對廠商有利者。"}, "law": "第 36 條"}, {"id": 147, "answer": 4, "question": "下列敘述何者符合採購法規定？", "choices": {"1": "投標廠商應提出之資格證明文 件，除招標文件另有規定者外，以影本為原則，但招標文件得規定 影本應載明與正本相符，並加蓋廠商印章。", "2": "機關採最有利標之 總評分法中價格不納入評分者，得評選優勝廠商比減價格。", "3": "機 關允許外國廠商參與非條約協定採購者，得於招標文件中規定外國 廠商不適用採購法第6章爭議處理規定。", "4": "採購法第26條第3項所 稱同等品由招標機關審查認定，其功能、效益、標準或特性不低於 招標文件所要求或提及者。"}, "law": "第 36 條"}, {"id": 148, "answer": 3, "question": "下列有關投標廠商資格之敘述，何者為非？", "choices": {"1": "具有相當人力證 明之範圍得包括投標廠商現有與承包招標標的有關之專業或一般人 力證明。", "2": "廠商或其受雇人、從業人員具有專門技能之基本資格 證明，除依法令就一定專門技能人員之人數為規定者外，不得對其 人數予以限制。", "3": "政黨與其具關係企業關係之廠商，不得參與投 標，但得作為投標廠商之分包廠商。", "4": "外國廠商附經公證或認證 之資格文件中文譯本，其中文譯本之內容有誤者，以原文為準。"}, "law": "第 36 條"}, {"id": 149, "answer": 3, "question": "下列敘述何者錯誤？", "choices": {"1": "資本額限制屬特定資格。", "2": "特殊或巨 額之採購，始得訂定特定資格。", "3": "投標廠商應符合之資格之一部 分，以分包廠商就其分包部分所具有者代之，機關不得拒絕。", "4": "特殊或巨額採購，投標廠商未符合招標文件規定之資本額者，得以 銀行或保險公司之履約及賠償連帶保證責任、連帶保證保險單代 之。"}, "law": "第 36 條"}, {"id": 150, "answer": 3, "question": "有關投標廠商基本資格之敘述，何者為非？", "choices": {"1": "廠商登記或設立之 證明，應以經濟部編訂之公司行號營業項目代碼表所列之大類、中 類、小類或細類項目為基準。", "2": "有關廠商納稅之證明，廠商不及 提出最近一期證明者，得以前一期之納稅證明代之。", "3": "位於金門 之機關，因地處偏遠不便，得限制金門當地廠商始得投標。", "4": "投 標廠商基本資格之訂定，應與提供招標標的有關或與履約能力有 關。"}, "law": "第 36 條"}, {"id": 151, "answer": 3, "question": "有關投標廠商基本資格之敘述，何者為非？", "choices": {"1": "投標廠商之基本資 格，應與提供招標標的有關或與履約能力有關。", "2": "有關廠商納稅 之證明，廠商不及提出最近一期證明者，得以前一期之納稅證明代 之。", "3": "臺南市某機關辦理採購，得依「投標廠商資格與特殊或巨 額採購認定標準」規定，擇定我國實績為廠商特定資格之一。", "4": "廠商登記或設立之證明，應以經濟部編訂之公司行號營業項目代碼 表所列之大類、中類、小類或細類項目為基準。"}, "law": "第 36 條"}, {"id": 152, "answer": 4, "question": "下列何者不是機關辦理採購，得擇定之基本資格？", "choices": {"1": "廠商納稅之 證明。", "2": "廠商具有維修、維護或售後服務能力之證明。", "3": "廠商 具有製造、供應或承做能力之證明。", "4": "具有相當人力之證明。"}, "law": "第 36 條"}, {"id": 153, "answer": 3, "question": "新北市八里區公所依採購法第40條規定洽請內政部國土管理署代辦 查核金額以上之下水道新建工程，下列敘述何者正確？", "choices": {"1": "監辦該 採購之上級機關為內政部。", "2": "監辦該採購之主會計及有關單位為 國土管理署之監辦單位。", "3": "八里區公所得洽請國土管理署依規定 簽報核定底價。", "4": "招標機關為國土管理署，故本案決標金額之統 計應歸屬中央機關辦理之採購。"}, "law": "第 40 條"}, {"id": 154, "answer": 1, "question": "機關辦理採購，下列敘述何者錯誤？", "choices": {"1": "機關於招標文件規定廠商 得請求釋疑之期限，至少應有等標期之四分之一，且不得少於10 日。", "2": "廠商對招標文件規定提出異議者，招標機關應自收受異 議之次日起15日內為適當之處理，並將處理結果以書面通知提出異 議之廠商。", "3": "機關最後釋疑之次日起算至截止投標日或資格審查 截止收件日之日數，不得少於原等標期之四分之一。", "4": "廠商對招 標文件規定提出異議者，為自公告或邀標之次日起等標期之四分之 一。但不得少於10日。"}, "law": "第 41 條"}, {"id": 155, "answer": 1, "question": "機關辦理採購，有關分段開標之規定，下列敘述何者正確？", "choices": {"1": "機 關辦理一次投標分段開標，未通過前一階段審標之投標廠商，其已 投標未開標之部分，原封發還。", "2": "採公開招標者，機關不得規定 廠商應將各段開標用之投標文件分別密封。", "3": "機關辦理公開招標 或選擇性招標，應就資格、規格與價格採取分段開標。", "4": "公開招 標案件得就廠商資格為單獨之一段招標。"}, "law": "第 42 條"}, {"id": 156, "answer": 2, "question": "機關辦理採購，除我國締結之條約或協定另有禁止規定者外，得 於招標文件規定，要求投標廠商採購國內貨品比率、技術移轉、投 資、協助外銷或其他類似條件，作為採購評選之項目，但其比率不 得逾？", "choices": {"1": "百分之三。", "2": "三分之一。", "3": "百分之十。", "4": "二分之 一。"}, "law": "第 43 條"}, {"id": 157, "answer": 4, "question": "關於底價之訂定，下列敘述何者為錯誤？", "choices": {"1": "機關得基於技術、品 質、功能、履約地、商業條款、評分或使用效益等差異，訂定不同 之底價。", "2": "未達公告金額之採購，得由承辦採購單位逕行簽報機 關首長或其授權人員核定底價。", "3": "限制性招標之議價，訂定底價 前應先參考廠商之報價或估價單。", "4": "公開招標採分段開標者，底 價應於資格審查後之下一階段開標前定之。"}, "law": "第 46 條"}, {"id": 158, "answer": 3, "question": "機關辦理採購，下列敘述何者正確？", "choices": {"1": "底價應依圖說、規範、契 約並考量成本、市場行情及政府機關決標資料逐項編列，查核金額 以上應簽報上級機關核定。", "2": "公開招標採分段開標者，其底價應 於開價格標前定之。", "3": "機關基於技術工法之差異，訂定不同之底 價，並無不可。", "4": "於宣布最有利標之得標廠商後再洽其議價。"}, "law": "第 46 條"}, {"id": 159, "answer": 4, "question": "下列敘述何者正確？", "choices": {"1": "機關辦理公開招標，因投標廠商家數未滿 3家而流標者，得發還投標文件。", "2": "機關於開標後因故廢標，廠 商要求發還投標文件者，機關得保留其中一份，其餘發還，或僅保 留影本。", "3": "機關於開標後因故廢標，採分段開標者，尚未開標之 部分應予發還。", "4": "以上皆是。"}, "law": "第 48 條"}, {"id": 160, "answer": 4, "question": "下列何種情形，非屬採購法第50條第1項第5款所稱「不同投標廠商 間之投標文件內容有重大異常關聯」之情形？", "choices": {"1": "投標文件內容由 同一人或同一廠商繕寫或備具者。", "2": "押標金由同一人或同一廠商 繳納或申請退還者。", "3": "投標標封或通知機關信函號碼連號，顯係 同一人或同一廠商所為者。", "4": "A公司及B公司為關係企業，該2公 司參與同一標案之投標。"}, "law": "第 50 條"}, {"id": 161, "answer": 3, "question": "機關辦理採購，下列敘述何者錯誤？", "choices": {"1": "查核金額以上之採購，擬 決標之最低標價超過底價百分之四未逾百分之八者，應先報經上級 機關核准後決標。", "2": "合於招標文件規定之投標廠商僅有1家或採 議價方式辦理，須限制減價次數者，應先通知廠商。", "3": "洽最低標 廠商優先減價1次時，該廠商書明照底價承作，機關得決標予該廠 商。", "4": "決標依採購法第52條第1項第2款規定辦理者，除小額採購 外，應成立評審委員會，成立時機準用採購法第46條第2項有關底 價之訂定時機。"}, "law": "第 53 條"}, {"id": 162, "answer": 3, "question": "機關辦理採購，下列敘述何者正確？", "choices": {"1": "機關洽最低標廠商優先減 價1次時，該廠商書明照底價承作，機關得決標予該廠商。", "2": "議 價案之減價次數，適用採購法第53條關於不得逾3次之規定。", "3": "決標依採購法第52條第1項第2款規定辦理者，除小額採購外，應成 立評審委員會，並得以第94條成立之評選委員會代之。", "4": "未達公 告金額採購，依採購法第22條第1項第9款規定辦理公開評選者，其 評選程序得予簡化，不適用採購法第94條評選委員會之規定。"}, "law": "第 53 條"}, {"id": 163, "answer": 2, "question": "機關依採購法第56條第1項及第57條採行協商措施，經洽請重行遞 送投標文件者，重行遞送之投標文件，有與協商無關或不受影響之 項目者，該項目？", "choices": {"1": "優於原投標文件者納入評選，低於原投標文 件內容者，不納入評選。", "2": "無論是否優於或低於原投標文件應不 予評選，並以重行遞送前之內容為準。", "3": "無論是否優於或低於原 投標文件應納入評選，並以重行遞送之內容為準。", "4": "優於原投標 文件者不納入評選，低於原投標文件內容者，納入評選。"}, "law": "第 56 條"}, {"id": 164, "answer": 3, "question": "依最有利標評選辦法規定，下列敘述何者錯誤？", "choices": {"1": "機關訂定評 選項目、子項及其評審標準，不得以有利或不利於特定廠商為目 的。", "2": "序位，指評選委員會依招標文件所列評比項目之重要性或 權重，評審廠商投標文件後所核給之序位。", "3": "招標文件如已訂明 固定費用或費率者，不得規定廠商須於投標文件內詳列組成該費用 或費率之內容。", "4": "總評分法中之總滿分，指招標文件所列各評選 項目滿分之合計總分數。"}, "law": "第 56 條"}, {"id": 165, "answer": 2, "question": "機關評選最有利標，下列何者為錯誤？", "choices": {"1": "機關得輔以廠商簡報 及現場詢答，其列為評選項目者，所占配分或權重不得逾百分之二 十。", "2": "採分階段辦理評選及淘汰不合格廠商者，得就分數或權重 較低之階段先行評選；並以二階段為原則。", "3": "價格納入評分者， 其所占總滿分之比率，不得低於百分之二十，且不得逾百分之五 十。", "4": "選擇性招標以資格為評選項目之一者，與資格有關部分之 配分或權重，應載明於資格審查文件。"}, "law": "第 56 條"}, {"id": 166, "answer": 1, "question": "機關評定最有利標後，對於合於招標文件規定但未得標之廠商，應 通知之事項，何者最完整正確？", "choices": {"1": "最有利標之標價與總評分或序 位評比結果及該未得標廠商之總評分或序位評比結果。", "2": "最有利 標之標價與總評分或序位評比結果及各未得標廠商之總評分或序位 評比結果。", "3": "最有利標之標價與總評分或序位評比結果。", "4": "該 未得標廠商之總評分或序位評比結果。"}, "law": "第 56 條"}, {"id": 167, "answer": 1, "question": "下列敘述何者錯誤？", "choices": {"1": "機關評選最有利標之過程中，除評定最有 利標之當次會議應作成紀錄外，其他會議是否作成紀錄得由評選委 員會決議之。", "2": "機關採最有利標決標，以不訂底價為原則。", "3": "機關評定最有利標後，應於決標公告公布最有利標之標價及總評分 或序位評比結果。", "4": "評選委員會評選最有利標，應依招標文件載 明之評選項目、子項及其配分或權重辦理，不得變更。"}, "law": "第 56 條"}, {"id": 168, "answer": 2, "question": "下列敘述何者錯誤？", "choices": {"1": "評定最有利標涉及序位評比者，招標文 件應載明各評比項目之權重。", "2": "機關採最有利標決標，其訂有底 價，而廠商報價逾底價須減價者，於採行協商措施時洽減之，不得 有超底價決標情形。", "3": "評定最有利標涉及序位評比者，應於招標 文件載明序位評比結果不合格者，不得作為協商對象或最有利標。", "4": "依最有利標評選辦法規定，招標文件未訂明固定費用或費率， 而由廠商於投標文件載明標價者，應規定廠商於投標文件內詳列報 價內容，並納入評選。"}, "law": "第 56 條"}, {"id": 169, "answer": 3, "question": "機關依「最有利標評選辦法」辦理最有利標評選，下列何者為錯 誤？", "choices": {"1": "招標文件未訂明固定費用或費率，而由廠商於投標文件載 明標價者，應規定廠商於投標文件內詳列報價內容，並納入評選。", "2": "招標文件已訂明固定費用或費率者，得規定廠商於投標文件內 詳列組成該費用或費率之內容，並納入評選。", "3": "招標文件已訂 明固定費用或費率者，仍應規定廠商於投標文件內詳列組成該費用 或費率之內容，並納入評選。", "4": "招標文件已訂明固定費用或費率 者，得不規定廠商於投標文件內詳列組成該費用或費率之內容。"}, "law": "第 56 條"}, {"id": 170, "answer": 1, "question": "依最有利標評選辦法規定，價格納入評分者，其所占總滿分之比率 不得低於？", "choices": {"1": "百分之二十。", "2": "百分之三十。", "3": "百分之五十。", "4": "百分之六十。"}, "law": "第 56 條"}, {"id": 171, "answer": 4, "question": "評選最有利標，下列敘述何者正確？", "choices": {"1": "投標廠商未出席簡報及現 場詢答者，該廠商不得參與評選，並不得作為最有利標。", "2": "廠商 簡報不得更改其投標文件之內容。惟如廠商另外提出補充資料者， 是否納入評選由評選委員決議之。", "3": "廠商簡報及現場詢答，應 與評選項目有關；其列為評選項目者，所占配分或權重不得逾百分 之十。", "4": "為利評選委員對廠商於各評選項目之表現為更深入之瞭 解，得輔以廠商簡報及現場詢答。"}, "law": "第 56 條"}, {"id": 172, "answer": 1, "question": "機關辦理採購，有關協商規定，下列敘述何者錯誤？", "choices": {"1": "依採購 法第55條規定採行協商措施者，其採行協商措施前之開標至審標作 業，依採購法規定應予保密。", "2": "不得將協商廠商投標文件內容、 優缺點及評分，透露予其他廠商。", "3": "採行協商措施應執行保密措 施。", "4": "原招標文件已標示得更改項目之內容，始得納入協商。"}, "law": "第 57 條"}, {"id": 173, "answer": 3, "question": "依採購法規定，招標文件規定得就特定項目採行協商措施時，下列 何者為正確？", "choices": {"1": "以評選最優廠商為協商對象。", "2": "審標程序公開 進行。", "3": "參與協商之廠商得依據協商結果修改投標文件。", "4": "開 標程序應公開。"}, "law": "第 57 條"}, {"id": 174, "answer": 1, "question": "機關辦理採購採最低標決標，依採購法第58條規定限期通知最低 標廠商提出說明後，廠商未於期限內提出合理之說明者，下列處置 何者適法？", "choices": {"1": "不決標予最低標廠商，並以次低標廠商為最低標廠 商。", "2": "不決標予最低標廠商，並逕予廢標。", "3": "不決標予最低標 廠商，並不發還押標金。", "4": "自次低標起，依序洽廠商是否願意減 至最低標價後決標。"}, "law": "第 58 條"}, {"id": 175, "answer": 3, "question": "下列何種情況屬採購法第58條所稱總標價或部分標價偏低之情形？", "choices": {"1": "廠商之部分標價低於其他機關最近辦理相同採購決標價之百分 之八十者。", "2": "廠商之部分標價有對應之底價項目可供比較，該部 分標價低於相同部分項目底價之百分之八十者。", "3": "訂有底價之採 購，廠商之總標價低於底價百分之八十者。", "4": "廠商之部分標價低 於可供參考之一般價格之百分之八十者。"}, "law": "第 58 條"}, {"id": 176, "answer": 2, "question": "機關辦理採購採最低標決標，最低標廠商標價低於底價百分之七 十，依採購法第58條規定，下列何者為非？", "choices": {"1": "洽最低標廠商說 明，如機關評估該說明合理，逕決標予該最低標廠商。", "2": "免洽最 低標廠商說明，不決標予該最低標廠商。", "3": "洽最低標廠商說明， 如機關評估該說明不合理，不決標予該最低標廠商，並以次低標為 最低標廠商。", "4": "經機關評估該標價並無降低品質、不能誠信履約 之虞，不洽最低標說明，逕決標予該最低標廠商。"}, "law": "第 58 條"}, {"id": 177, "answer": 4, "question": "機關辦理採購，下列敘述何者正確？", "choices": {"1": "機關得於招標文件中規定 廠商之標價有採購法第58條所稱標價偏低之情形時，即應繳納差額 保證金。", "2": "最低標廠商總標價在底價以內，但未低於底價之百分 之八十，該最低標主動表示標價錯誤，要求不決標予該廠商，機關 得予接受。", "3": "最低標廠商總標價有採購法第58條所稱標價偏低之 情形，得逕請廠商於5日內提出差額保證金，未提出者，不退還押 標金。", "4": "總標價未偏低但部分標價偏低者，仍適用採購法第58條 規定。"}, "law": "第 58 條"}, {"id": 178, "answer": 3, "question": "機關辦理採購，下列敘述何者正確？", "choices": {"1": "機關辦理採購依採購法第 51條規定通知廠商說明，廠商未依通知期限辦理者，視同放棄，不 得以該廠商為決標對象。", "2": "機關辦理公告金額以上採購之招標， 應於決標日起20日內，將決標結果之公告刊登於政府採購公報，並 以書面通知各投標廠商。", "3": "機關依招標文件規定審查廠商投標文 件，其審查結果之通知，經廠商請求者，得以書面為之。", "4": "機關 辦理採購，其因契約變更致原決標金額增加新臺幣150萬元，如未 另訂新契約者，免辦理決標公告。"}, "law": "第 60 條"}, {"id": 179, "answer": 4, "question": "某公立高中辦理94學年度畢業紀念冊編製之採購案，於94年6月15 日決標，依採購法規定，最遲應於何日前刊登決標公告？", "choices": {"1": "94 年7月15日。", "2": "94年8月15日。", "3": "94年7月4日。", "4": "94年7月14 日。"}, "law": "第 61 條"}, {"id": 180, "answer": 4, "question": "採購法第61條所稱決標後一定期間為？", "choices": {"1": "自開標日起20日。", "2": "自開標日起30日。", "3": "自決標日起20日。", "4": "自決標日起30日。"}, "law": "第 61 條"}, {"id": 181, "answer": 2, "question": "依採購法第61條規定辦理無法決標之公告，應於廢標後、重行招標 前刊登，並不得超過廢標後多久？", "choices": {"1": "一星期。", "2": "二星期。", "3": "三星期。", "4": "一個月。"}, "law": "第 61 條"}, {"id": 182, "answer": 4, "question": "某機關擬委外採購研習訓練，預定委外1年新臺幣(以下同)250萬 元，並擬於招標公告及招標文件敘明履約情形良好者，將依採購法 第22條第1項第7款續約2次每次1年。上網公告辦理招標，其上網填 報？", "choices": {"1": "採購金額為750萬元；預算金額為1,000萬元。", "2": "採購金 額為250萬元；預算金額為250萬元。", "3": "採購金額為250萬元；預 算金額為1,000萬元。", "4": "採購金額為750萬元；預算金額為250萬 元。 綜合"}, "law": ""}, {"id": 183, "answer": 1, "question": "下列何者敘述錯誤？", "choices": {"1": "機關委託法人或團體代辦採購，代辦採購 之法人、團體與其受雇人及關係企業，不得為該採購之投標廠商， 但得為分包廠商。", "2": "承辦專案管理之廠商與規劃、設計、施工或 供應廠商，不得同時為關係企業或同一其他廠商之關係企業。", "3": "機關承辦、監辦採購人員離職後3年內不得為本人或代理廠商向原 任職機關接洽處理離職前5年內與職務有關之事務。", "4": "機關辦理 採購，應於招標文件規定，廠商因履行機關契約而知悉其他廠商 無法知悉或應秘密之資訊之廠商，於使用該等資訊有利於得標之採 購，不得參加投標、作為決標對象或分包廠商。 綜合"}, "law": ""}, {"id": 184, "answer": 1, "question": "機關得於招標文件中規定，廠商有下列何種情形者，其所繳納之履 約保證金(含其孳息)應全部不發還？", "choices": {"1": "違反採購法第65條規定轉 包者。", "2": "須返還已支領之契約價金而未返還者。", "3": "查驗或驗收 不合格，且未於通知期限內依規定辦理。", "4": "擅自減省工料。 綜合"}, "law": ""}, {"id": 185, "answer": 3, "question": "機關辦理採購，下列敘述何者正確？", "choices": {"1": "依採購法第51條規定通知 廠商說明，廠商未依通知期限辦理者，視同放棄，不得以該廠商為 綜合 決標對象。", "2": "公告金額以上之招標，應於決標日起20日內，將決 標結果之公告刊登於政府採購公報，並以書面通知各投標廠商。", "3": "依招標文件規定審標，其審標結果之通知，應於審查結果完成 後儘速通知，最遲不得逾決標或廢標日10日。", "4": "未達公告金額採 購之招標，其依採購法第49條規定採公開取得書面報價方式辦理因 屬詢價性質，得依採購法第34條第1項但書規定辦理。"}, "law": ""}, {"id": 186, "answer": 2, "question": "依採購法對廠商之通知，下列何者應為書面？", "choices": {"1": "公告金額以上之 審標結果。", "2": "公告金額以上之無法決標通知。", "3": "未達公告金額 之決標結果。", "4": "未達公告金額之無法決標通知。 綜合"}, "law": ""}, {"id": 187, "answer": 2, "question": "下列何者錯誤？", "choices": {"1": "預算新臺幣50萬元之採購以公開招標方式辦 理。", "2": "預算新臺幣170萬元之採購，詢價結果只需145萬元，以公 開取得書面報價方式辦理。", "3": "預算新臺幣20萬元之採購得以公開 評選方式辦理。", "4": "預算新臺幣9萬元小額採購以公開取得書面報 價方式辦理。 綜合"}, "law": ""}, {"id": 188, "answer": 1, "question": "下列敘述何者錯誤？", "choices": {"1": "未達公告金額採購之監辦，依其屬地方， 由直轄市或縣(市)政府另定之。未另定者，比照中央規定辦理。", "2": "未達公告金額之招標方式，在地方由直轄市或縣(市)政府定 之。地方未定者，比照中央規定辦理。", "3": "直轄市、縣(市)政府 未設採購申訴審議委員會者，得依採購法第76條規定委請主管機關 申訴會辦理前項業務。", "4": "直轄市、縣(市)政府應成立採購稽核小 組。 綜合"}, "law": ""}, {"id": 189, "answer": 4, "question": "機關辦理查核金額以上之採購，下列何者屬無須報上級機關核准 之事項？", "choices": {"1": "最有利標。", "2": "減價收受。", "3": "超過底價百分之四決 標。", "4": "統包方式辦理工程採購。 綜合"}, "law": ""}, {"id": 190, "answer": 2, "question": "下列敘述何者符合採購法規定？", "choices": {"1": "投標廠商應提出之資格證明 文件，除招標文件另有規定者外，以影本為原則，但應加蓋廠商印 章。", "2": "機關採最有利標者，得將廠商過去的履約績效擇定為評選 項目。", "3": "機關允許外國廠商參與非條約協定採購者，得於招標文 件中規定外國廠商不適用採購法第六章爭議處理。", "4": "機關採複數 決標，其個別項目之預算金額未達巨額，但總金額為巨額者，適用 巨額採購有關廠商資格之規定。 綜合"}, "law": ""}, {"id": 191, "answer": 3, "question": "依採購法規定，下列何者錯誤？", "choices": {"1": "追加契約金額新臺幣170萬 元，無須上級機關核准。", "2": "勞務契約同時辦理追加金額新臺幣 600萬元、追減金額新臺幣500萬元之議價會議，須通知上級機關監 辦。", "3": "財物採購預算金額新臺幣140萬元，決標金額新臺幣110萬 元，廠商不履約，機關通知該廠商將其名稱及相關情形刊登政府採 購公報，廠商只能提出異議不能提出申訴。", "4": "勞務契約金額新臺 幣1,250萬元，僅追加新臺幣5萬元，該追加採購可適用採購法第23 條之規定。 綜合"}, "law": ""}, {"id": 192, "answer": 4, "question": "機關辦理採購，依採購法施行細則第64條之2採評分及格最低標決 標，下列敘述何者正確？", "choices": {"1": "涉及競圖之技術服務，先審查及格分 數以上之廠商後辦理比價。", "2": "不必成立審查委員會。", "3": "招標文 件明定採不分段開標。", "4": "辦理招標前無需先報上級機關核准。 綜合"}, "law": ""}, {"id": 193, "answer": 2, "question": "機關辦理位於原住民地區未達公告金額之採購，下列何者錯誤？", "choices": {"1": "應由原住民個人、機構、法人或團體承包；但渠等無法承包 者，不在此限。", "2": "於招標文件敘明開放原住民及非原住民廠商投 標，且將優先決標予原住民廠商者，須有3家以上原住民廠商投標 方可開標。", "3": "新臺幣15萬元以下之採購，得不經公告程序，逕洽 原住民機構、團體或個人辦理採購。", "4": "依採購法第22條第1項第9 款規定，以公開評選優勝廠商方式辦理者，得不優先決標予原住民 廠商。 綜合"}, "law": ""}, {"id": 194, "answer": 3, "question": "依政府採購法規定，下列招標文件規定何者適法？", "choices": {"1": "廠商之投標 文件未使用機關提供之封套者，視為不合格標。", "2": "允許廠商於開 標後補正非契約必要之點之文件。", "3": "廠商標價超過招標公告公開 之預算者為不合格標，不予減價機會。", "4": "採電子投標之廠商得減 收押標金，但減收額度以不逾百分之十五為限。 綜合"}, "law": ""}, {"id": 195, "answer": 2, "question": "下列何者正確？", "choices": {"1": "依法令得輸入或進入臺灣地區之大陸地區財 物或勞務，招標文件應允許我國廠商得提供該等財物或勞務參與投 標。", "2": "機關辦理採購，如符合「臺灣地區與大陸地區人民關係條 例」之相關規定，得允許大陸地區廠商為投標廠商。", "3": "對於適用 條約或協定之採購，應限定非屬條約或協定之國家廠商不得參與。", "4": "我國廠商所供應財物或勞務之原產地非屬我國者，視同國內廠 商。 綜合"}, "law": ""}, {"id": 196, "answer": 2, "question": "下列敘述何者正確？", "choices": {"1": "臨時人力之僱用不適用採購法。", "2": "村 （里）非採購法所稱之機關，故不宜辦理相關工程發包、採購業 務。", "3": "被機關補助經費之法人或團體辦理查核金額以上之採購， 於開標時應報請補助機關之上級機關監督。", "4": "機關首長擔任投標 廠商不支薪理事，該廠商如參與該機關之採購，機關首長無須迴 避。 綜合"}, "law": ""}, {"id": 197, "answer": 1, "question": "下列敘述何者正確？", "choices": {"1": "投標廠商依招標文件及「投標廠商資格與 特殊或巨額採購認定標準」第4條第1項第5款規定所提之「最近三 年內無退票紀錄證明」，如已辦妥清償註記者，視同為「無退票紀 錄」情形。", "2": "機關擬委託廠商辦理專案管理，屬技術服務，不得 以選擇性招標方式辦理。", "3": "機關辦理委託技術服務廠商評選， 於採購評選委員會評選階段，仍應通知主會計及有關單位派員監 辦。", "4": "機關辦理工程採購，其招標文件所定工程保險費用之報價 方式，應規定由廠商採單獨一項報價。 綜合"}, "law": ""}, {"id": 198, "answer": 2, "question": "下列敘述何者正確？", "choices": {"1": "B公司百分之百持有C公司之股份，該2公 司參與某一標案之投標，即屬重大異常關聯之情形。", "2": "不同投標 廠商參與投標，由同一廠商之人員代表出席開標會議，屬影響採購 公正之違反法令行為。", "3": "機關辦理採購，擬分4區複數決標，依 採購法規定，不得限制投標廠商僅可得標1區。", "4": "機關承辦採購 單位之主管不得為所辦採購之主驗人或樣品及材料之檢驗人。 綜合"}, "law": ""}, {"id": 199, "answer": 2, "question": "下列敘述何者錯誤？", "choices": {"1": "政黨及與其具關係企業關係之廠商，不得 參與投標。", "2": "代擬招標文件之廠商，機關於依該招標文件辦理之 採購，該廠商不得作為決標對象。但得作為分包廠商。", "3": "承辦專 案管理之廠商與規劃、設計、施工或供應廠商，不得同時為關係企 綜合 業。", "4": "提供規劃、設計服務之廠商，於依該規劃、設計結果辦理 之採購應予迴避。但於無利益衝突或無不公平競爭之虞，經機關同 意者，得不適用之。"}, "law": ""}, {"id": 200, "answer": 1, "question": "下列何者非屬採購法規定應製作紀錄之事項？", "choices": {"1": "請託或關說。", "2": "流標。", "3": "廢標。", "4": "評選會議。 綜合 是非題 1 X 政府採購法第2條所稱「勞務之委任」，適用民法之相關規定，不 限於有對價關係之有償委任。 2 O 政府採購法第2條所稱「勞務之委任」，適用民法之相關規定，且 限於有對價關係之有償委任。 3 X 機關非以人事經費僱用自然人為非正式編制臨時人員，雖比照人事 法規進用程序辦理，且訂有管理、考核規定者，仍應適用政府採購 法。 4 O 機關非以人事經費僱用自然人為非正式編制臨時人員，其比照人事 法規進用程序辦理，且訂有管理、考核規定者，不適用政府採購 法。 5 X 各直轄市、縣（市）政府將水土保持計畫「委外審查」或「委外施 工檢查」，不適用政府採購法規定。 6 O 各直轄市、縣（市）政府將水土保持計畫「委外審查」或「委外施 工檢查」，係屬協助技術性審查之一般事務工作，不涉及對外行使 公權力事項之權限移轉，其委託程序仍適用政府採購法規定。 7 X 機關於金融機構之財務調度、開發信用狀、買賣或發行債券、匯 兌、賺取利差、投資金融商品、申購基金，屬機關就資金之供需所 為之理財行為，亦屬勞務委託，應適用採購法。 8 O 機關於金融機構之財務調度、開發信用狀、買賣或發行債券、匯 兌、賺取利差、投資金融商品、申購基金，屬機關就資金之供需所 為之理財行為，不適用採購法。 9 X 機關為外交或投資等事件，依行政程序法第16條規定委託中間人辦 理相關事項，而有給付報酬或具對價關係者，仍屬政府採購法第2 條所稱採購，適用該法之規定。 10 X 機關以代收代付款方式辦理之採購，因非屬機關預算之支出，故不 適用政府採購法之規定。 11 O 機關委託金融機構代收款、辦理薪資轉帳，其有支付手續費或具有 對價者，適用採購法。 12 X 公務出國委由旅行社代辦，以機關名義辦理，但僅就機票項委託代 辦，因機票上為個人姓名，故得不適用政府採購法之規定。 13 O 公務出國委由旅行社代辦，如以機關名義辦理，無論機票及膳宿等 項目係全部或部分委託代辦，均應適用政府採購法之規定。 14 X 機關辦理標售資源回收物品，適用採購法。 第 2 條 15 O 機關辦理標售資源回收物品，不適用採購法。 第 2 條 16 O 各機關支付費用委託員工消費合作社辦理報名簡章、申請書及標誌 等出售，屬勞務之委任，屬政府採購法第2條規定範圍內，應依該 法規定辦理。 17 X 機關間請求協助事項，屬勞務之委任，不論是否涉及公權力行使， 應依政府採購法規定辦理。 18 O 機關為外交或投資等事件，其委託中間人辦理相關事項，而有給付 報酬或具對價關係者，除行政程序法第16條所定依法規將其權限之 一部分委託辦理者外，屬政府採購法第2條所稱採購，適用該法之 規定。 19 X 機關依規費法第9條規定繳納規費，使用其他機關學校設施、設備 及場所，因機關有支出，故應適用政府採購法。 20 O 機關為規費法第9條所定繳費義務人者，其依規費法繳納規費，使 用其他機關學校設施、設備及場所，無政府採購法之適用。 21 O 公營事業徵求經銷商之行為，其契約約定內容，如具一定事務之委 託處理，且約定其對價，屬採購法第2條所稱勞務之委任，應適用 政府採購法。 22 O 公營事業徵求經銷商之行為，其契約約定性質，如係以賣斷方式銷 售予經銷商，不具有償委任之約定條款者，不適用政府採購法。 23 X 機關承租辦公廳舍，屬租賃服務之勞務採購。 第 2 條 24 O 機關承租辦公廳舍，屬財物採購。 第 2 條 25 X 機關支付費用委託其員工消費合作社銷售報名簡章，該委託不適用 政府採購法之規定。 26 X 機關仲裁人之選定，屬政府採購法第2條所稱勞務之委任及僱傭， 應依政府採購法之規定辦理。 27 O 機關仲裁人之選定，因仲裁法已有規定，故不適用政府採購法。 第 2 條 28 X 地方機關以中央機關補助款辦理採購，其補助金額未達公告金額 者，不適用採購法之規定。 29 O 地方機關以中央機關補助款辦理採購，其補助金額未達公告金額 者，仍應適用採購法之規定。 30 X 以機關名義辦理採購，如未使用機關預算，不適用政府採購法之規 定。 31 O 以機關名義辦理採購，縱未使用機關預算，仍適用政府採購法之規 定。 32 O 機關以代收代付款方式辦理之採購，適用政府採購法之規定。 第 3 條 33 O 公務出國由機關人員自理，機關不代覓旅行社，並依國外出差旅費 規則報支差旅費者，因非機關辦理採購，故其旅行社之選定不適用 採購法。 34 X 機關接受法人30萬元補助辦理設施維護，其以補助金額辦理之採 購，不適用政府採購法之規定。 35 O 機關接受法人30萬元補助辦理設施維護，其以補助金額辦理之採 購，仍適用政府採購法之規定。 36 X 政府機關接受民間捐款辦理採購，未動支機關經費，不適用採購 法。 37 O 政府機關接受民間捐款辦理採購，未動支機關經費，仍適用採購 法。 38 X 公務出國由機關人員自理，機關不代覓旅行社，並依國外出差旅費 規則報支差旅費者，因係公款支付，故其旅行社之選定仍有政府採 購法之適用。 39 X 機關補助法人或團體，應依採購法規定選定補助對象。 第 4 條 40 O 機關補助法人或團體，其補助對象之選定不適用採購法。 第 4 條 41 O 採購法第4條第1項規定之「補助金額」，係以個別採購案認定。故 除補助機關另有約定外，只要個別採購案動支政府補助款之金額未 達公告金額，即不適用採購法。 42 X 自然人接受機關補助，其辦理採購仍應適用政府採購法之規定。 第 4 條 43 O 接受機關補助者之身分為自然人時，其辦理採購不適用採購法之規 定。 44 X 採購法第4條第1項規定之「補助金額」，係以個別採購案認定。故 除補助機關另有約定外，只要個別採購案動支政府補助款之金額達 公告金額以上，即適用政府採購法。 45 X 採購法第4條第1項所稱接受機關補助辦理採購，不包括法人或團體 接受機關獎助、捐助方式動支機關經費辦理之採購。 46 O 採購法第4條第1項所稱接受機關補助辦理採購，包括法人或團體接 受機關獎助、捐助或以其他類似方式動支機關經費辦理之採購。 47 X 採購法第4條第1項所定補助金額，於二以上機關補助法人或團體辦 理同一採購者，以其補助總金額計算之，並由補助金額最高之機關 辦理監督。 48 X 機關補助法人或團體辦理採購，其補助金額達採購法第4條規定 者，受補助者於辦理比價、議價時，應受補助機關監督，但辦理公 開招標之開標，則不受該機關監督。 49 X 機關採購得委託法人或團體代辦，代辦採購之法人、團體與其受雇 人及關係企業，不得為該採購之投標廠商，但得為分包廠商。 50 X 機關採購得委託法人或團體代辦工程採購，其委託屬工程採購。受 委託代辦採購之法人或團體，並須具備熟諳政府採購法令之人員。 51 X 機關採購得委託法人或團體代辦，其代辦金額未占採購金額半數以 上，或代辦金額未達公告金額者，不適用採購法之規定。 52 O 機關採購得委託法人或團體代辦，其代辦金額不論多寡，均適用採 購法之規定。 53 X 機關採購得委託法人或團體代辦，代辦採購之法人、團體不得為該 採購之投標廠商或分包廠商，但其關係企業法無禁止其擔任分包廠 商。 54 O 機關採購得委託法人或團體代辦，代辦採購之法人、團體與其受雇 人及關係企業，不得為該採購之投標廠商或分包廠商。 55 X 機關依政府採購法第5條第1項規定委託法人或團體代辦採購，其委 託非屬勞務採購，故受委託代辦採購之法人或團體，無需具備熟諳 政府採購法令之人員。 56 O 機關依採購法第5條第1項規定委託法人或團體代辦採購，其委託屬 勞務採購。受委託代辦採購之法人或團體，並須具備熟諳政府採購 法令之人員。 57 O 辦理採購人員於不違反採購法規定之範圍內，得基於公共利益、採 購效益或專業判斷之考量，為適當之採購決定，機關主會計及政風 人員應予尊重。 58 X 辦理採購人員於不違反政府採購法規定之範圍內，基於公共利益、 採購效益或專業判斷之考量，為適當之採購決定，但機關主會計及 政風人員如有其他意見，採購人員應從其意見辦理。 59 O 營繕工程如採總價結算，承包廠商依契約規定投保，其實際支付保 險費用雖低於契約所列該項目金額，機關仍應依契約所列金額支付 廠商。 60 X 營繕工程如採總價結算，承包廠商依契約規定之保險額度辦理投 保，其實際支付保險費用低於契約所列該項目金額，機關應覈實支 付。 61 O 司法、監察或其他機關對於採購機關或人員之調查、起訴、審判、 彈劾或糾舉等，得洽請採購法主管機關協助、鑑定或提供專業意 見。 62 O 招標文件未載明單價可調整之規定，則不得未經廠商同意擅改其單 價。 63 X 辦理採購人員得基於公共利益、採購效益或專業判斷之考量，為違 反採購法規定之採購決定。 64 X 機關辦理採購，應以維護公共利益及公平合理為原則，對廠商不得 為無正當理由之差別待遇。但未達公告金額之採購不在此限。 65 X 機關辦理採購，應以維護公共利益及公平合理為原則，對廠商不得 有任何之差別待遇。 66 X 機關採購保險公司之財產保險，屬財物採購 第 7 條 67 O 機關採購保險公司之財產保險，屬勞務採購。 第 7 條 68 X 機關採購冷凍農漁產品，不適用政府採購法。 第 7 條 69 O 機關採購生鮮農漁產品，不適用採購法。 第 7 條 70 O 機關辦理「冷凍食品(肉品)」之採購，非屬政府採購法第7條第2項 所稱「生鮮農漁產品」，適用政府採購法。 71 X 機關辦理「冷凍食品(肉品)」之採購，為政府採購法第7條第2項所 稱「生鮮農漁產品」，不適用政府採購法。 72 X 機關採購兼有工程、財物、勞務二種以上性質者，難以認定其歸屬 者，按其重要性歸屬之。 73 O 機關採購兼有工程、財物、勞務二種以上性質，難以認定其歸屬 者，按其性質所占預算金額比率最高者歸屬之。 74 X 機關辦理採購，因廠商須以統一發票作為付款憑證，因此邀請之投 標廠商不得為自然人。 75 X 機關辦理採購，應允許採購法第8條所稱廠商均得參與投標。 第 8 條 76 O 機關辦理採購，其邀請之投標廠商得為自然人，且得以「收據」取 代「統一發票」作為付款憑證。 77 O 公營事業或公立學校辦理採購之上級機關為其所隸屬之政府機關。第 9 條 78 O 經濟部所屬台灣電力公司核三廠辦理採購之上級機關為經濟部。 第 9 條 79 X 經濟部所屬台灣電力公司核三廠辦理採購之上級機關為其總公司。第 9 條 80 X 縣(市)議會辦理採購之上級機關為該縣(市)政府。 第 9 條 81 X 臺北市立信義國民小學辦理採購之上級機關為教育部。 第 9 條 82 O 機關辦理資訊服務採購，採適用或準用最有利標決標原則，標的分 類選取「84電腦及相關服務」，且預算金額達1,000萬元以上，於 傳輸決標公告時，須一併登載得標廠商「人員職稱」及「每月實際 薪資」。 83 O 機關辦理工程採購之預算金額達新臺幣1000萬元以上者，應於決標 後將得標廠商之契約單價資料傳輸至主管機關建立之工程價格資料 庫。 84 X 機關辦理工程、財物或勞務採購之預算金額達一定金額以上者，應 於決標後將得標廠商之契約單價資料傳輸至主管機關建立之價格資 料庫。 85 O 機關辦理工程採購之預算金額達一定金額以上者，應於決標後將得 標廠商之契約單價資料傳輸至主管機關建立之價格資料庫。 86 X 機關辦理巨額勞務採購，應依採購之特性及實際需要，成立採購工 作及審查小組，協助審查採購需求與經費、採購策略、招標文件等 事項，及提供與採購有關事務之諮詢。 87 O 機關辦理巨額工程採購，應依採購之特性及實際需要，成立採購工 作及審查小組，協助審查採購需求與經費、採購策略、招標文件等 事項，及提供與採購有關事務之諮詢。 88 X 機關辦理預算金額1,000萬元以上之資訊服務採購，採最低標決標 者，於傳輸決標公告時，必須一併登載得標廠商「人員職稱」及 「每月實際薪資」。 89 X 機關辦理工程採購之預算金額達公告金額以上者，應於決標後將得 標廠商報價之單價資料傳輸至主管機關建立之工程價格資料庫。 90 O 機關依政府採購法第11條第2項規定傳輸資料之內容，包含詳細價 目表、單價分析表及資源統計表，並應依主管機關訂定之「公共工 程細目編碼編訂說明」及其各章細目碼編訂規則表辦理。 91 X 機關辦理公告金額以上工程採購，應於決標後將得標廠商之契約單 價資料傳輸至主管機關建立之價格資料庫。 92 O 依政府採購法第101條第3項成立採購工作及審查小組，其組成、作 業程序得參照機關採購工作及審查小組設置及作業辦法之規定，但 其委員組成宜就本機關以外人員至少一人聘兼之，且至少宜有外聘 委員一人出席。 93 O 機關辦理查核金額以上採購，依採購特性及實際需要，認有成立採 購工作及審查小組之必要者，得成立採購工作及審查小組，協助審 查採購需求與經費、採購策略、招標文件等事項，及提供與採購有 關事務之諮詢。 94 O 資源統計表，係指工程採購標案內所有資源工項與無下層單價分析 之混合工項之數量及價格累計表。 95 O 機關辦理工程採購之預算金額達新臺幣1000萬元以上者，應於決標 後將經機關核定之預算單價資料傳輸至主管機關建立之工程價格資 料庫。 96 X 機關辦理未達查核金額之採購，其決標金額達查核金額者，機關無 需補具相關文件送上級機關備查。 97 X 依採購法第52條第1項第4款採複數決標者，其採購金額依全部項目 或數量之預算總額認定之。項目標的不同者，亦同。 98 O 依採購法第52條第1項第4款採複數決標者，其採購金額依全部項目 或數量之預算總額認定之。但項目之標的不同者，依個別項目之預 算金額認定之。 99 X 機關辦理查核金額以上採購之招標，應於等標期或截止收件日7日 前檢送採購預算資料、招標文件及相關文件，報請上級機關派員監 辦。 100 O 機關辦理查核金額以上採購之招標，應於等標期或截止收件日5日 前檢送採購預算資料、招標文件及相關文件，報請上級機關派員監 辦。 101 X 機關辦理查核金額以上採購之決標，其決標不與開標、比價或議價 合併辦理者，應於預定決標日5日前，檢送審標結果，報請上級機 關派員監辦。 102 O 機關辦理查核金額以上採購之決標，其決標不與開標、比價或議價 合併辦理者，應於預定決標日3日前，檢送審標結果，報請上級機 關派員監辦。 103 X 機關辦理採購，其屬巨額採購、查核金額以上之採購、公告金額以 上之採購或小額採購，依採購金額於開標前認定之。 104 O 機關辦理採購，其屬巨額採購、查核金額以上之採購、公告金額以 上之採購或小額採購，依採購金額於招標前認定之。 105 X 機關辦理驗收，上級機關監辦人員對採購人員不符合採購法規定程 序而提出意見，辦理採購之主驗人如不接受，應納入紀錄，報機關 首長或其授權人員決定之。 106 O 機關辦理驗收，上級機關監辦人員對採購人員不符合採購法規定程 序而提出意見，辦理採購之主驗人如不接受，應納入紀錄，報上級 機關核准。 107 X 機關辦理查核金額以上採購之驗收，應於預定驗收日5日前，檢送 結算表及相關文件，報請上級機關派員監辦。結算表及相關文件併 入結算驗收證明書編送時，仍應另行填送。 108 O 機關辦理查核金額以上採購之驗收，應於預定驗收日5日前，檢送 結算表及相關文件，報請上級機關派員監辦。結算表及相關文件併 入結算驗收證明書編送時，得免另行填送。 109 X 機關辦理採購，招標文件規定廠商報價金額包括機關支出及收入金 額者，其採購金額以支出及收入金額之絕對值合計認定之。 110 O 機關辦理採購，招標文件規定廠商報價金額包括機關支出及收入金 額者，其採購金額以支出所需金額認定之。 111 X 機關於招標文件內載明「預算未完成立法程序前，得先保留決 標」，俟預算完成立法程序後決標之作法，違反政府採購法之規 定。 112 O 機關於招標文件內載明「預算未完成立法程序前，得先保留決 標」，俟預算完成立法程序後決標之作法，與政府採購法並無違 誤。 113 X 機關辦理採購，招標文件含有選購或後續擴充項目者，其採購金額 不含預估選購或擴充項目所需金額。 114 O 機關辦理採購，招標文件含有選購或後續擴充項目者，其採購金額 應將預估選購或擴充項目所需金額計入。 115 X 查核金額於工程採購為新臺幣2億元，財物採購為新臺幣1億元，勞 務採購為新臺幣2千萬元。 116 O 查核金額於工程及財物採購為新臺幣5,000萬元，勞務採購為新臺 幣1,000萬元。 117 X 機關辦理財物承租之採購，其採購金額之計算，均以每月租金之48 倍認定之。 118 O 機關辦理財物承租之採購，於租期不確定者，其採購金額之計算， 以每月租金之48倍認定之。 119 X 機關辦理查核金額以上採購之開標、比價、議價、決標或驗收，上 級機關得斟酌其金額、地區或其他特殊情形，決定應否派員監辦。 其未派員監辦者，得免通知機關。 120 O 機關辦理查核金額以上採購之開標、比價、議價、決標或驗收，上 級機關得斟酌其金額、地區或其他特殊情形，決定應否派員監辦。 其未派員監辦者，應事先通知機關自行依法辦理。 121 X 機關辦理查核金額以上採購之開標、比價、議價、決標或驗收，上 級機關得斟酌所屬機關辦理採購案件情形，通案授權下級機關所有 案件均自行辦理，免報上級機關派員監辦。 122 X 監辦人員對採購不符合採購法規定程序而提出意見，仍應以辦理採 購之主持人或主驗人之意見為準，並將監辦人員之不同意見納入紀 錄。 123 X 財物之驗收，其有分批交貨、因緊急需要必須立即使用或因逐一開 箱或裝配完成後方知其數量，報請上級機關派員監辦確有困難者， 得視個案實際情形，事先敘明理由，函請上級機關同意後自行辦 理，並於全部驗收完成後二個月內，將結算表及相關文件彙總報請 上級機關備查。 124 O 財物之驗收，其有分批交貨、因緊急需要必須立即使用或因逐一開 箱或裝配完成後方知其數量，報請上級機關派員監辦確有困難者， 得視個案實際情形，事先敘明理由，函請上級機關同意後自行辦 理，並於全部驗收完成後一個月內，將結算表及相關文件彙總報請 上級機關備查。 125 X 機關辦理採購之監辦，不包括涉及廠商資格、規格、商業條款、底 價訂定、決標條件及驗收方法等實質或技術事項之審查。故監辦人 員即使發現該等事項有違反法令情形者，仍不得提出意見。 126 O 機關辦理採購之監辦，不包括涉及廠商資格、規格、商業條款、底 價訂定、決標條件及驗收方法等實質或技術事項之審查。監辦人員 發現該等事項有違反法令情形者，仍得提出意見。 127 X 機關以提供財物或權利之使用為對價，而無其他支出者，其採購金 額可認定為0元。 128 O 機關以提供財物或權利之使用為對價，而無其他支出者，其採購金 額以該財物或權利之使用價值認定之。 129 X 機關辦理查核金額以上採購之開標、審標、議價、決標及驗收時， 應於規定期限內，檢送相關文件報請上級機關派員監辦；上級機關 得視事實需要訂定授權條件，由機關自行辦理。 130 O 機關辦理查核金額以上採購之開標、比價、議價、決標及驗收時， 應於規定期限內，檢送相關文件報請上級機關派員監辦；上級機關 得視事實需要訂定授權條件，由機關自行辦理。 131 X 採購法第12條規定上級機關派員監辦，其核派之人員應為主會計或 政風單位人員。 132 X 依政府採購法第99條規定甄選投資廠商者，其採購金額以預估廠商 收入減支出金額認定之。 133 O 依採購法第99條規定甄選投資廠商者，其採購金額以預估廠商興 建、營運所需金額認定之。依採購法第7條第3項規定營運管理之委 託，包括廠商興建、營運金額者，亦同。 134 X 採購法第12條第1項上級監辦人員採書面審核監辦者，免經其機關 首長或其授權人員核准。 135 O 採購法第12條第1項上級監辦人員採書面審核監辦者，應經其機關 首長或其授權人員核准。 136 X 機關執行上級機關監辦職權時，得通案授權下級機關於辦理查核金 額以上採購之開標、比價、議價、決標及驗收時，免再報請上級機 關派員監辦。 137 X 查核金額於工程及勞務採購為新臺幣5,000萬元，財物採購為新臺 幣1,000萬元。 138 X 機關辦理採購，採單價決標且規定俟需要通知實做實算計價者，其 採購金額依預估採購所需單價金額認定之。 139 X 機關辦理一查核金額以上之採購案件，於決標後之金額未達查核金 額，其於驗收時無須報請上級機關派員監辦。 140 O 機關辦理一查核金額以上之採購案件，於決標後之金額未達查核金 額，其於驗收時仍應依規定報請上級機關派員監辦。 141 O 採購法第12條規定上級機關派員監辦，其監辦單位由上級機關之首 長或其授權人員決定，業務單位或會計單位人員均可。 142 O 機關辦理未達查核金額之採購，其決標金額達查核金額者，機關應 補具相關文件送上級機關備查。 143 X 中央機關承辦採購單位辦理小額採購，於開標、比價、議價、決標 及驗收時，應通知主(會)計或有關單位派員監辦。 144 O 中央機關辦理未達公告金額而逾公告金額十分之一之採購，主(會) 計或有關單位對於採購單位之通知監辦，如因無廠商投標而流標 者，得不派員監辦。 145 X 監辦人員對採購不符合採購法規定程序而提出意見，辦理採購之主 持人或主驗人如不接受，應納入紀錄，報機關首長或其授權人員決 定之。不接受上級機關監辦人員意見者，亦同。 146 O 監辦人員對採購不符合採購法規定程序而提出意見，辦理採購之主 持人或主驗人如不接受，應納入紀錄，報機關首長或其授權人員決 定之。但不接受上級機關監辦人員意見者，應報上級機關核准。 147 X 「機關主會計及有關單位會同監辦採購辦法」第5條有關「得不派 員監辦」之核准，得採通案簽准方式處理。 148 O 「機關主會計及有關單位會同監辦採購辦法」第5條有關「得不派 員監辦」之核准，不得採通案簽准方式處理。 149 X 公告金額以上採購，應由機關主(會)計及有關單位會同監辦。如無 有關單位者，應指定機關內部其他熟諳政府採購法令人員，會同主 (會)計單位派員監辦。 150 O 公告金額以上採購，應由機關主(會)計及有關單位會同監辦。如無 有關單位者，由主(會)計單位派員監辦即可。 151 X 公告金額以上採購，如機關內未設政風、監查（察）、督察、檢核 或稽核單位，機關首長或其授權人員須指定有關單位會同監辦。 152 O 公告金額以上採購，如機關內未設政風、監查（察）、督察、檢核 或稽核單位，屬不必由有關單位會同監辦之特殊情形。 153 X 依中央機關未達公告金額採購監辦辦法之規定，機關辦理未達公告 金額而逾公告金額十分之一之採購，其開標、比價、議價、決標及 驗收，承辦採購單位應通知機關首長或其授權人員指定之主(會)計 及有關單位派員監辦。 154 O 依中央機關未達公告金額採購監辦辦法之規定，機關辦理未達公告 金額而逾公告金額十分之一之採購，其開標、比價、議價、決標及 驗收，承辦採購單位應通知機關首長或其授權人員指定之主(會)計 或有關單位派員監辦。 155 X 機關承辦採購單位之承辦人員得擔任主驗人員，使用單位人員得擔 任會驗人員。中央機關未達公告金額之採購，其監辦規定較公告金 額以上者寬鬆。 156 O 機關承辦採購單位之承辦人員得擔任協驗人員，其主管得擔任主驗 人員，使用單位人員得擔任會驗人員。中央機關未達公告金額之採 購，其監辦規定較公告金額以上者寬鬆。 157 X 中央機關承辦採購單位辦理未達公告金額而逾公告金額十分之一之 採購，於開標、比價、議價、決標及驗收時，得視個案情形通知機 關首長或其授權人員指定之主(會)計或有關單位派員監辦。 158 O 中央機關承辦採購單位辦理未達公告金額而逾公告金額十分之一之 採購，於開標、比價、議價、決標及驗收時，應通知機關首長或其 授權人員指定之主(會)計或有關單位派員監辦。 159 X 機關於廠商履約施工中所辦理之估驗程序，亦屬驗收，適用政府採 購法所定監辦之規定，主會計單位應派員監辦。 160 O 機關於廠商履約施工中所辦理之估驗程序，非屬驗收，不適用政府 採購法所定監辦之規定，主會計單位無需派員監辦。 161 X 公告金額以上採購之分批或部分驗收，其驗收金額如未達公告金 額，機關主會計及有關單位得免派員監辦，無須經機關首長或其授 權人員之核准。 162 O 公告金額以上採購之分批或部分驗收，其驗收金額如未達公告金 額，機關主會計及有關單位得經機關首長或其授權人員核准後，免 派員監辦。 163 X 主會計單位依「中央機關未達公告金額採購監辦辦法」規定，在不 派員監辦之情形下，應採書面審核方式監辦。 164 O 主會計單位依「中央機關未達公告金額採購監辦辦法」規定，在不 派員監辦之情形下，亦得免採書面審核方式監辦。 165 X 機關之監辦人員對公告金額以上之採購採書面審核者，免經機關首 長或其授權人員核准。 166 O 機關之監辦人員對公告金額以上之採購採書面審核者，應經機關首 長或其授權人員核准。 167 X 公告金額以上採購洽由其他機關代辦，洽辦機關主會計及有關單位 之監辦不得洽請該代辦機關之類似單位代為監辦。 168 O 公告金額以上採購洽由其他機關代辦，洽辦機關主會計及有關單位 之監辦亦得一併洽請該代辦機關之類似單位代為監辦。 169 X 公告金額於工程、勞務及財物採購均為新臺幣100萬元。 第 13 條 170 O 公告金額於工程、勞務及財物採購均為新臺幣150萬元。 第 13 條 171 X 機關辦理公告金額以上採購之開標、審標、比價、議價、決標及驗 收，除有特殊情形者外，應由其主(會)計及有關單位會同監辦。 172 O 機關辦理公告金額以上採購之開標、比價、議價、決標及驗收，除 有特殊情形者外，應由其主(會)計及有關單位會同監辦。 173 X 監辦人員完成監辦後，應於所監辦案件之開標、比價、議價、決標 及驗收紀錄上簽名外，尚包括廠商標單及底價單。 174 O 監辦人員完成監辦後，應於所監辦案件之開標、比價、議價、決標 及驗收紀錄上簽名，不包括廠商標單及底價單。 175 X 採購法第13條第1項所稱有關單位，由機關首長或其授權人員就機 關內之政風、監查（察）、督察、檢核或稽核單位擇一指定之。無 該等單位者，應洽上級機關協助指派。 176 O 採購法第13條第1項所稱有關單位，由機關首長或其授權人員就機 關內之政風、監查（察）、督察、檢核或稽核單位擇一指定之。無 該等單位者，不適用有關單位會同監辦之規定。 177 X 依採購法第13條第2項規定，直轄市或縣〈市〉政府未另定未達公 告金額採購之監辦規定，其暨所屬機關未達公告金額採購之監辦， 應比照「中央機關未達公告金額採購監辦辦法」辦理。 178 O 依採購法第13條第2項規定，直轄市或縣〈市〉政府未另定未達公 告金額採購之監辦規定，其暨所屬機關未達公告金額採購之監辦， 應比照公告金額以上採購，依「機關主會計及有關單位會同監辦採 購辦法」辦理。 179 X 監辦人員於完成實地監辦，應於紀錄簽名，並應於各相關人員簽名 前為之。 180 O 監辦人員於完成實地監辦，應於紀錄簽名，並得於各相關人員均簽 名後為之。 181 X 中央機關之監辦人員對未達公告金額之採購採書面審核監辦者，應 經機關首長或其授權人員核准。 182 O 中央機關之監辦人員對未達公告金額之採購採書面審核監辦者，免 經機關首長或其授權人員核准。 183 X 中央機關以會議審查方式辦理未達公告金額之勞務驗收，承辦採購 單位通知主(會)計或有關單位派員監辦，監辦單位不派員監辦，須 經機關首長或其授權人員核准。 184 O 中央機關以會議審查方式辦理未達公告金額之勞務驗收，承辦採購 單位通知主(會)計或有關單位派員監辦，監辦單位得不派員監辦。 185 X 機關辦理公告金額以上採購之開標、比價、議價、決標及驗收，除 有特殊情形者外，應由其主(會)計或有關單位會同監辦。 186 X 機關內設有政風、監查（察）、督察、檢核或稽核單位，機關首長 或其授權人員得視情形指定非屬上開單位熟諳政採購法令之人員取 代該等單位人員會同監辦。 187 X 查核金額以上採購，上級機關已派員監辦，機關主會計及有關單位 得經機關首長或其授權人員核准後，不派員監辦。 188 X 採購案之承辦單位主管人員不得為該採購案之監辦人員。 第 13 條 189 X 公告金額以上採購，監辦人員得自行斟酌採購金額、地點等特殊因 素後，採書面審核監辦，並應於紀錄上載明「書面審核監辦」字 樣。 190 X 機關依中央機關未達公告金額採購監辦辦法辦理未達公告金額採購 之開標、比價、議價、決標及驗收，如屬重複性採購，已有監辦前 例者，得不通知機關首長或其授權人員指定之主(會)計或有關單位 派員監辦。 191 X 機關辦理公告金額以上工程之估驗及初驗，除符合特殊情形者外， 主會計單位應派員監辦。 192 O 機關辦理公告金額以上工程之估驗及初驗，主會計單位得免派員監 辦。 193 X 公告金額以上採購，監辦人員如簽奉機關首長或其授權人員核准採 書面審核監辦，紀錄無需由各相關人員均簽名後再送監辦人員。 194 O 公告金額以上採購，監辦人員如簽奉機關首長或其授權人員核准採 書面審核監辦，紀錄應由各相關人員均簽名後再併同有關文件送監 辦人員。 195 X 採購案之承辦人員不得為該採購案之監辦人員。惟機關如無其他適 當人員可供核派時，得於報經機關首長或其授權人員核准後，解除 前開限制。 196 O 採購案之承辦人員不得為該採購案之監辦人員。 第 13 條 197 X 中央機關辦理未達公告金額而逾公告金額十分之一之採購，主(會) 計或有關單位對於採購單位之通知監辦，如因無廠商投標而流標 者，應由機關首長或其授權人員核准後，不派員監辦。 198 O 中央機關承辦採購單位辦理小額採購，於開標、比價、議價、決標 及驗收時，得不通知主(會)計或有關單位派員監辦。 199 X 鄉立托兒所16所分散於各村落，擬由各托兒所依統一餐點表自行辦 理採購，違反政府採購法第14條之規定。 200 O 鄉立托兒所16所分散於各村落，擬由各托兒所依統一餐點表自行辦 理採購，合於政府採購法施行細則第13條所稱之依不同供應地區所 分別辦理者。 201 X 勞工保險局辦理勞、農保給付案件審查，委請各專業醫師不定期協 助審查診斷書之續聘事宜，不可依個別專業醫師之一年審查費用， 依不同需條求件或不同行業廠商之專業項目，分別辦理採購。 202 O 勞工保險局辦理勞、農保給付案件審查，委請各專業醫師不定期協 助審查診斷書之續聘事宜，可依個別專業醫師之一年審查費用，依 不同需求條件或不同行業廠商之專業項目，分別辦理採購。 203 X 同一年度中辦理數次性質相同，但地點名稱不同之採購，如符合政 府採購法施行細則第13條規定，係依不同施工或供應地區或不同需 求條件所分別辦理，每次採購金額皆未達公告金額，但合計總金額 在公告金額以上者，其發包程序應按「公告金額以上之採購」規定 辦理。 204 O 同一年度中辦理數次性質相同，但地點名稱不同之採購，如符合政 府採購法施行細則第13條規定，係依不同施工或供應地區或不同需 求條件所分別辦理，每次採購金額皆未達公告金額者，其發包程序 可按「未達公告金額之採購」規定辦理。 205 X 機關不得意圖規避採購法之適用，分批辦理公告金額以上之採購。 其有分批辦理之必要，並經機關首長或其授權人員核准者，應依其 總金額核計採購金額，分別按公告金額或查核金額以上之規定辦 理。 206 O 機關不得意圖規避採購法之適用，分批辦理公告金額以上之採購。 其有分批辦理之必要，並經上級機關核准者，應依其總金額核計採 購金額，分別按公告金額或查核金額以上之規定辦理。 207 O 有關公車行車記錄器之維修，每部記錄器損壞之零件或不盡相同， 但均在記錄器之組成範圍之內，如以每日委外檢修費用計算所應適 用之招標方式，違反政府採購法第14條之規定。 208 X 有關公車行車記錄器之維修，每部記錄器損壞之零件或不盡相同， 但均在記錄器之組成範圍之內，如以每日委外檢修費用計算所應適 用之招標方式，並未違反政府採購法第14條之規定。 209 X 機關辦公大樓之清潔維護勞務採購，如有分批按月招商辦理之必 要，可依政府採購法施行細則第13條所稱不同需求條件分別辦理採 購。 210 X 機關不得意圖規避採購法之適用，分批辦理公告金額以上之採購。 其有分批辦理之必要，並經機關首長核准者，應依其總金額核計採 購金額。 211 X 機關非依人事法規僱用臨時工者，不得依每人每年預估工資總額分 別辦理。 212 O 機關非依人事法規僱用臨時工者，得依每人每年預估工資總額分別 辦理。 213 X 機關分批辦理公告金額以上之採購，法定預算書已標示分批辦理 者，仍應報經上級機關核准。 214 O 機關分批辦理公告金額以上之採購，法定預算書已標示分批辦理 者，得免報經上級機關核准。 215 X 機關於不同地點採購餐飲服務，不得以每餐金額分別辦理。 第 14 條 216 O 機關於不同地點採購餐飲服務，得以每餐金額分別辦理。 第 14 條 217 X 機關人員對於與採購有關之事項，涉及本人、配偶、二親等以內親 屬，或共同生活家屬之利益時，應行迴避。惟該項迴避反不利於業 務執行者，得報請上級機關核定後免予迴避。 218 O 機關人員對於與採購有關之事項，涉及本人、配偶、二親等以內親 屬，或共同生活家屬之利益時，應行迴避。未依規定迴避者，機關 首長應令其迴避，並另行指定人員辦理。 219 O B君原係甲機關承辦採購人員，離職後受聘乙公司，離職3年內未向 甲機關接洽處理採購事務，則乙公司仍可參加甲機關辦理採購之投 標。 220 X 機關承辦、監辦採購人員離職後5年內不得為本人或代理廠商向原 任職機關接洽處理離職前3年內與職務有關之事務。 221 O 機關承辦、監辦採購人員離職後3年內不得為本人或代理廠商向原 任職機關接洽處理離職前5年內與職務有關之事務。 222 O 請託或關說，宜以書面為之或作成紀錄，且不得作為評選之參考。第 16 條 223 O 廠商於履約及驗收期間，不循法定程序，對契約內容或查驗、驗收 結果，要求變更，機關採購人員宜作成紀錄。 224 O 機關依採購法對廠商所為之通知，除採購法另有規定者外，得以口 頭、傳真或其他電子資料傳輸方式辦理。 225 X 機關辦理採購之請託或關說作成之紀錄，應以文字方式為之，附於 採購文件一併保存。 226 O 機關辦理採購之請託或關說作成之紀錄，得以文字或錄音等方式為 之，附於採購文件一併保存。 227 X 請託或關說，宜以書面為之或作成紀錄，俾作為評選之參考。 第 16 條 228 X 依採購法第16條規定，採購人員遇請託或關說，應以書面紀錄，附 於採購文件一併保存。 229 X 機關依採購法對廠商所為之通知，均應以書面、傳真或其他電子資 料傳輸方式辦理。 230 X 大陸地區廠商參與各機關採購，適用外國廠商之規定。 第 17 條 231 X 依「外國廠商參與非條約協定採購處理辦法」規定 ，條約協定國 廠商所供應財物或勞務之原產地為非條約協定國者，視同條約協定 國廠商。 232 O 依「外國廠商參與非條約協定採購處理辦法」規定 ，條約協定國 廠商所供應財物或勞務之原產地為非條約協定國者，視同非條約協 定國廠商。 233 X 適用我國所締結之條約或協定之採購，機關於招標文件中允許非條 約協定國廠商參與者，應明定非條約協定國廠商參與之部分，視同 條約協定採購。 234 O 適用我國所締結之條約或協定之採購，機關於招標文件中允許非條 約協定國廠商參與者，應明定非條約協定國廠商參與之部分，視同 非條約協定採購。 235 O 機關辦理涉及國家安全採購，為免廠商代表人具有犯罪紀錄參與採 購，影響國家安全，機關得於招標文件訂定廠商資格限制條件，禁 止該等廠商參與採購。 236 X 我國與中國大陸都是世界貿易組織(WTO)之會員，機關辦理採購， 如不允許大陸地區之廠商、財物或勞務參與，並不適法。 237 O 中國大陸尚未加入世界貿易組織（WTO）政府採購協定（GPA），且 兩岸尚未簽署相互開放政府採購市場之條約協定，目前無論是否適 用GPA之採購，機關均可於招標文件規定不允許大陸地區廠商及其 產品或勞務參與。 238 X 機關允許外國廠商參與非條約協定採購者，不得於招標文件中規定 外國廠商不適用政府採購法第57條第2款平等對待之規定。 239 O 機關允許外國廠商參與非條約協定採購者，得於招標文件中規定外 國廠商不適用政府採購法第57條第2款平等對待之規定。 240 O 主管機關依採購法第17條第3項規定公告限制或禁止特定國家或地 區之廠商或產品服務參與採購者，該等廠商或產品服務不得參加投 標或作為決標對象。 241 O 依「外國廠商參與非條約協定採購處理辦法」規定，工程採購中涉 及財物或勞務之提供者，其原產地之認定，準用財物或勞務之原產 地認定規定。 242 O 「外國廠商參與非條約協定採購處理辦法」所稱外國廠商，指未取 得我國國籍之自然人或非依我國法律設立登記之法人、機構或團 體。 243 O 我國與紐西蘭簽署之「臺紐經濟合作協定(ANZTEC)」已於102年12 月1日生效，雙方依ANZTEC開放政府採購市場。另紐西蘭已於104年 8月12日簽署WTO政府採購協定(GPA)，各機關辦理適用GPA之採購， 應依GPA規定對紐西蘭廠商開放。 244 O 我國與新加坡簽署之「臺星經濟夥伴協定(ASTEP)」已於103年4月 19日生效，雙方皆為世界貿易組織(WTO)政府採購協定(GPA)會員， 雙方再依ASTEP擴大開放政府採購市場。 245 O 依「外國廠商參與非條約協定採購處理辦法」規定，廠商所供應財 物原產地之認定，依進口貨物原產地認定標準之規定。 246 X 外國公司依我國公司法設立登記之在臺子公司，屬外國廠商。 第 17 條 247 O 外國公司依我國公司法經認許之在臺分公司，屬外國廠商。 第 17 條 248 O 外國公司依我國公司法設立登記之在臺子公司，屬我國廠商。 第 17 條 249 X 依「外國廠商參與非條約協定採購處理辦法」規定，我國廠商所供 應財物或勞務之原產地非屬我國者，仍屬我國廠商。 250 O 依「外國廠商參與非條約協定採購處理辦法」規定，我國廠商所供 應財物或勞務之原產地非屬我國者，視同外國廠商。 251 X 外國公司依我國公司法經認許之在臺分公司，屬我國廠商。 第 17 條 252 X 機關辦理非條約協定採購，不得於招標文件中規定允許外國廠商參 與。 253 O 大陸地區廠商參與各機關採購，準用外國廠商之規定。 第 17 條 254 O 機關辦理涉及國家安全採購，訂定廠商資格限制條件，應由需求、 使用或承辦採購單位敘明限制之理由及其必要性，簽報機關首長或 其授權人員核准。 255 X 機關辦理涉及國家安全採購，招標文件訂明廠商資格限制條件之情 形，廠商履約時，因廠商組成異動不符廠商資格限制條件，因非屬 投標時不符招標文件規定，機關無須檢討得洽廠商繼續履約。 256 O 機關辦理非條約協定採購，得視實際需要於招標文件中規定允許外 國廠商參與。 257 X 依「外國廠商參與非條約協定採購處理辦法」規定，廠商所供應財 物之原產地，依廠商登記地認定之。 258 X 機關辦理適用世界貿易組織(WTO)政府採購協定(GPA)之採購，不得 允許非GPA簽署會員之廠商參與。 259 O 外國法令限制或禁止我國廠商或產品服務參與採購者，主管機關得 限制或禁止該國廠商或產品服務參與採購。 260 X 依「外國廠商參與非條約協定採購處理辦法」之規定，大陸地區廠 商參與各機關採購，準用外國廠商之規定，爰機關辦理採購，允許 外國廠商參與者，亦應允許大陸地區廠商參與。 261 O 「外國廠商參與非條約協定採購處理辦法」所稱非條約協定採購， 指得不適用我國所締結之條約或協定之採購。 262 O 依「外國廠商參與非條約協定採購處理辦法」規定，廠商所供應勞 務之原產地，除法令另有規定者外，依實際提供勞務者之國籍或登 記地認定之。屬自然人者，依國籍認定之；非屬自然人者，依登記 地認定之。 263 X 依「外國廠商參與非條約協定採購處理辦法」規定，廠商所供應勞 務之原產地，依實際提供勞務者之國籍或登記地認定之。屬自然人 者，依國籍認定之；非屬自然人者，依營業地址認定之。 264 X 機關允許外國廠商參與非條約協定採購者，得於招標文件中規定外 國廠商不適用政府採購法第30條押標金、保證金之規定。 265 X 機關允許外國廠商參與非條約協定採購者，得於招標文件中規定外 國廠商不適用採購法第6章爭議處理之規定。 266 X 適用我國所締結之條約或協定之採購，機關不得允許非條約協定國 廠商參與。 267 O 機關辦理非條約協定採購，得於招標文件明定限我國廠商投標，且 勞務原產地須為我國。 268 X 機關允許外國廠商參與非條約協定採購者，應於招標文件中規定外 國廠商適用政府採購法第37條第1項投標廠商資格。 269 X 機關辦理非條約協定採購，應於招標文件明定限我國廠商投標，且 勞務原產地須為我國。 270 O 機關允許外國廠商參與非條約協定採購者，得於招標文件中規定外 國廠商不適用政府採購法第21條第4項平等受邀之機會。 271 X 依「外國廠商參與非條約協定採購處理辦法」規定，廠商所供應兼 有我國及外國財物或勞務，以進口國家認定其原產地。 272 O 依「外國廠商參與非條約協定採購處理辦法」規定，廠商所供應兼 有我國及外國財物或勞務，無法依進口貨物原產地認定標準或實際 提供勞務者之國籍或登記地認定其歸屬者，以所占金額比率最高者 歸屬之。 273 O 機關允許外國廠商參與非條約協定採購者，得於招標文件中規定外 國廠商不適用政府採購法第37條第1項投標廠商資格。 274 X 機關允許外國廠商參與非條約協定採購者，其選擇性招標，應於招 標文件中規定外國廠商適用政府採購法第21條第4項平等受邀之機 會。 275 X 屬性簡單之一般性技術服務案件（如測量、地質鑽探等）不得依政 府採購法規定採公開招標或選擇性招標辦理。 276 O 機關辦理限制性招標，邀請三家以上廠商比價，僅有一家廠商投標 者，得當場改為議價辦理。原已訂定之底價則參考該廠商報價重行 訂定。 277 O 屬性簡單之一般性技術服務案件（如測量、地質鑽探等）得依政府 採購法規定採公開招標或選擇性招標辦理。 278 X 機關辦理限制性招標，邀請三家以上廠商比價，僅有一家廠商投標 者，得當場改為議價辦理。原已訂定之底價無須參考該廠商報價重 行訂定。 279 X 機關採用選擇性招標方式辦理採購，得規定廠商將資格與規格合併 一次投標。審查後再邀合格廠商投價格標。 280 O 機關辦理公告金額以上之研究發展採購，得採選擇性招標建立合格 廠商名單。 281 X 機關辦理查核金額以上之採購，其採選擇性招標方式辦理者，應報 經上級機關核准。 282 X 機關辦理公告金額以上之研究發展採購，依政府採購法第20條規 定，應採選擇性招標建立合格廠商名單。 283 X 機關辦理選擇性招標，其預先辦理資格審查所建立之合格廠商名 單，有效期未逾3年者，得免逐年公告辦理資格審查，但應檢討修 正既有合格廠商名單。 284 O 機關辦理選擇性招標，其預先辦理資格審查所建立之合格廠商名 單，有效期未逾3年者，且已於辦理資格審查之公告載明不再公告 辦理資格審查者，於有效期內得免逐年公告。但仍應逐年檢討修正 該名單。 285 X 鑑於公告金額以上之勞務採購，不符政府採購法第21條第1項建立 合格廠商名單辦理採購之特性，故不得以建立合格廠商名單方式辦 理。 286 O 機關為特定個案辦理選擇性招標，其後續邀標之通知，機關可就個 案符合資格之廠商家數多寡，必要時以密件方式個別通知不同廠商 至不同處所遞送投標文件。 287 X 機關為特定個案辦理選擇性招標，其後續邀標之通知，無論個案符 合資格之廠商家數多寡，不得個別通知不同廠商至不同處所遞送投 標文件，以維公平競爭。 288 O 機關於合格廠商名單有效期內發現名單內之廠商有不符合原定資格 條件之情形者，得限期通知該廠商提出說明。廠商逾期未提出合理 說明者，機關應將其自合格廠商名單中刪除。 289 X 機關於合格廠商名單有效期內發現名單內之廠商有不符合原定資格 條件之情形者，應逕將其自合格廠商名單中刪除，並依採購法第 101條及第102條規定辦理。 290 X 機關辦理選擇性招標建立合格廠商名單後，未列入合格廠商名單之 廠商請求參加特定招標時，為符合公平原則，機關不得接受。 291 X 機關依採購法第21條第1項規定建立合格廠商名單，其預先辦理廠 商資格審查階段，採購金額以該名單有效期內預估採購總額認定 之；邀請符合資格廠商投標階段，仍以前揭預估採購總額為採購金 額。 292 O 公告金額以上之工程採購(涉及營造業或土木包工業)，得依政府採 購法第21條第1項建立合格廠商名單辦理。 293 O 機關辦理選擇性招標，建立經常性採購之合格廠商名單，該合格廠 商名單應建立6家以上。 294 X 機關依採購法第21條第1項建立合格廠商名單者，於後續邀請廠商 投標時，每次應至少邀請3家以上。 295 O 機關依採購法第21條第1項建立合格廠商名單者，於後續邀請廠商 投標時，每次邀請家數，法無明文限制。 296 X 機關辦理選擇性招標，建立經常性採購之合格廠商名單，該合格廠 商名單應建立3家以上。 297 O 機關辦理選擇性招標，應予經資格審查合格之廠商平等受邀之機 會。 298 X 機關為特定個案辦理選擇性招標，應於辦理廠商資格審查後，邀請 3家以上符合資格之廠商投標。 299 O 機關為特定個案辦理選擇性招標，應於辦理廠商資格審查後，邀請 所有符合資格之廠商投標。 300 O 機關依採購法第21條第1項規定建立合格廠商名單，其預先辦理廠 商資格審查階段，採購金額以該名單有效期內預估採購總額認定 之；邀請符合資格廠商投標階段，以邀請當次之採購預算金額認定 採購金額。 301 X 機關辦理選擇性招標，其係依政府採購法第21條第1項為建立合格 廠商名單而預先辦理資格審查者，廠商所遞送之資格文件，未訂開 標時間地點，其拆封審查，適用政府採購法開標、監辦程序。 302 X 機關辦理選擇性招標，預先辦理資格審查，其建立合格廠商名單 後，於名單有效期限內，機關得不再接受廠商提出資格審查之請 求。 303 O 機關辦理選擇性招標，預先辦理資格審查，其建立合格廠商名單 後，於名單有效期限內，機關應隨時接受廠商提出資格審查之請 求。 304 O 機關辦理選擇性招標，其係依政府採購法第21條第1項為建立合格 廠商名單而預先辦理資格審查者，廠商所遞送之資格文件，未訂開 標時間地點，其拆封審查，雖得無政府採購法開標及監辦程序之適 用，但資格審查如有不公，廠商仍可依政府採購法第6章之規定提 出異議及申訴。 305 O 採購法第22條第1項第4款及第7款分別明定採購案後續擴充得採行 限制性招標之要件，其中第7款擴充之範圍須於招標公告及招標文 件載明，而第4款則無須於原採購案公告擴充範圍。 306 X 機關辦理清潔服務採購，於招標文件中載明得依採購法第22條第1 項第7款辦理後續擴充1年，並以招標當年度基本工資估算清潔人員 薪資為固定金額給付。嗣於第2年後續擴充時，基本工資已調漲， 致原保留後續擴充之薪資金額已不足支應調整後之基本工資，機關 不得與原廠商辦理續約，應重新辦理招標。 307 X 機關辦理公共藝術之工程採購，得依採購法第22條第1項第14款規 定辦理限制性招標。 308 O 機關辦理公共藝術之工程採購，不得依採購法第22條第1項第14款 規定辦理限制性招標。 309 X 機關辦理藝文採購，其金額在公告金額以上者，依採購法第22條第 1項第14款規定採公告審查程序辦理者，應將公告刊登於政府電子 採購網，無需刊登於政府採購公報。 310 O 機關辦理藝文採購，其金額在公告金額以上者，依採購法第22條第 1項第14款規定採公告審查程序辦理者，應將公告刊登於政府採購 公報。 311 X 具專業素養、特質之文化、藝術專業人士、機構或團體，不得主動 向機關提供其具專業素養、特質之資料，供機關依採購法第22條第 1項第14款規定作為邀請或委託之參考。 312 O 具專業素養、特質之文化、藝術專業人士、機構或團體，得向機關 主動提供其具專業素養、特質之資料，以供機關依採購法第22條第 1項第14款規定作為邀請或委託之參考。 313 X 機關依採購法第22條第1項第14款規定辦理公告金額以上藝文採 購，得免收押標金，但保證金應於招標文件載明，不得免收。 314 O 機關依採購法第22條第1項第14款規定辦理藝文採購，以免收押標 金、保證金為原則。 315 X 機關辦理委託研究發展，得免收押標金，但決標後應收取保證金。第 22 條 316 O 機關辦理委託研究發展，以免收押標金、保證金為原則。 第 22 條 317 X 機關辦理藝文採購，其不經公告審查程序者，應先將邀請或委託對 象之名稱、具專業素養、特質之情形及不經公告審查程序逕行邀請 或委託之理由，報經上級機關核准後方得辦理。 318 O 機關辦理藝文採購，其不經公告審查程序者，應先將邀請或委託對 象之名稱、具專業素養、特質之情形及不經公告審查程序逕行邀請 或委託之理由，簽報機關首長或其授權人員核准後方得辦理。 319 X 機關公開評選廠商承辦專業服務，其廠商資格經審查不符合招標文 件之規定者，仍得參與評選。 320 O 機關公開評選廠商承辦專業服務，其廠商資格經審查不符合招標文 件之規定者，不得參與評選。 321 X 廠商因不可歸責於其本身之事由，應機關要求對同一服務事項依不 同條件辦理多次規劃或設計者，其重複規劃或設計之部分，不得另 給服務費用。 322 X 建造費用百分比法所稱之建造費用，指工程採購底價金額或評審委 員會建議金額，若無前2者，以工程預算代之，並包括承包商辦理 工程之各項保險費。 323 O 建造費用百分比法所稱之建造費用，指工程採購底價金額或評審委 員會建議金額，若無前2者，以工程預算代之。不包括相關法規所 定規費、設計費等費用或除外費用。 324 X 機關依採購法第22條第1項規定辦理限制性招標，應由需求、使用 或承辦採購單位，通案就性質相近之案件(例如搶修、搶險採購)預 為敘明符合各該款之情形，簽報機關首長或其授權人員通案核准， 以提升採購效率。 325 O 機關依採購法第22條第1項規定辦理限制性招標，應由需求、使用 或承辦採購單位，就個案敘明符合各款之情形，簽報機關首長或其 授權人員核准。其得以比價方式辦理者，優先以比價方式辦理。 326 O 廠商因不可歸責於其本身之事由，應機關要求對同一服務事項依不 同條件辦理多次規劃或設計者，其重複規劃或設計之部分，如經機 關審查同意者，得核實另給付服務費用。 327 X 機關採購公用事業依一定費率供應之標的，縱使非獨家供應，亦無 須議價程序。 328 O 機關採購公用事業依一定費率供應之標的，如確屬獨家供應且無法 以議價方式辦理者，得免議價程序。 329 X 機關依採購法第22條第1項第9款規定與評選優勝廠商之議價及決 標，如有2家以上廠商為同一優勝順序者，以獲得較多委員給予第1 名者為第1序位。 330 X 機關依採購法第22條第1項第9款規定(非採固定價格或費率)與評選 資訊服務優勝廠商之議價及決標，於招標文件載明如有2家以上廠 商為同一優勝順序者，以標價低者優先議價。 331 X 機關依採購法第22條第1項第9款規定與評選優勝廠商之議價及決 標，如有2家以上廠商為同一優勝順序者，應就該等廠商進行綜合 評選1次，以總評分最高、價格與總評分之商數最低或序位合計值 最低者，優先議價。 332 X 機關依採購法第22條第1項第9款規定(非採固定價格或費率)與評選 資訊服務優勝廠商之議價，於招標文件載明如有2家以上廠商為同 一優勝順序者，就該等廠商再進行綜合評選1次，以總評分最高、 價格與總評分之商數最低或序位合計值最低者，優先議價；得分 仍相同者，以配分最高之評選項目之得分合計值較高者決定議價順 序。 333 O 機關依採購法第22條第1項第9款規定與評選資訊服務優勝廠商之議 價，如有2家以上廠商為同一優順序者，擇配分最高之評選項目之 得分合計值較高者，優先議價；得分仍相同者，就該等廠商再進行 綜合評選1次，以總評分最高、價格與總評分之商數最低或序位合 計值最低者，優先議價；其再次相同者，抽籤決定之。 334 X 機關依採購法第22條第1項第9款規定與評選優勝廠商之議價及決 標，如有2家以上廠商為同一優勝順序者，除依機關委託社會福利 服務廠商評選及計費辦法辦理者外，以標價低者優先議價。 335 X 機關辦理未達公告金額之藝文採購，應依採購法第22條第1項第14 款規定辦理。 336 O 機關辦理未達公告金額之藝文採購，非依採購法第22條第1項第14 款辦理者，得準用依該款訂定之辦法之規定。 337 X 廠商承辦專案管理技術服務，其專案管理人員至少應有三分之一為 該廠商之專任職員。 338 O 廠商承辦專案管理技術服務，其專案管理人員至少應有二分之一為 該廠商之專任職員。 339 X 機關辦理設計競賽，其招標文件訂有廠商資格者，應先審查資格文 件，資格不符合招標文件之規定者，其他部分不予審查。另機關應 於審查結果完成後儘速通知各該廠商，最遲不得逾決標或廢標日30 日。 340 O 機關辦理設計競賽，其招標文件訂有廠商資格者，應先審查資格文 件，資格不符合招標文件之規定者，其他部分不予審查。另機關應 於審查結果完成後儘速通知各該廠商，最遲不得逾決標或廢標日10 日。 341 X 機關辦理委託資訊服務，採服務成本加公費法者，依法應由雇主負 擔之勞工保險費、積欠工資墊償基金提繳費、全民健康保險費、勞 工退休金，由機關定額給付。 342 O 機關辦理委託資訊服務，採服務成本加公費法者，依法應由雇主負 擔之勞工保險費、積欠工資墊償基金提繳費、全民健康保險費、勞 工退休金，由機關核實給付。 343 X 機關辦理委託專業服務，採服務成本加公費法者，其非經常性給與 之獎金，得由機關依實際需要於招標文件明定為實際薪資之一定比 率及給付條件，無須檢據核銷。 344 O 機關辦理委託專業服務，採服務成本加公費法者，其非經常性給與 之獎金，得由機關依實際需要於招標文件明定為實際薪資之一定比 率及給付條件，檢據核銷。 345 X 機關依採購法第22條第1項第9款規定辦理評選專業服務廠商，除招 標文件另有規定者外，其投標廠商應有3家始可開標。 346 O 機關依採購法第22條第1項第9款規定辦理評選專業服務廠商，除招 標文件另有規定者外，其投標廠商僅1家即可開標。 347 X 依「機關委託專業服務廠商評選及計費辦法」之規定，有2家以上 廠商為同一優勝順序者，為求公平謹慎，應以抽籤決定議價順序， 惟抽籤方式應載明於招標文件。 348 O 依「機關辦理設計競賽廠商評選及計費辦法」之規定，有2家以上 廠商為同一優勝順序者，擇配分最高之評選項目之得分合計值較高 者，優先議價；得分仍相同者，就該等廠商再進行綜合評選1次， 以總評分最高、價格與總評分之商數最低或序位合計值最低者，優 先議價；其再次相同者，抽籤決定之。 349 X 機關依採購法第22條第1項第9款規定與評選優勝廠商之議價及決 標，如有2家以上廠商為同一優勝順序者，以抽籤決定議價順序。 350 X 機關公開評選廠商承辦資訊服務，其招標文件訂有廠商資格條件 者，應先審查資格文件，資格不符合招標文件之規定者，其他部分 不予審查。另機關應於審查結果完成後儘速通知各該廠商，最遲不 得逾決標或廢標日30日。 351 O 機關委託技術服務廠商辦理設計，應符合節省能源、減少溫室氣體 排放、保護環境、節約資源、經濟耐用等目的，並考量景觀、自然 生態、生活美學及性別、身心障礙、高齡、兒童等使用者友善環 境。 352 X 機關辦理委託專業服務，其採服務成本加公費法者，其公費之金額 應為定額，且不得逾直接薪資及管理費用合計金額之百分之二十 五。 353 O 機關委託技術服務廠商辦理規劃服務，其服務內容已包括測量、 地質調查、土壤調查與試驗、水文氣象測量及調查、材料調查及試 驗、模型試驗及其他調查、試驗或勘測等項目，前述項目之服務費 用不得採建造費用百分比法計費。 354 O 機關依政府採購法第22條第1項第13款辦理委託研究發展，於擇定 研究機構後，仍應就研究主題及範圍，通知該研究機構提出計畫書 供機關審查。其審查結果不符合需要者，得不予接受或限期改正。 355 X 機關依採購法第22條第1項第14款規定辦理藝文採購，如招標文件 規定須收押標金者，屬違法行為，應予改正。 356 X 機關辦理採購，其採購標的如係由特定廠商獨家代理者，屬採購法 第22條第1項第2款所稱「獨家供應」。 357 O 機關委託廠商辦理技術服務，其招標文件載明廠商應提出之服務建 議書，得包括規劃設計理念及構想說明（例如住民參與、性別、身 心障礙、高齡、兒童等使用者友善環境等）。 358 O 機關委託廠商辦理設計，其評選項目，除法令另有規定者外，得載 明住民參與、性別、身心障礙、高齡、兒童等使用者友善環境等之 說明。 359 O 機關委託廠商從事軟體開發，為資訊服務採購，其委託對象之選 定，適用採購法。 360 O 機關委託技術服務採「建造費用百分比法」計費者，其工程採購中 之設備採購項目，如包括辦公設備、傢俱設備等現有成品之財物， 而無設計及監造之事實者，於招標文件載明不納入「建造費用」計 算服務費用。 361 X 機關依採購法第22條第1項第9款辦理委託專業服務，有關廠商之服 務費用，得於訂約後全部一次預付廠商，以利廠商資金週轉。 362 X 機關依採購法第22條第1項第9款規定評選專業服務廠商作業，適用 採購法有關最有利標之評選規定。 363 X 機關辦理委託資訊服務採服務成本加公費法者，應於契約訂明廠商 應記錄各項費用並提出憑證，憑證應經會計師簽證方有效。 364 X 機關辦理委託專業服務，其採服務成本加公費法者，其公費之金額 應為定額，且不得超過直接薪資及管理費用合計金額之百分之三 十。 365 X 機關辦理藝文採購，其依採購法第22條第1項第14款規定採公告審 查程序辦理者，得免將公告刊登於政府採購公報。 366 O 機關辦理藝文採購，其依採購法第22條第1項第14款規定採公告審 查程序辦理者，應將公告刊登於政府採購公報。 367 X 機關依採購法第22條第1項第9款規定辦理統包採購，準用採購法有 關最有利標之評選規定。 368 O 機關依採購法第22條第1項第9款規定辦理專業服務採購，準用採購 法有關最有利標之評選規定。 369 X 機關依採購法第22條第1項第9款規定辦理評選資訊服務廠商，其投 標廠商應有3家方可開標。 370 O 機關依採購法第22條第1項第9款規定辦理評選資訊服務廠商，得於 招標文件載明投標廠商至少3家可開標，以增加競爭。 371 X 機關依採購法第22條第1項第10款規定辦理設計競賽廠商評選，其 投標廠商應有3家方可開標。 372 O 機關依採購法第22條第1項第10款規定辦理設計競賽廠商評選，得 於招標文件載明投標廠商至少3家可開標，以增加競爭。 373 X 公營事業為商業性轉售所為之公告金額以上採購，為提升效率，得 採不公告之限制性招標，邀請2家以上廠商比價。 374 O 公營事業為商業性轉售所為之公告金額以上採購，基於轉售對象、 製程或供應源之特性或實際需要，不適宜以公開招標或選擇性招標 方式辦理者，得採限制性招標。 375 X 機關辦理工程採購，可依採購法第22條第1項第9款之規定公開評選 優勝廠商辦理限制性招標。 376 O 機關辦理專業服務採購，可依採購法第22條第1項第9款之規定公開 評選優勝廠商辦理限制性招標。 377 X 廠商之服務費用得於契約規定於訂約後預付一部分，但以不逾契約 價金總額或契約價金上限之50%為原則。 378 O 廠商之服務費用得於契約規定於訂約後預付一部分，但以不逾契約 價金總額或契約價金上限之30%為原則。 379 X 機關辦理藝文採購，其依採購法第22條第1項第14款規定採公告審 查程序辦理者，應成立審查委員會辦理審查；審查委員會並應由委 員5人以上組成，其中外聘委員不得少於三分之一。 380 X 機關依採購法第22條第1項第9款規定，辦理50萬元之技術服務採 購，應先報上級機關核准。 381 X 機關辦理設計競賽採服務成本加公費法者，應於契約訂明廠商應記 錄各項費用並提出憑證，憑證並應經會計師簽證，並應於契約訂明 成本上限及逾上限時之處理。 382 X 公營事業向其他公營事業採購公告金額以上房地產為法定得免辦理 公開徵求之情形之一。 383 X 機關辦理未達公告金額之藝文採購，不得依「機關邀請或委託文化 藝術專業人士機構團體表演或參與文藝活動作業辦法」規定辦理。 384 X 機關辦理某廠商電腦產品，以其商標專用權屬已立法保護之智慧財 產權為由，符合採購法第22條第1項第2款之專屬權利，無其他合適 之替代標的，故得採限制性招標。 385 X 機關依採購法第22條第1項第9款規定辦理公告金額以上採購之公開 評選，其第1次招標自公告日起至截止收件日止之等標期(未提供電 子領投標及公開閱覽)，應訂定10日以上之合理期限。第2次以後公 開評選之期限，由機關視需要合理訂定之。但不得少於5日。 386 X 機關辦理限制性招標，邀請2家以上廠商比價，有2家廠商投標者， 即得比價；僅有1家廠商投標者，應辦理第2次比價。 387 X 機關辦理藝文工程採購，其金額在公告金額以上者，依採購法第22 條第1項第14款規定採公告審查程序辦理者，應將公告刊登於政府 採購公報。 388 X 機關辦理公告金額以上之工程採購，得依採購法第22條第1項第12 款規定向原住民個人或政府立案之原住民團體採限制性招標。 389 X 機關辦理採購，屬專屬權利或獨家製造或供應，無其他合適之替代 標的之部分，其預估金額達採購金額之百分之五十以上，即得依採 購法第22條第1項第2款規定採限制性招標。 390 X 機關辦理公告金額以上拆除房屋構造物之工程採購，為配合扶助原 住民政策，得依採購法第22條第1項第12款邀請2家原住民勞動合作 社比價。 391 X 機關依採購法第22條第1項第9款辦理委託資訊服務公開評選，招標 文件已訂明固定服務費用或費率者，依該服務費用或費率決標，得 免議價程序。 392 X 機關依採購法第22條第1項第9款辦理評選，招標文件已訂明固定服 務費用或費率者，依該服務費用或費率決標，得免議價程序。 393 X 採「限制性招標」邀請廠商進行議、比價者，需事先建立合格廠商 名單。 394 X 機關辦理委託資訊服務，採服務成本加公費法者，其公費係指廠商 提供服務所得之報酬，包括風險、利潤及有關之稅捐等，其金額應 為定額，且不得超過直接薪資扣除非經常性給與之獎金後與管理費 用合計金額之百分之五十。 395 O 機關辦理委託資訊服務，採服務成本加公費法者，其公費係指廠商 提供服務所得之報酬，包括風險、利潤及有關之稅捐等，其金額應 為定額，且不得超過直接薪資扣除非經常性給與之獎金後與管理費 用合計金額之百分之二十五。 396 X 機關辦理採購，屬專屬權利或獨家製造或供應，無其他合適之替代 標的之部分，其預估金額達採購金額之百分之五十以上，分別辦理 採購確有重大困難之虞，必須與其他部分合併採購者，得依採購法 第22條第1項第16款規定採限制性招標。 397 O 機關辦理採購，屬專屬權利或獨家製造或供應，無其他合適之替代 標的之部分，其預估金額達採購金額之百分之五十以上，分別辦理 採購確有重大困難之虞，必須與其他部分合併採購者，得依採購法 第22條第1項第2款規定採限制性招標。 398 O 機關得依採購法第22條第1項第13款採限制性招標委託在專業領域 具領先地位之自然人或經公告審查優勝之學術或非營利機構進行科 技、技術引進、行政或學術研究發展。 399 O 機關委託專業服務，其服務費用，應參酌一般收費情形核實議定。 其必須核實另支費用者，應於契約內訂明項目及費用範圍；契約未 規定者，不得另為任何給付。 400 O 機關辦理委託研究發展，應依實際需要訂定研究機構之基本資格或 特定資格，不得不當限制競爭。 401 O 機關為瞭解具專業素養、特質之文化、藝術專業人士、機構或團體 之情形，得於政府採購公報或主管機關資訊網路，公開徵求其提供 具專業素養、特質之資料，以供為依採購法第22條第1項第14款及 「機關邀請或委託文化藝術專業人士機構團體表演或參與文藝活動 作業辦法」規定邀請或委託之參考。 402 X 機關依採購法第22條第1項第11款辦理房地產之公開徵求，適合需 要者有2家以上廠商為同一適合需要序位者，以比價方式辦理。 403 X 機關依採購法第22條第1項第8款於公開競價市場採購公告金額以上 財物之限制性招標議價，無需由主(會)計及有關單位辦理監辦。 404 O 機關依採購法第22條第1項第9款辦理公開評選專業服務廠商，為增 加競爭，招標文件明定投標廠商至少2家始可開標。 405 X 機關得依採購法第22條第1項第13款採限制性招標委託在專業領域 具領先地位之自然人或經公告審查優勝之學術或非營利機構進行科 技、技術引進、行政或學術研究發展之工程採購。 406 X 機關依採購法第22條第1項第10款規定辦理設計競賽廠商評選，招 標文件已訂明固定服務費用或費率者，依該服務費用或費率決標， 得免議價程序。 407 O 機關依採購法第22條第1項第10款規定辦理設計競賽廠商評選，招 標文件已訂明固定服務費用或費率者，依該服務費用或費率決標， 但議價程序不得免除。 408 X 政府採購法第22條第1項第13款所稱具領先地位之自然人，得為在 相關專業領域之表現，曾獲我國(不含國外)政府機關、學術機構或 具有公信力之團體獎勵或表揚者。 409 O 政府採購法第22條第1項第13款所稱具領先地位之自然人，得為在 相關專業領域之表現，曾獲國內外政府機關、學術機構或具有公信 力之團體獎勵或表揚者。 410 O 採購法第22條第1項第6款所稱百分之五十，指追加累計金額占原主 契約金額之比率。 411 O 機關依採購法第22條第1項第9款辦理，並採分項複數決標，經開標 結果無廠商投標之項次，該等項次如符合採購法第22條第1項第1款 適用情形者，得採限制性招標。 412 X 機關委託廠商承辦資訊服務採服務成本加公費法者，得於招標文件 規定得標廠商服務費用降低或實際績效提高時，得依情形給付廠商 獎勵性報酬，其屬服務費用降低者，為所減省之契約價金金額之一 定比率，以不逾百分之三十為限，其屬實際績效提高者之契約給付 金額，以不逾契約價金總額或契約價金上限之百分之十為限。 413 O 機關委託廠商承辦資訊服務採服務成本加公費法者，得於招標文件 規定得標廠商服務費用降低或實際績效提高時，得依情形給付廠商 獎勵性報酬，其屬服務費用降低者，為所減省之契約價金金額之一 定比率，以不逾百分之五十為限，其屬實際績效提高者之契約給付 金額，以不逾契約價金總額或契約價金上限之百分之十為限。 414 X 機關委託研究發展，不得將其整體規劃、細部計畫及執行事項合併 辦理。 415 O 機關委託研究發展，得將其整體規劃、細部計畫及執行事項合併或 分別辦理。 416 X 機關依採購法第22條第1項第9款辦理委託專業服務，有關廠商之服 務費用，以完成履約事項一次支付價金為原則。 417 O 機關依採購法第22條第1項第9款辦理委託專業服務，有關廠商之服 務費用，得於契約規定於訂約後預付一部分，其餘按月或分期支 付。 418 X 機關辦理委託資訊服務採按月、按日或按時計酬法者，適用於計畫 性質複雜，服務費用不易確實預估或履約成果不確定之服務案件。 419 O 機關辦理委託資訊服務採服務成本加公費法者，適用於計畫性質複 雜，服務費用不易確實預估或履約成果不確定之服務案件。 420 X 機關委託廠商承辦資訊服務，因屬勞務採購，其履約期間雖在1年 以上，仍不得於契約內訂定相關隨物價指數調整契約價金之機制。 421 O 機關委託廠商承辦資訊服務，其履約期間在1年以上者，得於契約 內訂明自第2年起得隨物價指數調整契約價金，並敘明其所適用之 調整項目、調整方式及調整金額上限。 422 X 採購法第22條第1項第13款所稱具領先地位之自然人，得為在相關 專業領域著有專書或研究報告，經相關目的事業主管機關認有特殊 表現或貢獻者。 423 O 採購法第22條第1項第13款所稱具領先地位之自然人，得為在相關 專業領域著有專書或研究報告，經機關認有特殊表現或貢獻者。 424 X 機關辦理設計競賽之優勝者，須於獲選後提供製作成品服務者，得 於招標文件規定得標廠商服務費用降低或實際績效提高時，依情形 給付廠商獎勵性報酬，其屬實際績效提高者之契約給付金額，以不 逾契約價金總額或契約價金上限之百分之三十為限。 425 O 機關辦理設計競賽之優勝者，須於獲選後提供製作成品服務者，得 於招標文件規定得標廠商服務費用降低或實際績效提高時，得依情 形給付廠商獎勵性報酬，其屬服務費用降低者，為所減省之契約價 金金額之一定比率，以不逾百分之五十為限。 426 X 機關辦理公告金額以上之房地產採購案，其參加應徵之廠商，應為 房地產之所有權人，不得委託其他人代理。 427 O 機關辦理公告金額以上之房地產採購案，其參加應徵之廠商，應為 房地產之所有權人或其委託代理人。 428 X 採購法第22條第1項第6款所稱百分之五十，指追加及追減絕對值合 計金額占原主契約金額之比率。 429 X 機關依政府採購法第22條第1項第6款規定辦理追加契約以外之工程 時，應以變更原契約方式為之，不得另案簽訂契約。 430 O 機關依政府採購法第22條第1項第6款規定辦理追加契約以外之工程 時，得另案簽訂契約或以變更原契約方式為之。 431 X 政府採購法第22條第1項第1款所稱「公開招標或選擇性招標辦理結 果，無廠商投標或無合格標」，係指經2次流標，第3次招標始得依 該款規定辦理。 432 O 政府採購法第22條第1項第1款所指「公開招標或選擇性招標辦理結 果，無廠商投標或無合格標」，不受2次以上流標之限制。 433 X 機關依採購法第22條第1項第10款規定辦理設計競賽廠商評選，其 評選結果應通知廠商，對未獲選者無須敘明其原因。 434 O 機關依採購法第22條第1項第10款規定辦理設計競賽廠商評選，其 評選結果應通知廠商，對未獲選者並應敘明其原因。 435 X 機關公開評選廠商承辦資訊服務，其評選結果應通知廠商，對未獲 選者無須敘明其原因。 436 O 機關公開評選廠商承辦資訊服務，其評選結果應通知廠商，對未獲 選者並應敘明其原因。 437 X 機關辦理委託專業服務其採總包價法者，應於契約訂明廠商應記錄 各項費用並提出憑證，機關並得至廠商處所辦理查核。 438 O 機關辦理委託專業服務其採服務成本加公費法者，應於契約訂明廠 商應記錄各項費用並提出憑證，機關並得至廠商處所辦理查核。 439 X 採購法第22條第1項第4款「原有採購之後續維修、零配件供應、更 換或擴充，因相容或互通性之需要，必須向原供應廠商採購者。」 可採限制性招標之規定，只適用於財物及勞務採購不適用於工程採 購案。 440 O 採購法第22條第1項第4款「原有採購之後續維修、零配件供應、更 換或擴充，因相容或互通性之需要，必須向原供應廠商採購者。」 可採限制性招標之規定，於工程、財物、勞務皆一體適用。 441 X 機關辦理毗鄰房地產或畸零地之公告金額以上房地產採購，係與現 有房地產合併，以應業務需要者，其公開徵求程序不得免除。 442 O 機關辦理毗鄰房地產或畸零地之公告金額以上房地產採購，係與現 有房地產合併，以應業務需要者，得免公開徵求。 443 X 機關依採購法第22條第1項第9款規定，辦理50萬元之技術服務採 購，因屬未達公告金額之採購，由機關內部成立評審委員會即可。 444 O 機關依採購法第22條第1項第9款規定，辦理50萬元之技術服務採 購，應依採購法第94條規定，成立採購評選委員會。 445 X 機關辦理設計競賽，依機關辦理設計競賽廠商評選及計費辦法規 定，設計成果之製作費用，以採成本加公費法為原則。但屬得標廠 商代收及代付之費用，得核實給付。 446 O 機關辦理設計競賽，依機關辦理設計競賽廠商評選及計費辦法規 定，設計成果之製作費用，以採總包價法為原則。但屬得標廠商代 收及代付之費用，得核實給付。 447 X 機關辦理限制性招標，邀請2家以上廠商比價，僅有1家廠商投標 者，應予廢標。 448 O 機關辦理限制性招標，邀請2家以上廠商比價，僅有1家廠商投標 者，得當場改為議價辦理。 449 X 機關依採購法第22條第1項第9款辦理委託專業服務，有關廠商之服 務費用，不得於契約規定於訂約後預付部分款項。 450 O 機關依採購法第22條第1項第9款辦理委託專業服務，有關廠商之服 務費用，得於契約規定於訂約後預付一部分，但該部分不得超過契 約總額之百分之三十。 451 X 機關以公告程序辦理設計競賽，其招標文件載明給予未獲選者獎勵 金，不得採行。 452 O 機關以公告程序辦理設計競賽，除法令另有規定外，其招標文件得 視個案特性及實際需要載明給予設計競賽優勝者之獎勵方式與未獲 選者之獎勵名額及方式。 453 X 採購法第22條第1項第2款所稱專屬權利，指已立法保護之智慧財產 權(包括商標專用權)。 454 O 採購法第22條第1項第2款所稱專屬權利，指已立法保護之智慧財產 權。但不包括商標專用權。 455 X 機關委託廠商承辦專業服務，其涉及智慧財產權之歸屬者，機關應 於招標文件載明由機關取得所有權利。 456 O 機關委託廠商承辦專業服務，其涉及智慧財產權之歸屬者，應由機 關於招標文件預為載明。 457 X 採購法第22條第1項第4款所稱「原供應廠商」，不包括原供應廠商 之分包廠商。 458 O 採購法第22條第1項第4款所稱「原供應廠商」，包括原分包廠商。第 22 條 459 X 採購法第22條第1項第6款規定所稱「因未能預見之情形，必須追加 契約以外之工程」，係指增加原契約外之工作項目，不包括原契約 項目規格之變更或既有標的數量之增加。 460 O 採購法第22條第1項第6款規定所稱「因未能預見之情形，必須追加 契約以外之工程」，係指增加原契約外之工作項目、原契約項目規 格之變更或既有標的數量之增加。 461 X 採購評選委員會依採購法第22條第1項第9款規定評選優勝專業服務 廠商，其優勝廠商以1家為限。 462 O 採購評選委員會依採購法第22條第1項第9款規定評選優勝專業服務 廠商，其優勝廠商得不以1家為限。 463 X 機關依採購法第22條第1項第11款公開徵求房地產者，應將公告刊 登於政府採購公報或公開於資訊網路。 464 O 機關依採購法第22條第1項第11款公開徵求房地產者，應將公告刊 登於政府採購公報並公開於資訊網路。 465 X 機關依採購法第22條第1項第11款辦理房地產之公開徵求，適合需 要者在2家以上者，以標價低者優先議價。 466 O 機關依採購法第22條第1項第11款辦理房地產之公開徵求，適合需 要者在2家以上者，依適合需要序位，自最適合需要者起，依序以 議價方式辦理。 467 X 政府機關指定地區購買或承租房地產，經依所需條件公開徵求勘選 認定適合者，不得採限制性招標。 468 O 政府機關指定地區購買或承租房地產，經依所需條件公開徵求勘選 認定適合者，得採限制性招標。 469 X 機關委託廠商承辦專業服務，其服務費用之計算以總包價法為限， 不得採用服務成本加公費法辦理。 470 O 機關委託廠商承辦專業服務，其服務費用之計算，得視專業服務之 類別、性質、規模、工作範圍及內容或工作期間等情形，以服務成 本加公費法辦理。 471 X 公告金額以上之採購，機關得依採購法第22條第1項第12款規定逕 洽原住民個人或政府立案之原住民團體採限制性招標辦理所採購之 「非營利產品、勞務及工程」之議、比價。 472 O 公告金額以上之採購，機關得逕洽原住民個人或政府立案之原住民 團體採限制性招標辦理議、比價者，僅限於依採購法第22條第1項 第12款規定所採購之「非營利產品及勞務」，並不包括工程案。 473 X 機關依採購法第22條第1項第13款辦理委託研究發展，於擇定研究 機構後，應即辦理議價、決標。簽約後該研究機構應提出計畫書， 再由機關自行或成立審查委員會審查。 474 O 機關依採購法第22條第1項第13款辦理委託研究發展，於擇定研究 機構後，仍應就研究主題及範圍，通知該研究機構提出計畫書供機 關審查。並於審查通過後，再辦理議價。 475 X 機關委託技術服務採服務成本加公費法計費者，廠商應記錄各項費 用並提出憑證，該憑證應包括各項費用之發票、收據、紀錄或報表 等，除契約另有規定外，憑證應為正本。 476 O 機關委託技術服務採服務成本加公費法計費者，廠商應記錄各項費 用並提出憑證，該憑證應包括各項費用之發票、收據、紀錄或報表 等，除契約另有規定外，憑證得為影本。 477 X 機關公開評選廠商承辦專業服務，其招標文件訂有廠商資格條件， 如經機關審查資格文件不符合招標文件之規定者，得於評選會議中 洽廠商釐清。 478 O 機關公開評選廠商承辦專業服務，其招標文件訂有廠商資格條件 者，應先審查資格文件，資格不符合招標文件之規定者，其他部分 不予審查。 479 X 勞務採購，招標文件規定契約期間為1年，預算金額新臺幣（下 同）80萬元，但機關保留後續擴充2年，每年擴充金額80萬元，以 機關之決定為準，不一定採購後續2年，則該案應以公告金額以上 之採購認定之。如果在第1年結束前機關決定不辦理後續擴充，則 該案之第1年即為未達公告金額之採購。 480 O 勞務採購，招標文件規定契約期間為1年，預算金額新臺幣（下 同）80萬元，但機關保留後續擴充2年，每年擴充金額為80萬元， 以機關之決定為準，不一定採購後續2年，則該案仍應以公告金 額以上之採購認定之。如果在第1年結束前機關決定不辦理後續擴 充，則該案之第1年仍為公告金額以上之採購。 481 X 機關依採購法第22條第1項第9款規定評選資訊服務廠商作業，適用 採購法有關最有利標之評選規定。 482 O 機關依採購法第22條第1項第9款規定評選資訊服務廠商作業，準用 採購法有關最有利標之評選規定。 483 X 機關依採購法第22條第1項第13款辦理委託研究發展，於擇定研究 機構後，仍應就研究主題及範圍，通知該研究機構提出計畫書供機 關審查。其審查方式，應以會議方式為之。 484 O 機關依採購法第22條第1項第13款辦理委託研究發展，於擇定研究 機構後，仍應就研究主題及範圍，通知該研究機構提出計畫書供機 關審查。其審查方式，得以會議或書面方式為之。 485 X 機關辦理委託專業服務，其採服務成本加公費法者，應於契約訂明 成本下限及未達下限時之處理。 486 O 機關辦理委託專業服務，其採服務成本加公費法者，應於契約訂明 成本上限及逾上限時之處理。 487 X 依採購法第22條第1項第7款之規定，後續擴充之情形，須於原招標 公告或招標文件敘明。 488 X 機關依「機關委託研究發展作業辦法」成立審查委員會辦理審查 者，其審查程序、標準、審查委員會之組成及分工等均由機關依權 責自行核定，亦得由機關人員自行評審。 489 O 機關公開評選廠商承辦資訊服務，其招標文件訂有廠商資格條件 者，應先審查資格文件，資格不符合招標文件之規定者，其他部分 不予審查。另機關應於審查結果完成後儘速通知各該廠商，最遲不 得逾決標或廢標日十日。 490 X 機關依採購法第22條第1項第9款辦理，並採分項複數決標，經開標 結果無廠商投標之項次，該等項次如符合採購法第22條第1項第1款 適用情形者，仍不得採限制性招標。 491 O 機關依「機關委託研究發展作業辦法」成立審查委員會辦理審查 者，準用採購評選委員會組織準則及審議規則之規定。 492 X 機關依機關委託資訊服務廠商評選及計費辦法委託廠商辦理整體性 資訊服務者，其契約期間最長不得逾5年。 493 O 機關依機關委託資訊服務廠商評選及計費辦法委託廠商辦理整體性 資訊服務者，其契約期間最長不得逾10年。 494 X 關於委任律師代為訴訟，雖屬採購法第22條第1項第9款所稱專業服 務，惟其委任對象之選定，係依訴訟法程序之規定辦理，不適用採 購法。 495 O 關於委任律師代為訴訟，為採購法第22條第1項第9款所稱專業服 務，其委任對象之選定，應適用採購法。 496 X 機關辦理研究發展案，不得依採購法第22條第1項第9款及「機關委 託專業服務廠商評選及計費辦法」之規定辦理。 497 O 機關辦理研究發展案，得依採購法第22條第1項第9款及「機關委託 專業服務廠商評選及計費辦法」之規定辦理。 498 X 機關以限制性招標未經公開客觀評選方式委託廠商提供專業服務， 服務費用在公告金額以上者，其服務費用之計算方式，不得依「機 關委託專業服務廠商評選及計費辦法」之規定。 499 O 機關以公開客觀評選方式委託廠商提供專業服務，服務費用在公告 金額以上者，其廠商評選與服務費用之計算方式，依「機關委託專 業服務廠商評選及計費辦法」之規定。 500 X 機關依採購法第22條第1項第14款規定採公告審查程序辦理藝文採 購，其審查委員會，不得以採購法第94條成立之評選委員會代之。 501 O 機關依採購法第22條第1項第14款規定採公告審查程序辦理藝文採 購，其審查委員會，得以採購法第94條成立之評選委員會代之。 502 X 採購法第22條第1項第3款所稱「不可預見之緊急事故」僅限於已發 生者，為防止緊急事故的發生所採取的防範措施不得採行。 503 O 採購法第22條第1項第3款所稱「不可預見之緊急事故」不限於已發 生者，為防止緊急事故的發生所採取的防範措施亦屬之。 504 X 機關公開評選廠商承辦專業服務，其評選結果應通知廠商，對未獲 選者無須敘明其原因。 505 O 機關公開評選廠商承辦專業服務，其評選結果應通知廠商，對未獲 選者並應敘明其原因。 506 X 台灣銀行參加法院拍賣之不動產或動產案件之投標，非屬採購行 為，不適用採購法第22條第1項第8款「在集中交易或公開競價市場 採購財物」，得採限制性招標之規定。 507 O 台灣銀行參加法院拍賣之不動產或動產案件之投標，屬於採購行 為，適用採購法第22條第1項第8款「在集中交易或公開競價市場採 購財物」，得採限制性招標之規定。 508 X 機關依採購法第22條第1項第11款辦理房地產之公開徵求未採固定 費用或費率者，適合需要者有2家以上廠商為同一適合需要序位 者，應再綜合評選1次。 509 O 機關依採購法第22條第1項第11款辦理房地產之公開徵求未採固定 費用或費率者，適合需要者有2家以上廠商為同一適合需要序位 者，以標價低者優先議價。 510 X 採「機關委託技術服務廠商評選及計費辦法」辦理評選作業，其由 廠商報列技術服務費用者，廠商之報價應於議價時開啟，方得與廠 商議價。 511 O 採「機關委託技術服務廠商評選及計費辦法」辦理評選作業，其由 廠商報列技術服務費用者，應將價格納入評選。 512 X 機關辦理委託專業服務廠商評選採固定費用或費率者，評選優勝廠 商時，廠商報價應列為評選項目之一，並至少占20%以上配分。 513 O 機關辦理委託專業服務廠商評選，評選優勝廠商時，即將廠商報價 納入考量。 514 X 機關辦理委託專業服務其服務成本加公費法之公費，得按直接薪資 及管理費之金額依一定比率增加，且全部公費不得超過直接薪資扣 除非經常性給與之獎金後與管理費用合計金額之百分之三十。 515 O 機關辦理委託專業服務其服務成本加公費法之公費，應為定額，不 得按直接薪資及管理費之金額依一定比率增加，且全部公費不得超 過直接薪資扣除非經常性給與之獎金後與管理費用合計金額之百分 之二十五。 516 X 機關辦理專業服務，其採服務成本加公費法者，其公費係指廠商提 供專業服務所得之報酬，包括風險、利潤及有關之稅捐等，其金額 應為定額，且不得超過直接薪資扣除非經常性給與之獎金後與管理 費用合計金額之百分之五十。 517 O 機關辦理專業服務，其採服務成本加公費法者，其公費係指廠商提 供專業服務所得之報酬，包括風險、利潤及有關之稅捐等，其金額 應為定額，且不得超過直接薪資扣除非經常性給與之獎金後與管理 費用合計金額之百分之二十五。 518 O 對於未達公告金額之採購，通案不採公告方式辦理是不正確之作 法。 519 X 對於未達公告金額之採購，可敘明理由通案簽經機關首長或其授權 人員核准不採公告方式辦理。 520 O 機關辦理位於原住民地區未達採購法公告金額之採購，應由原住民 個人、機構、法人或團體承包。但原住民個人、機構、法人或團體 無法承包者，不在此限。 521 X 位於原住民地區之機關辦理未達採購法公告金額之採購，應由原住 民個人、機構、法人或團體承包。但原住民個人、機構、法人或團 體無法承包者，不在此限。 522 O 未達公告金額而逾公告金額十分之一之採購，依採購法第49條規定 以公開取得方式辦理，若於第1次公告前即已依「中央機關未達公 告金額採購招標辦法」第3條規定，簽經機關首長或其授權人員核 准，於未能取得3家以上廠商之書面報價或企劃書時即改採限制性 招標方式辦理者，得逕依實際家數改採議、比價方式辦理。 523 X 公告金額以上之採購，若於第1次公開招標公告前即已簽經機關首 長或其授權人員核准，未達3家廠商投標，即改採限制性招標方式 辦理者，得逕依實際家數改採議、比價方式辦理。 524 X 未達公告金額之採購，可依向廠商詢價結果報價金額未達公告金額 認定之。 525 X 機關辦理位於原住民地區未達公告金額之採購案，即使符合採購法 第22條第1項第3款「遇有不可預見之緊急事故，致無法以公開或選 擇性招標程序適時辦理，且確有必要者」，仍應依原住民族工作權 保障法規定，優先決標予原住民廠商。 526 O 機關辦理採購，其服務費用未達公告金額者，得依採購法第49條規 定以公開取得書面報價或企劃書方式辦理。 527 X 機關辦理採購，其服務費用在公告金額十分之一以下者，不得依採 購法第49條規定以公開取得書面報價或企劃書方式辦理。 528 O 縣政府得自行訂定未達公告金額採購之招標方式，但應符合採購法 第49條規定。 529 X 地方政府得依地方制度法自行訂定未達公告金額採購之招標方式， 不受採購法限制。 530 X 未達公告金額採購之招標，其金額逾公告金額十分之一者，機關依 「中央機關未達公告金額採購招標辦法」第2條第1項第2款規定， 符合採購法第22條第1項第16款者，須簽報機關首長或其授權人員 核准免報經主管機關認定。 531 O 未達公告金額採購之招標，其金額逾公告金額十分之一者，機關依 「中央機關未達公告金額採購招標辦法」第2條第1項第2款規定， 符合採購法第22條第1項第16款者，免報經主管機關認定。 532 O 根據統包實施辦法規定，統包之範圍，於財物採購，包含細部設 計、供應及安裝。 533 O 機關以統包辦理招標，得於招標文件中規定允許一定家數內之廠商 共同投標。 534 O 機關以統包辦理採購，不得將監造納入。 第 24 條 535 X 機關以統包辦理採購，應將監造一併納入，以減少機關之管理介 面。 536 X 機關以統包辦理招標，設計有變更之必要者，得不經機關同意或依 機關之通知辦理。 537 O 機關以統包辦理招標，得標廠商設計成果之智慧財產權，機關得視 需要預為規定取得部分或全部權利或取得授權。 538 X 機關以統包辦理招標並規定廠商於投標時提出設計圖者，應就所有 未得標廠商，依招標文件之規定，發給獎勵金。 539 O 機關基於效率及品質之要求，得將建築工程之設計與施工併於同一 採購契約一併以統包方式辦理招標。 540 X 機關基於效率及品質之要求，不得將建築工程之設計與施工併於同 一採購契約一併以統包方式辦理招標。 541 O 機關以統包辦理招標並規定廠商於投標時提出設計圖者，得就審查 達一定分數或名次之未得標廠商，依招標文件之規定，發給獎勵 金。 542 X 機關以統包辦理招標並規定廠商於投標時提出設計圖者，不得於招 標文件規定就審查達一定分數或名次之未得標廠商，發給獎勵金， 以撙節公帑。 543 X 機關以統包辦理招標，招標文件所規定之評審標準，應包括廠商之 技術能力，至於設計之完整性及可行性可於履約前再予審查。 544 X 機關基於效率及品質之要求，得依細部設計結果將建築構造物、空 調、機電設備等工程之施工以統包方式辦理招標。 545 X 機關以統包辦理招標，應於招標文件中規定允許一定家數內之廠商 共同投標。 546 X 根據統包實施辦法規定，統包之範圍，於財物採購，不得包含營 運。 547 O 根據統包實施辦法規定，統包之範圍，於財物採購，得包含營運。第 24 條 548 X 勞務性質採購，得依「統包實施辦法」規定，以統包方式辦理招 標。 549 O 財物或工程性質採購，得依「統包實施辦法」規定，以統包方式辦 理招標。 550 X 機關以統包辦理招標，其設計屬得標廠商履約行為，招標文件不得 規定設計應送經機關審查後方得施工或供應。 551 O 機關以統包辦理招標，應於招標文件規定得標廠商之設計應送機關 或其指定機構審查後，始得據以施工或供應。 552 X 機關以統包辦理招標，得依採購法第22條第1項第9款經公開客觀評 選為優勝者之方式為之。 553 O 機關以統包辦理招標，不得依採購法第22條第1項第9款經公開客觀 評選為優勝者之方式為之。 554 O 機關以統包辦理招標，設計有變更之必要者，仍應經機關同意或依 機關之通知辦理。 555 O 機關以統包辦理招標，應於招標文件規定得標廠商設計成果之智慧 財產權歸屬及侵害第三人合法權益時由廠商負責處理並承擔一切法 律責任。 556 X 機關以統包辦理招標，招標文件應規定設計結果不符合契約規定或 無法依機關之通知變更者，機關應終止或解除契約，但報經上級機 關同意者，不在此限。 557 O 機關以統包辦理招標，招標文件應規定設計結果不符合契約規定或 無法依機關之通知變更者，機關得終止或解除契約。 558 X 機關以統包辦理招標，不得於招標文件中規定投標廠商或其分包廠 商關於設計之履約能力資格。 559 O 機關以統包辦理招標，得依實際需要，於招標文件中規定投標廠商 或其分包廠商關於設計之履約能力資格。 560 X 機關以統包辦理招標，其設計有必要變更者，廠商均得向機關請求 償付履約所增加之必要費用。 561 O 機關以統包辦理招標，其設計有必要變更且係不可歸責於廠商者， 廠商得向機關請求償付履約所增加之必要費用。 562 X 根據統包實施辦法規定，統包之範圍，於財物採購，包含供應及安 裝，不包含細部設計。 563 X 機關以統包辦理招標，得標廠商設計成果之智慧財產權，機關皆應 預為規定取得全部權利，以維護機關權益。 564 X 機關基於效率及品質之要求，得以統包辦理招標。但查核金額以上 者應報經上級機關核准。 565 X 共同投標廠商得標後各成員之履約實績，不可由共同投標廠商於驗 收後提出各成員實際履約實績證明認定之。 566 O 共同投標廠商得標後各成員之履約實績，可由共同投標廠商於驗收 後提出各成員實際履約實績證明認定之。 567 X 機關允許共同投標時，得於招標文件中規定，押標金及保證金各由 共同投標廠商共同繳納，不得由共同投標協議書所指定之代表廠商 繳納。 568 O 機關允許共同投標時，應於招標文件中規定，押標金及保證金由共 同投標廠商共同繳納，或由共同投標協議書所指定之代表廠商繳 納。 569 O 共同投標廠商於投標時應附之協議書內容，應載明共同投標廠商成 員有破產或其他重大情事，致無法繼續共同履約者，同意將其契約 之一切權利義務由其他成員另覓之廠商或其他成員繼受。 570 X 機關辦理採購，允許廠商共同投標者，得就共同投標廠商各成員主 辦事項之金額，於其共同投標協議書所載之比率上限予以限制。 571 O 機關辦理採購，允許廠商共同投標者，得就共同投標廠商各成員主 辦事項之金額，於其共同投標協議書所載之比率下限予以限制。 572 X 機關既已允許共同投標，故採共同投標方式得標之廠商，不得再依 採購法第67條規定分包予其他廠商。 573 X 共同投標廠商於投標時應檢附由各成員之負責人或其代理人共同具 名，且經公證或認證之共同投標協議書，無須載明各成員之主辦項 目及所占契約金額比率，但應載明各成員於得標後連帶負履行契約 責任。 574 X 機關得視個別採購之特性，於招標文件中規定允許一定家數內之廠 商共同投標。但查核金額以上者應報經上級機關核准。 575 X 機關允許共同投標時，得視案件性質於招標文件規定共同投標廠商 得免檢附共同投標協議書。 576 X 機關允許共同投標時，應於招標文件中規定共同投標廠商之契約價 金應由代表廠商統一請(受)領，不得由各成員分別請(受)領。 577 X 機關允許共同投標時，於招標文件中規定共同投標廠商之成員，不 得對同一採購另行提出投標文件或為另一共同投標廠商之成員，係 屬限制競爭之作法，不得採行。 578 X 機關辦理特殊或巨額之採購，允許共同投標時，不得於招標文件中 規定共同投標廠商各成員及代表廠商之特定資格。 579 X 機關得視個別採購之特性，於招標文件中規定允許一定家數內之廠 商共同投標。共同投標之廠商於得標後應共同具名簽約，就其承攬 工程或提供財物、勞務之部分，分別負瑕疵擔保責任。 580 O 機關得視個別採購之特性，於招標文件中規定允許一定家數內之廠 商共同投標。共同投標之廠商於得標後應共同具名簽約，連帶負履 行採購契約之責。 581 X 機關辦理採購，允許共同投標時，得規定代表廠商資格，但不得於 招標文件中規定共同投標廠商各成員及代表廠商之基本資格。 582 O 機關辦理採購，允許共同投標時，得於招標文件中規定共同投標廠 商各成員及代表廠商之基本資格。 583 X 共同投標協議書內容與契約規定不符時，因共同投標協議書已經機 關審查，故應以共同投標協議書為準。 584 O 共同投標協議書內容與契約規定不符者，以契約規定為準。 第 25 條 585 X 共同投標廠商於投標時應檢附由各成員之負責人或其代理人共同具 名，且經公證或認證之共同投標協議書內容，若於得標後變更者， 無須經機關同意，但須經共同投標廠商其他成員同意。 586 O 共同投標廠商於投標時應檢附由各成員之負責人或其代理人共同具 名，且經公證或認證之共同投標協議書內容，若於得標後變更者， 須經機關同意。 587 O 機關辦理特殊或巨額之採購，允許共同投標時，得於招標文件中規 定共同投標廠商各成員及代表廠商之特定資格。 588 X 機關允許共同投標時，得於招標文件中規定共同投標廠商之投標文 件限由各成員共同具名。 589 O 機關允許共同投標時，應於招標文件中規定共同投標廠商之投標文 件應由各成員共同具名，或由共同投標協議書指定之代表人簽署。 590 X 機關允許共同投標時，其對共同投標廠商押標金不予發還之通知， 對共同投標廠商成員之一為通知，仍具效力。 591 O 機關允許共同投標時，應於招標文件中規定其對共同投標廠商之代 表人之通知，與對共同投標廠商所有成員之通知具同等效力。 592 X 機關允許共同投標時，得於招標文件中規定廠商僅得共同投標不得 單獨投標。 593 O 機關允許共同投標時，應於招標文件中規定共同投標廠商之成員， 不得對同一採購另行提出投標文件或為另一共同投標廠商之成員。 但有該採購涉及專利或特殊之工法或技術，或預估合於招標文件規 定之投標廠商競爭不足，為增加廠商競爭，則不在此限。 594 O 機關允許共同投標時，應於招標文件中載明廠商得單獨投標。 第 25 條 595 X 共同投標以能增加廠商之競爭或無不當限制競爭者為限，故不得允 許廠商採同業共同投標。 596 O 共同投標以能增加廠商之競爭或無不當限制競爭者為限。同業共同 投標應符合公平交易法第15條第1項但書各款之規定。 597 X 機關辦理採購，參加共同投標之廠商，其成員中有3家為不同行 業，有2家屬同一行業者，視為異業共同投標。 598 O 機關辦理採購，參加共同投標之廠商有2家以上屬同一行業者，視 同同業共同投標，應符合公平交易法第15條第1項但書各款之規 定。 599 X 機關於招標文件中規定允許一定家數內之廠商共同投標者，以不超 過3家為原則。 600 O 機關於招標文件中規定允許一定家數內之廠商共同投標者，以不超 過5家為原則。 601 X 共同投標廠商之成員有採購法第101條第1項各款情形之一者，機關 應即通知共同投標廠商每一成員。 602 O 共同投標廠商之成員有採購法第101條第1項各款情形之一者，機關 應視可歸責之事由，對各該應負責任之成員個別為通知。 603 X 機關可於招標文件規定允許廠商共同投標，且該採購係外國廠商得 參與者，涉及外國廠商之共同投標協議書，不得以外文書寫。 604 O 機關可於招標文件規定允許廠商共同投標，且該採購係外國廠商得 參與者，涉及外國廠商之共同投標協議書，得以外文書寫，附經公 證或認證之中文譯本，並於招標文件中訂明。 605 X 機關允許共同投標時，如共同投標廠商於投標文件敘明契約價金由 各成員分別請（受）領者，無須先載明各成員分別請（受）領之項 目及金額。 606 O 機關允許共同投標時，應於招標文件中規定共同投標廠商於投標 文件敘明契約價金由代表廠商統一請（受）領，或由各成員分別請 （受）領；其屬分別請（受）領者，並應載明各成員分別請（受） 領之項目及金額。 607 X 依採購法規定，機關允許共同投標時，投標文件之補充或更正及契 約文件之簽訂、補充或更正，僅得由共同投標協議書指定之代表人 簽署。 608 O 機關允許共同投標時，投標文件之補充或更正及契約文件之簽訂、 補充或更正，應於招標文件中規定共同投標廠商應由各成員共同具 名，或由共同投標協議書指定之代表人簽署。 609 X 機關允許共同投標時，共同投標廠商於投標時應檢附之共同投標協 議書，只需各成員之負責人或代理人共同具名即可，惟得標後須經 公證或認證並列入契約。 610 O 機關允許共同投標時，共同投標廠商於投標時應檢附由各成員之負 責人或其代理人共同具名，且經公證或認證之共同投標協議書，於 得標後列入契約。 611 X 共同投標廠商於投標時應附之協議書內容，應載明共同投標廠商成 員有破產或其他重大情事，致無法繼續共同履約者，同意將其契約 之一切權利義務由招標機關另覓其他廠商繼受。 612 O 機關辦理公告金額以上且非適用我國締結之政府採購條約或協定之 採購，招標文件限定廠商必須以我國產品供應，不違反採購法第26 條規定。 613 X 機關辦理公告金額以上且非適用我國締結之政府採購條約或協定之 採購，招標文件限定廠商必須以我國產品供應，違反採購法第26條 規定。 614 X 機關擬定之技術規格無國際標準或國家標準，且無法以精確之方式 說明招標要求，其於招標文件提及特定之廠牌時，只須於招標文件 註明「或同等品」字樣即可，無須考量該等廠牌之價格、功能、效 益、標準及特性是否相當。 615 O 機關就廠商所提出之同等品比較表等資料，其採自行審查者，係指 簽報機關首長或其授權人員核定是否為同等品。 616 O 機關或受機關委託研擬招標文件內容之廠商，基於採購特性及實 際需要訂定特殊技術規格，或於招標文件要求或提及特定之商標或 商名、專利、設計或型式、特定來源地、生產者或供應者時，應依 「政府採購法第26條執行注意事項」所定的審查方式審查之。 617 O 招標文件允許投標廠商提出同等品者，得於招標文件註明「或同 等品」字樣，並規定得標廠商如欲提出同等品者，得於使用同等品 前，向機關提出，及機關審查同等品所需時間。 618 X 機關就廠商所提出之同等品比較表等資料之審查結果，其非同等品 者，機關無須敘明原因書面通知廠商。 619 O 機關擬訂定之技術規格有國際標準或國家標準，其未能符合機關採 購需求，須於招標文件載明其他標準（例如JIS、ACI、ASTM等）或 訂定較嚴之規格者，可依「政府採購法第26條執行注意事項」所載 審查方式審查後再行辦理。如其有審查前例者，得免重複為之。 620 O 採購法第26條第3項所稱同等品，指經機關審查認定，其功能、效 益、標準或特性不低於招標文件所要求或提及者。 621 X 採購法第26條第3項所稱同等品，指經機關審查認定，其功能、效 益、標準或特性優於招標文件所要求或提及者。 622 O 招標文件允許得標廠商得於使用同等品前提出同等品者，廠商提出 時，應敘明同等品之廠牌、價格及功能、效益、標準或特性比較表 等相關資料，以供機關審查。其經審查為同等品者，方得使用。 623 X 招標文件允許得標廠商得於使用同等品前提出同等品者，廠商提出 時，應敘明同等品之廠牌、價格及功能、效益、標準或特性比較表 等相關資料，以供上級機關審查。 624 O 廠商得標後提出之同等品，其價格如較契約所載為高，應以原契約 價金為準，不得加價。 625 X 廠商得標後提出之同等品，其價格如較契約所載為高，機關得視實 際情形酌予加價。 626 O 機關就廠商所提出之同等品比較表等資料，其採開會審查者，係指 簽報機關首長或其授權人員召開審查會議，並得邀請專家學者、廠 商代表、原設計者與會，以確認是否為同等品。 627 X 機關就廠商所提出之同等品比較表等資料，其採開會審查者，應成 立審查委員會，並準用採購評選委員會組織準則第4條第1項有關組 成人數之規定。 628 O 招標文件允許投標廠商提出同等品者，得於招標文件註明「或同等 品」字樣，並規定廠商如欲提出同等品者，應於投標文件內預先提 出。其經審查非同等品者，為不合格之廠商。 629 X 招標文件允許投標廠商提出同等品者，得於招標文件註明「或同等 品」字樣，並規定廠商如欲提出同等品者，應於投標文件內預先提 出。未提出同等品者，為不合格之廠商。 630 O 機關辦理公告金額以上之採購，應依功能或效益訂定招標文件。 機關所擬定、採用或適用之技術規格，不應以有3家以上廠商可供 應，即認定為無限制競爭之虞。 631 X 機關辦理公告金額以上之採購，應依功能或效益訂定招標文件。機 關所擬定、採用或適用之技術規格，如有3家以上廠商可供應，則 可認定為無限制競爭之虞。 632 X 機關辦理採購，不得尋求或接受在特定採購中有商業利益之廠商之 任何建議，以免妨礙競爭。 633 X 機關辦理公告金額以上之採購，採購規格明訂產品須取得環保標 章，符合採購法第26條規定。 634 X 機關辦理未達公告金額之採購，不適用採購法第26條之規定，故於 招標文件要求或提及特定之廠牌，並無違反採購法規定之虞。 635 X 採購法第26條第3項所稱之同等品，於採最有利標成立評選委員會 時，應由評選委員會審查認定。 636 X 機關擬定之技術規格無國際標準或國家標準，且無法以精確之方式 說明招標要求，其於招標文件提及特定之廠牌時，只須於招標文件 註明「或同等品」字樣即可，無須考量該等廠牌目前是否均有製 造。 637 O 機關就廠商所提出之同等品比較表等資料，應以自行審查、開會審 查或委託審查之方式之一審查之。 638 X 機關就廠商所提出之同等品比較表等資料，以機關自行審查為原 則，以開會或委託審查為例外。 639 O 機關就廠商所提出之同等品比較表等資料之審查結果，其非同等品 者，機關應敘明原因書面通知廠商。 640 O 各機關不得以足以構成妨礙競爭之方式，尋求或接受在特定採購中 有商業利益之廠商之建議。 641 O 機關擬定之技術規格無國際標準或國家標準，且無法以精確之方式 說明招標要求，其於招標文件提及特定之廠牌時，非只須於招標文 件註明「或同等品」字樣即可，仍須考量該等廠牌目前是否均有製 造、供應，容易取得，價格合理，能確保採購品質，且無代理商、 經銷商有公平交易法所稱之獨占或聯合行為之情事。 642 X 機關辦理採購，招標公告或招標文件不得公開預算金額。 第 27 條 643 X 政府採購公報按日發行，全年無休。 第 27 條 644 X 採購法第28條第1項所稱公告日，指上傳政府採購資訊公告系統之 日；邀標日，指廠商收到機關邀請廠商投標通知單之日。 645 X 依採購法第61條規定辦理決標結果之公告，其以轉售為目的所為之 採購涉及商業機密者，得免予決標公告，但應附記不公告之理由。 646 O 政府採購公報除星期例假日、放假日及特殊情形外，按日發行。 第 27 條 647 O 機關辦理採購，採公開招標方式辦理者，如於開標前取消採購，則 應刊登無法決標公告。 648 X 財物變賣或出租公告資訊應公開於政府採購資訊網站，必要時並得 刊登政府採購公報。 649 O 財物變賣或出租公告資訊得公開於政府採購資訊網站，並刊登政府 採購公報。 650 O 未達公告金額採購之決標公告資訊得公開於政府採購資訊網站，必 要時並得刊登政府採購公報。 651 X 機關辦理巨額採購，第1次選擇性招標之廠商資格預先審查，其公 告自刊登政府採購公報日起至截止收件日止之等標期，（未提供電 子領投標及公開閱覽），除條約或協定另有規定者外，應訂定28日 以上之合理期限。 652 O 機關辦理巨額採購，第1次選擇性招標之廠商資格預先審查，其公 告自刊登政府採購公報日起至截止收件日止之等標期，（未提供電 子領投標及公開閱覽），除條約或協定另有規定者外，應訂定14日 以上之合理期限。 653 X 採購法第28條第1項所稱公告日，指刊登於政府採購公報之日；邀 標日，指符合資格之廠商接獲通知邀請投標之日。 654 O 機關於等標期截止前變更招標文件內原訂物價指數調整門檻，非屬 招標文件內容之重大變更，如於原訂截止日前5日公告或書面通知 各廠商者，得免延長等標期。 655 O 採購法第28條第1項所稱公告日，指刊登於政府採購公報之日；邀 標日，指發出通知邀請符合資格之廠商投標之日。 656 O 機關辦理未達公告金額之公開招標（未提供電子領投標及公開閱 覽），除我國締結之條約或協定另有規定者外，依招標期限標準之 規定，其等標期不得少於7日。 657 X 機關辦理採購金額新臺幣200萬元之特殊採購，採公開招標，資格 有實績規定，其公告自刊登政府採購公報日起至截止投標日止第1 次招標之等標期，至少要有28日。 658 X 機關依採購法第22條第1項第9款規定辦理公告金額以上採購之公開 評選，其自公告日起至截止收件日止之等標期（未提供電子領投 標及公開閱覽），應訂定10日以上之合理期限。第2次以後之等標 期，由機關視需要合理訂定之。但不得少於5日。 659 X 機關依採購法第22條第1項第11款規定辦理公告金額以上未達查核 金額之公開徵求房地產採購，其自公告日起至截止收件日止之等 標期（未提供電子領投標及公開閱覽），應訂定14日以上之合理期 限。 660 O 招標期限標準第7條第2項所稱「重大改變」，例如廠商資格的放 寬、數量的明顯變更。 661 X 未達公告金額之採購，以公開取得3家以上廠商之書面報價或企劃 書方式辦理者，於收受廠商之書面報價或企劃書及審查符合需要者 之過程，屬詢價性質，可於公告文件載明截止收件日期，不必載明 開標時間及地點。如載明開標時間及地點，非屬公開招標，第1次 公告之等標期不可少於7日。 662 O 未達公告金額之採購，以公開取得3家以上廠商之書面報價或企劃 書方式辦理者，於收受廠商之書面報價或企劃書及審查符合需要者 之過程，屬詢價性質，可於公告文件載明截止收件日期，不必載明 開標時間及地點。如載明開標時間及地點，非屬公開招標，第1次 公告之等標期可少於7日，但不得少於5日。 663 X 機關辦理未達公告金額之公開招標（未提供電子領投標及公開閱 覽），除我國締結之條約或協定另有規定者外，依招標期限標準之 規定，其等標期不得少於5日。 664 O 機關訂定等標期，應視採購個案之規模、複雜程度及性質，考量廠 商準備及遞送投標文件所必須之時間，予以「合理」訂定，不得逕 以下限期限訂之。 665 O 機關以公開取得廠商書面報價或企劃書辦理未達公告金額之採購， 如選擇於主管機關之資訊網路公開而不刊登政府採購公報者，上班 日下午4點傳輸資料至網路，其等標期自傳輸至該系統之次一上班 日起計算。 666 X 機關以公開取得廠商書面報價或企劃書辦理未達公告金額之採購， 如選擇於主管機關之資訊網路公開而不刊登政府採購公報者，上 班日下午4點傳輸資料至網路，其等標期自傳輸至該系統之日起計 算，上傳當日算1日。 667 X 領標方式中之「公開發售」，機關可以就書面方式以外，增列電 子領標方式。對於以郵遞方式領標者，可以將領標期限提前一天截 止，並規定不得以廠商名稱領標。 668 O 機關辦理公開招標，廠商之投標文件，應以書面密封，於投標截止 期限前，以郵遞或專人送達招標機關或其指定之場所，機關不得僅 限親自送達。 669 X 機關辦理公開招標，廠商之投標文件，應以書面密封，於投標截止 期限前，以郵遞或專人送達招標機關或其指定之場所，機關得僅限 親自送達。 670 O 機關辦理未達公告金額之各種採購，均得免收押標金、保證金。但 招標文件另有規定者，不在此限。 671 X 未達公告金額之採購，機關雖未於招標文件中規定得標廠商應繳納 之履約保證金得以符合招標文件所定投標廠商資格條件之其他廠商 之履約及賠償連帶保證代之，惟廠商向招標機關提出其履約保證金 將以其他廠商履約保證替代，機關經評估之後仍得同意。 672 X 差額保證金之繳納，其有效期、內容、發還及不發還等事項，準 用履約保證金之規定，是以，廠商依採購法第58條繳納差額保證金 者，毋須再繳交招標文件規定之履約保證金。 673 O 公告金額以上之採購，機關得於招標文件中規定得標廠商提出符 合招標文件所定投標廠商資格條件之其他廠商之履約及賠償連帶保 證，其應繳納之履約保證金得減收百分之五十內。 674 X 依採購法規定，廠商以郵政匯票、金融機構簽發之本票或支票、或 取具金融機構之書面連帶保證繳納押標金，機關不得拒絕。 675 X 押標金及保證金應以投標廠商或得標廠商名義繳納，是以，如以設 定質權之金融機構定期存款單繳納，該定期存款單之存款人與投標 商或得標商非同一人，機關不可接受。 676 X 機關得於招標文件中規定，違反採購法第65條規定轉包者，廠商所 繳納之履約保證金（不含孳息），全部不發還。 677 O 機關得於招標文件中規定，違反採購法第65條規定轉包者，廠商所 繳納之履約保證金（含其孳息），全部不發還。 678 X 廠商原係以現金繳納履約保證金，即不得再向機關提出申請轉換保 證金繳納方式。 679 O 廠商原係以現金繳納履約保證金，如向機關提出申請轉換保證金方 式，且經機關同意，得改以政府公債繳納之。 680 X 押標金或保證金以設定質權之金融機構定期存款單繳納者，應不受 特定存款金融機構之限制；其向金融機構申請設定質權時，應由質 權人會同辦理。 681 O 押標金或保證金以設定質權之金融機構定期存款單繳納者，應不受 特定存款金融機構之限制；其向金融機構申請設定質權時，無需由 質權人會同辦理。 682 X 機關得於招標文件中擇定履約保證金之額度為一定金額，並以不逾 預算金額或預估採購總額之百分之十五為原則。 683 O 機關得於招標文件中擇定履約保證金之額度為一定金額，並以不逾 預算金額或預估採購總額之百分之十為原則。 684 X 機關辦理非條約協定採購，得於招標文件中規定全球化廠商應繳納 之押標金、履約保證金或保固保證金金額得予減收，其額度以不逾 各原定應繳總額之百分之五十為限，不併入招標文件中規定優良廠 商應繳納之押標金、履約保證金或保固保證金金額得予減收之額度 計算。 685 O 機關辦理非條約協定採購，得於招標文件中規定全球化廠商應繳納 之押標金、履約保證金或保固保證金金額得予減收，其額度以不逾 各原定應繳總額之百分之三十為限，不併入招標文件中規定優良廠 商應繳納之押標金、履約保證金或保固保證金金額得予減收之額度 計算。 686 X 機關辦理採購，廠商不得以郵政匯票之方式繳納押標金或保證金。第 30 條 687 O 機關辦理採購，廠商得以郵政匯票之方式繳納押標金或保證金。 第 30 條 688 X 機關辦理簽約，應以廠商先繳納履約保證金為條件。 第 30 條 689 O 機關辦理簽約，得不以廠商先繳納履約保證金為條件。 第 30 條 690 X 機關以議價方式辦理採購金額新臺幣150萬元以上之財物採購，均 得於招標文件中規定得標後免收履約保證金。 691 O 保固保證金之額度，得為一定金額或契約金額之一定比率，由機關 於招標文件中擇定之。一定金額者，以不逾預算金額或預估採購總 額之百分之三為原則；一定比率者，以不逾契約金額之百分之三為 原則。 692 X 保固保證金之額度，得為一定金額或契約金額之一定比率，由機關 於招標文件中擇定之。一定金額者，以不逾預算金額或預估採購總 額之百分之十為原則；一定比率者，以不逾契約金額之百分之五為 原則。 693 O 押標金或保證金以銀行本行本票、支票或保付支票繳納者，應為即 期並以機關為受款人。未填寫受款人者，仍應接受。 694 O 機關得視案件性質及實際需要，於招標文件中規定得標廠商得支領 預付款及其金額，並訂明廠商支領預付款前應先提供同額預付款還 款保證。 695 X 招標文件載明押標金為一定金額者，以不逾預算金額或預估採購總 額之百分之十為原則。但不得逾新臺幣5,000萬元。 696 O 招標文件載明押標金為一定金額者，以不逾預算金額或預估採購總 額之百分之五為原則。但不得逾新臺幣5,000萬元。 697 X 履約保證金之繳納期限，由機關視案件性質及實際需要，於招標文 件中合理訂定之；公告金額以上之採購應訂定14日以上之合理期 限。 698 O 履約保證金之繳納期限，由機關視案件性質及實際需要，於招標文 件中合理訂定之；查核金額以上之採購應訂定14日以上之合理期 限。 699 X 依「押標金保證金暨其他擔保作業辦法」規定，同一廠商同時作為 各機關採購契約之連帶保證廠商者，以5個契約為限，且機關應將 該規定於招標文件載明之。 700 O 依「押標金保證金暨其他擔保作業辦法」規定，同一廠商同時作為 各機關採購契約之連帶保證廠商者，以2契約為限，且機關應將該 規定於招標文件載明之。 701 X 押標金之額度，得為一定金額或標價之一定比率，由機關於招標文 件中擇定之。採單價決標之採購，亦同。 702 O 押標金之額度，得為一定金額或標價之一定比率，由機關於招標文 件中擇定之。採單價決標之採購，押標金應為一定金額。 703 X 機關辦理採購，其履約保證金額度為新臺幣（下同）50萬元，得標 廠商不得以25萬元現金及25萬元之郵政匯票向招標機關繳納作為履 約保證金。 704 O 機關辦理採購，其履約保證金額度為新臺幣（下同）50萬元，得標 廠商得以25萬元現金及25萬元之郵政匯票向招標機關繳納作為履約 保證金。 705 X 機關辦理採購，得於招標文件中規定優良廠商應繳納之押標金、履 約保證金或保固保證金金額得予減收，依法其額度以不逾原定應繳 總額之百分之三十為限。 706 O 機關辦理採購，得於招標文件中規定優良廠商應繳納之押標金、履 約保證金或保固保證金金額得予減收，依法其額度以不逾原定應繳 總額之百分之五十為限。 707 X 廠商總標價偏低但在底價七成以上，以差額保證金作為採購法第58 條規定之擔保者，擔保金額為總標價與底價之差額。 708 O 廠商總標價偏低但在底價七成以上，以差額保證金作為採購法第58 條規定之擔保者，擔保金額為總標價與底價八成之差額。 709 X 機關辦理採購，得於招標文件中規定具有一定條件之優良廠商，其 應繳納之押標金、履約保證金或保固保證金金額得予減收。減收後 獎勵期間屆滿者，應補繳減收之金額。 710 O 機關辦理採購，得於招標文件中規定具有一定條件之優良廠商，其 應繳納之押標金、履約保證金或保固保證金金額得予減收。減收後 獎勵期間屆滿者，免補繳減收之金額。 711 X 機關辦理未達公告金額之採購，不得收押標金、保證金。 第 30 條 712 X 招標文件規定廠商須繳納押標金者，得併載明廠商得將以現金繳納 之押標金附於投標文件內遞送，以簡化作業。 713 X 押標金或保證金以銀行本行本票、支票或保付支票繳納者，應為即 期並以機關為受款人。未填寫受款人者，不得接受。 714 X 採購法第31條第2項關於不予發還廠商所繳納之押標金之情形，機 關可於招標文件中增列其他情形，後續即可依招標文件之規定不發 還廠商所繳納之押標金。 715 X 機關辦理採購，廠商容許他人借用本人名義或證件參加投標，非屬 採購法第31條第2項規定情形。 716 O 機關辦理採購，廠商容許他人借用本人名義或證件參加投標，屬採 購法第31條第2項規定情形。 717 X 機關辦理採購，廠商或其代表人、代理人、受雇人或其他從業人 員，就有關招標、審標、決標事項，對公務員行求、期約或交付賄 賂或其他不正利益，非屬採購法第31條第2項規定「對採購有關人 員行求、期約或交付不正利益」情形。 718 O 機關辦理採購，廠商或其代表人、代理人、受雇人或其他從業人 員，就有關招標、審標、決標事項，對公務員行求、期約或交付不 正利益，屬採購法第31條第2項規定「對採購有關人員行求、期約 或交付不正利益」情形。 719 X 機關得於招標文件中規定，得標廠商未於規定期限內提出正本之資 格文件供查驗者，按逾期天數沒收一定比率之押標金。 720 O 採購法第31條第2項關於不予發還廠商所繳納之押標金之情形，機 關係逕依該條規定處理。 721 X 投標廠商有採購法第31條第2項及第101條第1項規定情形，其變更 公司名稱及統一編號後，不適用前揭規定。 722 O 投標廠商有採購法第31條第2項及第101條第1項規定情形，其變更 公司名稱及統一編號後，仍適用前揭規定。 723 X 機關依採購法第60條規定將廠商視同放棄而未決標予該廠商者，應 依採購法第31條第2項規定不發還押標金。 724 X 機關得於招標文件中規定，得發還得標廠商所繳納之保證金之孳 息。 725 O 廠商投標時標封上或容器外應標示廠商名稱及地址。其交寄或付郵 所在地，機關不得予以限制。 726 X 有一機關辦理採購採一次投標，資格、規格、價格分段開標，且於 招標文件中規定允許廠商於開標前補正非契約必要之點之文件。因 此，廠商於開價格標前之資格審查時要求補正非契約必要之點之文 件，機關仍得接受。 727 O 有一機關辦理採購採一次投標，資格、規格、價格分段開標，且於 招標文件中規定允許廠商於開標前補正非契約必要之點之文件。因 此，廠商於開價格標前之資格審查時要求補正非契約必要之點之文 件，機關不得接受。 728 X 廠商將投標文件置於不透明之紙箱，以塑膠繩封裝，因未使用機關 所提供之標封，應為不合格標。 729 X 廠商投標時標封上或容器外應標示廠商名稱及地址。其交寄或付郵 所在地與廠商地址不同時，為不合格標。 730 O 依採購法施行細則第33條第1項規定，同一投標廠商就同一採購之 投標，以一標為限。今有甲公司與乙公司就同一採購分別投標，其 投標文件所載負責人為同一人，未違反上開規定，惟如有採購法第 50條第1項第5款規定情形，機關應不予開標決標。 731 O 廠商將投標文件置於不透明之信封或容器內，以釘書針封裝者，符 合採購法第33條第1項所稱書面密封。 732 X 依據採購法規定，機關須於招標文件規定投標廠商之標封須密封並 於封口加蓋廠商印章，所送影本亦應加蓋廠商印章。大標封內之證 件封、價格封比照辦理。 733 X 機關辦理採購，其招標文件免附契約條款，俟決標後與廠商簽約時 再附上即可。 734 X 依採購法規定，廠商之投標文件，是否於投標截止期限前送達招標 機關或其指定之場所，得以郵戳為認定基準。 735 X 機關辦理查核金額以上之工程採購，應於公告招標前辦理招標文件 之公開閱覽，但有特殊情形報經上級機關核准者，不在此限。 736 X 機關依採購法第22條第1項第3款辦理巨額之工程採購，仍應於公告 招標前辦理招標文件之公開閱覽。 737 O 機關依採購法第22條第1項第3款辦理巨額之工程採購，無須於公告 招標前辦理招標文件之公開閱覽。 738 X 機關依採購法第105條第1項第1款或第2款辦理巨額之工程採購，仍 應於公告招標前辦理招標文件之公開閱覽。 739 O 機關依採購法第105條第1項第1款或第2款辦理巨額之工程採購，無 須於公告招標前辦理招標文件之公開閱覽。 740 X 機關辦理開標、審標、比價、議價、決標等作業，應依採購法規定 允許廠商「自行錄音錄影」，以維公平、公開之採購程序。 741 O 按採購法第34條第4項規定，機關辦理開標、審標、比價、議價、 決標等作業，如涉及廠商投標文件內容，除法令另有規定外，應保 守秘密，不得允許廠商「自行錄音錄影」。 742 X 機關辦理查核金額以上之工程採購，應於公告招標前辦理招標文件 之公開閱覽，並無例外。 743 O 機關辦理採購，底價於開標後決標前仍應保密，廢標後縱使有特殊 情形亦同。 744 X 機關辦理採購，底價於開標後仍應保密，但廢標後除有特殊情形 外，應予公開。 745 X 機關辦理採購，其招標文件於公告前應予保密。底價於決標後除有 特殊情形外，應予公開。但機關依實際需要認有於招標文件公開底 價之必要者，應先報經上級機關核准。 746 O 機關辦理採購，其招標文件於公告前應予保密。底價於決標後除有 特殊情形外，應予公開。但機關得依實際需要，於招標文件中公告 底價。 747 O 機關於招標文件中規定允許投標廠商於截止投標期限前提出替代方 案者，招標文件應訂明替代方案標封於主方案經審查合於招標文件 規定後，再予開封及審查。 748 X 機關得於招標文件中規定允許廠商於得標後提出替代方案且訂定 獎勵措施，但其獎勵額度，以不逾所減省契約價金之百分之三十為 限。所減省之契約價金，並應扣除機關為處理替代方案所增加之必 要費用。 749 X 機關於招標文件中規定允許投標廠商於截止投標期限前提出替代方 案者，廠商履行替代方案所需之調查、研究、試驗、設計等費用， 得由雙方分攤。機關實施替代方案所增加之必要費用，亦同。 750 X 機關於招標文件中規定允許投標廠商於截止投標期限前提出替代方 案者，主方案經審查不合於招標文件之規定，而替代方案經審查合 格者，得予接受。 751 O 機關得於招標文件中規定允許廠商於得標後提出替代方案且訂定 獎勵措施，但其獎勵額度，以不逾所減省契約價金之百分之五十為 限。所減省之契約價金，並應扣除機關為處理替代方案所增加之必 要費用。 752 X 機關於招標文件中規定允許投標廠商於截止投標期限前即提出替代 方案者，機關同時審查替代方案及主方案，屬採購法第1條所稱提 升採購效率之作法，採購法並無禁止。 753 O 機關於招標文件中規定允許廠商於得標後在不降低原有功能條件下 得就技術、工法、材料或設備，提出可縮減工期、減省經費或提高 效率之替代方案，並無違反採購法規定。 754 X 機關於招標文件中規定允許投標廠商於截止投標期限前提出替代方 案者，廠商之替代方案應單獨密封，標封外標示其為替代方案，且 每一項目得提出數個替代方案。 755 O 機關於招標文件中規定允許投標廠商於截止投標期限前提出替代方 案者，廠商之替代方案應單獨密封，標封外標示其為替代方案，且 每一項目以提出一個替代方案為限。 756 X 招標文件規定允許提替代方案者，廠商提出之替代方案經審查有降 低招標文件所規定之原有功能條件者，縱經機關評估該替代方案之 總體效益更利於機關，仍不得採用。 757 O 招標文件規定允許提替代方案者，廠商提出之替代方案經審查有降 低招標文件所規定之原有功能條件者，應不予採用。但招標文件規 定得協商更改之項目或廠商提出之替代方案經綜合評估各有利不利 情形，其總體效益更有利於機關者，不在此限。 758 X 機關於招標文件中規定允許廠商於得標後在不降低原有功能條件下 得就技術、工法、材料或設備，提出可縮減工期、減省經費或提高 效率之替代方案，違反採購法規定，不得採行。 759 O 營業稅或所得稅之納稅證明，得以與最近一期或前一期證明相同期 間內主管稽徵機關核發之無違章欠稅之查復表代之。 760 X 機關規定投標廠商之基本資格，得於招標文件明定廠商須具有維 修、維護或售後服務能力之證明，並對其人員之人數予以限制。 761 O 機關規定投標廠商之基本資格，得於招標文件明定廠商須具有維 修、維護或售後服務能力之證明，除依法令就一定專門技能人員之 人數為規定者外，不得對其人數予以限制。 762 X 新臺幣2,000萬元之一般工程採購，機關不可訂定投標廠商須檢附 曾完成與招標標的類似之承作文件。 763 O 新臺幣2,000萬元之一般工程採購，機關可訂定投標廠商須檢附曾 完成與招標標的類似之承作文件。 764 X 機關訂定投標廠商之特定資格時，如評估可能符合特定資格之廠商 家數有三家以上，即無不當限制競爭之情形。 765 X 機關辦理採購，有關投標廠商資格之訂定，應依「投標廠商資格與 特殊或巨額採購認定標準」辦理。但採購標的內之重要項目，訂定 有分包廠商資格者，不在此限。 766 X 機關辦理新臺幣1億5,000萬元之一般工程採購，得訂定實收資本額 為不低於新臺幣1,500萬元之投標廠商資格。 767 O 機關辦理資訊服務採購，如屬經濟部投資審議司公告「具敏感性 或國安（含資安）疑慮之業務範疇」，為免發生國安或資安疑慮， 依「機關辦理涉及國家安全採購之廠商資格限制條件及審查作業辦 法」及「投標廠商資格與特殊或巨額採購認定標準」第4條第1項第 6款規定，於招標文件載明不允許經濟部投資審議司公告之陸資資 訊服務業參與。 768 O 「投標廠商資格與特殊或巨額採購認定標準」第5條第1項第3款所 稱「實收資本額」，於有限公司指資本總額。 769 X 廠商基本資格之廠商具有維修、維護或售後服務能力之證明，可限 定廠商投標時須提出已設立自有維修站或場所之證明。 770 O 廠商基本資格之廠商具有維修、維護或售後服務能力之證明，不可 限定廠商投標時須提出已設立自有維修站或場所之證明。 771 X 機關採複數決標或分批辦理巨額採購，其個別項目或數量或分批採 購之預算金額未達巨額採購認定標準者，仍可適用巨額採購有關廠 商資格之規定。 772 O 機關採複數決標或分批辦理巨額採購，其個別項目或數量或分批採 購之預算金額未達巨額採購認定標準者，不適用巨額採購有關廠商 資格之規定。 773 X 廠商特定資格之具有相當設備者，得為完成與招標標的同性質或相 當之工程、財物或勞務所需之自有設備。其尚無自有者，尚不得以 租賃、租賃承諾證明或採購中或得標後承諾採購證明代之。 774 O 廠商特定資格之具有相當設備者，得為完成與招標標的同性質或 相當之工程、財物或勞務所需之自有設備。其尚無自有者，得以租 賃、租賃承諾證明或採購中或得標後承諾採購證明代之。 775 X 機關辦理採購，對於廠商履行契約所必須具備之財務、商業或技術 資格條件，得就廠商在我國之商業活動為考量，並得以其為政府機 關、公立學校或公營事業所完成者為限。 776 O 機關辦理採購，對於廠商履行契約所必須具備之財務、商業或技術 資格條件，應就廠商在我國或外國之商業活動為整體考量，不以其 為政府機關、公立學校或公營事業所完成者為限。 777 X 廠商納稅證明，其屬營業稅繳稅證明者，為營業稅繳款書收據聯及 主管稽徵機關核章之最近一期營業人銷售額與稅額申報書收執聯。 廠商不及提出最近一期證明者，得以前一期之納稅證明代之。新設 立且未屆第一期營業稅繳納期限者，得以營業稅主管稽徵機關核發 之核准設立登記公函或申領統一發票購票證相關文件代之。 778 O 廠商納稅證明，其屬營業稅繳稅證明者，為營業稅繳款書收據聯或 主管稽徵機關核章之最近一期營業人銷售額與稅額申報書收執聯。 廠商不及提出最近一期證明者，得以前一期之納稅證明代之。新設 立且未屆第一期營業稅繳納期限者，得以營業稅主管稽徵機關核發 之核准設立登記公函代之；經核定使用統一發票者，應一併檢附申 領統一發票購票證相關文件。 779 X 機關訂定招標文件，對於投標廠商之設立或所在地，基於履約地點 之需要，得予以限制。 780 O 機關訂定招標文件，對於投標廠商之設立或所在地，除其他法令另 有規定者外，不得予以限制。 781 X 為確保廠商履約能力與誠信，凡有欠稅情形之廠商，一律不得參與 政府採購之投標。 782 O 個案採購之投標廠商資格條件，得不以檢具納稅證明文件為必要。第 36 條 783 X 廠商投標時須否附具依法加入工業或商業團體之證明，由機關自行 依採購案之特性及實務需要於招標文件載明之。投標廠商為外國廠 商者，仍應附具。 784 O 廠商投標時須否附具依法加入工業或商業團體之證明，由機關自行 依採購案之特性及實務需要於招標文件載明之。但投標廠商為外國 廠商者，得免附具。 785 X 機關辦理特殊採購或巨額採購以採購金額訂定資格條件者，應於招 標公告或招標文件載明採購金額。 786 O 機關辦理特殊採購或巨額採購以預算金額訂定資格條件者，應於招 標公告或招標文件載明預算金額。 787 O 投標廠商應提出之資格證明文件，除招標文件另有規定者外，以影 本為原則。影本之尺寸與正本不一致，或未載明與正本相符、未加 蓋廠商印章等情事，而不影響辨識其內容或真偽者，機關不得拒 絕。 788 X 廠商加入工業或商業團體之證明，得由招標機關限制由特定區域之 團體出具；投標廠商為外國廠商者，得免附具。 789 O 廠商加入工業或商業團體之證明，除法令另有規定外，不得限制由 特定區域之團體出具；投標廠商為外國廠商者，得免附具。 790 X 投標廠商應提出之資格證明文件，除招標文件另有規定者外，以正 本為原則。 791 O 投標廠商應提出之資格證明文件，除招標文件另有規定者外，以影 本為原則。但機關得通知投標廠商提出正本供查驗。 792 X 採購兼有工程、財物或勞務二種以上性質，而以其中之一認定其歸 屬者，其他性質符合特殊採購情形之一，不得以該其他性質於該採 購所占比例或相關部分訂定特定資格。 793 O 採購兼有工程、財物或勞務二種以上性質，而以其中之一認定其歸 屬者，其他性質符合特殊採購情形之一，得以該其他性質於該採購 所占比例或相關部分訂定特定資格。 794 X 廠商登記或設立之證明，機關規定須具有特定營業項目方可參與投 標者，其所規定之營業項目，不得不當限制競爭，至多以經濟部編 訂之公司行號營業項目代碼表所列之小類為限。 795 O 廠商登記或設立之證明，機關規定須具有特定營業項目方可參與投 標者，其所規定之營業項目，不得不當限制競爭，並應以經濟部編 訂之公司行號營業項目代碼表所列之大類、中類、小類或細類項目 為基準。 796 X 機關辦理採購，有關設立或具有或承諾於得標後一定期間內建立自 有或特約維修站或場所之證明係屬特定資格，非屬特殊或巨額採購 不得訂定。 797 O 機關訂定與履約能力有關之基本資格時，得依採購案件之特性及實 際需要，就投標廠商資格與特殊或巨額採購認定標準之規定，擇定 廠商應附具之物品。 798 X 機關訂定廠商信用證明之基本資格，可包括票據交換機構於等標期 內所出具之非拒絕往來戶或最近3年內無退票紀錄證明、會計師簽 證之財務報表或金融機構或徵信機構出具之信用證明等。 799 X 機關辦理某巨額工程採購經評估有訂定廠商特定資格之需要，機關 訂定該案具有相當實績者，得為截止投標日前7年內，完成與招標 標的同性質或相當之工程契約，其單次契約金額或數量不低於招標 標的預算金額或數量之五分之三，或累計金額或數量不低於招標標 的預算金額或數量。 800 X 機關訂定廠商納稅證明為廠商基本資格，其屬營業稅繳稅證明者， 為營業稅繳款書收據聯或主管稽徵機關核章之最近一期營業人銷售 額與稅額申報書收執聯。廠商不及提出最近一期證明而於投標時檢 附前一期之納稅證明，為不合格標。 801 O 機關訂定廠商納稅證明為廠商基本資格，其屬營業稅繳稅證明者， 為營業稅繳款書收據聯或主管稽徵機關核章之最近一期營業人銷售 額與稅額申報書收執聯。廠商不及提出最近一期證明者，得以前一 期之納稅證明代之。 802 X 機關辦理採購，招標文件訂有廠商基本資格為廠商須具有維修、維 護或售後服務能力之證明，可限定廠商投標時須提出原廠代理證 明。 803 O 機關於招標文件規定，得標廠商於交貨或驗收時需檢附採購標的之 原廠製造證明或原廠商品質保證書一節，尚無不當。 804 X 機關辦理特殊採購，不得訂定「總負債金額」之門檻作為投標廠商 之資格條件。 805 O 非屬特殊或巨額採購，不得訂定「總負債金額」之門檻作為投標廠 商之資格條件。 806 X 機關辦理外國廠商得參與之採購，招標文件規定投標廠商應提出之 資格文件，外國廠商一體適用，不得另為規定。 807 O 機關辦理外國廠商得參與之採購，招標文件規定投標廠商應提出之 資格文件，外國廠商依該國情形提出有困難者，得於投標文件內敘 明其情形或以其所具有之相當資格代之。 808 X 機關辦理採購，得依規定訂定基本資格、特定資格，而投標廠商應 符合之資格，以分包廠商就其分包部分所具有者代之，仍屬合格廠 商。 809 O 機關辦理採購，得依規定訂定基本資格、特定資格，並得於招標文 件規定投標廠商應符合之資格之一部分，得以分包廠商就其分包部 分所具有者代之。 810 X 機關辦理為期3年新臺幣6,000萬元（每年之預算金額為2,000萬 元）之提供勞力為主且工作內容重複之勞務採購之公開評選招標， 經評估有訂定單次契約金額不低於預算金額之經驗或實績之必要， 則其單次契約金額之訂定，最高得規定廠商提報之單次契約實績金 額，不低於2,400萬元。 811 O 機關辦理為期3年新臺幣6,000萬元（每年之預算金額為2,000萬 元）之提供勞力為主且工作內容重複之勞務採購之公開評選招標， 經評估有訂定單次契約金額不低於預算金額之經驗或實績之必要， 則其單次契約金額之訂定，最高得規定廠商提報之單次契約實績金 額，不低於800萬元。 812 X 依「投標廠商資格與特殊或巨額採購認定標準」所指之特殊採購， 不包括採購標的為藝術品或具有歷史文化紀念價值之古物。 813 O 機關辦理採購，採購標的為藝術品或具有歷史文化紀念價值之古 物，該採購得認定為特殊採購。 814 X 機關辦理新臺幣2億元一般性工程採購之公開招標，經評估有訂定 單次契約金額不低於預算金額之經驗或實績之必要，則其單次契約 金額之訂定，得規定廠商提報之單次實績金額不低於9000萬元。 815 O 機關辦理新臺幣2億元一般性工程採購之公開招標，經評估有訂定 單次契約金額不低於預算金額之經驗或實績之必要，則其單次契 約金額之訂定，最高得規定廠商提報之單次實績金額不低於8000萬 元。 816 X 機關辦理採購，有關外國廠商之投標資格及應提出之資格文件，得 就實際需要於招標文件中另行規定，附經公證或認證之中文譯本。 中文譯本與原本不一致時，以中文譯本為準。 817 O 機關辦理採購，有關外國廠商之投標資格及應提出之資格文件，得 就實際需要於招標文件中另行規定，附經公證或認證之中文譯本。 其中文譯本之內容有誤者，以原文為準。 818 X 投標廠商應提出之資格證明文件，應以書面為之，不得以電子資料 替代。 819 O 投標廠商應提出之資格證明文件，得以目的事業主管機關核准之電 子資料替代。 820 X 機關訂定投標廠商須具有相當經驗或實績之特定資格條件者，其 範圍得為截止投標日前3年內，完成與招標標的同性質或相當之工 程、財物或勞務契約，其單次契約金額或數量不低於招標標的預算 金額或數量之五分之二，或累計金額或數量不低於招標標的預算金 額或數量之五分之四，並得含採購機關(構)出具之驗收證明或啟用 後功能正常之使用情形證明。 821 O 機關訂定投標廠商須具有相當經驗或實績之特定資格條件者，其 範圍得為截止投標日前7年內，完成與招標標的同性質或相當之工 程、財物或勞務契約，其單次契約金額或數量不低於招標標的預算 金額或數量之五分之一，或累計金額或數量不低於招標標的預算金 額或數量之五分之三，並得含採購機關(構)出具之驗收證明或啟用 後功能正常之使用情形證明。 822 X 投標廠商應提出之資格證明文件，除招標文件另有規定者外，以影 本為原則。影本之尺寸與正本不一致者，應載明與正本相符並加蓋 廠商印章，否則為不合格標。 823 X 營業稅或所得稅之納稅證明，不得以與最近一期或前一期證明相同 期間內主管稽徵機關核發之無違章欠稅之查復表代之。 824 X 投標廠商未符合招標機關依採購法規定所定資格者，其投標不予受 理。廠商之基本資格，得以銀行或保險公司之履約及賠償連帶保證 責任、連帶保證保險單代之。 825 X 機關辦理公開招標之採購，得訂定廠商投標時須提出原廠代理證明 或經銷證明。 826 O 招標機關與得標廠商簽訂採購契約時，除依採購法第37條第2項及 「押標金保證金暨其他擔保作業辦法」第33條至第33條之4規定辦 理者外，不得要求得標廠商另覓廠商連帶保證。 827 X 招標機關與得標廠商簽訂採購契約時，除依採購法第37條第2項及 「押標金保證金暨其他擔保作業辦法」第33條至第33條之4規定辦 理者外，亦得視個案需要，要求得標廠商另覓廠商連帶保證。 828 X 投標廠商未符合招標機關依採購法規定所定資格者，其投標不予受 理。但廠商之財力資格，得以金融機構之履約及賠償連帶保證責 任、連帶保證保險單代之。 829 O 投標廠商未符合招標機關依採購法規定所定資格者，其投標不予受 理。但廠商之財力資格，得以銀行或保險公司之履約及賠償連帶保 證責任、連帶保證保險單代之。 830 X 機關訂定投標廠商之資格條件，不得不當限制競爭，並以確認廠商 具備履行契約所必須之能力者為限。廠商人員之學歷得為基本資 格。 831 O 機關訂定投標廠商之資格條件，不得不當限制競爭，並以確認廠商 具備履行契約所必須之能力者為限。廠商人員之學歷不得為基本資 格。 832 O 政黨及與其具關係企業關係之廠商，不得參與投標。 第 38 條 833 X 政黨及與其具關係企業關係之廠商，得參與投標或作為分包廠商。第 38 條 834 X 機關辦理採購，承辦專案管理之廠商，其負責人或合夥人不得同時 為規劃、設計、施工或供應廠商之負責人或合夥人，上開所稱「規 劃、設計、施工或供應廠商」，尚不包含分包廠商。 835 X 承辦專案管理之廠商，其負責人或合夥人不得同時為與該服務有關 之規劃、設計、施工或供應廠商之負責人或合夥人。但承辦專案管 理之廠商與規劃、設計、施工或供應廠商，同時為同一其他廠商之 關係企業，則尚無不可。 836 X 機關辦理採購，得將其對規劃、設計、供應或履約業務之專案管 理，委託廠商為之。但未達公告金額之採購則不適用。 837 O 機關辦理採購，承辦專案管理之廠商，其負責人或合夥人不得同時 為規劃、設計、施工或供應廠商之負責人或合夥人，上開所稱「規 劃、設計、施工或供應廠商」，包含分包廠商。 838 O 機關依採購法第40條洽請具採購專業之機關代辦採購，洽辦機關及 代辦機關分屬中央及地方機關者，依洽辦機關之屬性認定該採購係 屬中央或地方機關辦理之採購。 839 X 機關依採購法第40條洽請具採購專業之機關代辦採購，洽辦機關及 代辦機關分屬中央及地方機關者，依代辦機關之屬性認定該採購係 屬中央或地方機關辦理之採購。 840 O 機關之採購，得洽由其他具有專業能力之機關代辦，上開「代 辦」，係指將採購程序委由具有專業能力之機關代為辦理。 841 X 機關辦理招標，依採購法第41條第2項之規定變更或補充招標文件 內容者，應視需要延長等標期或截止收件期限。其非屬重大改變， 且於原定截止日前5日公告或書面通知各廠商者，仍應延長等標期 或截止收件期限。 842 O 機關辦理招標，依採購法第41條第2項之規定變更或補充招標文件 內容者，應視需要延長等標期或截止收件期限。其非屬重大改變， 且於原定截止日前5日公告或書面通知各廠商者，得免延長等標期 或截止收件期限。 843 X 機關於招標文件規定廠商得請求釋疑之期限，至少應有等標期之四 分之一，其不足1日者不納入計算。機關釋疑之期限，比照答復異 議之期限。 844 O 機關於招標文件規定廠商得請求釋疑之期限，至少應有等標期之四 分之一。機關最後釋疑之次日起算至截止投標日或資格審查截止收 件日之日數，不得少於原等標期之四分之一。 845 X 機關辦理公開招標，對廠商請求釋疑之處理結果，其涉及變更或補 充招標文件內容者，為提升採購效率，得於開標時徵得所有出席廠 商同意於當場說明，並於開標紀錄載明其情形。 846 X 機關於招標文件規定廠商得請求釋疑之期限，至少應有等標期之四 分之一，且不得少於10日。機關釋疑之期限，不得逾截止投標日或 資格審查截止收件日前1日。 847 X 機關辦理採購，得規定資格、規格及價格分段投標，但僅就資格投 標者，以限制性招標為限。 848 O 機關辦理分段開標，除第1階段應公告外，後續階段之邀標，得免 予公告。第1次公開招標，分段投標之第1階段投標廠商家數已達 採購法第48條第1項3家以上合格廠商投標之規定者，後續階段之開 標，得不受該廠商家數之限制。 849 O 機關辦理採購，得規定資格、規格及價格分段投標，但僅就資格投 標者，以選擇性招標為限。 850 X 機關採分段投標辦理採購者，未通過前一階段審標之投標廠商，不 得參加後續階段之投標；採一次投標分段開標者，其已投標未開標 之標封，仍應保存於機關，不得發還。 851 X 機關辦理分段開標，除第1階段應公告外，後續階段之邀標，得免 予公告。第1次公開招標，分段投標之第1階段投標廠商家數已達 採購法第48條第1項3家以上合格廠商投標之規定者，後續階段之開 標，仍應受該廠商家數之限制。 852 X 機關依採購法第43條第2款優先決標予國內廠商者，於國內廠商有2 家以上時，其減價或比減價格應依採購法第53條規定辦理。 853 X 機關辦理採購，為保護國內廠商，得同時將採購法第43條第2款及 第44條之機制納入招標文件中規定。 854 X 機關辦理採購，不得於招標文件中載明外國廠商為最低標，且其標 價符合採購法第52條規定之最低標決標原則者，以該標價優先決標 予國內廠商。 855 O 機關辦理採購，除我國締結之條約或協定有禁止規定者外，得於招 標文件中載明外國廠商為最低標，且其標價符合採購法第52條規定 之最低標決標原則者，得以該標價優先決標予國內廠商。 856 X 依「國內廠商標價優惠實施辦法」規定，採購法第44條第1項所稱 特定之採購，指機關辦理查核金額以上之採購，招標文件載明採購 標的中屬於採購法第44條第2項適用範圍之項目，並附記依同條第1 項規定得以較高標價優先決標予國內廠商者。 857 X 依「國內廠商標價優惠實施辦法」規定，採購法第44條第2項所稱 適用範圍，指經目的事業主管機關擇定，並公告於政府採購公報之 工程、財物或勞務項目。 858 X 機關依採購法第45條辦理開標，允許投標廠商之負責人或其代理人 或授權代表出席，不得限制出席人數。 859 O 機關依採購法第45條辦理開標，允許投標廠商之負責人或其代理人 或授權代表出席，得限制出席人數。 860 O 依採購法第21條規定辦理選擇性招標之資格審查，供建立合格廠商 名單者，招標文件得免標示開標之時間及地點。 861 X 依採購法第21條規定辦理選擇性招標之資格審查，供建立合格廠商 名單者，招標文件應標示開標之時間及地點。 862 O 機關辦理公開招標，其決標與開標得合併辦理，機關並應於決標前 當場確認審標結果，並列入紀錄。 863 X 機關辦理公開招標，其決標與開標不得合併辦理，機關應先確認審 標結果，並列入紀錄後再擇期辦理決標。 864 O 公開招標、選擇性招標及限制性招標之比價，其招標文件所標示之 開標時間，為等標期屆滿當日或次一上班日。 865 X 公開招標、選擇性招標及限制性招標之比價，其招標文件所標示之 開標時間，不得為等標期屆滿當日。 866 O 採購法第45條所稱開標，指依招標文件標示之時間及地點開啟廠商 投標文件之標封，非指價格標之開啟。 867 X 採購法第45條所稱開標，指依招標文件標示之時間及地點開啟廠商 投標文件之標封，意即價格標之開啟。 868 O 機關辦理開標，主持開標人員由機關首長或其授權人員指派適當人 員擔任，主持開標人員得兼任承辦開標人員。 869 X 機關辦理開標，主持開標人員由機關首長或其授權人員指派適當人 員擔任，主持開標人員不得兼任承辦開標人員。 870 X 機關辦理公開招標，除因投標廠商未達家數而流標外，開標時應製 作紀錄，由辦理開標人員會同簽認；有監辦開標人員者，亦應會同 簽認。 871 X 公開招標、選擇性招標及限制性招標之比價，其招標文件所標示之 開標時間，應為等標期屆滿次日起5日內為之。但採分段開標者， 其第2段以後之開標，不適用之。 872 X 機關採限制性招標邀請2家廠商進行比價，並於比價前訂定底價， 惟僅1家廠商投標，機關當場改為議價方式辦理者，並逕依前開訂 定之底價洽該廠商議價。 873 O 機關採限制性招標邀請2家廠商進行比價，並於比價前訂定底價， 惟僅1家廠商投標，機關當場改為議價方式辦理者，應參考該廠商 報價重新訂定底價後，再洽該廠商議價。 874 X 小額採購於中央機關為新臺幣10萬元以下之採購，含10萬元本數。第 47 條 875 O 小額採購於中央機關為新臺幣15萬元以下之採購，含15萬元本數。第 47 條 876 O 機關辦理公開招標，第1次開標因投標廠商家數未滿3家而流標者， 得發還投標文件。廠商要求發還者，機關不得拒絕。機關於開標後 因故廢標，採分段開標者，尚未開標之部分應予發還。 877 O 機關辦理公開招標，第1次開標因投標廠商家數未滿3家而流標者， 得發還投標文件。廠商要求發還者，機關不得拒絕。 878 X 機關辦理公開招標，第1次開標因投標廠商家數未滿3家而流標者， 第2次招標之等標期間得予縮短，並得不受採購法第48條第1項所定 3家廠商之限制。廢標後不論有無修改招標文件而重行招標者，準 用採購法第48條第2項關於第2次招標之規定。 879 X 機關辦理公開招標，第1次開標因投標廠商家數未滿3家而流標者， 得發還投標文件。廠商要求發還者，機關不得拒絕。機關於開標後 因故廢標，採分段開標者，尚未開標之部分應予保留不發還廠商。 880 O 機關辦理公開招標，第1次開標因投標廠商家數未滿3家而流標者， 第2次招標之等標期間得予縮短，並得不受採購法第48條第1項所定 3家廠商之限制。廢標後依原招標文件重行招標者，準用採購法第 48條第2項關於第2次招標之規定。 881 O 機關辦理公開招標之第1次開標，有3標封，其中有1標封未標示廠 商名稱及地址，則本案不予開標。 882 X 機關辦理公開招標，第1次開標因投標廠商家數未滿3家而流標者， 投標文件應保存於機關，不得發還。廠商要求發還者，機關得拒 絕。 883 X 機關辦理公開招標之第1次開標，有3標封，其中有1標封未標示廠 商名稱及地址，本案仍可開標。 884 X 未達公告金額之採購，如以公開取得書面報價或企劃書方式辦理 者，機關不得允許廠商以傳真或電子資料傳輸方式遞送書面報價或 企劃書。 885 O 未達公告金額之採購，如以公開取得書面報價或企劃書方式辦理 者，機關得允許廠商以傳真或電子資料傳輸方式遞送書面報價或企 劃書。 886 O 未達公告金額之採購，以公開取得企劃書方式辦理，得參考最有利 標精神擇最符合需要者，再邀請該最符合需要者，辦理議價。 887 X 公告金額以上之採購，以公開取得企劃書方式辦理，參考最有利標 精神擇最符合需要者，再邀請該最符合需要者，辦理議價。 888 O 未達公告金額之採購，其金額逾公告金額十分之一者，如依採購法 第49條規定，以公開取得3家以上廠商之書面報價或企劃書方式辦 理，得比照採購法施行細則第55條關於公開招標之規定。 889 X 未達公告金額之採購，其金額逾公告金額十分之一者，如依採購法 第49條規定，以公開取得3家以上廠商之書面報價或企劃書方式辦 理，不得比照採購法施行細則第55條關於公開招標之規定。 890 O 機關依「中央機關未達公告金額採購招標辦法」第2條第1項第3款 規定辦理採購，得於公告或招標文件中訂明開標時間地點，並於開 標後當場審查，逕行辦理決標。 891 X 機關依「中央機關未達公告金額採購招標辦法」第2條第1項第3款 規定辦理採購，應於公告或招標文件中訂明開標時間地點，並於開 標後當場審查，逕行辦理決標。 892 O 未達公告金額之採購，其金額逾公告金額十分之一者，除符合採購 法第22條第1項各款情形外，仍應公開取得3家以上廠商之書面報價 或企劃書。 893 X 機關依「中央機關未達公告金額採購招標辦法」第2條第1項第3款 規定辦理者，得以採購法第34條公開徵求廠商提供參考資料之方式 刊登公告辦理採購。 894 O 機關辦理採購，決標或簽約後發現得標廠商於決標前有採購法第50 條第1項情形者，應撤銷決標、終止契約或解除契約，並得追償損 失。但撤銷決標、終止契約或解除契約反不符公共利益，並經上級 機關核准者，不在此限。 895 X 機關辦理採購，決標或簽約後發現得標廠商於決標前有採購法第50 條第1項情形者，應撤銷決標、終止契約或解除契約，並得追償損 失。但撤銷決標、終止契約或解除契約反不符公共利益，並經機關 首長及其授權人核准者，不在此限。 896 X 機關應依招標文件規定之條件，審查廠商投標文件，對其內容有疑 義時，得通知投標廠商提出說明。審查內容發現有缺漏資格證件， 與標價無關者，機關得允許廠商補正。 897 O 機關應依招標文件規定之條件，審查廠商投標文件，對其內容有疑 義時，得通知投標廠商提出說明。審查內容發現有缺漏資格證件， 雖與標價無關，仍不得允許廠商補正。 898 X 機關辦理公告金額以上之專業服務、技術服務、資訊服務、社會 福利服務或文化創意服務，且招標文件已訂明固定服務費用或費率 者，依該服務費用或費率決標，議價程序得予免除。 899 O 機關辦理公告金額以上之專業服務、技術服務、資訊服務、社會福 利服務或文化創意服務者，以不訂底價之最有利標為原則。 900 O 機關辦理採購之決標，合於招標文件規定之投標廠商之最低標價超 過底價時，得洽該最低標廠商減價1次；減價結果仍超過底價時， 得由所有合於招標文件規定之投標廠商重新比減價格，比減價格不 得逾3次。 901 X 機關辦理採購之決標，所有合於招標文件規定之投標廠商僅有1 家，其標價超過底價時，減價次數不得逾3次，且無須通知廠商。 902 O 機關辦理採購之決標，所有合於招標文件規定之投標廠商僅有1 家，其標價超過底價時，須限制減價次數者，應先通知廠商。 903 X 機關辦理採購，其決標依採購法第52條第1項第2款規定採未訂底價 最低標決標原則辦理者，無論金額大小，應成立評審委員會，其成 員由機關首長或其授權人員就對於採購標的之價格具有專門知識之 機關職員或公正人士派兼或聘兼之。 904 X 決標依採購法第52條第1項第2款規定辦理且設有評審委員會者，應 先審查合於招標文件規定之最低標價後，再由評審委員會提出建議 之金額。對於標價合理者，評審委員會仍應提出建議之金額。 905 O 決標依採購法第52條第1項第2款規定辦理且設有評審委員會者，應 先審查合於招標文件規定之最低標價後，再由評審委員會提出建議 之金額。但標價合理者，評審委員會得不提出建議之金額。 906 X 機關辦理以最低標決標之採購，得預先於招標公告及招標文件內預 告無法決標時，採行協商措施，因非最有利標決標故免報上級機關 核准。 907 O 機關辦理以最低標決標之採購，經報上級機關核准，並於招標公告 及招標文件內預告者，得於依規定無法決標時，採行協商措施。 908 X 機關辦理以最低標決標之採購，得經機關首長或其授權人員核准於 招標公告及招標文件內預告，於無法決標時，採行協商措施。 909 O 評定最有利標涉及序位評比者，招標文件應載明各評比項目之權 重。評比項目之子項有計分基準者，其配分方式應載明於招標文 件。 910 X 評選最有利標，為利評選委員對廠商於各評選項目之表現為更深入 之瞭解，得輔以廠商簡報及現場詢答。並得規定投標廠商未出席簡 報及現場詢答者，則為不合格標，不得參與評選。 911 X 評定最有利標涉及序位評比者，招標文件應載明各評比項目之權 重。評比項目之子項有計分基準者，其配分得免載明於招標文件。 912 X 機關評定最有利標之方式包括：總評分法、評分單價法、序位法、 其他經上級機關認定之方式。 913 O 機關評定最有利標之方式包括：總評分法、評分單價法、序位法、 其他經主管機關認定之方式。 914 X 機關依採購法第56條規定，採最有利標決標辦理新臺幣50萬元之勞 務服務採購，免報上級機關核准。 915 O 機關依採購法第56條規定，採最有利標決標辦理新臺幣50萬元之技 術服務採購，應先報上級機關核准。 916 X 機關採選擇性招標之最有利標決標，將廠商資格作為評選項目之一 者，其配分或權重免載明於資格審查文件。 917 O 選擇性招標以資格為評選項目之一者，與資格有關部分之配分或權 重，應載明於資格審查文件；其他評選項目及子項之配分或權重， 應載明於資格審查後之下一階段招標文件。 918 O 機關評選結果無法評定最有利標時，其採行協商措施者，應予參與 協商之廠商依據協商結果，就協商項目於一定期間內修改該部分之 投標文件重行遞送之機會。價格須依協商項目調整者，亦同。 919 X 機關評選結果無法評定最有利標時，其採行協商措施者，對於參與 協商但無可能得標之廠商，得不通知其修改投標文件重行遞送。 920 O 機關依採購法第58條規定通知最低標廠商提出說明，而廠商說明不 合理，即使表明願意提供擔保者，機關應予拒絕，逕不決標予該廠 商。 921 X 機關依採購法第58條規定通知最低標廠商提出說明，而廠商說明不 合理，但表明願意提供擔保者，機關仍須限期通知廠商繳交差額保 證金，廠商未依限繳交，方得不決標予該廠商。 922 X 廠商人員違反採購法第59條第1項規定，機關可就終止契約、解除 契約或扣除2倍不正利益擇一處置即可。 923 X 依採購法第59條規定，個案採購如已結案或終止解除契約，則免通 知廠商限期給付2倍不正利益。 924 O 採購法第59條第2項所稱「不正利益」，係指同條第1項廠商以支付 他人佣金、比例金、仲介費、後謝金或其他不正利益。 925 O 某機關依採購法辦理公開招標，開標結果5家投標廠商均合格，惟 報價最低且相同，均得為決標對象者之2家均未依通知期限到場， 主持人以該2家放棄比減價格，抽籤後辦理決標。 926 X 某機關依採購法辦理公開招標，開標結果5家投標廠商均合格且進 入底價，惟均得為決標對象之最低標及次低標2家廠商未到場，且 經機關依採購法第60條規定通知廠商限期到場後，該2家廠商均未 依通知期限到場，主持人以該2家放棄為由，決標予第3低標廠商。 927 X 機關採購如有契約變更或加減價之情形，致原決標金額增加者，該 增加之金額，無須依採購法第61條或第62條規定辦理公告、彙送。 928 O 機關採購如有契約變更或加減價之情形，致原決標金額增加者，該 增加之金額，應依採購法第61條或第62條規定辦理公告、彙送。 929 O 因流標或廢標者，機關於開標紀錄上請出席廠商簽名領回原封投標 資料，或於廢標紀錄上請出席廠商會同簽名，如上開紀錄已載明無 法決標之原因，並將影本提供出席廠商，已具有採購法第61條所定 對該廠商書面通知該案無法決標之效果。 930 O 機關辦理公告金額以上採購之招標，除有特殊情形者外，應於決標 日起30日內，將決標結果之公告刊登於政府採購公報，並以書面通 知各投標廠商。無法決標者，亦同。 931 X 機關辦理公告金額以上採購之招標，除有特殊情形者外，應於決標 日起30日內，將決標結果之公告刊登於政府採購公報，免以書面通 知各投標廠商。無法決標者無須刊登公報。 932 X 機關辦理公告金額以上之採購，其採限制性招標者，決標後得免將 決標結果之公告刊登於政府採購公報。但仍應書面通知各投標廠 商。 933 X 機關辦理未達公告金額但逾公告金額十分之一之採購，應將決標結 果之公告刊登於政府採購公報。 934 O 機關辦理未達公告金額但逾公告金額十分之一之採購，得免將決標 結果之公告刊登於政府採購公報。但應將決標資料定期傳送至採購 法主管機關指定之電腦資料庫。 935 O 機關洽外國廠商辦理採購，如無法當面議價，可採書面或電子資料 傳輸方式辦理。 綜合 936 X 機關辦理採購，宣布保留決標，即使保留決標紀錄已載明「俟廠商 繳妥差額保證金後生效」，並符合採購法施行細則第68條規定應記 載事項，仍須另為製作決標或廢標紀錄。 綜合 937 O 機關具時效性之案件，如有必要於預算審議通過後立即執行者，為 爭取時效，得先行辦理招標作業，並於招標文件載明預算未完成立 法程序前，得先辦理保留決標，俟預算通過後始決標生效。 綜合 938 X 機關具時效性之案件，如有必要於預算審議通過後立即執行者，尚 難以爭取時效為由，先行辦理招標作業。 綜合 939 X 機關辦理採購之議價程序，因涉及採購契約價金及履約內容之議 定，爰以廠商到場為必要。 綜合"}, "law": "第 62 條"}];
+        
+        let allQuestions = [];
+        
+        // Process MCQs
+        mcqsData.forEach(q => {
+            allQuestions.push({
+                id: q.id,
+                type: 'mcq',
+                question: "[選擇題 " + q.id + "] " + q.question,
+                choices: Object.entries(q.choices).map(([key, val]) => ({
+                    num: parseInt(key),
+                    text: "(" + key + ") " + val
+                })),
+                answer: q.answer,
+                law: q.law,
+                explanation: getExplanation(q.id, q.answer, q.law)
+            });
+        });
+
+        // Function to dynamically supply explanation
+        function getExplanation(qid, correctAns, law) {
+            const db = {
+                1: "機關購買房地產（買受）屬於財物採購（第2條、第7條），應適用採購法。變賣或標售財物屬於收入，不適用採購法；補助選定非屬採購本體。",
+                2: "購買冷凍食品（肉品）屬於財物之買受，適用採購法。買匯、出租及標售（收入）皆不適用。",
+                3: "土地之出租屬於機關收入，非採購法所稱之採購（工程之定作、財物之買受、租賃、勞務之委任或僱傭）。",
+                4: "受機關補助辦理採購，補助金額占採購金額達半數以上，且補助金額在公告金額以上者，適用採購法（第4條）。",
+                6: "受補助之法人或團體，其查核金額以上採購，應報請「補助機關」派員監督監辦，而非補助機關之上級機關（第4條）。",
+                8: "指定廠牌公開徵求報價單辦理決標涉限制競爭（小額採購除外，50萬已達公告金額1/10以上非小額）；限制製造廠代理商或特定轄區經驗亦限制競爭。不適用條約協定限我國投標是合法的。",
+                11: "權利之買受或租賃，歸類於「財物採購」（第7條）。",
+                12: "查核金額以上之採購，開標、比價、議價、決標及驗收，應報請上級機關派員監辦（第12條）。",
+                16: "採購金額應包括後續擴充預估總金額。90萬 + 90萬*2年 = 270萬元（第12條/細則第6條）。",
+                23: "採購案之承辦人員負責採購執行，為避免角色衝突，不得同時擔任該採購案之監辦人員（第13條）。",
+                24: "公告金額指新臺幣 150 萬元（第13條最新規定）。",
+                30: "利益迴避條款之親屬範疇不包括「前配偶」（第15條）。",
+                31: "離職人員 3 年內不得為本人或代理廠商向原任職機關接洽處理離職前 5 年內與職務有關之事務（第15條）。",
+                41: "專屬權利包括專利權、著作權、電路布局權等，但明確排除「商標專用權」（第22條細則）。",
+                42: "機關辦理評選專業服務、技術服務、資訊服務或設計競賽，第1次開標不受3家限制，1家投標即可開標（第22條第1項第9款）。",
+                54: "委託資訊服務預付款上限以不超過契約總額之 30% 為原則（第22條）。",
+                62: "追加工程限制之 50% 係指「追加累計金額占原主契約金額之比率」（第22條）。",
+                73: "統包採購包含設計與施工，不得依第22條第1項第9款（單純勞務評選）方式辦理限制性招標。",
+                81: "僅在招標文件要求特定廠牌並註明「或同等品」是不夠的，必須符合「無國際/國家標準且無法精確說明招標要求」之法定前提（第26條）。",
+                91: "非屬重大改變且於截止日前 5 日公告或書面通知廠商者，得免延長等標期（第28條）。",
+                93: "電子領標得縮短等標期 3 日，但縮短後公告金額以上不得少於 7 日（第28條/招標期限標準）。",
+                97: "招標前辦理公開閱覽，等標期得縮短 5 日，但縮短後不得少於 10 日（第28條/招標期限標準）。",
+                107: "押標金應於招標文件規定廠商以特定方式繳納，不應要求「將現金附於投標文件內遞送」，此舉違反押標金保證金格式與收受實務（第30條）。",
+                108: "押標金額度以不逾標價之 5% 為原則，且不得逾新臺幣 5,000 萬元（第30條）。",
+                110: "標價偏低未提合理說明，應不予決標，但其押標金仍應發還，不屬於不予發還押標金之範疇（第31條）。"
+            };
+            
+            let baseExp = db[qid] || `本題標準答案為：(${correctAns})。`;
+            if (law) {
+                baseExp += `【法規依據：${law}】`;
+            }
+            return baseExp;
+        }
+
+        // Shuffle questions
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Shuffle questions for randomized experience
+        allQuestions = shuffle(allQuestions);
+
+        let currentIndex = 0;
+        let score = 0;
+        let answeredCount = 0;
+        let userSelections = {};
+
+        function loadQuestion(index) {
+            const q = allQuestions[index];
+            const progress = document.getElementById("quiz-progress");
+            const questionTitle = document.getElementById("quiz-question");
+            const optionsContainer = document.getElementById("quiz-options");
+            const feedback = document.getElementById("quiz-feedback");
+            const prevBtn = document.getElementById("quiz-prev-btn");
+            
+            progress.innerText = `題目進度: ${index + 1} / ${allQuestions.length} [選擇題]`;
+            questionTitle.innerText = q.question;
+            optionsContainer.innerHTML = "";
+            
+            feedback.style.display = "none";
+            prevBtn.disabled = index === 0;
+
+            const previouslySelected = userSelections[index];
+            const hasAnswered = previouslySelected !== undefined;
+
+            q.choices.forEach(opt => {
+                const btn = document.createElement("button");
+                btn.className = "quiz-option-btn";
+                btn.innerText = opt.text;
+                btn.disabled = hasAnswered;
+
+                if (hasAnswered) {
+                    const optKey = opt.num;
+                    const correctAns = q.answer;
+                    
+                    if (optKey === correctAns) {
+                        btn.classList.add("correct");
+                    }
+                    if (optKey === previouslySelected && previouslySelected !== correctAns) {
+                        btn.classList.add("wrong");
+                    }
+                } else {
+                    btn.onclick = () => selectOption(index, opt.num);
+                }
+                
+                optionsContainer.appendChild(btn);
+            });
+
+            if (hasAnswered) {
+                showFeedback(q);
+            }
+        }
+
+        function selectOption(index, optionNum) {
+            if (userSelections[index] !== undefined) return;
+            
+            const q = allQuestions[index];
+            userSelections[index] = optionNum;
+            answeredCount++;
+            
+            if (optionNum === q.answer) {
+                score++;
+            }
+            
+            updateScore();
+            loadQuestion(index);
+        }
+
+        function showFeedback(q) {
+            const feedback = document.getElementById("quiz-feedback");
+            const feedbackText = document.getElementById("quiz-feedback-text");
+            feedbackText.innerText = q.explanation;
+            feedback.style.display = "block";
+        }
+
+        function updateScore() {
+            const scoreLbl = document.getElementById("quiz-score");
+            const pct = answeredCount > 0 ? Math.round((score / answeredCount) * 100) : 0;
+            scoreLbl.innerText = `得分: ${score} / ${answeredCount} (${pct}%)`;
+        }
+
+        function nextQuestion() {
+            if (currentIndex < allQuestions.length - 1) {
+                currentIndex++;
+                loadQuestion(currentIndex);
+            } else {
+                alert(`模擬測驗結束！您的最終得分是：${score} / ${allQuestions.length}！`);
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadQuestion(currentIndex);
+            }
+        }
+
+        // Table Trap Toggle Function
+        function toggleTrapDetail(id) {
+            const detailRow = document.getElementById(id);
+            if (detailRow.style.display === "table-row") {
+                detailRow.style.display = "none";
+            } else {
+                detailRow.style.display = "table-row";
+            }
+        }
+
+        // Smooth scroll for nav active state
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Load first question on init
+        window.onload = () => {
+            loadQuestion(0);
+        };
+    </script>
+</body>
+</html>
