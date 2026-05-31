@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府採購專業人員考試 - 系統化互動備考門戶</title>
+    <meta name="description" content="專為中華民國行政院公共工程委員會「採購專業人員訓練考試」精準打造的系統化重點備考筆記與互動式離線模擬測驗系統入口。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0b0f19;
+            --bg-card: rgba(31, 41, 55, 0.4);
+            --bg-card-hover: rgba(55, 65, 81, 0.6);
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #10b981; /* Emerald Green */
+            --accent-secondary: #f59e0b; /* Amber */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glow-green: 0 0 20px rgba(16, 185, 129, 0.25);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, var(--text-primary) 30%, #a7f3d0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin: 0 auto 2.5rem auto;
+            font-weight: 300;
+        }
+
+        .features-badge {
+            display: inline-flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent-primary);
+            padding: 0.35rem 0.85rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            color: var(--accent-secondary);
+        }
+
+        /* Grid container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem 2rem;
+        }
+
+        .grid-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .grid-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.75rem;
+        }
+
+        /* Glassmorphism Card Design */
+        .subject-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), var(--glow-green);
+        }
+
+        .subject-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .subject-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .subject-card p {
+            font-size: 0.925rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            min-height: 4.5rem;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+        }
+
+        .meta-tag.highlight {
+            border-color: rgba(16, 185, 129, 0.2);
+            color: var(--accent-primary);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        /* Styled Button */
+        .btn-study {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent-primary);
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all var(--transition-speed);
+            gap: 0.5rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-study:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .btn-study svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            transition: transform var(--transition-speed);
+        }
+
+        .btn-study:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: rgba(31, 41, 55, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .tips-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tips-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .tips-list li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tips-list li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem 2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+                margin-bottom: 2rem;
+            }
+            main {
+                padding: 0 1rem 4rem 1rem;
+            }
+            .subject-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .subject-card {
+                padding: 1.5rem;
+            }
+            .tips-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="features-badge">
+            <span class="badge">100% 離線可用</span>
+            <span class="badge warning">不需安裝後端</span>
+            <span class="badge">GitHub Pages 靜態適配</span>
+        </div>
+        <h1>政府採購專業人員考試</h1>
+        <p>系統化考點整理重點筆記與離線自包含模擬測驗系統。整合歷屆考題與高頻文字陷阱，助您高效備考，輕鬆通關！</p>
+    </header>
+
+    <main>
+        
+        <h2 class="grid-title">📚 備考單元總覽門戶</h2>
+        
+        <div class="subject-grid">
+            
+            <!-- Card 1 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <span class="card-icon">💰</span>
+                    <h3>底價及價格分析</h3>
+                    <p>掌握底價核定權限與時限、保密與公開例外，深入分析固定與變動成本，以及採購法第58條超低標差額保證金實務判定程序。</p>
+                </div>
+                <div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight">44 選擇題</span>
+                        <span class="meta-tag highlight">96 是非題</span>
+                        <span class="meta-tag">超底價決標限制</span>
+                        <span class="meta-tag">RWD 陷阱摺疊</span>
+                    </div>
+                    <a href="重點筆記/底價及價格分析_重點筆記.html" class="btn-study">
+                        進入備考系統
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <span class="card-icon">🔄</span>
+                    <h3>政府採購全生命週期概論</h3>
+                    <p>涵蓋規劃、招標、決標、履約、驗收至接管營運之政府採購全生命週期核心概念，並梳理各階段的工程與技術服務計費門檻。</p>
+                </div>
+                <div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight">24 選擇題</span>
+                        <span class="meta-tag highlight">32 是非題</span>
+                        <span class="meta-tag">生命週期階段</span>
+                        <span class="meta-tag">計費門檻表</span>
+                    </div>
+                    <a href="重點筆記/政府採購全生命週期概論_重點筆記.html" class="btn-study">
+                        進入備考系統
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <span class="card-icon">⚖️</span>
+                    <h3>總則、招標及決標</h3>
+                    <p>採購法最核心基石！詳解招標方式、等標期計算、投標廠商資格限制，以及開標、比減價規則與法定廢標/決標條件。</p>
+                </div>
+                <div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight">200+ 選擇題</span>
+                        <span class="meta-tag highlight">超大題庫</span>
+                        <span class="meta-tag">採購金額級距</span>
+                        <span class="meta-tag">比減價流程</span>
+                    </div>
+                    <a href="重點筆記/政府採購法之總則、招標及決標題庫_重點筆記.html" class="btn-study">
+                        進入備考系統
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <span class="card-icon">🏗️</span>
+                    <h3>履約管理及驗收</h3>
+                    <p>深入學習合約變更、工期展延、契約暫停與終止，以及工程財物之法定驗收程序、部分驗收、減價收受等實務判定原則。</p>
+                </div>
+                <div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight">系統整理</span>
+                        <span class="meta-tag">變更設計</span>
+                        <span class="meta-tag">驗收天數限制</span>
+                        <span class="meta-tag">瑕疵擔保</span>
+                    </div>
+                    <a href="重點筆記/政府採購法之履約管理及驗收_重點筆記.html" class="btn-study">
+                        進入備考系統
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <span class="card-icon">🚨</span>
+                    <h3>政府採購法之爭議處理</h3>
+                    <p>完整梳理異議、申訴與調解的法定受理機關、程序時限；並解析採購申訴審議委員會之調解建議與仲裁等司法救濟途徑。</p>
+                </div>
+                <div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight">爭議處理流程</span>
+                        <span class="meta-tag">異議時限 10日</span>
+                        <span class="meta-tag">申訴時限 15日</span>
+                        <span class="meta-tag">停工實務</span>
+                    </div>
+                    <a href="重點筆記/政府採購法之爭議處理_重點筆記.html" class="btn-study">
+                        進入備考系統
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="subject-card">
+                <div class="card-header">
+                    <span class="card-icon">⛓️</span>
+                    <h3>政府採購法之罰則及附則</h3>
+                    <p>精準提煉沒收押標金、追償、不良廠商停權處分（第101條至103條）之法定救濟時限與停權期間，以及刑事處罰與沒收追徵規範。</p>
+                </div>
+                <div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight">罰則大梳理</span>
+                        <span class="meta-tag">停權處分 101條</span>
+                        <span class="meta-tag">申訴救濟</span>
+                        <span class="meta-tag">追償限制</span>
+                    </div>
+                    <a href="重點筆記/政府採購法之罰則及附則_重點筆記.html" class="btn-study">
+                        進入備考系統
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips-section">
+            <h3 class="tips-title">💡 GitHub Pages 備考門戶使用說明</h3>
+            <ul class="tips-list">
+                <li><strong>離線保存與可攜帶性</strong>：所有網頁均採用「離線自包含」架構設計。若要無網路環境下備考，只需在瀏覽器中按下 <code>Ctrl+S</code> (或 Mac <code>Cmd+S</code>) 另存為單一 HTML 網頁，即可帶到任何地方離線作答。</li>
+                <li><strong>行動裝置自適應 (RWD)</strong>：是非題文字陷阱已針對手機版面最佳化為「卡片流」，測驗按鈕設有大點擊熱區，方便您在通勤或零碎時間以手機流暢刷題。</li>
+                <li><strong>模擬測驗隨機挑戰</strong>：每次進入網頁或點擊「隨機重測」時，測驗系統都會將所有題目與選項重新隨機打亂，確保您能真正理解法規邏輯，而非死背題序答案。</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 政府採購專業人員考試 - 互動備考門戶</p>
+        <p>本門戶系統為靜態網頁架構，完全支援 GitHub Pages 部署，無需配置任何資料庫。</p>
+    </footer>
+
+</body>
+</html>
